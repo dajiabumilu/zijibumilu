@@ -1,1516 +1,581 @@
-port: 7890
-socks-port: 7891
-allow-lan: true
-mode: Rule
+mixed-port: 7890
+allow-lan: false
+mode: rule
+ipv6: false
 log-level: info
 external-controller: 0.0.0.0:9090
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  ipv6: false
+  default-nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+  nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+    - 119.29.29.29
+    - 180.76.76.76
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - "*.localdomain"
+    - "*.example"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
+    - router.asus.com
+    - localhost.sec.qq.com
+    - localhost.ptlogin2.qq.com
+    - +.msftconnecttest.com
+tun:
+  enable: true
+  stack: system
+  auto-route: true
+  auto-detect-interface: true
+  dns-hijack:
+    - 114.114.114.114
+    - 180.76.76.76
+    - 119.29.29.29
+    - 223.5.5.5
+    - 8.8.8.8
+    - 8.8.4.4
+    - 1.1.1.1
+    - 1.0.0.1
 proxies:
-  - {"type":"vless","name":"🇩🇪德国7|⬇️6.5MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.12","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇸🇬新加坡15|⬇️3.3MB/s|Netflix|Youtube|Openai","server":"support.zoom.us","port":80,"uuid":"d9074e14-c4e4-4e58-8fff-3727e83af868","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"free.pranithsandaruwan.shop","ws-opts":{"path":"/","headers":{"host":"free.pranithsandaruwan.shop"}}}
-  - {"type":"vless","name":"🇦🇺澳大利亚1|⬇️12.5MB/s|0%|Netflix|Disney|Youtube|Openai","server":"188.114.97.3","port":443,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozArgAh.VaLiDBV7996.Ir","ws-opts":{"path":"/OBFV60WlJSJMGU5U?ed=2560","headers":{"host":"gozArgAh.VaLiDBV7996.Ir"}}}
-  - {"type":"vless","name":"🇧🇷巴西2|⬇️22.6MB/s|0%|Netflix|Disney","server":"45.131.5.79","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国60|⬇️16.9MB/s|0%|Netflix|Disney|Youtube|Openai","server":"188.114.97.3","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram-@WedBaZtel-------------wedbazTel------/?ed","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇯🇵日本19|⬇️10.0MB/s|0%|Netflix|Disney","server":"45.131.5.220","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇦🇺澳大利亚3|⬇️18.3MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.132","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇫🇮芬兰1|⬇️7.6MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.194","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇩🇪德国9|⬇️5.4MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.47","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇫🇮芬兰9|⬇️1.7MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.242","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"trojan","name":"🇺🇸美国36|⬇️1.2MB/s|33%|Netflix|Openai","server":"fgh9jkr5.890617.xyz","port":443,"password":"d67cfeaf-b277-44ac-ab99-9dd02a7c5299","udp":true,"skip-cert-verify":true,"sni":"Fgh9JkR5.890617.xYz","network":"ws","ws-opts":{"path":"/lWljHWvIMOj85lz42MdhsCLV"}}
-  - {"type":"vless","name":"🇩🇪德国5|⬇️12.3MB/s|52%|Netflix|Disney|Youtube|Openai","server":"188.114.96.3","port":443,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"GOZArgAH.vaLIDbV7996.IR","ws-opts":{"path":"/oiBBYyE4WkprI2wD?ed=2560","headers":{"host":"GOZArgAH.vaLIDbV7996.IR"}}}
-  - {"type":"vmess","name":"🇺🇸美国57|⬇️17.3MB/s|29%|Netflix|Openai","ws-opts":{"path":"/oooo","headers":{"host":"ocbc.com"}},"server":"v7.heduian.link","port":"30807","uuid":"cbb3f877-d1fb-344c-87a9-d153bffd5484","alterId":"2","cipher":"auto","network":"ws"}
-  - {"type":"vless","name":"🇬🇧英国2|⬇️2.5MB/s|49%|Netflix|Disney|Openai","server":"45.131.5.239","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇯🇵日本20|⬇️11.4MB/s|70%|Netflix|Youtube|Openai","server":"bsuqian01.dynu.net","port":25768,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇹🇼台湾8|⬇️30.8MB/s|19%|Netflix|Disney|Youtube|Openai","server":"shenzhou05.mysynology.net","port":37809,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.yahoo.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇯🇵日本14|⬇️20.5MB/s|28%|Netflix|Openai","server":"shenzhou02.mysynology.net","port":35659,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"gateway.icloud.com","tls":false,"udp":true}
-  - {"type":"trojan","name":"🇺🇸美国15|⬇️9.8MB/s|32%|Netflix|Openai","server":"sanjose01.852224.ggff.net","port":443,"password":"89c1aea7-4d0d-4013-b663-0f94a3e6bdbd","udp":true,"skip-cert-verify":true,"sni":"sanjose01.852224.ggff.net","network":"ws","ws-opts":{"path":"/T5yZBrY2Qkg2cThJQeJb"}}
-  - {"type":"vless","name":"🇯🇵日本16|⬇️3.4MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.151","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇹🇼台湾2|⬇️22.6MB/s|19%|Netflix|Youtube|Openai","server":"zhee01.dynu.net","port":15700,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇯🇵日本24|⬇️21.7MB/s|12%|Netflix|Openai","server":"beiyong.dynuddns.net","port":48121,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇯🇵日本23|⬇️24.9MB/s|12%|Netflix|Youtube|Openai","server":"shenzhou05.mysynology.net","port":10635,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇭🇰香港11|⬇️1.5MB/s|Netflix","server":"test123.zlqhdns.top","port":61178,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vmess","name":"🇫🇷法国10|⬇️11.8MB/s|0%|Netflix|Openai","ws-opts":{"path":"/link","headers":{"host":"az05.beyondy.cfd"}},"server":"172.67.136.233","port":"443","uuid":"3f638f34-8dba-4186-bc43-2716a7ddd4be","alterId":"0","cipher":"auto","network":"ws","tls":true}
-  - {"type":"vless","name":"🇯🇵日本21|⬇️20.2MB/s|55%|Netflix|Disney|Openai","server":"shenzhou05.mysynology.net","port":17278,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.yahoo.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇹🇼台湾3|⬇️8.5MB/s|19%|Netflix|Youtube|Openai","server":"gy01.hunheiydd.xyz","port":12477,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇦🇺澳大利亚5|⬇️2.5MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.80","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vmess","name":"🇺🇸美国40|⬇️8.6MB/s|33%|Netflix|Openai","ws-opts":{"path":"/q2hGWwflPDbymaoOj85lz42MdhsCLV","headers":{"host":"fgh9jkr5.890617.xyz"}},"server":"FgH9jKR5.890617.xYz","port":"443","uuid":"d67cfeaf-b277-44ac-ab99-9dd02a7c5299","alterId":"0","cipher":"auto","network":"ws","tls":true}
-  - {"type":"vless","name":"🇩🇪德国4|⬇️6.4MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.223","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国67|⬇️8.3MB/s|51%|Netflix|Openai","server":"gy01.hunheiydd.xyz","port":30274,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"gateway.icloud.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇺🇸美国28|⬇️13.1MB/s|37%|Netflix|Openai","server":"zhee01.dynu.net","port":22054,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.yahoo.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇫🇮芬兰8|⬇️10.8MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.113","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳
-    @WangCai2","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vmess","name":"🇨🇦加拿大4|⬇️11.0MB/s|Netflix|Youtube|Openai","ws-opts":{"path":"/oooo","headers":{"host":"baidu.com"}},"server":"v25.heduian.link","port":"30825","uuid":"cbb3f877-d1fb-344c-87a9-d153bffd5484","alterId":"2","cipher":"auto","network":"ws"}
-  - {"type":"vmess","name":"🇺🇸美国2|⬇️2.4MB/s|50%|Netflix|Openai","ws-opts":{"path":"/","headers":{"host":"zxjp-b.tkong.cc"}},"server":"tk.hzlt.tkddns.xyz","port":"22642","uuid":"98e96c9f-4bb3-39d4-9a2c-fac04257f7c7","alterId":"2","cipher":"auto","network":"ws","tls":true}
-  - {"type":"vless","name":"🇺🇸美国8|⬇️7.8MB/s|32%|Netflix|Youtube|Openai","server":"shenzhou05.mysynology.net","port":50452,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.amazon.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇯🇵日本8|⬇️10.7MB/s|55%|Netflix|Disney|Openai","server":"csuzhou01.1cooldns.com","port":14548,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🌀其他21-PH|⬇️9.6MB/s|10%|Netflix|Youtube|Openai","server":"csuzhou01.1cooldns.com","port":27011,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.amazon.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇨🇭瑞士1|⬇️8.7MB/s|0%|Netflix|Youtube|Openai","server":"main.shik-posh.sbs","port":443,"uuid":"fa4e782f-d1db-4ece-9cfa-01899f4486f4","skip-cert-verify":true,"network":"tcp","tls":false,"udp":true}
-  - {"type":"vmess","name":"🇺🇸美国14|⬇️10.5MB/s|0%|Netflix|Openai","server":"185.189.32.179","port":"48737","uuid":"3680a006-d824-4574-90f3-21226dae6903","alterId":"0","cipher":"auto","network":"tcp"}
-  - {"type":"vless","name":"🇫🇷法国7|⬇️12.3MB/s|51%|Youtube|Openai","server":"agaungzhou01.bumbleshrimp.com","port":40072,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.yahoo.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇺🇸美国25|⬇️14.1MB/s|51%|Netflix|Youtube|Openai","server":"bsuqian01.dynu.net","port":30206,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"addons.mozilla.org","tls":false,"udp":true}
-  - {"type":"vless","name":"🇭🇰香港17|⬇️15.2MB/s|0%|Netflix|Disney|Youtube","server":"agaungzhou01.bumbleshrimp.com","port":31800,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vmess","name":"🇺🇸美国6|⬇️1.7MB/s|33%|Netflix|Openai","ws-opts":{"path":"/","headers":{"host":"zxjp-a.tkong.cc"}},"server":"tk.hzlt.tkddns.xyz","port":"22641","uuid":"98e96c9f-4bb3-39d4-9a2c-fac04257f7c7","alterId":"2","cipher":"auto","network":"ws","tls":true}
-  - {"type":"vless","name":"🇯🇵日本26|⬇️1.9MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.48","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🌀其他14-SA|⬇️9.8MB/s|0%|Netflix|Youtube|Openai","server":"agaungzhou01.bumbleshrimp.com","port":60677,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇨🇭瑞士2|⬇️7.1MB/s|28%|Netflix|Disney|Youtube|Openai","server":"152.67.68.116","port":443,"uuid":"7c317161-5cf8-4cbc-811a-d1297c41bb23","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"YAPC-1.afshin.ir","tls":true,"udp":true}
-  - {"type":"vless","name":"🇰🇷韩国2|⬇️1.8MB/s|65%|Netflix|Disney|Openai","server":"172.64.152.226","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram@sinavm","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇫🇷法国12|⬇️11.8MB/s|47%|Netflix|Openai","server":"zula.ir","port":8443,"uuid":"1c0334b6-14be-46ac-aba1-46798088f61c","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"vip.hvitrin.ir","ws-opts":{"path":"/@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7","headers":{"host":"vip.hvitrin.ir"}}}
-  - {"type":"vmess","name":"🇷🇺俄罗斯4|⬇️7.4MB/s|50%","ws-opts":{"path":"/","headers":{"host":"cm1.awslcn.info"}},"server":"cm1.awslcn.info","port":"25230","uuid":"b784f479-32c2-4fa9-a6f9-0e8d3f8cb4ae","alterId":"0","cipher":"auto","network":"ws"}
-  - {"type":"vless","name":"🇸🇬新加坡2|⬇️23.4MB/s|43%|Youtube|Openai","server":"beiyong.dynuddns.net","port":29877,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇫🇷法国5|⬇️15.4MB/s|47%|Netflix|Youtube|Openai","server":"172.67.204.84","port":8443,"uuid":"1c0334b6-14be-46ac-aba1-46798088f61c","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"vip.hvitrin.ir","ws-opts":{"path":"/@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7","headers":{"host":"vip.hvitrin.ir"}}}
-  - {"type":"vless","name":"🇯🇵日本11|⬇️15.7MB/s|70%|Netflix|Openai","server":"gy01.hunheiydd.xyz","port":11839,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇬🇧英国6|⬇️2.9MB/s|49%|Netflix|Disney|Openai","server":"45.131.5.101","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇦乌克兰1|⬇️7.1MB/s|51%|Netflix|Openai","server":"shenzhou02.mysynology.net","port":38400,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.yahoo.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇸🇬新加坡11|⬇️20.5MB/s|28%|Netflix|Openai","server":"test123.zlqhdns.top","port":10778,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇺🇸美国68|⬇️27.2MB/s|0%|Netflix|Disney","server":"45.131.5.203","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🌀其他13-IL|⬇️2.0MB/s|0%|Youtube|Openai","server":"tel5.vpntype.dev","port":443,"uuid":"82f3187f-43cc-4a55-8c7d-16e1076776b9","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"tel5.vpntype.dev","tls":true,"udp":true}
-  - {"type":"vless","name":"🇺🇸美国3|⬇️24.7MB/s|39%|Netflix|Disney|Openai","server":"45.131.5.185","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"ss","name":"🌀其他24-AM|⬇️11.6MB/s|42%|Openai","server":"45.129.185.97","port":4443,"cipher":"chacha20-ietf-poly1305","password":"5rfA92M6A2a9E1GiFHa9Ux"}
-  - {"type":"vless","name":"🇦🇪阿拉伯酋长国1|⬇️3.9MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.147","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇭🇰香港4|⬇️19.3MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.182","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳
-    @MxlShare@WangCai2","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇦🇺澳大利亚6|⬇️15.1MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.131","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇩🇪德国14|⬇️3.4MB/s|52%|Netflix|Disney|Openai","server":"45.131.4.111","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🌀其他18-AR|⬇️4.0MB/s|0%|Youtube|Openai","server":"csuzhou01.1cooldns.com","port":15464,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇺🇸美国64|⬇️15.5MB/s|39%|Netflix|Disney|Openai","server":"45.131.5.3","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"trojan","name":"🇺🇸美国69|⬇️7.6MB/s|32%|Netflix|Openai","server":"1p.890689.xyz","port":443,"password":"a8fce442-ae9a-4cc1-a0cc-20308ff0a0db","udp":true,"skip-cert-verify":true,"sni":"1P.890689.xyZ","network":"ws","ws-opts":{"path":"/lXENb74xF4ylXngZ"}}
-  - {"type":"vless","name":"🇺🇸美国39|⬇️1.1MB/s|28%|Netflix|Disney|Openai","server":"31.59.111.49","port":33718,"uuid":"e657e5fb-c417-4d3f-d84e-a3a8f010f9fa","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"icloud.cdn-apple.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇺🇸美国22|⬇️2.4MB/s|65%|Netflix|Disney|Openai","server":"45.131.5.83","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇦🇺澳大利亚10|⬇️2.0MB/s|0%|Netflix|Openai","server":"45.131.6.27","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇯🇵日本25|⬇️21.1MB/s|0%|Netflix|Disney|Openai","server":"www.speedtest.net","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"redfree8.pooriashop.ir","ws-opts":{"path":"/join---MTMVPN---join?ed=2560","headers":{"host":"redfree8.pooriashop.ir"}}}
-  - {"type":"vless","name":"🇵🇱波兰1|⬇️7.9MB/s|32%|Openai","server":"shenzhou02.mysynology.net","port":47096,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🌀其他6-IL|⬇️1.9MB/s|0%|Youtube|Openai","server":"tel5.vpntype.dev","port":443,"uuid":"31d55b81-bdee-4355-8fee-a32ed6297860","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"tel5.vpntype.dev","tls":true,"udp":true}
-  - {"type":"vless","name":"🇯🇵日本13|⬇️14.8MB/s|0%|Netflix|Disney","server":"45.131.5.99","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国26|⬇️1.0MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.119","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇯🇵日本1|⬇️2.2MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.80","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国19|⬇️2.8MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.28","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇯🇵日本27|⬇️1.7MB/s|0%|Netflix|Disney","server":"45.131.4.214","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇰🇷韩国7|⬇️2.1MB/s|65%|Netflix|Disney|Openai","server":"45.131.4.113","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🌀其他1-SE|⬇️1.8MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.67","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国13|⬇️29.3MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.33","port":8080,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇬🇧英国9|⬇️19.7MB/s|49%|Netflix|Disney|Openai","server":"45.131.5.119","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇯🇵日本3|⬇️23.6MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.179","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇩🇪德国3|⬇️24.7MB/s|52%|Netflix|Disney|Openai","server":"45.131.5.73","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国58|⬇️1.4MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.194","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国59|⬇️1.8MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.188","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇩🇪德国1|⬇️1.9MB/s|26%|Openai","server":"grdt.dtsantoor.com","port":443,"uuid":"119bb4e1-f0c2-4251-8bf7-5a070162f2d0","skip-cert-verify":true,"network":"tcp","servername":"grdt.dtsantoor.com","tls":true,"udp":true}
-  - {"type":"vless","name":"🇺🇸美国34|⬇️14.5MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.151","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国16|⬇️15.1MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.116","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2flow","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇹🇼台湾6|⬇️5.1MB/s|19%|Netflix|Youtube|Openai","server":"gysz0000.dynu.net","port":12477,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇰🇷韩国6|⬇️1.3MB/s|65%|Netflix|Disney|Openai","server":"45.131.5.27","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2flow=-udp443","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🌀其他9-TR|⬇️9.5MB/s|41%|Youtube|Openai","server":"bsuqian01.dynu.net","port":45114,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇺🇸美国30|⬇️2.3MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.36","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🌀其他7-SE|⬇️30.5MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.110","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇬🇧英国8|⬇️2.0MB/s|37%|Openai","server":"109.107.159.69","port":22069,"uuid":"361427b1-5cf9-4ae6-bd1b-5dbf99a21b61","skip-cert-verify":true,"network":"tcp","tls":false,"udp":true}
-  - {"type":"vless","name":"🇭🇰香港3|⬇️1.2MB/s|50%|Netflix|Youtube","server":"hon5.vpntype.dev","port":443,"uuid":"ebda7cbf-a068-451c-96bf-0275dd039ae4","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"hon5.vpntype.dev","tls":true,"udp":true}
-  - {"type":"vless","name":"🌀其他17-IL|⬇️5.7MB/s|41%|Youtube|Openai","server":"agaungzhou01.bumbleshrimp.com","port":30019,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.yahoo.com","tls":false,"udp":true}
-  - {"type":"ss","name":"🇺🇸美国43|⬇️7.8MB/s|32%|Netflix|Openai","server":"zf1.10101251.xyz","port":41705,"cipher":"aes-256-gcm","password":"4bccdfb7-f45b-44bb-9cd3-fb6f8fc8072f"}
-  - {"type":"vless","name":"🇺🇸美国55|⬇️1.1MB/s|0%|Disney|Openai","server":"45.131.5.35","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国27|⬇️19.1MB/s|65%|Netflix|Disney|Openai","server":"45.131.4.241","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇭🇰香港9|⬇️29.9MB/s|0%|Netflix|Disney","server":"45.131.4.245","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram@ShadowProxy66","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国50|⬇️11.5MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.57","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇯🇵日本2|⬇️6.2MB/s|Netflix|Disney|Openai","server":"45.131.5.24","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇬🇧英国7|⬇️1.6MB/s|49%|Netflix|Disney|Openai","server":"45.131.5.1","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇦🇺澳大利亚9|⬇️5.9MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.220","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国9|⬇️26.7MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.154","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - "{\"type\":\"vless\",\"name\":\"🇧🇷巴西1|⬇️2.8MB/s|0%|Netflix|Disney|Openai\",\"server\":\"45.131.5.206\",\"port\":80,\"uuid\":\"c5293efa-28f8-4a0f-8f34-541078970cee\",\"skip-cert-verify\":true,\"udp\":true,\"tls\":true,\"network\":\"ws\",\"servername\":\"gozargah.validbv7996.ir\",\"ws-opts\":{\"path\":\"/Telegramð\x9F\x87¨ð\x9F\x87³@WangCai2\",\"headers\":{\"host\":\"gozargah.validbv7996.ir\"}}}"
-  - {"type":"vless","name":"🇦🇺澳大利亚7|⬇️29.0MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.149","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇦🇪阿拉伯酋长国2|⬇️1.9MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.228","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"ss","name":"🌀其他22-KZ|⬇️2.6MB/s|51%|Openai","server":"2.56.177.254","port":8443,"cipher":"chacha20-ietf-poly1305","password":"YsBZTt83gB2HX09t9aSLaF"}
-  - {"type":"vless","name":"🇬🇧英国3|⬇️1.4MB/s|0%|Netflix|Disney|Openai","server":"shenzhou02.mysynology.net","port":47151,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.amazon.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇭🇰香港12|⬇️7.1MB/s|0%|Netflix|Disney","server":"45.131.6.45","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🌀其他20-IL|⬇️2.5MB/s|0%|Youtube|Openai","server":"tel5.vpntype.dev","port":443,"uuid":"121a9fa2-8505-4cdc-972a-7b41f1296fc0","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"tel5.vpntype.dev","tls":true,"udp":true}
-  - {"type":"vless","name":"🇹🇼台湾4|⬇️2.1MB/s|0%|Netflix|Youtube|Openai","server":"120.238.53.237","port":34313,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"gateway.icloud.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇺🇸美国48|⬇️4.5MB/s|65%|Netflix|Disney|Openai","server":"45.131.5.180","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇹🇼台湾1|⬇️2.1MB/s|0%|Netflix|Disney|Youtube|Openai","server":"shenzhou02.mysynology.net","port":34313,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"gateway.icloud.com","tls":false,"udp":true}
-  - {"type":"vmess","name":"🇭🇰香港8|⬇️2.4MB/s|50%|Netflix|Disney","server":"120.198.71.214","port":"34093","uuid":"418048af-a293-4b99-9b0c-98ca3580dd24","alterId":"0","cipher":"auto","network":"tcp"}
-  - {"type":"vless","name":"🇺🇸美国12|⬇️1.8MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.190","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇦🇺澳大利亚4|⬇️30.1MB/s|0%|Netflix|Disney","server":"45.131.5.18","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国56|⬇️5.4MB/s|0%|Netflix|Openai","server":"gysz0000.dynu.net","port":29023,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.amazon.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇺🇸美国27|⬇️2.7MB/s|39%|Netflix|Disney|Openai","server":"45.131.5.82","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇦🇪阿拉伯酋长国2|⬇️1.4MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.166","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇸🇬新加坡11|⬇️1.9MB/s|Youtube|Openai","server":"170.114.45.6","port":80,"uuid":"d9074e14-c4e4-4e58-8fff-3727e83af868","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"free.pranithsandaruwan.shop","ws-opts":{"path":"/","headers":{"host":"free.pranithsandaruwan.shop"}}}
-  - {"type":"vless","name":"🇸🇬新加坡12|⬇️3.9MB/s|Youtube|Openai","server":"support.zoom.us","port":80,"uuid":"d9074e14-c4e4-4e58-8fff-3727e83af868","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"free.pranithsandaruwan.shop","ws-opts":{"path":"/","headers":{"host":"free.pranithsandaruwan.shop"}}}
-  - {"type":"vless","name":"🇸🇬新加坡16|⬇️4.9MB/s|Youtube|Openai","server":"170.114.46.6","port":80,"uuid":"d9074e14-c4e4-4e58-8fff-3727e83af868","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"free.pranithsandaruwan.shop","ws-opts":{"path":"/","headers":{"host":"free.pranithsandaruwan.shop"}}}
-  - {"type":"vless","name":"🇸🇬新加坡3|⬇️4.9MB/s|Youtube|Openai","server":"170.114.46.6","port":80,"uuid":"d9074e14-c4e4-4e58-8fff-3727e83af868","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"free.pranithsandaruwan.shop","ws-opts":{"path":"/","headers":{"host":"free.pranithsandaruwan.shop"}}}
-  - {"type":"vless","name":"🌀其他5-SE|⬇️1.7MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.134","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🌀其他26-SE|⬇️3.7MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.6","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇦🇺澳大利亚5|⬇️1.1MB/s|0%|Netflix|Openai","server":"45.131.5.164","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇯🇵日本9|⬇️16.3MB/s|0%|Netflix|Disney|Youtube|Openai","server":"188.114.96.3","port":443,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"GOZArgAH.vaLIDbV7996.IR","ws-opts":{"path":"/oiBBYyE4WkprI2wD?ed=2560","headers":{"host":"GOZArgAH.vaLIDbV7996.IR"}}}
-  - {"type":"vless","name":"🇺🇸美国44|⬇️1.4MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.14","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇧🇷巴西3|⬇️4.7MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.227","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国32|⬇️16.0MB/s|28%|Netflix|Disney|Openai","server":"rncatlsclyx.codesofun.pp.ua","port":443,"uuid":"f84898a3-1691-489a-8d6e-0eb0981bef00","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"rnca.majiang.pp.ua","ws-opts":{"path":"/rn2","headers":{"host":"rnca.majiang.pp.ua"}}}
-  - {"type":"vless","name":"🇩🇪德国7|⬇️3.7MB/s|52%|Netflix|Disney|Openai","server":"45.131.5.151","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇭🇰香港1|⬇️31.2MB/s|0%|Youtube","server":"beiyong.dynuddns.net","port":12597,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇺🇸美国9|⬇️2.3MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.110","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇩🇪德国6|⬇️2.4MB/s|0%|Disney|Openai","server":"45.131.5.69","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇭🇰香港12|⬇️2.7MB/s|0%|Netflix|Disney|Youtube","server":"bsuqian01.dynu.net","port":27631,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇸🇬新加坡2|⬇️1.2MB/s|Youtube|Openai","server":"csuzhou01.1cooldns.com","port":44003,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇯🇵日本1|⬇️9.8MB/s|70%|Youtube|Openai","server":"csuzhou01.1cooldns.com","port":13989,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"gateway.icloud.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇭🇰香港2|⬇️13.3MB/s|0%|Youtube|Openai","server":"zhee01.dynu.net","port":25135,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇯🇵日本12|⬇️4.0MB/s|12%|Openai","server":"gysz0000.dynu.net","port":10635,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🌀其他20-CN|⬇️14.2MB/s|32%","server":"shenzhou02.mysynology.net","port":62157,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇭🇰香港8|⬇️8.2MB/s|0%|Netflix|Disney|Youtube","server":"zhee01.dynu.net","port":35853,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇭🇰香港9|⬇️12.3MB/s|0%|Netflix|Disney|Youtube","server":"gy01.hunheiydd.xyz","port":45883,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇯🇵日本7|⬇️6.2MB/s|20%|Youtube|Openai","server":"bsuqian01.dynu.net","port":31735,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇭🇰香港11|⬇️6.0MB/s|Youtube","server":"test123.zlqhdns.top","port":24318,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇭🇰香港18|⬇️5.8MB/s|0%|Netflix|Disney","server":"gysz0000.dynu.net","port":45883,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇦🇪阿拉伯酋长国1|⬇️1.3MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.228","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🌀其他15-CN|⬇️10.5MB/s|32%","server":"shenzhou05.mysynology.net","port":28680,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇺🇸美国28|⬇️14.5MB/s|54%|Openai","server":"shenzhou05.mysynology.net","port":21578,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.amazon.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇩🇪德国2|⬇️1.6MB/s|51%|Openai","server":"csuzhou01.1cooldns.com","port":58031,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.yahoo.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇭🇰香港6|⬇️4.9MB/s|0%|Disney|Youtube","server":"zhee01.dynu.net","port":54220,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇺🇸美国72|⬇️10.9MB/s|Openai","server":"zhee01.dynu.net","port":38311,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.amazon.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇺🇸美国74|⬇️10.8MB/s|32%|Openai","server":"zhee01.dynu.net","port":64654,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"gateway.icloud.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇹🇼台湾9|⬇️5.7MB/s|19%|Youtube|Openai","server":"zhee01.dynu.net","port":13263,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"gateway.icloud.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇭🇰香港16|⬇️4.0MB/s|0%|Netflix|Disney|Youtube|Openai","server":"csuzhou01.1cooldns.com","port":41279,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇹🇼台湾6|⬇️4.9MB/s|19%|Youtube|Openai","server":"gy01.hunheiydd.xyz","port":15823,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.yahoo.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇬🇧英国3|⬇️6.7MB/s|50%|Disney|Openai","server":"csuzhou01.1cooldns.com","port":14659,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"ss","name":"🌀其他25-SE|⬇️8.4MB/s|0%|Netflix|Disney|Youtube|Openai","server":"sto2.a.edgeservers.org","port":39649,"cipher":"chacha20-ietf-poly1305","password":"zCbrIk12Qlg9YcERdnzjoh"}
-  - {"type":"vless","name":"🇨🇦加拿大8|⬇️2.5MB/s|68%|Youtube|Openai","server":"gy01.hunheiydd.xyz","port":16011,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.amazon.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🌀其他10-AT|⬇️2.7MB/s|51%|Openai","server":"bsuqian01.dynu.net","port":17889,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"gateway.icloud.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇬🇧英国7|⬇️13.1MB/s|50%|Disney|Openai","server":"shenzhou02.mysynology.net","port":35311,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.yahoo.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇺🇸美国52|⬇️1.3MB/s|54%|Openai","server":"shenzhou05.mysynology.net","port":19620,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.amazon.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇺🇸美国5|⬇️2.8MB/s|0%|Netflix|Openai","server":"45.131.5.171","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🌀其他14-MD|⬇️5.2MB/s|51%|Openai","server":"bsuqian01.dynu.net","port":22216,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🌀其他33-RO|⬇️1.6MB/s|51%|Youtube|Openai","server":"bsuqian01.dynu.net","port":17930,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇭🇰香港4|⬇️2.5MB/s|0%|Netflix|Disney","server":"bsuqian01.dynu.net","port":40387,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇬🇧英国2|⬇️8.7MB/s|50%|Disney|Openai","server":"beiyong.dynuddns.net","port":65053,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.amazon.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇬🇧英国5|⬇️2.2MB/s|50%|Disney|Openai","server":"csuzhou01.1cooldns.com","port":32055,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.amazon.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🌀其他12-ES|⬇️4.9MB/s|32%|Openai","server":"bsuqian01.dynu.net","port":40581,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇨🇭瑞士2|⬇️7.3MB/s|28%|Netflix|Disney|Openai","server":"yapc-1.afshin.ir","port":443,"uuid":"7c317161-5cf8-4cbc-811a-d1297c41bb23","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"YAPC-1.afshin.ir","tls":true,"udp":true}
-  - {"type":"vless","name":"🇺🇸美国45|⬇️3.6MB/s|51%|Openai","server":"shenzhou02.mysynology.net","port":40430,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.yahoo.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇺🇸美国77|⬇️8.0MB/s|33%|Openai","server":"192.3.130.103","port":443,"uuid":"576c81b6-4976-4fe3-b1a9-05a9c302e98e","skip-cert-verify":true,"udp":true,"network":"grpc","tls":true,"grpc-opts":{"grpc-service-name":"HlAPZV9g9xmyAVVV002zYFTmiIeg"},"servername":"us10-01.iran2030.ggff.net"}
-  - {"type":"vless","name":"🌀其他4-MY|⬇️1.6MB/s|0%|Youtube|Openai","server":"csuzhou01.1cooldns.com","port":23301,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vmess","name":"🇸🇬新加坡17|⬇️1.4MB/s|43%|Youtube|Openai","server":"b268cf3c-su7xc0-swx10p-cw9v.b.fosant.com","port":"3683","uuid":"f39baabc-ef78-11ef-b714-f23c93136cb3","alterId":"0","cipher":"auto","network":"tcp"}
-  - {"type":"vless","name":"🇺🇸美国81|⬇️6.1MB/s|33%|Openai","server":"192.3.130.103","port":443,"uuid":"576c81b6-4976-4fe3-b1a9-05a9c302e98e","skip-cert-verify":true,"udp":true,"network":"grpc","tls":true,"grpc-opts":{"grpc-service-name":"HlAPZV9g9xmyAVVV002zYFTmiIeg"},"servername":"us10-03zl.huangshang.filegear-sg.me"}
-  - {"type":"vless","name":"🇺🇸美国39|⬇️1.6MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.9","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vmess","name":"🇸🇬新加坡1|⬇️1.7MB/s|43%|Youtube|Openai","server":"1387ebdd-su7b40-su6828-eme.b.fosant.com","port":"3683","uuid":"16d93f14-af0e-11ee-8ebe-f23c93136cb3","alterId":"0","cipher":"auto","network":"tcp"}
-  - {"type":"vless","name":"🇺🇸美国76|⬇️9.0MB/s|50%|Openai","server":"beiyong.dynuddns.net","port":57926,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"gateway.icloud.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇺🇸美国6|⬇️8.0MB/s|0%|Netflix|Disney","server":"45.131.4.254","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇩🇪德国9|⬇️8.0MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.33","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇫🇮芬兰5|⬇️1.2MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.113","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇯🇵日本4|⬇️1.1MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.4","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国43|⬇️4.8MB/s|67%|Openai","server":"139.185.34.131","port":443,"uuid":"ea286109-d20f-415e-849e-4af20ab04b65","skip-cert-verify":true,"network":"tcp","servername":"147135001195.sec22org.com","tls":true,"udp":true}
-  - {"type":"vless","name":"🇭🇰香港17|⬇️2.3MB/s|Netflix|Disney|Openai","server":"45.131.5.15","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国2|⬇️5.4MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.145","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇧🇷巴西4|⬇️16.6MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.16","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇨🇦加拿大5|⬇️4.4MB/s|68%|Youtube|Openai","server":"gysz0000.dynu.net","port":16011,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.amazon.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇩🇪德国14|⬇️2.1MB/s|52%|Netflix|Disney|Openai","server":"45.131.5.208","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇰🇷韩国2|⬇️3.7MB/s|65%|Netflix|Disney","server":"45.131.4.234","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇯🇵日本15|⬇️1.8MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.178","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国35|⬇️3.2MB/s|65%|Netflix|Disney|Openai","server":"45.131.5.145","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国23|⬇️1.8MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.222","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国18|⬇️5.0MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.126","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇭🇰香港5|⬇️12.9MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.131","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇧🇷巴西1|⬇️1.1MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.200","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国64|⬇️3.4MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.198","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳
-    @WangCai2","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国79|⬇️22.2MB/s|39%|Netflix|Disney|Openai","server":"45.131.5.192","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇦🇺澳大利亚4|⬇️1.9MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.214","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇯🇵日本10|⬇️1.6MB/s|0%|Netflix|Disney|Openai","server":"45.131.5.182","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国61|⬇️2.0MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.192","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇫🇮芬兰4|⬇️1.4MB/s|0%|Netflix|Disney|Openai","server":"45.131.4.200","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🌀其他22-TH|⬇️4.3MB/s|0%|Netflix|Youtube|Openai","server":"shenzhou02.mysynology.net","port":32193,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.nvidia.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇯🇵日本11|⬇️2.7MB/s|0%|Netflix|Openai","server":"45.131.5.221","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vless","name":"🇺🇸美国55|⬇️1.0MB/s|67%|Openai","server":"150.230.118.66","port":443,"uuid":"54694a33-a8dc-47dd-bc38-acd3971e0055","skip-cert-verify":true,"network":"tcp","servername":"147135004002.sec20org.com","tls":true,"udp":true}
-  - {"type":"vless","name":"🇫🇮芬兰9|⬇️1.2MB/s|0%|Netflix|Openai","server":"45.131.4.73","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/MOSiV2--MOSiV2--MOSiV2--MOSiV2--MOSiV2--MOSiV2?ed","headers":{"host":"gozargah.validbv7996.ir"}}}
-  - {"type":"vmess","name":"🇧🇷巴西2|⬇️6.3MB/s|65%|Youtube|Openai","ws-opts":{"path":"/s15.html","headers":{"host":"375175914186712025032911325872796.s15.chibaba.filegear-sg.me"}},"server":"104.18.23.68","port":"80","uuid":"bd9c1aea-240a-463a-83ee-e7b3a6a4ac7a","alterId":"0","cipher":"auto","network":"ws"}
-  - {"type":"vless","name":"🇩🇪德国13|⬇️7.7MB/s|26%|Youtube","server":"91.107.155.79","port":443,"uuid":"f099efbb-5d64-4429-99e0-094467294dbf","skip-cert-verify":true,"network":"tcp","servername":"mw9.rogha.ir","tls":false,"udp":true}
-  - {"type":"vless","name":"🇯🇵日本13|⬇️5.5MB/s|39%|Disney|Youtube|Openai","server":"yijia-jp.sanguayun.com","port":21450,"uuid":"d8fb7ca6-5a60-4c79-8499-ef3675425aa3","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"s0.awsstatic.com","tls":false,"udp":true}
-  - {"type":"vless","name":"🇬🇧英国6|⬇️2.2MB/s|49%|Netflix|Disney|Openai","server":"45.131.4.191","port":80,"uuid":"c5293efa-28f8-4a0f-8f34-541078970cee","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"gozargah.validbv7996.ir","ws-opts":{"path":"/Telegram🇨🇳@WangCai2/?ed=2560","headers":{"host":"gozargah.validbv7996.ir"}}}
+  - {"type":"vless","name":"【看视频】台湾1-无限流量","server":"usa.visa.com","port":443,"uuid":"e94b7e06-1934-4f0e-89ad-1f516e532590","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"a.bumilu.zone.id","ws-opts":{"path":"/?ed=2560","headers":{"host":"a.bumilu.zone.id"}}}
+  - {"type":"vless","name":"【看视频】台湾5-无限流量","server":"www.visa.com.br","port":2087,"uuid":"e94b7e06-1934-4f0e-89ad-1f516e532590","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"a.bumilu.zone.id","ws-opts":{"path":"/?ed=2560","headers":{"host":"a.bumilu.zone.id"}}}
+  - {"type":"vless","name":"【看视频】台湾6-无限流量","server":"www.visasoutheasteurope.com","port":2096,"uuid":"e94b7e06-1934-4f0e-89ad-1f516e532590","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"a.bumilu.zone.id","ws-opts":{"path":"/?ed=2560","headers":{"host":"a.bumilu.zone.id"}}}
+  - {"type":"ss","name":"🇭🇰中继香港011【请勿用来看视频】","server":"183.240.228.175","port":50200,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇭🇰中继香港021【请勿用来看视频】","server":"120.241.29.116","port":50201,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇭🇰IEPL香港033【请勿用来看视频】","server":"120.232.217.158","port":50202,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇭🇰中继香港041【请勿用来看视频】","server":"183.240.228.175","port":50203,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇭🇰中继香港051【请勿用来看视频】","server":"183.240.228.175","port":50204,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇭🇰中继香港061【请勿用来看视频】","server":"183.240.228.175","port":50205,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇭🇰IEPL香港073【请勿用来看视频】","server":"120.232.217.158","port":50206,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇭🇰中继香港081【请勿用来看视频】","server":"183.240.228.175","port":50207,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇭🇰中继香港091【请勿用来看视频】","server":"120.241.29.116","port":50208,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇭🇰中继香港101【请勿用来看视频】","server":"120.241.29.116","port":50209,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇭🇰中继香港111【请勿用来看视频】","server":"183.240.228.175","port":58456,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇭🇰中继香港121【请勿用来看视频】","server":"120.241.29.116","port":50252,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇭🇰中继香港131【请勿用来看视频】","server":"183.240.228.175","port":50253,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇭🇰中继香港141【请勿用来看视频】","server":"120.241.29.116","port":50254,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇭🇰中继香港151【请勿用来看视频】","server":"183.240.228.175","port":50255,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇯🇵IEPL日本013【请勿用来看视频】","server":"120.232.217.158","port":50210,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇯🇵中继日本021【请勿用来看视频】","server":"120.241.29.116","port":50211,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇯🇵中继日本031【请勿用来看视频】","server":"120.241.29.116","port":50212,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇯🇵中继日本041【请勿用来看视频】","server":"120.241.29.116","port":50213,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇯🇵中继日本051【请勿用来看视频】","server":"120.241.29.116","port":50214,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇯🇵中继日本061【请勿用来看视频】","server":"120.241.29.116","port":50215,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇯🇵中继日本071【请勿用来看视频】","server":"120.241.29.116","port":50216,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇯🇵IEPL日本083【请勿用来看视频】","server":"120.232.217.158","port":50217,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇸🇬IEPL｜新加坡013【请勿用来看视频】","server":"120.232.217.158","port":50218,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡021【请勿用来看视频】","server":"183.240.228.175","port":50219,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡031【请勿用来看视频】","server":"120.241.29.116","port":50220,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡041【请勿用来看视频】","server":"183.240.228.175","port":50221,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡051【请勿用来看视频】","server":"120.241.29.116","port":50222,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡061【请勿用来看视频】","server":"120.241.29.116","port":50223,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇸🇬IEPL｜新加坡073【请勿用来看视频】","server":"120.232.217.158","port":50224,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡081【请勿用来看视频】","server":"183.240.228.175","port":50225,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡091【请勿用来看视频】","server":"120.241.29.116","port":50226,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡101【请勿用来看视频】","server":"183.240.228.175","port":50227,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇺🇸IEPL美国013【请勿用来看视频】","server":"120.232.217.158","port":50229,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇺🇸IEPL美国023【请勿用来看视频】","server":"120.232.217.158","port":50231,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇺🇸中继美国031【请勿用来看视频】","server":"183.240.228.175","port":50232,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇺🇸中继美国041【请勿用来看视频】","server":"183.240.228.175","port":50666,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇺🇸中继美国051【请勿用来看视频】","server":"120.241.29.116","port":50669,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇺🇸中继美国061【请勿用来看视频】","server":"120.241.29.116","port":50670,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇹🇼IEPL台湾013【请勿用来看视频】","server":"120.232.217.158","port":50234,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇹🇼中继台湾021【请勿用来看视频】","server":"120.241.29.116","port":50235,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇹🇼中继台湾031【请勿用来看视频】","server":"120.241.29.116","port":50757,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇻🇳中继越南｜原生1【请勿用来看视频】","server":"183.240.228.175","port":50233,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇲🇾马来西亚【请勿用来看视频】","server":"183.240.228.175","port":53898,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇵🇭菲律宾【请勿用来看视频】","server":"120.241.29.116","port":50731,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇦🇷阿根廷【请勿用来看视频】","server":"120.241.29.116","port":50732,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇰🇭柬埔寨【请勿用来看视频】","server":"120.241.29.116","port":50733,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇷🇺俄罗斯【请勿用来看视频】","server":"120.241.29.116","port":50734,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇰🇷韩国1【请勿用来看视频】","server":"120.241.29.116","port":50246,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇰🇷韩国2【请勿用来看视频】","server":"183.240.228.175","port":50730,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇩🇪德国【请勿用来看视频】","server":"120.241.29.116","port":53900,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇨🇦加拿大【请勿用来看视频】","server":"120.241.29.116","port":50236,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇹🇷土耳其【请勿用来看视频】","server":"120.241.29.116","port":53901,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇮🇳印度【请勿用来看视频】","server":"120.241.29.116","port":50237,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇮🇪爱尔兰【请勿用来看视频】","server":"120.241.29.116","port":50667,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇬🇧英国【请勿用来看视频】","server":"183.240.228.175","port":53904,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"vless","name":"【看视频】-gouyunHK1T流量","server":"206.237.7.142","port":443,"uuid":"fc8f2b62-6e38-4943-b4c3-24997ff3f6ba","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"itunes.apple.com","tls":false,"udp":true}
+  - {"type":"ss","name":"🇭🇰香港-01【通用】","server":"120.241.29.116","port":50201,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇸🇬新加坡【通用】","server":"120.232.217.76","port":50218,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇯🇵日本【【通用】","server":"120.232.217.76","port":50210,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇮🇩英国【通用】","server":"183.240.228.175","port":50238,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇰🇷韩国【通用】","server":"120.241.29.116","port":50246,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇲🇾马来西亚【通用】","server":"183.240.228.175","port":53898,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇮🇳印度【通用】","server":"120.241.29.116","port":50237,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇻🇳越南【通用】","server":"183.240.228.175","port":50233,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇺🇸美国【通用】","server":"183.240.228.175","port":50232,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇫🇷法国【通用】","server":"120.241.29.116","port":50242,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
+  - {"type":"ss","name":"🇨🇦加拿大【通用】","server":"120.241.29.116","port":50236,"cipher":"chacha20-ietf-poly1305","password":"75e09741-13c8-494b-901a-3701d4cfb225"}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - 🇩🇪德国7|⬇️6.5MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡15|⬇️3.3MB/s|Netflix|Youtube|Openai
-      - 🇦🇺澳大利亚1|⬇️12.5MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇧🇷巴西2|⬇️22.6MB/s|0%|Netflix|Disney
-      - 🇺🇸美国60|⬇️16.9MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇯🇵日本19|⬇️10.0MB/s|0%|Netflix|Disney
-      - 🇦🇺澳大利亚3|⬇️18.3MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰1|⬇️7.6MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国9|⬇️5.4MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰9|⬇️1.7MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国36|⬇️1.2MB/s|33%|Netflix|Openai
-      - 🇩🇪德国5|⬇️12.3MB/s|52%|Netflix|Disney|Youtube|Openai
-      - 🇺🇸美国57|⬇️17.3MB/s|29%|Netflix|Openai
-      - 🇬🇧英国2|⬇️2.5MB/s|49%|Netflix|Disney|Openai
-      - 🇯🇵日本20|⬇️11.4MB/s|70%|Netflix|Youtube|Openai
-      - 🇹🇼台湾8|⬇️30.8MB/s|19%|Netflix|Disney|Youtube|Openai
-      - 🇯🇵日本14|⬇️20.5MB/s|28%|Netflix|Openai
-      - 🇺🇸美国15|⬇️9.8MB/s|32%|Netflix|Openai
-      - 🇯🇵日本16|⬇️3.4MB/s|0%|Netflix|Disney|Openai
-      - 🇹🇼台湾2|⬇️22.6MB/s|19%|Netflix|Youtube|Openai
-      - 🇯🇵日本24|⬇️21.7MB/s|12%|Netflix|Openai
-      - 🇯🇵日本23|⬇️24.9MB/s|12%|Netflix|Youtube|Openai
-      - 🇭🇰香港11|⬇️1.5MB/s|Netflix
-      - 🇫🇷法国10|⬇️11.8MB/s|0%|Netflix|Openai
-      - 🇯🇵日本21|⬇️20.2MB/s|55%|Netflix|Disney|Openai
-      - 🇹🇼台湾3|⬇️8.5MB/s|19%|Netflix|Youtube|Openai
-      - 🇦🇺澳大利亚5|⬇️2.5MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国40|⬇️8.6MB/s|33%|Netflix|Openai
-      - 🇩🇪德国4|⬇️6.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国67|⬇️8.3MB/s|51%|Netflix|Openai
-      - 🇺🇸美国28|⬇️13.1MB/s|37%|Netflix|Openai
-      - 🇫🇮芬兰8|⬇️10.8MB/s|0%|Netflix|Disney|Openai
-      - 🇨🇦加拿大4|⬇️11.0MB/s|Netflix|Youtube|Openai
-      - 🇺🇸美国2|⬇️2.4MB/s|50%|Netflix|Openai
-      - 🇺🇸美国8|⬇️7.8MB/s|32%|Netflix|Youtube|Openai
-      - 🇯🇵日本8|⬇️10.7MB/s|55%|Netflix|Disney|Openai
-      - 🌀其他21-PH|⬇️9.6MB/s|10%|Netflix|Youtube|Openai
-      - 🇨🇭瑞士1|⬇️8.7MB/s|0%|Netflix|Youtube|Openai
-      - 🇺🇸美国14|⬇️10.5MB/s|0%|Netflix|Openai
-      - 🇫🇷法国7|⬇️12.3MB/s|51%|Youtube|Openai
-      - 🇺🇸美国25|⬇️14.1MB/s|51%|Netflix|Youtube|Openai
-      - 🇭🇰香港17|⬇️15.2MB/s|0%|Netflix|Disney|Youtube
-      - 🇺🇸美国6|⬇️1.7MB/s|33%|Netflix|Openai
-      - 🇯🇵日本26|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他14-SA|⬇️9.8MB/s|0%|Netflix|Youtube|Openai
-      - 🇨🇭瑞士2|⬇️7.1MB/s|28%|Netflix|Disney|Youtube|Openai
-      - 🇰🇷韩国2|⬇️1.8MB/s|65%|Netflix|Disney|Openai
-      - 🇫🇷法国12|⬇️11.8MB/s|47%|Netflix|Openai
-      - 🇷🇺俄罗斯4|⬇️7.4MB/s|50%
-      - 🇸🇬新加坡2|⬇️23.4MB/s|43%|Youtube|Openai
-      - 🇫🇷法国5|⬇️15.4MB/s|47%|Netflix|Youtube|Openai
-      - 🇯🇵日本11|⬇️15.7MB/s|70%|Netflix|Openai
-      - 🇬🇧英国6|⬇️2.9MB/s|49%|Netflix|Disney|Openai
-      - 🇺🇦乌克兰1|⬇️7.1MB/s|51%|Netflix|Openai
-      - 🇸🇬新加坡11|⬇️20.5MB/s|28%|Netflix|Openai
-      - 🇺🇸美国68|⬇️27.2MB/s|0%|Netflix|Disney
-      - 🌀其他13-IL|⬇️2.0MB/s|0%|Youtube|Openai
-      - 🇺🇸美国3|⬇️24.7MB/s|39%|Netflix|Disney|Openai
-      - 🌀其他24-AM|⬇️11.6MB/s|42%|Openai
-      - 🇦🇪阿拉伯酋长国1|⬇️3.9MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港4|⬇️19.3MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚6|⬇️15.1MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国14|⬇️3.4MB/s|52%|Netflix|Disney|Openai
-      - 🌀其他18-AR|⬇️4.0MB/s|0%|Youtube|Openai
-      - 🇺🇸美国64|⬇️15.5MB/s|39%|Netflix|Disney|Openai
-      - 🇺🇸美国69|⬇️7.6MB/s|32%|Netflix|Openai
-      - 🇺🇸美国39|⬇️1.1MB/s|28%|Netflix|Disney|Openai
-      - 🇺🇸美国22|⬇️2.4MB/s|65%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚10|⬇️2.0MB/s|0%|Netflix|Openai
-      - 🇯🇵日本25|⬇️21.1MB/s|0%|Netflix|Disney|Openai
-      - 🇵🇱波兰1|⬇️7.9MB/s|32%|Openai
-      - 🌀其他6-IL|⬇️1.9MB/s|0%|Youtube|Openai
-      - 🇯🇵日本13|⬇️14.8MB/s|0%|Netflix|Disney
-      - 🇺🇸美国26|⬇️1.0MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本1|⬇️2.2MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国19|⬇️2.8MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本27|⬇️1.7MB/s|0%|Netflix|Disney
-      - 🇰🇷韩国7|⬇️2.1MB/s|65%|Netflix|Disney|Openai
-      - 🌀其他1-SE|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国13|⬇️29.3MB/s|0%|Netflix|Disney|Openai
-      - 🇬🇧英国9|⬇️19.7MB/s|49%|Netflix|Disney|Openai
-      - 🇯🇵日本3|⬇️23.6MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国3|⬇️24.7MB/s|52%|Netflix|Disney|Openai
-      - 🇺🇸美国58|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国59|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国1|⬇️1.9MB/s|26%|Openai
-      - 🇺🇸美国34|⬇️14.5MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国16|⬇️15.1MB/s|0%|Netflix|Disney|Openai
-      - 🇹🇼台湾6|⬇️5.1MB/s|19%|Netflix|Youtube|Openai
-      - 🇰🇷韩国6|⬇️1.3MB/s|65%|Netflix|Disney|Openai
-      - 🌀其他9-TR|⬇️9.5MB/s|41%|Youtube|Openai
-      - 🇺🇸美国30|⬇️2.3MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他7-SE|⬇️30.5MB/s|0%|Netflix|Disney|Openai
-      - 🇬🇧英国8|⬇️2.0MB/s|37%|Openai
-      - 🇭🇰香港3|⬇️1.2MB/s|50%|Netflix|Youtube
-      - 🌀其他17-IL|⬇️5.7MB/s|41%|Youtube|Openai
-      - 🇺🇸美国43|⬇️7.8MB/s|32%|Netflix|Openai
-      - 🇺🇸美国55|⬇️1.1MB/s|0%|Disney|Openai
-      - 🇺🇸美国27|⬇️19.1MB/s|65%|Netflix|Disney|Openai
-      - 🇭🇰香港9|⬇️29.9MB/s|0%|Netflix|Disney
-      - 🇺🇸美国50|⬇️11.5MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本2|⬇️6.2MB/s|Netflix|Disney|Openai
-      - 🇬🇧英国7|⬇️1.6MB/s|49%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚9|⬇️5.9MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国9|⬇️26.7MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西1|⬇️2.8MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚7|⬇️29.0MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇪阿拉伯酋长国2|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他22-KZ|⬇️2.6MB/s|51%|Openai
-      - 🇬🇧英国3|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港12|⬇️7.1MB/s|0%|Netflix|Disney
-      - 🌀其他20-IL|⬇️2.5MB/s|0%|Youtube|Openai
-      - 🇹🇼台湾4|⬇️2.1MB/s|0%|Netflix|Youtube|Openai
-      - 🇺🇸美国48|⬇️4.5MB/s|65%|Netflix|Disney|Openai
-      - 🇹🇼台湾1|⬇️2.1MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇭🇰香港8|⬇️2.4MB/s|50%|Netflix|Disney
-      - 🇺🇸美国12|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚4|⬇️30.1MB/s|0%|Netflix|Disney
-      - 🇺🇸美国56|⬇️5.4MB/s|0%|Netflix|Openai
-      - 🇺🇸美国27|⬇️2.7MB/s|39%|Netflix|Disney|Openai
-      - 🇦🇪阿拉伯酋长国2|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡11|⬇️1.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡12|⬇️3.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡16|⬇️4.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡3|⬇️4.9MB/s|Youtube|Openai
-      - 🌀其他5-SE|⬇️1.7MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他26-SE|⬇️3.7MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚5|⬇️1.1MB/s|0%|Netflix|Openai
-      - 🇯🇵日本9|⬇️16.3MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇺🇸美国44|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西3|⬇️4.7MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国32|⬇️16.0MB/s|28%|Netflix|Disney|Openai
-      - 🇩🇪德国7|⬇️3.7MB/s|52%|Netflix|Disney|Openai
-      - 🇭🇰香港1|⬇️31.2MB/s|0%|Youtube
-      - 🇺🇸美国9|⬇️2.3MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国6|⬇️2.4MB/s|0%|Disney|Openai
-      - 🇭🇰香港12|⬇️2.7MB/s|0%|Netflix|Disney|Youtube
-      - 🇸🇬新加坡2|⬇️1.2MB/s|Youtube|Openai
-      - 🇯🇵日本1|⬇️9.8MB/s|70%|Youtube|Openai
-      - 🇭🇰香港2|⬇️13.3MB/s|0%|Youtube|Openai
-      - 🇯🇵日本12|⬇️4.0MB/s|12%|Openai
-      - 🌀其他20-CN|⬇️14.2MB/s|32%
-      - 🇭🇰香港8|⬇️8.2MB/s|0%|Netflix|Disney|Youtube
-      - 🇭🇰香港9|⬇️12.3MB/s|0%|Netflix|Disney|Youtube
-      - 🇯🇵日本7|⬇️6.2MB/s|20%|Youtube|Openai
-      - 🇭🇰香港11|⬇️6.0MB/s|Youtube
-      - 🇭🇰香港18|⬇️5.8MB/s|0%|Netflix|Disney
-      - 🇦🇪阿拉伯酋长国1|⬇️1.3MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他15-CN|⬇️10.5MB/s|32%
-      - 🇺🇸美国28|⬇️14.5MB/s|54%|Openai
-      - 🇩🇪德国2|⬇️1.6MB/s|51%|Openai
-      - 🇭🇰香港6|⬇️4.9MB/s|0%|Disney|Youtube
-      - 🇺🇸美国72|⬇️10.9MB/s|Openai
-      - 🇺🇸美国74|⬇️10.8MB/s|32%|Openai
-      - 🇹🇼台湾9|⬇️5.7MB/s|19%|Youtube|Openai
-      - 🇭🇰香港16|⬇️4.0MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇹🇼台湾6|⬇️4.9MB/s|19%|Youtube|Openai
-      - 🇬🇧英国3|⬇️6.7MB/s|50%|Disney|Openai
-      - 🌀其他25-SE|⬇️8.4MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇨🇦加拿大8|⬇️2.5MB/s|68%|Youtube|Openai
-      - 🌀其他10-AT|⬇️2.7MB/s|51%|Openai
-      - 🇬🇧英国7|⬇️13.1MB/s|50%|Disney|Openai
-      - 🇺🇸美国52|⬇️1.3MB/s|54%|Openai
-      - 🇺🇸美国5|⬇️2.8MB/s|0%|Netflix|Openai
-      - 🌀其他14-MD|⬇️5.2MB/s|51%|Openai
-      - 🌀其他33-RO|⬇️1.6MB/s|51%|Youtube|Openai
-      - 🇭🇰香港4|⬇️2.5MB/s|0%|Netflix|Disney
-      - 🇬🇧英国2|⬇️8.7MB/s|50%|Disney|Openai
-      - 🇬🇧英国5|⬇️2.2MB/s|50%|Disney|Openai
-      - 🌀其他12-ES|⬇️4.9MB/s|32%|Openai
-      - 🇨🇭瑞士2|⬇️7.3MB/s|28%|Netflix|Disney|Openai
-      - 🇺🇸美国45|⬇️3.6MB/s|51%|Openai
-      - 🇺🇸美国77|⬇️8.0MB/s|33%|Openai
-      - 🌀其他4-MY|⬇️1.6MB/s|0%|Youtube|Openai
-      - 🇸🇬新加坡17|⬇️1.4MB/s|43%|Youtube|Openai
-      - 🇺🇸美国81|⬇️6.1MB/s|33%|Openai
-      - 🇺🇸美国39|⬇️1.6MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡1|⬇️1.7MB/s|43%|Youtube|Openai
-      - 🇺🇸美国76|⬇️9.0MB/s|50%|Openai
-      - 🇺🇸美国6|⬇️8.0MB/s|0%|Netflix|Disney
-      - 🇩🇪德国9|⬇️8.0MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰5|⬇️1.2MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本4|⬇️1.1MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国43|⬇️4.8MB/s|67%|Openai
-      - 🇭🇰香港17|⬇️2.3MB/s|Netflix|Disney|Openai
-      - 🇺🇸美国2|⬇️5.4MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西4|⬇️16.6MB/s|0%|Netflix|Disney|Openai
-      - 🇨🇦加拿大5|⬇️4.4MB/s|68%|Youtube|Openai
-      - 🇩🇪德国14|⬇️2.1MB/s|52%|Netflix|Disney|Openai
-      - 🇰🇷韩国2|⬇️3.7MB/s|65%|Netflix|Disney
-      - 🇯🇵日本15|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国35|⬇️3.2MB/s|65%|Netflix|Disney|Openai
-      - 🇺🇸美国23|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国18|⬇️5.0MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港5|⬇️12.9MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西1|⬇️1.1MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国64|⬇️3.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国79|⬇️22.2MB/s|39%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚4|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本10|⬇️1.6MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国61|⬇️2.0MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰4|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他22-TH|⬇️4.3MB/s|0%|Netflix|Youtube|Openai
-      - 🇯🇵日本11|⬇️2.7MB/s|0%|Netflix|Openai
-      - 🇺🇸美国55|⬇️1.0MB/s|67%|Openai
-      - 🇫🇮芬兰9|⬇️1.2MB/s|0%|Netflix|Openai
-      - 🇧🇷巴西2|⬇️6.3MB/s|65%|Youtube|Openai
-      - 🇩🇪德国13|⬇️7.7MB/s|26%|Youtube
-      - 🇯🇵日本13|⬇️5.5MB/s|39%|Disney|Youtube|Openai
-      - 🇬🇧英国6|⬇️2.2MB/s|49%|Netflix|Disney|Openai
+      - 【看视频】台湾1-无限流量
+      - 【看视频】台湾5-无限流量
+      - 【看视频】台湾6-无限流量
+      - 🇭🇰中继香港011【请勿用来看视频】
+      - 🇭🇰中继香港021【请勿用来看视频】
+      - 🇭🇰IEPL香港033【请勿用来看视频】
+      - 🇭🇰中继香港041【请勿用来看视频】
+      - 🇭🇰中继香港051【请勿用来看视频】
+      - 🇭🇰中继香港061【请勿用来看视频】
+      - 🇭🇰IEPL香港073【请勿用来看视频】
+      - 🇭🇰中继香港081【请勿用来看视频】
+      - 🇭🇰中继香港091【请勿用来看视频】
+      - 🇭🇰中继香港101【请勿用来看视频】
+      - 🇭🇰中继香港111【请勿用来看视频】
+      - 🇭🇰中继香港121【请勿用来看视频】
+      - 🇭🇰中继香港131【请勿用来看视频】
+      - 🇭🇰中继香港141【请勿用来看视频】
+      - 🇭🇰中继香港151【请勿用来看视频】
+      - 🇯🇵IEPL日本013【请勿用来看视频】
+      - 🇯🇵中继日本021【请勿用来看视频】
+      - 🇯🇵中继日本031【请勿用来看视频】
+      - 🇯🇵中继日本041【请勿用来看视频】
+      - 🇯🇵中继日本051【请勿用来看视频】
+      - 🇯🇵中继日本061【请勿用来看视频】
+      - 🇯🇵中继日本071【请勿用来看视频】
+      - 🇯🇵IEPL日本083【请勿用来看视频】
+      - 🇸🇬IEPL｜新加坡013【请勿用来看视频】
+      - 🇸🇬中继｜新加坡021【请勿用来看视频】
+      - 🇸🇬中继｜新加坡031【请勿用来看视频】
+      - 🇸🇬中继｜新加坡041【请勿用来看视频】
+      - 🇸🇬中继｜新加坡051【请勿用来看视频】
+      - 🇸🇬中继｜新加坡061【请勿用来看视频】
+      - 🇸🇬IEPL｜新加坡073【请勿用来看视频】
+      - 🇸🇬中继｜新加坡081【请勿用来看视频】
+      - 🇸🇬中继｜新加坡091【请勿用来看视频】
+      - 🇸🇬中继｜新加坡101【请勿用来看视频】
+      - 🇺🇸IEPL美国013【请勿用来看视频】
+      - 🇺🇸IEPL美国023【请勿用来看视频】
+      - 🇺🇸中继美国031【请勿用来看视频】
+      - 🇺🇸中继美国041【请勿用来看视频】
+      - 🇺🇸中继美国051【请勿用来看视频】
+      - 🇺🇸中继美国061【请勿用来看视频】
+      - 🇹🇼IEPL台湾013【请勿用来看视频】
+      - 🇹🇼中继台湾021【请勿用来看视频】
+      - 🇹🇼中继台湾031【请勿用来看视频】
+      - 🇻🇳中继越南｜原生1【请勿用来看视频】
+      - 🇲🇾马来西亚【请勿用来看视频】
+      - 🇵🇭菲律宾【请勿用来看视频】
+      - 🇦🇷阿根廷【请勿用来看视频】
+      - 🇰🇭柬埔寨【请勿用来看视频】
+      - 🇷🇺俄罗斯【请勿用来看视频】
+      - 🇰🇷韩国1【请勿用来看视频】
+      - 🇰🇷韩国2【请勿用来看视频】
+      - 🇩🇪德国【请勿用来看视频】
+      - 🇨🇦加拿大【请勿用来看视频】
+      - 🇹🇷土耳其【请勿用来看视频】
+      - 🇮🇳印度【请勿用来看视频】
+      - 🇮🇪爱尔兰【请勿用来看视频】
+      - 🇬🇧英国【请勿用来看视频】
+      - 【看视频】-gouyunHK1T流量
+      - 🇭🇰香港-01【通用】
+      - 🇸🇬新加坡【通用】
+      - 🇯🇵日本【【通用】
+      - 🇮🇩英国【通用】
+      - 🇰🇷韩国【通用】
+      - 🇲🇾马来西亚【通用】
+      - 🇮🇳印度【通用】
+      - 🇻🇳越南【通用】
+      - 🇺🇸美国【通用】
+      - 🇫🇷法国【通用】
+      - 🇨🇦加拿大【通用】
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - 🇩🇪德国7|⬇️6.5MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡15|⬇️3.3MB/s|Netflix|Youtube|Openai
-      - 🇦🇺澳大利亚1|⬇️12.5MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇧🇷巴西2|⬇️22.6MB/s|0%|Netflix|Disney
-      - 🇺🇸美国60|⬇️16.9MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇯🇵日本19|⬇️10.0MB/s|0%|Netflix|Disney
-      - 🇦🇺澳大利亚3|⬇️18.3MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰1|⬇️7.6MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国9|⬇️5.4MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰9|⬇️1.7MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国36|⬇️1.2MB/s|33%|Netflix|Openai
-      - 🇩🇪德国5|⬇️12.3MB/s|52%|Netflix|Disney|Youtube|Openai
-      - 🇺🇸美国57|⬇️17.3MB/s|29%|Netflix|Openai
-      - 🇬🇧英国2|⬇️2.5MB/s|49%|Netflix|Disney|Openai
-      - 🇯🇵日本20|⬇️11.4MB/s|70%|Netflix|Youtube|Openai
-      - 🇹🇼台湾8|⬇️30.8MB/s|19%|Netflix|Disney|Youtube|Openai
-      - 🇯🇵日本14|⬇️20.5MB/s|28%|Netflix|Openai
-      - 🇺🇸美国15|⬇️9.8MB/s|32%|Netflix|Openai
-      - 🇯🇵日本16|⬇️3.4MB/s|0%|Netflix|Disney|Openai
-      - 🇹🇼台湾2|⬇️22.6MB/s|19%|Netflix|Youtube|Openai
-      - 🇯🇵日本24|⬇️21.7MB/s|12%|Netflix|Openai
-      - 🇯🇵日本23|⬇️24.9MB/s|12%|Netflix|Youtube|Openai
-      - 🇭🇰香港11|⬇️1.5MB/s|Netflix
-      - 🇫🇷法国10|⬇️11.8MB/s|0%|Netflix|Openai
-      - 🇯🇵日本21|⬇️20.2MB/s|55%|Netflix|Disney|Openai
-      - 🇹🇼台湾3|⬇️8.5MB/s|19%|Netflix|Youtube|Openai
-      - 🇦🇺澳大利亚5|⬇️2.5MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国40|⬇️8.6MB/s|33%|Netflix|Openai
-      - 🇩🇪德国4|⬇️6.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国67|⬇️8.3MB/s|51%|Netflix|Openai
-      - 🇺🇸美国28|⬇️13.1MB/s|37%|Netflix|Openai
-      - 🇫🇮芬兰8|⬇️10.8MB/s|0%|Netflix|Disney|Openai
-      - 🇨🇦加拿大4|⬇️11.0MB/s|Netflix|Youtube|Openai
-      - 🇺🇸美国2|⬇️2.4MB/s|50%|Netflix|Openai
-      - 🇺🇸美国8|⬇️7.8MB/s|32%|Netflix|Youtube|Openai
-      - 🇯🇵日本8|⬇️10.7MB/s|55%|Netflix|Disney|Openai
-      - 🌀其他21-PH|⬇️9.6MB/s|10%|Netflix|Youtube|Openai
-      - 🇨🇭瑞士1|⬇️8.7MB/s|0%|Netflix|Youtube|Openai
-      - 🇺🇸美国14|⬇️10.5MB/s|0%|Netflix|Openai
-      - 🇫🇷法国7|⬇️12.3MB/s|51%|Youtube|Openai
-      - 🇺🇸美国25|⬇️14.1MB/s|51%|Netflix|Youtube|Openai
-      - 🇭🇰香港17|⬇️15.2MB/s|0%|Netflix|Disney|Youtube
-      - 🇺🇸美国6|⬇️1.7MB/s|33%|Netflix|Openai
-      - 🇯🇵日本26|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他14-SA|⬇️9.8MB/s|0%|Netflix|Youtube|Openai
-      - 🇨🇭瑞士2|⬇️7.1MB/s|28%|Netflix|Disney|Youtube|Openai
-      - 🇰🇷韩国2|⬇️1.8MB/s|65%|Netflix|Disney|Openai
-      - 🇫🇷法国12|⬇️11.8MB/s|47%|Netflix|Openai
-      - 🇷🇺俄罗斯4|⬇️7.4MB/s|50%
-      - 🇸🇬新加坡2|⬇️23.4MB/s|43%|Youtube|Openai
-      - 🇫🇷法国5|⬇️15.4MB/s|47%|Netflix|Youtube|Openai
-      - 🇯🇵日本11|⬇️15.7MB/s|70%|Netflix|Openai
-      - 🇬🇧英国6|⬇️2.9MB/s|49%|Netflix|Disney|Openai
-      - 🇺🇦乌克兰1|⬇️7.1MB/s|51%|Netflix|Openai
-      - 🇸🇬新加坡11|⬇️20.5MB/s|28%|Netflix|Openai
-      - 🇺🇸美国68|⬇️27.2MB/s|0%|Netflix|Disney
-      - 🌀其他13-IL|⬇️2.0MB/s|0%|Youtube|Openai
-      - 🇺🇸美国3|⬇️24.7MB/s|39%|Netflix|Disney|Openai
-      - 🌀其他24-AM|⬇️11.6MB/s|42%|Openai
-      - 🇦🇪阿拉伯酋长国1|⬇️3.9MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港4|⬇️19.3MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚6|⬇️15.1MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国14|⬇️3.4MB/s|52%|Netflix|Disney|Openai
-      - 🌀其他18-AR|⬇️4.0MB/s|0%|Youtube|Openai
-      - 🇺🇸美国64|⬇️15.5MB/s|39%|Netflix|Disney|Openai
-      - 🇺🇸美国69|⬇️7.6MB/s|32%|Netflix|Openai
-      - 🇺🇸美国39|⬇️1.1MB/s|28%|Netflix|Disney|Openai
-      - 🇺🇸美国22|⬇️2.4MB/s|65%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚10|⬇️2.0MB/s|0%|Netflix|Openai
-      - 🇯🇵日本25|⬇️21.1MB/s|0%|Netflix|Disney|Openai
-      - 🇵🇱波兰1|⬇️7.9MB/s|32%|Openai
-      - 🌀其他6-IL|⬇️1.9MB/s|0%|Youtube|Openai
-      - 🇯🇵日本13|⬇️14.8MB/s|0%|Netflix|Disney
-      - 🇺🇸美国26|⬇️1.0MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本1|⬇️2.2MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国19|⬇️2.8MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本27|⬇️1.7MB/s|0%|Netflix|Disney
-      - 🇰🇷韩国7|⬇️2.1MB/s|65%|Netflix|Disney|Openai
-      - 🌀其他1-SE|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国13|⬇️29.3MB/s|0%|Netflix|Disney|Openai
-      - 🇬🇧英国9|⬇️19.7MB/s|49%|Netflix|Disney|Openai
-      - 🇯🇵日本3|⬇️23.6MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国3|⬇️24.7MB/s|52%|Netflix|Disney|Openai
-      - 🇺🇸美国58|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国59|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国1|⬇️1.9MB/s|26%|Openai
-      - 🇺🇸美国34|⬇️14.5MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国16|⬇️15.1MB/s|0%|Netflix|Disney|Openai
-      - 🇹🇼台湾6|⬇️5.1MB/s|19%|Netflix|Youtube|Openai
-      - 🇰🇷韩国6|⬇️1.3MB/s|65%|Netflix|Disney|Openai
-      - 🌀其他9-TR|⬇️9.5MB/s|41%|Youtube|Openai
-      - 🇺🇸美国30|⬇️2.3MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他7-SE|⬇️30.5MB/s|0%|Netflix|Disney|Openai
-      - 🇬🇧英国8|⬇️2.0MB/s|37%|Openai
-      - 🇭🇰香港3|⬇️1.2MB/s|50%|Netflix|Youtube
-      - 🌀其他17-IL|⬇️5.7MB/s|41%|Youtube|Openai
-      - 🇺🇸美国43|⬇️7.8MB/s|32%|Netflix|Openai
-      - 🇺🇸美国55|⬇️1.1MB/s|0%|Disney|Openai
-      - 🇺🇸美国27|⬇️19.1MB/s|65%|Netflix|Disney|Openai
-      - 🇭🇰香港9|⬇️29.9MB/s|0%|Netflix|Disney
-      - 🇺🇸美国50|⬇️11.5MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本2|⬇️6.2MB/s|Netflix|Disney|Openai
-      - 🇬🇧英国7|⬇️1.6MB/s|49%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚9|⬇️5.9MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国9|⬇️26.7MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西1|⬇️2.8MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚7|⬇️29.0MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇪阿拉伯酋长国2|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他22-KZ|⬇️2.6MB/s|51%|Openai
-      - 🇬🇧英国3|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港12|⬇️7.1MB/s|0%|Netflix|Disney
-      - 🌀其他20-IL|⬇️2.5MB/s|0%|Youtube|Openai
-      - 🇹🇼台湾4|⬇️2.1MB/s|0%|Netflix|Youtube|Openai
-      - 🇺🇸美国48|⬇️4.5MB/s|65%|Netflix|Disney|Openai
-      - 🇹🇼台湾1|⬇️2.1MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇭🇰香港8|⬇️2.4MB/s|50%|Netflix|Disney
-      - 🇺🇸美国12|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚4|⬇️30.1MB/s|0%|Netflix|Disney
-      - 🇺🇸美国56|⬇️5.4MB/s|0%|Netflix|Openai
-      - 🇺🇸美国27|⬇️2.7MB/s|39%|Netflix|Disney|Openai
-      - 🇦🇪阿拉伯酋长国2|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡11|⬇️1.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡12|⬇️3.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡16|⬇️4.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡3|⬇️4.9MB/s|Youtube|Openai
-      - 🌀其他5-SE|⬇️1.7MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他26-SE|⬇️3.7MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚5|⬇️1.1MB/s|0%|Netflix|Openai
-      - 🇯🇵日本9|⬇️16.3MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇺🇸美国44|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西3|⬇️4.7MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国32|⬇️16.0MB/s|28%|Netflix|Disney|Openai
-      - 🇩🇪德国7|⬇️3.7MB/s|52%|Netflix|Disney|Openai
-      - 🇭🇰香港1|⬇️31.2MB/s|0%|Youtube
-      - 🇺🇸美国9|⬇️2.3MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国6|⬇️2.4MB/s|0%|Disney|Openai
-      - 🇭🇰香港12|⬇️2.7MB/s|0%|Netflix|Disney|Youtube
-      - 🇸🇬新加坡2|⬇️1.2MB/s|Youtube|Openai
-      - 🇯🇵日本1|⬇️9.8MB/s|70%|Youtube|Openai
-      - 🇭🇰香港2|⬇️13.3MB/s|0%|Youtube|Openai
-      - 🇯🇵日本12|⬇️4.0MB/s|12%|Openai
-      - 🌀其他20-CN|⬇️14.2MB/s|32%
-      - 🇭🇰香港8|⬇️8.2MB/s|0%|Netflix|Disney|Youtube
-      - 🇭🇰香港9|⬇️12.3MB/s|0%|Netflix|Disney|Youtube
-      - 🇯🇵日本7|⬇️6.2MB/s|20%|Youtube|Openai
-      - 🇭🇰香港11|⬇️6.0MB/s|Youtube
-      - 🇭🇰香港18|⬇️5.8MB/s|0%|Netflix|Disney
-      - 🇦🇪阿拉伯酋长国1|⬇️1.3MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他15-CN|⬇️10.5MB/s|32%
-      - 🇺🇸美国28|⬇️14.5MB/s|54%|Openai
-      - 🇩🇪德国2|⬇️1.6MB/s|51%|Openai
-      - 🇭🇰香港6|⬇️4.9MB/s|0%|Disney|Youtube
-      - 🇺🇸美国72|⬇️10.9MB/s|Openai
-      - 🇺🇸美国74|⬇️10.8MB/s|32%|Openai
-      - 🇹🇼台湾9|⬇️5.7MB/s|19%|Youtube|Openai
-      - 🇭🇰香港16|⬇️4.0MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇹🇼台湾6|⬇️4.9MB/s|19%|Youtube|Openai
-      - 🇬🇧英国3|⬇️6.7MB/s|50%|Disney|Openai
-      - 🌀其他25-SE|⬇️8.4MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇨🇦加拿大8|⬇️2.5MB/s|68%|Youtube|Openai
-      - 🌀其他10-AT|⬇️2.7MB/s|51%|Openai
-      - 🇬🇧英国7|⬇️13.1MB/s|50%|Disney|Openai
-      - 🇺🇸美国52|⬇️1.3MB/s|54%|Openai
-      - 🇺🇸美国5|⬇️2.8MB/s|0%|Netflix|Openai
-      - 🌀其他14-MD|⬇️5.2MB/s|51%|Openai
-      - 🌀其他33-RO|⬇️1.6MB/s|51%|Youtube|Openai
-      - 🇭🇰香港4|⬇️2.5MB/s|0%|Netflix|Disney
-      - 🇬🇧英国2|⬇️8.7MB/s|50%|Disney|Openai
-      - 🇬🇧英国5|⬇️2.2MB/s|50%|Disney|Openai
-      - 🌀其他12-ES|⬇️4.9MB/s|32%|Openai
-      - 🇨🇭瑞士2|⬇️7.3MB/s|28%|Netflix|Disney|Openai
-      - 🇺🇸美国45|⬇️3.6MB/s|51%|Openai
-      - 🇺🇸美国77|⬇️8.0MB/s|33%|Openai
-      - 🌀其他4-MY|⬇️1.6MB/s|0%|Youtube|Openai
-      - 🇸🇬新加坡17|⬇️1.4MB/s|43%|Youtube|Openai
-      - 🇺🇸美国81|⬇️6.1MB/s|33%|Openai
-      - 🇺🇸美国39|⬇️1.6MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡1|⬇️1.7MB/s|43%|Youtube|Openai
-      - 🇺🇸美国76|⬇️9.0MB/s|50%|Openai
-      - 🇺🇸美国6|⬇️8.0MB/s|0%|Netflix|Disney
-      - 🇩🇪德国9|⬇️8.0MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰5|⬇️1.2MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本4|⬇️1.1MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国43|⬇️4.8MB/s|67%|Openai
-      - 🇭🇰香港17|⬇️2.3MB/s|Netflix|Disney|Openai
-      - 🇺🇸美国2|⬇️5.4MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西4|⬇️16.6MB/s|0%|Netflix|Disney|Openai
-      - 🇨🇦加拿大5|⬇️4.4MB/s|68%|Youtube|Openai
-      - 🇩🇪德国14|⬇️2.1MB/s|52%|Netflix|Disney|Openai
-      - 🇰🇷韩国2|⬇️3.7MB/s|65%|Netflix|Disney
-      - 🇯🇵日本15|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国35|⬇️3.2MB/s|65%|Netflix|Disney|Openai
-      - 🇺🇸美国23|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国18|⬇️5.0MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港5|⬇️12.9MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西1|⬇️1.1MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国64|⬇️3.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国79|⬇️22.2MB/s|39%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚4|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本10|⬇️1.6MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国61|⬇️2.0MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰4|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他22-TH|⬇️4.3MB/s|0%|Netflix|Youtube|Openai
-      - 🇯🇵日本11|⬇️2.7MB/s|0%|Netflix|Openai
-      - 🇺🇸美国55|⬇️1.0MB/s|67%|Openai
-      - 🇫🇮芬兰9|⬇️1.2MB/s|0%|Netflix|Openai
-      - 🇧🇷巴西2|⬇️6.3MB/s|65%|Youtube|Openai
-      - 🇩🇪德国13|⬇️7.7MB/s|26%|Youtube
-      - 🇯🇵日本13|⬇️5.5MB/s|39%|Disney|Youtube|Openai
-      - 🇬🇧英国6|⬇️2.2MB/s|49%|Netflix|Disney|Openai
+      - 【看视频】台湾1-无限流量
+      - 【看视频】台湾5-无限流量
+      - 【看视频】台湾6-无限流量
+      - 🇭🇰中继香港011【请勿用来看视频】
+      - 🇭🇰中继香港021【请勿用来看视频】
+      - 🇭🇰IEPL香港033【请勿用来看视频】
+      - 🇭🇰中继香港041【请勿用来看视频】
+      - 🇭🇰中继香港051【请勿用来看视频】
+      - 🇭🇰中继香港061【请勿用来看视频】
+      - 🇭🇰IEPL香港073【请勿用来看视频】
+      - 🇭🇰中继香港081【请勿用来看视频】
+      - 🇭🇰中继香港091【请勿用来看视频】
+      - 🇭🇰中继香港101【请勿用来看视频】
+      - 🇭🇰中继香港111【请勿用来看视频】
+      - 🇭🇰中继香港121【请勿用来看视频】
+      - 🇭🇰中继香港131【请勿用来看视频】
+      - 🇭🇰中继香港141【请勿用来看视频】
+      - 🇭🇰中继香港151【请勿用来看视频】
+      - 🇯🇵IEPL日本013【请勿用来看视频】
+      - 🇯🇵中继日本021【请勿用来看视频】
+      - 🇯🇵中继日本031【请勿用来看视频】
+      - 🇯🇵中继日本041【请勿用来看视频】
+      - 🇯🇵中继日本051【请勿用来看视频】
+      - 🇯🇵中继日本061【请勿用来看视频】
+      - 🇯🇵中继日本071【请勿用来看视频】
+      - 🇯🇵IEPL日本083【请勿用来看视频】
+      - 🇸🇬IEPL｜新加坡013【请勿用来看视频】
+      - 🇸🇬中继｜新加坡021【请勿用来看视频】
+      - 🇸🇬中继｜新加坡031【请勿用来看视频】
+      - 🇸🇬中继｜新加坡041【请勿用来看视频】
+      - 🇸🇬中继｜新加坡051【请勿用来看视频】
+      - 🇸🇬中继｜新加坡061【请勿用来看视频】
+      - 🇸🇬IEPL｜新加坡073【请勿用来看视频】
+      - 🇸🇬中继｜新加坡081【请勿用来看视频】
+      - 🇸🇬中继｜新加坡091【请勿用来看视频】
+      - 🇸🇬中继｜新加坡101【请勿用来看视频】
+      - 🇺🇸IEPL美国013【请勿用来看视频】
+      - 🇺🇸IEPL美国023【请勿用来看视频】
+      - 🇺🇸中继美国031【请勿用来看视频】
+      - 🇺🇸中继美国041【请勿用来看视频】
+      - 🇺🇸中继美国051【请勿用来看视频】
+      - 🇺🇸中继美国061【请勿用来看视频】
+      - 🇹🇼IEPL台湾013【请勿用来看视频】
+      - 🇹🇼中继台湾021【请勿用来看视频】
+      - 🇹🇼中继台湾031【请勿用来看视频】
+      - 🇻🇳中继越南｜原生1【请勿用来看视频】
+      - 🇲🇾马来西亚【请勿用来看视频】
+      - 🇵🇭菲律宾【请勿用来看视频】
+      - 🇦🇷阿根廷【请勿用来看视频】
+      - 🇰🇭柬埔寨【请勿用来看视频】
+      - 🇷🇺俄罗斯【请勿用来看视频】
+      - 🇰🇷韩国1【请勿用来看视频】
+      - 🇰🇷韩国2【请勿用来看视频】
+      - 🇩🇪德国【请勿用来看视频】
+      - 🇨🇦加拿大【请勿用来看视频】
+      - 🇹🇷土耳其【请勿用来看视频】
+      - 🇮🇳印度【请勿用来看视频】
+      - 🇮🇪爱尔兰【请勿用来看视频】
+      - 🇬🇧英国【请勿用来看视频】
+      - 【看视频】-gouyunHK1T流量
+      - 🇭🇰香港-01【通用】
+      - 🇸🇬新加坡【通用】
+      - 🇯🇵日本【【通用】
+      - 🇮🇩英国【通用】
+      - 🇰🇷韩国【通用】
+      - 🇲🇾马来西亚【通用】
+      - 🇮🇳印度【通用】
+      - 🇻🇳越南【通用】
+      - 🇺🇸美国【通用】
+      - 🇫🇷法国【通用】
+      - 🇨🇦加拿大【通用】
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - 🇩🇪德国7|⬇️6.5MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡15|⬇️3.3MB/s|Netflix|Youtube|Openai
-      - 🇦🇺澳大利亚1|⬇️12.5MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇧🇷巴西2|⬇️22.6MB/s|0%|Netflix|Disney
-      - 🇺🇸美国60|⬇️16.9MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇯🇵日本19|⬇️10.0MB/s|0%|Netflix|Disney
-      - 🇦🇺澳大利亚3|⬇️18.3MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰1|⬇️7.6MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国9|⬇️5.4MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰9|⬇️1.7MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国36|⬇️1.2MB/s|33%|Netflix|Openai
-      - 🇩🇪德国5|⬇️12.3MB/s|52%|Netflix|Disney|Youtube|Openai
-      - 🇺🇸美国57|⬇️17.3MB/s|29%|Netflix|Openai
-      - 🇬🇧英国2|⬇️2.5MB/s|49%|Netflix|Disney|Openai
-      - 🇯🇵日本20|⬇️11.4MB/s|70%|Netflix|Youtube|Openai
-      - 🇹🇼台湾8|⬇️30.8MB/s|19%|Netflix|Disney|Youtube|Openai
-      - 🇯🇵日本14|⬇️20.5MB/s|28%|Netflix|Openai
-      - 🇺🇸美国15|⬇️9.8MB/s|32%|Netflix|Openai
-      - 🇯🇵日本16|⬇️3.4MB/s|0%|Netflix|Disney|Openai
-      - 🇹🇼台湾2|⬇️22.6MB/s|19%|Netflix|Youtube|Openai
-      - 🇯🇵日本24|⬇️21.7MB/s|12%|Netflix|Openai
-      - 🇯🇵日本23|⬇️24.9MB/s|12%|Netflix|Youtube|Openai
-      - 🇭🇰香港11|⬇️1.5MB/s|Netflix
-      - 🇫🇷法国10|⬇️11.8MB/s|0%|Netflix|Openai
-      - 🇯🇵日本21|⬇️20.2MB/s|55%|Netflix|Disney|Openai
-      - 🇹🇼台湾3|⬇️8.5MB/s|19%|Netflix|Youtube|Openai
-      - 🇦🇺澳大利亚5|⬇️2.5MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国40|⬇️8.6MB/s|33%|Netflix|Openai
-      - 🇩🇪德国4|⬇️6.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国67|⬇️8.3MB/s|51%|Netflix|Openai
-      - 🇺🇸美国28|⬇️13.1MB/s|37%|Netflix|Openai
-      - 🇫🇮芬兰8|⬇️10.8MB/s|0%|Netflix|Disney|Openai
-      - 🇨🇦加拿大4|⬇️11.0MB/s|Netflix|Youtube|Openai
-      - 🇺🇸美国2|⬇️2.4MB/s|50%|Netflix|Openai
-      - 🇺🇸美国8|⬇️7.8MB/s|32%|Netflix|Youtube|Openai
-      - 🇯🇵日本8|⬇️10.7MB/s|55%|Netflix|Disney|Openai
-      - 🌀其他21-PH|⬇️9.6MB/s|10%|Netflix|Youtube|Openai
-      - 🇨🇭瑞士1|⬇️8.7MB/s|0%|Netflix|Youtube|Openai
-      - 🇺🇸美国14|⬇️10.5MB/s|0%|Netflix|Openai
-      - 🇫🇷法国7|⬇️12.3MB/s|51%|Youtube|Openai
-      - 🇺🇸美国25|⬇️14.1MB/s|51%|Netflix|Youtube|Openai
-      - 🇭🇰香港17|⬇️15.2MB/s|0%|Netflix|Disney|Youtube
-      - 🇺🇸美国6|⬇️1.7MB/s|33%|Netflix|Openai
-      - 🇯🇵日本26|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他14-SA|⬇️9.8MB/s|0%|Netflix|Youtube|Openai
-      - 🇨🇭瑞士2|⬇️7.1MB/s|28%|Netflix|Disney|Youtube|Openai
-      - 🇰🇷韩国2|⬇️1.8MB/s|65%|Netflix|Disney|Openai
-      - 🇫🇷法国12|⬇️11.8MB/s|47%|Netflix|Openai
-      - 🇷🇺俄罗斯4|⬇️7.4MB/s|50%
-      - 🇸🇬新加坡2|⬇️23.4MB/s|43%|Youtube|Openai
-      - 🇫🇷法国5|⬇️15.4MB/s|47%|Netflix|Youtube|Openai
-      - 🇯🇵日本11|⬇️15.7MB/s|70%|Netflix|Openai
-      - 🇬🇧英国6|⬇️2.9MB/s|49%|Netflix|Disney|Openai
-      - 🇺🇦乌克兰1|⬇️7.1MB/s|51%|Netflix|Openai
-      - 🇸🇬新加坡11|⬇️20.5MB/s|28%|Netflix|Openai
-      - 🇺🇸美国68|⬇️27.2MB/s|0%|Netflix|Disney
-      - 🌀其他13-IL|⬇️2.0MB/s|0%|Youtube|Openai
-      - 🇺🇸美国3|⬇️24.7MB/s|39%|Netflix|Disney|Openai
-      - 🌀其他24-AM|⬇️11.6MB/s|42%|Openai
-      - 🇦🇪阿拉伯酋长国1|⬇️3.9MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港4|⬇️19.3MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚6|⬇️15.1MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国14|⬇️3.4MB/s|52%|Netflix|Disney|Openai
-      - 🌀其他18-AR|⬇️4.0MB/s|0%|Youtube|Openai
-      - 🇺🇸美国64|⬇️15.5MB/s|39%|Netflix|Disney|Openai
-      - 🇺🇸美国69|⬇️7.6MB/s|32%|Netflix|Openai
-      - 🇺🇸美国39|⬇️1.1MB/s|28%|Netflix|Disney|Openai
-      - 🇺🇸美国22|⬇️2.4MB/s|65%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚10|⬇️2.0MB/s|0%|Netflix|Openai
-      - 🇯🇵日本25|⬇️21.1MB/s|0%|Netflix|Disney|Openai
-      - 🇵🇱波兰1|⬇️7.9MB/s|32%|Openai
-      - 🌀其他6-IL|⬇️1.9MB/s|0%|Youtube|Openai
-      - 🇯🇵日本13|⬇️14.8MB/s|0%|Netflix|Disney
-      - 🇺🇸美国26|⬇️1.0MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本1|⬇️2.2MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国19|⬇️2.8MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本27|⬇️1.7MB/s|0%|Netflix|Disney
-      - 🇰🇷韩国7|⬇️2.1MB/s|65%|Netflix|Disney|Openai
-      - 🌀其他1-SE|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国13|⬇️29.3MB/s|0%|Netflix|Disney|Openai
-      - 🇬🇧英国9|⬇️19.7MB/s|49%|Netflix|Disney|Openai
-      - 🇯🇵日本3|⬇️23.6MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国3|⬇️24.7MB/s|52%|Netflix|Disney|Openai
-      - 🇺🇸美国58|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国59|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国1|⬇️1.9MB/s|26%|Openai
-      - 🇺🇸美国34|⬇️14.5MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国16|⬇️15.1MB/s|0%|Netflix|Disney|Openai
-      - 🇹🇼台湾6|⬇️5.1MB/s|19%|Netflix|Youtube|Openai
-      - 🇰🇷韩国6|⬇️1.3MB/s|65%|Netflix|Disney|Openai
-      - 🌀其他9-TR|⬇️9.5MB/s|41%|Youtube|Openai
-      - 🇺🇸美国30|⬇️2.3MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他7-SE|⬇️30.5MB/s|0%|Netflix|Disney|Openai
-      - 🇬🇧英国8|⬇️2.0MB/s|37%|Openai
-      - 🇭🇰香港3|⬇️1.2MB/s|50%|Netflix|Youtube
-      - 🌀其他17-IL|⬇️5.7MB/s|41%|Youtube|Openai
-      - 🇺🇸美国43|⬇️7.8MB/s|32%|Netflix|Openai
-      - 🇺🇸美国55|⬇️1.1MB/s|0%|Disney|Openai
-      - 🇺🇸美国27|⬇️19.1MB/s|65%|Netflix|Disney|Openai
-      - 🇭🇰香港9|⬇️29.9MB/s|0%|Netflix|Disney
-      - 🇺🇸美国50|⬇️11.5MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本2|⬇️6.2MB/s|Netflix|Disney|Openai
-      - 🇬🇧英国7|⬇️1.6MB/s|49%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚9|⬇️5.9MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国9|⬇️26.7MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西1|⬇️2.8MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚7|⬇️29.0MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇪阿拉伯酋长国2|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他22-KZ|⬇️2.6MB/s|51%|Openai
-      - 🇬🇧英国3|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港12|⬇️7.1MB/s|0%|Netflix|Disney
-      - 🌀其他20-IL|⬇️2.5MB/s|0%|Youtube|Openai
-      - 🇹🇼台湾4|⬇️2.1MB/s|0%|Netflix|Youtube|Openai
-      - 🇺🇸美国48|⬇️4.5MB/s|65%|Netflix|Disney|Openai
-      - 🇹🇼台湾1|⬇️2.1MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇭🇰香港8|⬇️2.4MB/s|50%|Netflix|Disney
-      - 🇺🇸美国12|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚4|⬇️30.1MB/s|0%|Netflix|Disney
-      - 🇺🇸美国56|⬇️5.4MB/s|0%|Netflix|Openai
-      - 🇺🇸美国27|⬇️2.7MB/s|39%|Netflix|Disney|Openai
-      - 🇦🇪阿拉伯酋长国2|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡11|⬇️1.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡12|⬇️3.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡16|⬇️4.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡3|⬇️4.9MB/s|Youtube|Openai
-      - 🌀其他5-SE|⬇️1.7MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他26-SE|⬇️3.7MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚5|⬇️1.1MB/s|0%|Netflix|Openai
-      - 🇯🇵日本9|⬇️16.3MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇺🇸美国44|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西3|⬇️4.7MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国32|⬇️16.0MB/s|28%|Netflix|Disney|Openai
-      - 🇩🇪德国7|⬇️3.7MB/s|52%|Netflix|Disney|Openai
-      - 🇭🇰香港1|⬇️31.2MB/s|0%|Youtube
-      - 🇺🇸美国9|⬇️2.3MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国6|⬇️2.4MB/s|0%|Disney|Openai
-      - 🇭🇰香港12|⬇️2.7MB/s|0%|Netflix|Disney|Youtube
-      - 🇸🇬新加坡2|⬇️1.2MB/s|Youtube|Openai
-      - 🇯🇵日本1|⬇️9.8MB/s|70%|Youtube|Openai
-      - 🇭🇰香港2|⬇️13.3MB/s|0%|Youtube|Openai
-      - 🇯🇵日本12|⬇️4.0MB/s|12%|Openai
-      - 🌀其他20-CN|⬇️14.2MB/s|32%
-      - 🇭🇰香港8|⬇️8.2MB/s|0%|Netflix|Disney|Youtube
-      - 🇭🇰香港9|⬇️12.3MB/s|0%|Netflix|Disney|Youtube
-      - 🇯🇵日本7|⬇️6.2MB/s|20%|Youtube|Openai
-      - 🇭🇰香港11|⬇️6.0MB/s|Youtube
-      - 🇭🇰香港18|⬇️5.8MB/s|0%|Netflix|Disney
-      - 🇦🇪阿拉伯酋长国1|⬇️1.3MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他15-CN|⬇️10.5MB/s|32%
-      - 🇺🇸美国28|⬇️14.5MB/s|54%|Openai
-      - 🇩🇪德国2|⬇️1.6MB/s|51%|Openai
-      - 🇭🇰香港6|⬇️4.9MB/s|0%|Disney|Youtube
-      - 🇺🇸美国72|⬇️10.9MB/s|Openai
-      - 🇺🇸美国74|⬇️10.8MB/s|32%|Openai
-      - 🇹🇼台湾9|⬇️5.7MB/s|19%|Youtube|Openai
-      - 🇭🇰香港16|⬇️4.0MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇹🇼台湾6|⬇️4.9MB/s|19%|Youtube|Openai
-      - 🇬🇧英国3|⬇️6.7MB/s|50%|Disney|Openai
-      - 🌀其他25-SE|⬇️8.4MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇨🇦加拿大8|⬇️2.5MB/s|68%|Youtube|Openai
-      - 🌀其他10-AT|⬇️2.7MB/s|51%|Openai
-      - 🇬🇧英国7|⬇️13.1MB/s|50%|Disney|Openai
-      - 🇺🇸美国52|⬇️1.3MB/s|54%|Openai
-      - 🇺🇸美国5|⬇️2.8MB/s|0%|Netflix|Openai
-      - 🌀其他14-MD|⬇️5.2MB/s|51%|Openai
-      - 🌀其他33-RO|⬇️1.6MB/s|51%|Youtube|Openai
-      - 🇭🇰香港4|⬇️2.5MB/s|0%|Netflix|Disney
-      - 🇬🇧英国2|⬇️8.7MB/s|50%|Disney|Openai
-      - 🇬🇧英国5|⬇️2.2MB/s|50%|Disney|Openai
-      - 🌀其他12-ES|⬇️4.9MB/s|32%|Openai
-      - 🇨🇭瑞士2|⬇️7.3MB/s|28%|Netflix|Disney|Openai
-      - 🇺🇸美国45|⬇️3.6MB/s|51%|Openai
-      - 🇺🇸美国77|⬇️8.0MB/s|33%|Openai
-      - 🌀其他4-MY|⬇️1.6MB/s|0%|Youtube|Openai
-      - 🇸🇬新加坡17|⬇️1.4MB/s|43%|Youtube|Openai
-      - 🇺🇸美国81|⬇️6.1MB/s|33%|Openai
-      - 🇺🇸美国39|⬇️1.6MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡1|⬇️1.7MB/s|43%|Youtube|Openai
-      - 🇺🇸美国76|⬇️9.0MB/s|50%|Openai
-      - 🇺🇸美国6|⬇️8.0MB/s|0%|Netflix|Disney
-      - 🇩🇪德国9|⬇️8.0MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰5|⬇️1.2MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本4|⬇️1.1MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国43|⬇️4.8MB/s|67%|Openai
-      - 🇭🇰香港17|⬇️2.3MB/s|Netflix|Disney|Openai
-      - 🇺🇸美国2|⬇️5.4MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西4|⬇️16.6MB/s|0%|Netflix|Disney|Openai
-      - 🇨🇦加拿大5|⬇️4.4MB/s|68%|Youtube|Openai
-      - 🇩🇪德国14|⬇️2.1MB/s|52%|Netflix|Disney|Openai
-      - 🇰🇷韩国2|⬇️3.7MB/s|65%|Netflix|Disney
-      - 🇯🇵日本15|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国35|⬇️3.2MB/s|65%|Netflix|Disney|Openai
-      - 🇺🇸美国23|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国18|⬇️5.0MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港5|⬇️12.9MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西1|⬇️1.1MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国64|⬇️3.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国79|⬇️22.2MB/s|39%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚4|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本10|⬇️1.6MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国61|⬇️2.0MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰4|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他22-TH|⬇️4.3MB/s|0%|Netflix|Youtube|Openai
-      - 🇯🇵日本11|⬇️2.7MB/s|0%|Netflix|Openai
-      - 🇺🇸美国55|⬇️1.0MB/s|67%|Openai
-      - 🇫🇮芬兰9|⬇️1.2MB/s|0%|Netflix|Openai
-      - 🇧🇷巴西2|⬇️6.3MB/s|65%|Youtube|Openai
-      - 🇩🇪德国13|⬇️7.7MB/s|26%|Youtube
-      - 🇯🇵日本13|⬇️5.5MB/s|39%|Disney|Youtube|Openai
-      - 🇬🇧英国6|⬇️2.2MB/s|49%|Netflix|Disney|Openai
+      - 【看视频】台湾1-无限流量
+      - 【看视频】台湾5-无限流量
+      - 【看视频】台湾6-无限流量
+      - 🇭🇰中继香港011【请勿用来看视频】
+      - 🇭🇰中继香港021【请勿用来看视频】
+      - 🇭🇰IEPL香港033【请勿用来看视频】
+      - 🇭🇰中继香港041【请勿用来看视频】
+      - 🇭🇰中继香港051【请勿用来看视频】
+      - 🇭🇰中继香港061【请勿用来看视频】
+      - 🇭🇰IEPL香港073【请勿用来看视频】
+      - 🇭🇰中继香港081【请勿用来看视频】
+      - 🇭🇰中继香港091【请勿用来看视频】
+      - 🇭🇰中继香港101【请勿用来看视频】
+      - 🇭🇰中继香港111【请勿用来看视频】
+      - 🇭🇰中继香港121【请勿用来看视频】
+      - 🇭🇰中继香港131【请勿用来看视频】
+      - 🇭🇰中继香港141【请勿用来看视频】
+      - 🇭🇰中继香港151【请勿用来看视频】
+      - 🇯🇵IEPL日本013【请勿用来看视频】
+      - 🇯🇵中继日本021【请勿用来看视频】
+      - 🇯🇵中继日本031【请勿用来看视频】
+      - 🇯🇵中继日本041【请勿用来看视频】
+      - 🇯🇵中继日本051【请勿用来看视频】
+      - 🇯🇵中继日本061【请勿用来看视频】
+      - 🇯🇵中继日本071【请勿用来看视频】
+      - 🇯🇵IEPL日本083【请勿用来看视频】
+      - 🇸🇬IEPL｜新加坡013【请勿用来看视频】
+      - 🇸🇬中继｜新加坡021【请勿用来看视频】
+      - 🇸🇬中继｜新加坡031【请勿用来看视频】
+      - 🇸🇬中继｜新加坡041【请勿用来看视频】
+      - 🇸🇬中继｜新加坡051【请勿用来看视频】
+      - 🇸🇬中继｜新加坡061【请勿用来看视频】
+      - 🇸🇬IEPL｜新加坡073【请勿用来看视频】
+      - 🇸🇬中继｜新加坡081【请勿用来看视频】
+      - 🇸🇬中继｜新加坡091【请勿用来看视频】
+      - 🇸🇬中继｜新加坡101【请勿用来看视频】
+      - 🇺🇸IEPL美国013【请勿用来看视频】
+      - 🇺🇸IEPL美国023【请勿用来看视频】
+      - 🇺🇸中继美国031【请勿用来看视频】
+      - 🇺🇸中继美国041【请勿用来看视频】
+      - 🇺🇸中继美国051【请勿用来看视频】
+      - 🇺🇸中继美国061【请勿用来看视频】
+      - 🇹🇼IEPL台湾013【请勿用来看视频】
+      - 🇹🇼中继台湾021【请勿用来看视频】
+      - 🇹🇼中继台湾031【请勿用来看视频】
+      - 🇻🇳中继越南｜原生1【请勿用来看视频】
+      - 🇲🇾马来西亚【请勿用来看视频】
+      - 🇵🇭菲律宾【请勿用来看视频】
+      - 🇦🇷阿根廷【请勿用来看视频】
+      - 🇰🇭柬埔寨【请勿用来看视频】
+      - 🇷🇺俄罗斯【请勿用来看视频】
+      - 🇰🇷韩国1【请勿用来看视频】
+      - 🇰🇷韩国2【请勿用来看视频】
+      - 🇩🇪德国【请勿用来看视频】
+      - 🇨🇦加拿大【请勿用来看视频】
+      - 🇹🇷土耳其【请勿用来看视频】
+      - 🇮🇳印度【请勿用来看视频】
+      - 🇮🇪爱尔兰【请勿用来看视频】
+      - 🇬🇧英国【请勿用来看视频】
+      - 【看视频】-gouyunHK1T流量
+      - 🇭🇰香港-01【通用】
+      - 🇸🇬新加坡【通用】
+      - 🇯🇵日本【【通用】
+      - 🇮🇩英国【通用】
+      - 🇰🇷韩国【通用】
+      - 🇲🇾马来西亚【通用】
+      - 🇮🇳印度【通用】
+      - 🇻🇳越南【通用】
+      - 🇺🇸美国【通用】
+      - 🇫🇷法国【通用】
+      - 🇨🇦加拿大【通用】
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 🇩🇪德国7|⬇️6.5MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡15|⬇️3.3MB/s|Netflix|Youtube|Openai
-      - 🇦🇺澳大利亚1|⬇️12.5MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇧🇷巴西2|⬇️22.6MB/s|0%|Netflix|Disney
-      - 🇺🇸美国60|⬇️16.9MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇯🇵日本19|⬇️10.0MB/s|0%|Netflix|Disney
-      - 🇦🇺澳大利亚3|⬇️18.3MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰1|⬇️7.6MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国9|⬇️5.4MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰9|⬇️1.7MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国36|⬇️1.2MB/s|33%|Netflix|Openai
-      - 🇩🇪德国5|⬇️12.3MB/s|52%|Netflix|Disney|Youtube|Openai
-      - 🇺🇸美国57|⬇️17.3MB/s|29%|Netflix|Openai
-      - 🇬🇧英国2|⬇️2.5MB/s|49%|Netflix|Disney|Openai
-      - 🇯🇵日本20|⬇️11.4MB/s|70%|Netflix|Youtube|Openai
-      - 🇹🇼台湾8|⬇️30.8MB/s|19%|Netflix|Disney|Youtube|Openai
-      - 🇯🇵日本14|⬇️20.5MB/s|28%|Netflix|Openai
-      - 🇺🇸美国15|⬇️9.8MB/s|32%|Netflix|Openai
-      - 🇯🇵日本16|⬇️3.4MB/s|0%|Netflix|Disney|Openai
-      - 🇹🇼台湾2|⬇️22.6MB/s|19%|Netflix|Youtube|Openai
-      - 🇯🇵日本24|⬇️21.7MB/s|12%|Netflix|Openai
-      - 🇯🇵日本23|⬇️24.9MB/s|12%|Netflix|Youtube|Openai
-      - 🇭🇰香港11|⬇️1.5MB/s|Netflix
-      - 🇫🇷法国10|⬇️11.8MB/s|0%|Netflix|Openai
-      - 🇯🇵日本21|⬇️20.2MB/s|55%|Netflix|Disney|Openai
-      - 🇹🇼台湾3|⬇️8.5MB/s|19%|Netflix|Youtube|Openai
-      - 🇦🇺澳大利亚5|⬇️2.5MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国40|⬇️8.6MB/s|33%|Netflix|Openai
-      - 🇩🇪德国4|⬇️6.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国67|⬇️8.3MB/s|51%|Netflix|Openai
-      - 🇺🇸美国28|⬇️13.1MB/s|37%|Netflix|Openai
-      - 🇫🇮芬兰8|⬇️10.8MB/s|0%|Netflix|Disney|Openai
-      - 🇨🇦加拿大4|⬇️11.0MB/s|Netflix|Youtube|Openai
-      - 🇺🇸美国2|⬇️2.4MB/s|50%|Netflix|Openai
-      - 🇺🇸美国8|⬇️7.8MB/s|32%|Netflix|Youtube|Openai
-      - 🇯🇵日本8|⬇️10.7MB/s|55%|Netflix|Disney|Openai
-      - 🌀其他21-PH|⬇️9.6MB/s|10%|Netflix|Youtube|Openai
-      - 🇨🇭瑞士1|⬇️8.7MB/s|0%|Netflix|Youtube|Openai
-      - 🇺🇸美国14|⬇️10.5MB/s|0%|Netflix|Openai
-      - 🇫🇷法国7|⬇️12.3MB/s|51%|Youtube|Openai
-      - 🇺🇸美国25|⬇️14.1MB/s|51%|Netflix|Youtube|Openai
-      - 🇭🇰香港17|⬇️15.2MB/s|0%|Netflix|Disney|Youtube
-      - 🇺🇸美国6|⬇️1.7MB/s|33%|Netflix|Openai
-      - 🇯🇵日本26|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他14-SA|⬇️9.8MB/s|0%|Netflix|Youtube|Openai
-      - 🇨🇭瑞士2|⬇️7.1MB/s|28%|Netflix|Disney|Youtube|Openai
-      - 🇰🇷韩国2|⬇️1.8MB/s|65%|Netflix|Disney|Openai
-      - 🇫🇷法国12|⬇️11.8MB/s|47%|Netflix|Openai
-      - 🇷🇺俄罗斯4|⬇️7.4MB/s|50%
-      - 🇸🇬新加坡2|⬇️23.4MB/s|43%|Youtube|Openai
-      - 🇫🇷法国5|⬇️15.4MB/s|47%|Netflix|Youtube|Openai
-      - 🇯🇵日本11|⬇️15.7MB/s|70%|Netflix|Openai
-      - 🇬🇧英国6|⬇️2.9MB/s|49%|Netflix|Disney|Openai
-      - 🇺🇦乌克兰1|⬇️7.1MB/s|51%|Netflix|Openai
-      - 🇸🇬新加坡11|⬇️20.5MB/s|28%|Netflix|Openai
-      - 🇺🇸美国68|⬇️27.2MB/s|0%|Netflix|Disney
-      - 🌀其他13-IL|⬇️2.0MB/s|0%|Youtube|Openai
-      - 🇺🇸美国3|⬇️24.7MB/s|39%|Netflix|Disney|Openai
-      - 🌀其他24-AM|⬇️11.6MB/s|42%|Openai
-      - 🇦🇪阿拉伯酋长国1|⬇️3.9MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港4|⬇️19.3MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚6|⬇️15.1MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国14|⬇️3.4MB/s|52%|Netflix|Disney|Openai
-      - 🌀其他18-AR|⬇️4.0MB/s|0%|Youtube|Openai
-      - 🇺🇸美国64|⬇️15.5MB/s|39%|Netflix|Disney|Openai
-      - 🇺🇸美国69|⬇️7.6MB/s|32%|Netflix|Openai
-      - 🇺🇸美国39|⬇️1.1MB/s|28%|Netflix|Disney|Openai
-      - 🇺🇸美国22|⬇️2.4MB/s|65%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚10|⬇️2.0MB/s|0%|Netflix|Openai
-      - 🇯🇵日本25|⬇️21.1MB/s|0%|Netflix|Disney|Openai
-      - 🇵🇱波兰1|⬇️7.9MB/s|32%|Openai
-      - 🌀其他6-IL|⬇️1.9MB/s|0%|Youtube|Openai
-      - 🇯🇵日本13|⬇️14.8MB/s|0%|Netflix|Disney
-      - 🇺🇸美国26|⬇️1.0MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本1|⬇️2.2MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国19|⬇️2.8MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本27|⬇️1.7MB/s|0%|Netflix|Disney
-      - 🇰🇷韩国7|⬇️2.1MB/s|65%|Netflix|Disney|Openai
-      - 🌀其他1-SE|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国13|⬇️29.3MB/s|0%|Netflix|Disney|Openai
-      - 🇬🇧英国9|⬇️19.7MB/s|49%|Netflix|Disney|Openai
-      - 🇯🇵日本3|⬇️23.6MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国3|⬇️24.7MB/s|52%|Netflix|Disney|Openai
-      - 🇺🇸美国58|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国59|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国1|⬇️1.9MB/s|26%|Openai
-      - 🇺🇸美国34|⬇️14.5MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国16|⬇️15.1MB/s|0%|Netflix|Disney|Openai
-      - 🇹🇼台湾6|⬇️5.1MB/s|19%|Netflix|Youtube|Openai
-      - 🇰🇷韩国6|⬇️1.3MB/s|65%|Netflix|Disney|Openai
-      - 🌀其他9-TR|⬇️9.5MB/s|41%|Youtube|Openai
-      - 🇺🇸美国30|⬇️2.3MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他7-SE|⬇️30.5MB/s|0%|Netflix|Disney|Openai
-      - 🇬🇧英国8|⬇️2.0MB/s|37%|Openai
-      - 🇭🇰香港3|⬇️1.2MB/s|50%|Netflix|Youtube
-      - 🌀其他17-IL|⬇️5.7MB/s|41%|Youtube|Openai
-      - 🇺🇸美国43|⬇️7.8MB/s|32%|Netflix|Openai
-      - 🇺🇸美国55|⬇️1.1MB/s|0%|Disney|Openai
-      - 🇺🇸美国27|⬇️19.1MB/s|65%|Netflix|Disney|Openai
-      - 🇭🇰香港9|⬇️29.9MB/s|0%|Netflix|Disney
-      - 🇺🇸美国50|⬇️11.5MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本2|⬇️6.2MB/s|Netflix|Disney|Openai
-      - 🇬🇧英国7|⬇️1.6MB/s|49%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚9|⬇️5.9MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国9|⬇️26.7MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西1|⬇️2.8MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚7|⬇️29.0MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇪阿拉伯酋长国2|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他22-KZ|⬇️2.6MB/s|51%|Openai
-      - 🇬🇧英国3|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港12|⬇️7.1MB/s|0%|Netflix|Disney
-      - 🌀其他20-IL|⬇️2.5MB/s|0%|Youtube|Openai
-      - 🇹🇼台湾4|⬇️2.1MB/s|0%|Netflix|Youtube|Openai
-      - 🇺🇸美国48|⬇️4.5MB/s|65%|Netflix|Disney|Openai
-      - 🇹🇼台湾1|⬇️2.1MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇭🇰香港8|⬇️2.4MB/s|50%|Netflix|Disney
-      - 🇺🇸美国12|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚4|⬇️30.1MB/s|0%|Netflix|Disney
-      - 🇺🇸美国56|⬇️5.4MB/s|0%|Netflix|Openai
-      - 🇺🇸美国27|⬇️2.7MB/s|39%|Netflix|Disney|Openai
-      - 🇦🇪阿拉伯酋长国2|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡11|⬇️1.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡12|⬇️3.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡16|⬇️4.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡3|⬇️4.9MB/s|Youtube|Openai
-      - 🌀其他5-SE|⬇️1.7MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他26-SE|⬇️3.7MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚5|⬇️1.1MB/s|0%|Netflix|Openai
-      - 🇯🇵日本9|⬇️16.3MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇺🇸美国44|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西3|⬇️4.7MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国32|⬇️16.0MB/s|28%|Netflix|Disney|Openai
-      - 🇩🇪德国7|⬇️3.7MB/s|52%|Netflix|Disney|Openai
-      - 🇭🇰香港1|⬇️31.2MB/s|0%|Youtube
-      - 🇺🇸美国9|⬇️2.3MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国6|⬇️2.4MB/s|0%|Disney|Openai
-      - 🇭🇰香港12|⬇️2.7MB/s|0%|Netflix|Disney|Youtube
-      - 🇸🇬新加坡2|⬇️1.2MB/s|Youtube|Openai
-      - 🇯🇵日本1|⬇️9.8MB/s|70%|Youtube|Openai
-      - 🇭🇰香港2|⬇️13.3MB/s|0%|Youtube|Openai
-      - 🇯🇵日本12|⬇️4.0MB/s|12%|Openai
-      - 🌀其他20-CN|⬇️14.2MB/s|32%
-      - 🇭🇰香港8|⬇️8.2MB/s|0%|Netflix|Disney|Youtube
-      - 🇭🇰香港9|⬇️12.3MB/s|0%|Netflix|Disney|Youtube
-      - 🇯🇵日本7|⬇️6.2MB/s|20%|Youtube|Openai
-      - 🇭🇰香港11|⬇️6.0MB/s|Youtube
-      - 🇭🇰香港18|⬇️5.8MB/s|0%|Netflix|Disney
-      - 🇦🇪阿拉伯酋长国1|⬇️1.3MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他15-CN|⬇️10.5MB/s|32%
-      - 🇺🇸美国28|⬇️14.5MB/s|54%|Openai
-      - 🇩🇪德国2|⬇️1.6MB/s|51%|Openai
-      - 🇭🇰香港6|⬇️4.9MB/s|0%|Disney|Youtube
-      - 🇺🇸美国72|⬇️10.9MB/s|Openai
-      - 🇺🇸美国74|⬇️10.8MB/s|32%|Openai
-      - 🇹🇼台湾9|⬇️5.7MB/s|19%|Youtube|Openai
-      - 🇭🇰香港16|⬇️4.0MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇹🇼台湾6|⬇️4.9MB/s|19%|Youtube|Openai
-      - 🇬🇧英国3|⬇️6.7MB/s|50%|Disney|Openai
-      - 🌀其他25-SE|⬇️8.4MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇨🇦加拿大8|⬇️2.5MB/s|68%|Youtube|Openai
-      - 🌀其他10-AT|⬇️2.7MB/s|51%|Openai
-      - 🇬🇧英国7|⬇️13.1MB/s|50%|Disney|Openai
-      - 🇺🇸美国52|⬇️1.3MB/s|54%|Openai
-      - 🇺🇸美国5|⬇️2.8MB/s|0%|Netflix|Openai
-      - 🌀其他14-MD|⬇️5.2MB/s|51%|Openai
-      - 🌀其他33-RO|⬇️1.6MB/s|51%|Youtube|Openai
-      - 🇭🇰香港4|⬇️2.5MB/s|0%|Netflix|Disney
-      - 🇬🇧英国2|⬇️8.7MB/s|50%|Disney|Openai
-      - 🇬🇧英国5|⬇️2.2MB/s|50%|Disney|Openai
-      - 🌀其他12-ES|⬇️4.9MB/s|32%|Openai
-      - 🇨🇭瑞士2|⬇️7.3MB/s|28%|Netflix|Disney|Openai
-      - 🇺🇸美国45|⬇️3.6MB/s|51%|Openai
-      - 🇺🇸美国77|⬇️8.0MB/s|33%|Openai
-      - 🌀其他4-MY|⬇️1.6MB/s|0%|Youtube|Openai
-      - 🇸🇬新加坡17|⬇️1.4MB/s|43%|Youtube|Openai
-      - 🇺🇸美国81|⬇️6.1MB/s|33%|Openai
-      - 🇺🇸美国39|⬇️1.6MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡1|⬇️1.7MB/s|43%|Youtube|Openai
-      - 🇺🇸美国76|⬇️9.0MB/s|50%|Openai
-      - 🇺🇸美国6|⬇️8.0MB/s|0%|Netflix|Disney
-      - 🇩🇪德国9|⬇️8.0MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰5|⬇️1.2MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本4|⬇️1.1MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国43|⬇️4.8MB/s|67%|Openai
-      - 🇭🇰香港17|⬇️2.3MB/s|Netflix|Disney|Openai
-      - 🇺🇸美国2|⬇️5.4MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西4|⬇️16.6MB/s|0%|Netflix|Disney|Openai
-      - 🇨🇦加拿大5|⬇️4.4MB/s|68%|Youtube|Openai
-      - 🇩🇪德国14|⬇️2.1MB/s|52%|Netflix|Disney|Openai
-      - 🇰🇷韩国2|⬇️3.7MB/s|65%|Netflix|Disney
-      - 🇯🇵日本15|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国35|⬇️3.2MB/s|65%|Netflix|Disney|Openai
-      - 🇺🇸美国23|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国18|⬇️5.0MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港5|⬇️12.9MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西1|⬇️1.1MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国64|⬇️3.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国79|⬇️22.2MB/s|39%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚4|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本10|⬇️1.6MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国61|⬇️2.0MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰4|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他22-TH|⬇️4.3MB/s|0%|Netflix|Youtube|Openai
-      - 🇯🇵日本11|⬇️2.7MB/s|0%|Netflix|Openai
-      - 🇺🇸美国55|⬇️1.0MB/s|67%|Openai
-      - 🇫🇮芬兰9|⬇️1.2MB/s|0%|Netflix|Openai
-      - 🇧🇷巴西2|⬇️6.3MB/s|65%|Youtube|Openai
-      - 🇩🇪德国13|⬇️7.7MB/s|26%|Youtube
-      - 🇯🇵日本13|⬇️5.5MB/s|39%|Disney|Youtube|Openai
-      - 🇬🇧英国6|⬇️2.2MB/s|49%|Netflix|Disney|Openai
+      - 【看视频】台湾1-无限流量
+      - 【看视频】台湾5-无限流量
+      - 【看视频】台湾6-无限流量
+      - 🇭🇰中继香港011【请勿用来看视频】
+      - 🇭🇰中继香港021【请勿用来看视频】
+      - 🇭🇰IEPL香港033【请勿用来看视频】
+      - 🇭🇰中继香港041【请勿用来看视频】
+      - 🇭🇰中继香港051【请勿用来看视频】
+      - 🇭🇰中继香港061【请勿用来看视频】
+      - 🇭🇰IEPL香港073【请勿用来看视频】
+      - 🇭🇰中继香港081【请勿用来看视频】
+      - 🇭🇰中继香港091【请勿用来看视频】
+      - 🇭🇰中继香港101【请勿用来看视频】
+      - 🇭🇰中继香港111【请勿用来看视频】
+      - 🇭🇰中继香港121【请勿用来看视频】
+      - 🇭🇰中继香港131【请勿用来看视频】
+      - 🇭🇰中继香港141【请勿用来看视频】
+      - 🇭🇰中继香港151【请勿用来看视频】
+      - 🇯🇵IEPL日本013【请勿用来看视频】
+      - 🇯🇵中继日本021【请勿用来看视频】
+      - 🇯🇵中继日本031【请勿用来看视频】
+      - 🇯🇵中继日本041【请勿用来看视频】
+      - 🇯🇵中继日本051【请勿用来看视频】
+      - 🇯🇵中继日本061【请勿用来看视频】
+      - 🇯🇵中继日本071【请勿用来看视频】
+      - 🇯🇵IEPL日本083【请勿用来看视频】
+      - 🇸🇬IEPL｜新加坡013【请勿用来看视频】
+      - 🇸🇬中继｜新加坡021【请勿用来看视频】
+      - 🇸🇬中继｜新加坡031【请勿用来看视频】
+      - 🇸🇬中继｜新加坡041【请勿用来看视频】
+      - 🇸🇬中继｜新加坡051【请勿用来看视频】
+      - 🇸🇬中继｜新加坡061【请勿用来看视频】
+      - 🇸🇬IEPL｜新加坡073【请勿用来看视频】
+      - 🇸🇬中继｜新加坡081【请勿用来看视频】
+      - 🇸🇬中继｜新加坡091【请勿用来看视频】
+      - 🇸🇬中继｜新加坡101【请勿用来看视频】
+      - 🇺🇸IEPL美国013【请勿用来看视频】
+      - 🇺🇸IEPL美国023【请勿用来看视频】
+      - 🇺🇸中继美国031【请勿用来看视频】
+      - 🇺🇸中继美国041【请勿用来看视频】
+      - 🇺🇸中继美国051【请勿用来看视频】
+      - 🇺🇸中继美国061【请勿用来看视频】
+      - 🇹🇼IEPL台湾013【请勿用来看视频】
+      - 🇹🇼中继台湾021【请勿用来看视频】
+      - 🇹🇼中继台湾031【请勿用来看视频】
+      - 🇻🇳中继越南｜原生1【请勿用来看视频】
+      - 🇲🇾马来西亚【请勿用来看视频】
+      - 🇵🇭菲律宾【请勿用来看视频】
+      - 🇦🇷阿根廷【请勿用来看视频】
+      - 🇰🇭柬埔寨【请勿用来看视频】
+      - 🇷🇺俄罗斯【请勿用来看视频】
+      - 🇰🇷韩国1【请勿用来看视频】
+      - 🇰🇷韩国2【请勿用来看视频】
+      - 🇩🇪德国【请勿用来看视频】
+      - 🇨🇦加拿大【请勿用来看视频】
+      - 🇹🇷土耳其【请勿用来看视频】
+      - 🇮🇳印度【请勿用来看视频】
+      - 🇮🇪爱尔兰【请勿用来看视频】
+      - 🇬🇧英国【请勿用来看视频】
+      - 【看视频】-gouyunHK1T流量
+      - 🇭🇰香港-01【通用】
+      - 🇸🇬新加坡【通用】
+      - 🇯🇵日本【【通用】
+      - 🇮🇩英国【通用】
+      - 🇰🇷韩国【通用】
+      - 🇲🇾马来西亚【通用】
+      - 🇮🇳印度【通用】
+      - 🇻🇳越南【通用】
+      - 🇺🇸美国【通用】
+      - 🇫🇷法国【通用】
+      - 🇨🇦加拿大【通用】
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - 🇩🇪德国7|⬇️6.5MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡15|⬇️3.3MB/s|Netflix|Youtube|Openai
-      - 🇦🇺澳大利亚1|⬇️12.5MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇧🇷巴西2|⬇️22.6MB/s|0%|Netflix|Disney
-      - 🇺🇸美国60|⬇️16.9MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇯🇵日本19|⬇️10.0MB/s|0%|Netflix|Disney
-      - 🇦🇺澳大利亚3|⬇️18.3MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰1|⬇️7.6MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国9|⬇️5.4MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰9|⬇️1.7MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国36|⬇️1.2MB/s|33%|Netflix|Openai
-      - 🇩🇪德国5|⬇️12.3MB/s|52%|Netflix|Disney|Youtube|Openai
-      - 🇺🇸美国57|⬇️17.3MB/s|29%|Netflix|Openai
-      - 🇬🇧英国2|⬇️2.5MB/s|49%|Netflix|Disney|Openai
-      - 🇯🇵日本20|⬇️11.4MB/s|70%|Netflix|Youtube|Openai
-      - 🇹🇼台湾8|⬇️30.8MB/s|19%|Netflix|Disney|Youtube|Openai
-      - 🇯🇵日本14|⬇️20.5MB/s|28%|Netflix|Openai
-      - 🇺🇸美国15|⬇️9.8MB/s|32%|Netflix|Openai
-      - 🇯🇵日本16|⬇️3.4MB/s|0%|Netflix|Disney|Openai
-      - 🇹🇼台湾2|⬇️22.6MB/s|19%|Netflix|Youtube|Openai
-      - 🇯🇵日本24|⬇️21.7MB/s|12%|Netflix|Openai
-      - 🇯🇵日本23|⬇️24.9MB/s|12%|Netflix|Youtube|Openai
-      - 🇭🇰香港11|⬇️1.5MB/s|Netflix
-      - 🇫🇷法国10|⬇️11.8MB/s|0%|Netflix|Openai
-      - 🇯🇵日本21|⬇️20.2MB/s|55%|Netflix|Disney|Openai
-      - 🇹🇼台湾3|⬇️8.5MB/s|19%|Netflix|Youtube|Openai
-      - 🇦🇺澳大利亚5|⬇️2.5MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国40|⬇️8.6MB/s|33%|Netflix|Openai
-      - 🇩🇪德国4|⬇️6.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国67|⬇️8.3MB/s|51%|Netflix|Openai
-      - 🇺🇸美国28|⬇️13.1MB/s|37%|Netflix|Openai
-      - 🇫🇮芬兰8|⬇️10.8MB/s|0%|Netflix|Disney|Openai
-      - 🇨🇦加拿大4|⬇️11.0MB/s|Netflix|Youtube|Openai
-      - 🇺🇸美国2|⬇️2.4MB/s|50%|Netflix|Openai
-      - 🇺🇸美国8|⬇️7.8MB/s|32%|Netflix|Youtube|Openai
-      - 🇯🇵日本8|⬇️10.7MB/s|55%|Netflix|Disney|Openai
-      - 🌀其他21-PH|⬇️9.6MB/s|10%|Netflix|Youtube|Openai
-      - 🇨🇭瑞士1|⬇️8.7MB/s|0%|Netflix|Youtube|Openai
-      - 🇺🇸美国14|⬇️10.5MB/s|0%|Netflix|Openai
-      - 🇫🇷法国7|⬇️12.3MB/s|51%|Youtube|Openai
-      - 🇺🇸美国25|⬇️14.1MB/s|51%|Netflix|Youtube|Openai
-      - 🇭🇰香港17|⬇️15.2MB/s|0%|Netflix|Disney|Youtube
-      - 🇺🇸美国6|⬇️1.7MB/s|33%|Netflix|Openai
-      - 🇯🇵日本26|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他14-SA|⬇️9.8MB/s|0%|Netflix|Youtube|Openai
-      - 🇨🇭瑞士2|⬇️7.1MB/s|28%|Netflix|Disney|Youtube|Openai
-      - 🇰🇷韩国2|⬇️1.8MB/s|65%|Netflix|Disney|Openai
-      - 🇫🇷法国12|⬇️11.8MB/s|47%|Netflix|Openai
-      - 🇷🇺俄罗斯4|⬇️7.4MB/s|50%
-      - 🇸🇬新加坡2|⬇️23.4MB/s|43%|Youtube|Openai
-      - 🇫🇷法国5|⬇️15.4MB/s|47%|Netflix|Youtube|Openai
-      - 🇯🇵日本11|⬇️15.7MB/s|70%|Netflix|Openai
-      - 🇬🇧英国6|⬇️2.9MB/s|49%|Netflix|Disney|Openai
-      - 🇺🇦乌克兰1|⬇️7.1MB/s|51%|Netflix|Openai
-      - 🇸🇬新加坡11|⬇️20.5MB/s|28%|Netflix|Openai
-      - 🇺🇸美国68|⬇️27.2MB/s|0%|Netflix|Disney
-      - 🌀其他13-IL|⬇️2.0MB/s|0%|Youtube|Openai
-      - 🇺🇸美国3|⬇️24.7MB/s|39%|Netflix|Disney|Openai
-      - 🌀其他24-AM|⬇️11.6MB/s|42%|Openai
-      - 🇦🇪阿拉伯酋长国1|⬇️3.9MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港4|⬇️19.3MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚6|⬇️15.1MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国14|⬇️3.4MB/s|52%|Netflix|Disney|Openai
-      - 🌀其他18-AR|⬇️4.0MB/s|0%|Youtube|Openai
-      - 🇺🇸美国64|⬇️15.5MB/s|39%|Netflix|Disney|Openai
-      - 🇺🇸美国69|⬇️7.6MB/s|32%|Netflix|Openai
-      - 🇺🇸美国39|⬇️1.1MB/s|28%|Netflix|Disney|Openai
-      - 🇺🇸美国22|⬇️2.4MB/s|65%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚10|⬇️2.0MB/s|0%|Netflix|Openai
-      - 🇯🇵日本25|⬇️21.1MB/s|0%|Netflix|Disney|Openai
-      - 🇵🇱波兰1|⬇️7.9MB/s|32%|Openai
-      - 🌀其他6-IL|⬇️1.9MB/s|0%|Youtube|Openai
-      - 🇯🇵日本13|⬇️14.8MB/s|0%|Netflix|Disney
-      - 🇺🇸美国26|⬇️1.0MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本1|⬇️2.2MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国19|⬇️2.8MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本27|⬇️1.7MB/s|0%|Netflix|Disney
-      - 🇰🇷韩国7|⬇️2.1MB/s|65%|Netflix|Disney|Openai
-      - 🌀其他1-SE|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国13|⬇️29.3MB/s|0%|Netflix|Disney|Openai
-      - 🇬🇧英国9|⬇️19.7MB/s|49%|Netflix|Disney|Openai
-      - 🇯🇵日本3|⬇️23.6MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国3|⬇️24.7MB/s|52%|Netflix|Disney|Openai
-      - 🇺🇸美国58|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国59|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国1|⬇️1.9MB/s|26%|Openai
-      - 🇺🇸美国34|⬇️14.5MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国16|⬇️15.1MB/s|0%|Netflix|Disney|Openai
-      - 🇹🇼台湾6|⬇️5.1MB/s|19%|Netflix|Youtube|Openai
-      - 🇰🇷韩国6|⬇️1.3MB/s|65%|Netflix|Disney|Openai
-      - 🌀其他9-TR|⬇️9.5MB/s|41%|Youtube|Openai
-      - 🇺🇸美国30|⬇️2.3MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他7-SE|⬇️30.5MB/s|0%|Netflix|Disney|Openai
-      - 🇬🇧英国8|⬇️2.0MB/s|37%|Openai
-      - 🇭🇰香港3|⬇️1.2MB/s|50%|Netflix|Youtube
-      - 🌀其他17-IL|⬇️5.7MB/s|41%|Youtube|Openai
-      - 🇺🇸美国43|⬇️7.8MB/s|32%|Netflix|Openai
-      - 🇺🇸美国55|⬇️1.1MB/s|0%|Disney|Openai
-      - 🇺🇸美国27|⬇️19.1MB/s|65%|Netflix|Disney|Openai
-      - 🇭🇰香港9|⬇️29.9MB/s|0%|Netflix|Disney
-      - 🇺🇸美国50|⬇️11.5MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本2|⬇️6.2MB/s|Netflix|Disney|Openai
-      - 🇬🇧英国7|⬇️1.6MB/s|49%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚9|⬇️5.9MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国9|⬇️26.7MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西1|⬇️2.8MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚7|⬇️29.0MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇪阿拉伯酋长国2|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他22-KZ|⬇️2.6MB/s|51%|Openai
-      - 🇬🇧英国3|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港12|⬇️7.1MB/s|0%|Netflix|Disney
-      - 🌀其他20-IL|⬇️2.5MB/s|0%|Youtube|Openai
-      - 🇹🇼台湾4|⬇️2.1MB/s|0%|Netflix|Youtube|Openai
-      - 🇺🇸美国48|⬇️4.5MB/s|65%|Netflix|Disney|Openai
-      - 🇹🇼台湾1|⬇️2.1MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇭🇰香港8|⬇️2.4MB/s|50%|Netflix|Disney
-      - 🇺🇸美国12|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚4|⬇️30.1MB/s|0%|Netflix|Disney
-      - 🇺🇸美国56|⬇️5.4MB/s|0%|Netflix|Openai
-      - 🇺🇸美国27|⬇️2.7MB/s|39%|Netflix|Disney|Openai
-      - 🇦🇪阿拉伯酋长国2|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡11|⬇️1.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡12|⬇️3.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡16|⬇️4.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡3|⬇️4.9MB/s|Youtube|Openai
-      - 🌀其他5-SE|⬇️1.7MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他26-SE|⬇️3.7MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚5|⬇️1.1MB/s|0%|Netflix|Openai
-      - 🇯🇵日本9|⬇️16.3MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇺🇸美国44|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西3|⬇️4.7MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国32|⬇️16.0MB/s|28%|Netflix|Disney|Openai
-      - 🇩🇪德国7|⬇️3.7MB/s|52%|Netflix|Disney|Openai
-      - 🇭🇰香港1|⬇️31.2MB/s|0%|Youtube
-      - 🇺🇸美国9|⬇️2.3MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国6|⬇️2.4MB/s|0%|Disney|Openai
-      - 🇭🇰香港12|⬇️2.7MB/s|0%|Netflix|Disney|Youtube
-      - 🇸🇬新加坡2|⬇️1.2MB/s|Youtube|Openai
-      - 🇯🇵日本1|⬇️9.8MB/s|70%|Youtube|Openai
-      - 🇭🇰香港2|⬇️13.3MB/s|0%|Youtube|Openai
-      - 🇯🇵日本12|⬇️4.0MB/s|12%|Openai
-      - 🌀其他20-CN|⬇️14.2MB/s|32%
-      - 🇭🇰香港8|⬇️8.2MB/s|0%|Netflix|Disney|Youtube
-      - 🇭🇰香港9|⬇️12.3MB/s|0%|Netflix|Disney|Youtube
-      - 🇯🇵日本7|⬇️6.2MB/s|20%|Youtube|Openai
-      - 🇭🇰香港11|⬇️6.0MB/s|Youtube
-      - 🇭🇰香港18|⬇️5.8MB/s|0%|Netflix|Disney
-      - 🇦🇪阿拉伯酋长国1|⬇️1.3MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他15-CN|⬇️10.5MB/s|32%
-      - 🇺🇸美国28|⬇️14.5MB/s|54%|Openai
-      - 🇩🇪德国2|⬇️1.6MB/s|51%|Openai
-      - 🇭🇰香港6|⬇️4.9MB/s|0%|Disney|Youtube
-      - 🇺🇸美国72|⬇️10.9MB/s|Openai
-      - 🇺🇸美国74|⬇️10.8MB/s|32%|Openai
-      - 🇹🇼台湾9|⬇️5.7MB/s|19%|Youtube|Openai
-      - 🇭🇰香港16|⬇️4.0MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇹🇼台湾6|⬇️4.9MB/s|19%|Youtube|Openai
-      - 🇬🇧英国3|⬇️6.7MB/s|50%|Disney|Openai
-      - 🌀其他25-SE|⬇️8.4MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇨🇦加拿大8|⬇️2.5MB/s|68%|Youtube|Openai
-      - 🌀其他10-AT|⬇️2.7MB/s|51%|Openai
-      - 🇬🇧英国7|⬇️13.1MB/s|50%|Disney|Openai
-      - 🇺🇸美国52|⬇️1.3MB/s|54%|Openai
-      - 🇺🇸美国5|⬇️2.8MB/s|0%|Netflix|Openai
-      - 🌀其他14-MD|⬇️5.2MB/s|51%|Openai
-      - 🌀其他33-RO|⬇️1.6MB/s|51%|Youtube|Openai
-      - 🇭🇰香港4|⬇️2.5MB/s|0%|Netflix|Disney
-      - 🇬🇧英国2|⬇️8.7MB/s|50%|Disney|Openai
-      - 🇬🇧英国5|⬇️2.2MB/s|50%|Disney|Openai
-      - 🌀其他12-ES|⬇️4.9MB/s|32%|Openai
-      - 🇨🇭瑞士2|⬇️7.3MB/s|28%|Netflix|Disney|Openai
-      - 🇺🇸美国45|⬇️3.6MB/s|51%|Openai
-      - 🇺🇸美国77|⬇️8.0MB/s|33%|Openai
-      - 🌀其他4-MY|⬇️1.6MB/s|0%|Youtube|Openai
-      - 🇸🇬新加坡17|⬇️1.4MB/s|43%|Youtube|Openai
-      - 🇺🇸美国81|⬇️6.1MB/s|33%|Openai
-      - 🇺🇸美国39|⬇️1.6MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡1|⬇️1.7MB/s|43%|Youtube|Openai
-      - 🇺🇸美国76|⬇️9.0MB/s|50%|Openai
-      - 🇺🇸美国6|⬇️8.0MB/s|0%|Netflix|Disney
-      - 🇩🇪德国9|⬇️8.0MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰5|⬇️1.2MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本4|⬇️1.1MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国43|⬇️4.8MB/s|67%|Openai
-      - 🇭🇰香港17|⬇️2.3MB/s|Netflix|Disney|Openai
-      - 🇺🇸美国2|⬇️5.4MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西4|⬇️16.6MB/s|0%|Netflix|Disney|Openai
-      - 🇨🇦加拿大5|⬇️4.4MB/s|68%|Youtube|Openai
-      - 🇩🇪德国14|⬇️2.1MB/s|52%|Netflix|Disney|Openai
-      - 🇰🇷韩国2|⬇️3.7MB/s|65%|Netflix|Disney
-      - 🇯🇵日本15|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国35|⬇️3.2MB/s|65%|Netflix|Disney|Openai
-      - 🇺🇸美国23|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国18|⬇️5.0MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港5|⬇️12.9MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西1|⬇️1.1MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国64|⬇️3.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国79|⬇️22.2MB/s|39%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚4|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本10|⬇️1.6MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国61|⬇️2.0MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰4|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他22-TH|⬇️4.3MB/s|0%|Netflix|Youtube|Openai
-      - 🇯🇵日本11|⬇️2.7MB/s|0%|Netflix|Openai
-      - 🇺🇸美国55|⬇️1.0MB/s|67%|Openai
-      - 🇫🇮芬兰9|⬇️1.2MB/s|0%|Netflix|Openai
-      - 🇧🇷巴西2|⬇️6.3MB/s|65%|Youtube|Openai
-      - 🇩🇪德国13|⬇️7.7MB/s|26%|Youtube
-      - 🇯🇵日本13|⬇️5.5MB/s|39%|Disney|Youtube|Openai
-      - 🇬🇧英国6|⬇️2.2MB/s|49%|Netflix|Disney|Openai
+      - 【看视频】台湾1-无限流量
+      - 【看视频】台湾5-无限流量
+      - 【看视频】台湾6-无限流量
+      - 🇭🇰中继香港011【请勿用来看视频】
+      - 🇭🇰中继香港021【请勿用来看视频】
+      - 🇭🇰IEPL香港033【请勿用来看视频】
+      - 🇭🇰中继香港041【请勿用来看视频】
+      - 🇭🇰中继香港051【请勿用来看视频】
+      - 🇭🇰中继香港061【请勿用来看视频】
+      - 🇭🇰IEPL香港073【请勿用来看视频】
+      - 🇭🇰中继香港081【请勿用来看视频】
+      - 🇭🇰中继香港091【请勿用来看视频】
+      - 🇭🇰中继香港101【请勿用来看视频】
+      - 🇭🇰中继香港111【请勿用来看视频】
+      - 🇭🇰中继香港121【请勿用来看视频】
+      - 🇭🇰中继香港131【请勿用来看视频】
+      - 🇭🇰中继香港141【请勿用来看视频】
+      - 🇭🇰中继香港151【请勿用来看视频】
+      - 🇯🇵IEPL日本013【请勿用来看视频】
+      - 🇯🇵中继日本021【请勿用来看视频】
+      - 🇯🇵中继日本031【请勿用来看视频】
+      - 🇯🇵中继日本041【请勿用来看视频】
+      - 🇯🇵中继日本051【请勿用来看视频】
+      - 🇯🇵中继日本061【请勿用来看视频】
+      - 🇯🇵中继日本071【请勿用来看视频】
+      - 🇯🇵IEPL日本083【请勿用来看视频】
+      - 🇸🇬IEPL｜新加坡013【请勿用来看视频】
+      - 🇸🇬中继｜新加坡021【请勿用来看视频】
+      - 🇸🇬中继｜新加坡031【请勿用来看视频】
+      - 🇸🇬中继｜新加坡041【请勿用来看视频】
+      - 🇸🇬中继｜新加坡051【请勿用来看视频】
+      - 🇸🇬中继｜新加坡061【请勿用来看视频】
+      - 🇸🇬IEPL｜新加坡073【请勿用来看视频】
+      - 🇸🇬中继｜新加坡081【请勿用来看视频】
+      - 🇸🇬中继｜新加坡091【请勿用来看视频】
+      - 🇸🇬中继｜新加坡101【请勿用来看视频】
+      - 🇺🇸IEPL美国013【请勿用来看视频】
+      - 🇺🇸IEPL美国023【请勿用来看视频】
+      - 🇺🇸中继美国031【请勿用来看视频】
+      - 🇺🇸中继美国041【请勿用来看视频】
+      - 🇺🇸中继美国051【请勿用来看视频】
+      - 🇺🇸中继美国061【请勿用来看视频】
+      - 🇹🇼IEPL台湾013【请勿用来看视频】
+      - 🇹🇼中继台湾021【请勿用来看视频】
+      - 🇹🇼中继台湾031【请勿用来看视频】
+      - 🇻🇳中继越南｜原生1【请勿用来看视频】
+      - 🇲🇾马来西亚【请勿用来看视频】
+      - 🇵🇭菲律宾【请勿用来看视频】
+      - 🇦🇷阿根廷【请勿用来看视频】
+      - 🇰🇭柬埔寨【请勿用来看视频】
+      - 🇷🇺俄罗斯【请勿用来看视频】
+      - 🇰🇷韩国1【请勿用来看视频】
+      - 🇰🇷韩国2【请勿用来看视频】
+      - 🇩🇪德国【请勿用来看视频】
+      - 🇨🇦加拿大【请勿用来看视频】
+      - 🇹🇷土耳其【请勿用来看视频】
+      - 🇮🇳印度【请勿用来看视频】
+      - 🇮🇪爱尔兰【请勿用来看视频】
+      - 🇬🇧英国【请勿用来看视频】
+      - 【看视频】-gouyunHK1T流量
+      - 🇭🇰香港-01【通用】
+      - 🇸🇬新加坡【通用】
+      - 🇯🇵日本【【通用】
+      - 🇮🇩英国【通用】
+      - 🇰🇷韩国【通用】
+      - 🇲🇾马来西亚【通用】
+      - 🇮🇳印度【通用】
+      - 🇻🇳越南【通用】
+      - 🇺🇸美国【通用】
+      - 🇫🇷法国【通用】
+      - 🇨🇦加拿大【通用】
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 🇩🇪德国7|⬇️6.5MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡15|⬇️3.3MB/s|Netflix|Youtube|Openai
-      - 🇦🇺澳大利亚1|⬇️12.5MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇧🇷巴西2|⬇️22.6MB/s|0%|Netflix|Disney
-      - 🇺🇸美国60|⬇️16.9MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇯🇵日本19|⬇️10.0MB/s|0%|Netflix|Disney
-      - 🇦🇺澳大利亚3|⬇️18.3MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰1|⬇️7.6MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国9|⬇️5.4MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰9|⬇️1.7MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国36|⬇️1.2MB/s|33%|Netflix|Openai
-      - 🇩🇪德国5|⬇️12.3MB/s|52%|Netflix|Disney|Youtube|Openai
-      - 🇺🇸美国57|⬇️17.3MB/s|29%|Netflix|Openai
-      - 🇬🇧英国2|⬇️2.5MB/s|49%|Netflix|Disney|Openai
-      - 🇯🇵日本20|⬇️11.4MB/s|70%|Netflix|Youtube|Openai
-      - 🇹🇼台湾8|⬇️30.8MB/s|19%|Netflix|Disney|Youtube|Openai
-      - 🇯🇵日本14|⬇️20.5MB/s|28%|Netflix|Openai
-      - 🇺🇸美国15|⬇️9.8MB/s|32%|Netflix|Openai
-      - 🇯🇵日本16|⬇️3.4MB/s|0%|Netflix|Disney|Openai
-      - 🇹🇼台湾2|⬇️22.6MB/s|19%|Netflix|Youtube|Openai
-      - 🇯🇵日本24|⬇️21.7MB/s|12%|Netflix|Openai
-      - 🇯🇵日本23|⬇️24.9MB/s|12%|Netflix|Youtube|Openai
-      - 🇭🇰香港11|⬇️1.5MB/s|Netflix
-      - 🇫🇷法国10|⬇️11.8MB/s|0%|Netflix|Openai
-      - 🇯🇵日本21|⬇️20.2MB/s|55%|Netflix|Disney|Openai
-      - 🇹🇼台湾3|⬇️8.5MB/s|19%|Netflix|Youtube|Openai
-      - 🇦🇺澳大利亚5|⬇️2.5MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国40|⬇️8.6MB/s|33%|Netflix|Openai
-      - 🇩🇪德国4|⬇️6.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国67|⬇️8.3MB/s|51%|Netflix|Openai
-      - 🇺🇸美国28|⬇️13.1MB/s|37%|Netflix|Openai
-      - 🇫🇮芬兰8|⬇️10.8MB/s|0%|Netflix|Disney|Openai
-      - 🇨🇦加拿大4|⬇️11.0MB/s|Netflix|Youtube|Openai
-      - 🇺🇸美国2|⬇️2.4MB/s|50%|Netflix|Openai
-      - 🇺🇸美国8|⬇️7.8MB/s|32%|Netflix|Youtube|Openai
-      - 🇯🇵日本8|⬇️10.7MB/s|55%|Netflix|Disney|Openai
-      - 🌀其他21-PH|⬇️9.6MB/s|10%|Netflix|Youtube|Openai
-      - 🇨🇭瑞士1|⬇️8.7MB/s|0%|Netflix|Youtube|Openai
-      - 🇺🇸美国14|⬇️10.5MB/s|0%|Netflix|Openai
-      - 🇫🇷法国7|⬇️12.3MB/s|51%|Youtube|Openai
-      - 🇺🇸美国25|⬇️14.1MB/s|51%|Netflix|Youtube|Openai
-      - 🇭🇰香港17|⬇️15.2MB/s|0%|Netflix|Disney|Youtube
-      - 🇺🇸美国6|⬇️1.7MB/s|33%|Netflix|Openai
-      - 🇯🇵日本26|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他14-SA|⬇️9.8MB/s|0%|Netflix|Youtube|Openai
-      - 🇨🇭瑞士2|⬇️7.1MB/s|28%|Netflix|Disney|Youtube|Openai
-      - 🇰🇷韩国2|⬇️1.8MB/s|65%|Netflix|Disney|Openai
-      - 🇫🇷法国12|⬇️11.8MB/s|47%|Netflix|Openai
-      - 🇷🇺俄罗斯4|⬇️7.4MB/s|50%
-      - 🇸🇬新加坡2|⬇️23.4MB/s|43%|Youtube|Openai
-      - 🇫🇷法国5|⬇️15.4MB/s|47%|Netflix|Youtube|Openai
-      - 🇯🇵日本11|⬇️15.7MB/s|70%|Netflix|Openai
-      - 🇬🇧英国6|⬇️2.9MB/s|49%|Netflix|Disney|Openai
-      - 🇺🇦乌克兰1|⬇️7.1MB/s|51%|Netflix|Openai
-      - 🇸🇬新加坡11|⬇️20.5MB/s|28%|Netflix|Openai
-      - 🇺🇸美国68|⬇️27.2MB/s|0%|Netflix|Disney
-      - 🌀其他13-IL|⬇️2.0MB/s|0%|Youtube|Openai
-      - 🇺🇸美国3|⬇️24.7MB/s|39%|Netflix|Disney|Openai
-      - 🌀其他24-AM|⬇️11.6MB/s|42%|Openai
-      - 🇦🇪阿拉伯酋长国1|⬇️3.9MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港4|⬇️19.3MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚6|⬇️15.1MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国14|⬇️3.4MB/s|52%|Netflix|Disney|Openai
-      - 🌀其他18-AR|⬇️4.0MB/s|0%|Youtube|Openai
-      - 🇺🇸美国64|⬇️15.5MB/s|39%|Netflix|Disney|Openai
-      - 🇺🇸美国69|⬇️7.6MB/s|32%|Netflix|Openai
-      - 🇺🇸美国39|⬇️1.1MB/s|28%|Netflix|Disney|Openai
-      - 🇺🇸美国22|⬇️2.4MB/s|65%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚10|⬇️2.0MB/s|0%|Netflix|Openai
-      - 🇯🇵日本25|⬇️21.1MB/s|0%|Netflix|Disney|Openai
-      - 🇵🇱波兰1|⬇️7.9MB/s|32%|Openai
-      - 🌀其他6-IL|⬇️1.9MB/s|0%|Youtube|Openai
-      - 🇯🇵日本13|⬇️14.8MB/s|0%|Netflix|Disney
-      - 🇺🇸美国26|⬇️1.0MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本1|⬇️2.2MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国19|⬇️2.8MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本27|⬇️1.7MB/s|0%|Netflix|Disney
-      - 🇰🇷韩国7|⬇️2.1MB/s|65%|Netflix|Disney|Openai
-      - 🌀其他1-SE|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国13|⬇️29.3MB/s|0%|Netflix|Disney|Openai
-      - 🇬🇧英国9|⬇️19.7MB/s|49%|Netflix|Disney|Openai
-      - 🇯🇵日本3|⬇️23.6MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国3|⬇️24.7MB/s|52%|Netflix|Disney|Openai
-      - 🇺🇸美国58|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国59|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国1|⬇️1.9MB/s|26%|Openai
-      - 🇺🇸美国34|⬇️14.5MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国16|⬇️15.1MB/s|0%|Netflix|Disney|Openai
-      - 🇹🇼台湾6|⬇️5.1MB/s|19%|Netflix|Youtube|Openai
-      - 🇰🇷韩国6|⬇️1.3MB/s|65%|Netflix|Disney|Openai
-      - 🌀其他9-TR|⬇️9.5MB/s|41%|Youtube|Openai
-      - 🇺🇸美国30|⬇️2.3MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他7-SE|⬇️30.5MB/s|0%|Netflix|Disney|Openai
-      - 🇬🇧英国8|⬇️2.0MB/s|37%|Openai
-      - 🇭🇰香港3|⬇️1.2MB/s|50%|Netflix|Youtube
-      - 🌀其他17-IL|⬇️5.7MB/s|41%|Youtube|Openai
-      - 🇺🇸美国43|⬇️7.8MB/s|32%|Netflix|Openai
-      - 🇺🇸美国55|⬇️1.1MB/s|0%|Disney|Openai
-      - 🇺🇸美国27|⬇️19.1MB/s|65%|Netflix|Disney|Openai
-      - 🇭🇰香港9|⬇️29.9MB/s|0%|Netflix|Disney
-      - 🇺🇸美国50|⬇️11.5MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本2|⬇️6.2MB/s|Netflix|Disney|Openai
-      - 🇬🇧英国7|⬇️1.6MB/s|49%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚9|⬇️5.9MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国9|⬇️26.7MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西1|⬇️2.8MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚7|⬇️29.0MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇪阿拉伯酋长国2|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他22-KZ|⬇️2.6MB/s|51%|Openai
-      - 🇬🇧英国3|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港12|⬇️7.1MB/s|0%|Netflix|Disney
-      - 🌀其他20-IL|⬇️2.5MB/s|0%|Youtube|Openai
-      - 🇹🇼台湾4|⬇️2.1MB/s|0%|Netflix|Youtube|Openai
-      - 🇺🇸美国48|⬇️4.5MB/s|65%|Netflix|Disney|Openai
-      - 🇹🇼台湾1|⬇️2.1MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇭🇰香港8|⬇️2.4MB/s|50%|Netflix|Disney
-      - 🇺🇸美国12|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚4|⬇️30.1MB/s|0%|Netflix|Disney
-      - 🇺🇸美国56|⬇️5.4MB/s|0%|Netflix|Openai
-      - 🇺🇸美国27|⬇️2.7MB/s|39%|Netflix|Disney|Openai
-      - 🇦🇪阿拉伯酋长国2|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡11|⬇️1.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡12|⬇️3.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡16|⬇️4.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡3|⬇️4.9MB/s|Youtube|Openai
-      - 🌀其他5-SE|⬇️1.7MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他26-SE|⬇️3.7MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚5|⬇️1.1MB/s|0%|Netflix|Openai
-      - 🇯🇵日本9|⬇️16.3MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇺🇸美国44|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西3|⬇️4.7MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国32|⬇️16.0MB/s|28%|Netflix|Disney|Openai
-      - 🇩🇪德国7|⬇️3.7MB/s|52%|Netflix|Disney|Openai
-      - 🇭🇰香港1|⬇️31.2MB/s|0%|Youtube
-      - 🇺🇸美国9|⬇️2.3MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国6|⬇️2.4MB/s|0%|Disney|Openai
-      - 🇭🇰香港12|⬇️2.7MB/s|0%|Netflix|Disney|Youtube
-      - 🇸🇬新加坡2|⬇️1.2MB/s|Youtube|Openai
-      - 🇯🇵日本1|⬇️9.8MB/s|70%|Youtube|Openai
-      - 🇭🇰香港2|⬇️13.3MB/s|0%|Youtube|Openai
-      - 🇯🇵日本12|⬇️4.0MB/s|12%|Openai
-      - 🌀其他20-CN|⬇️14.2MB/s|32%
-      - 🇭🇰香港8|⬇️8.2MB/s|0%|Netflix|Disney|Youtube
-      - 🇭🇰香港9|⬇️12.3MB/s|0%|Netflix|Disney|Youtube
-      - 🇯🇵日本7|⬇️6.2MB/s|20%|Youtube|Openai
-      - 🇭🇰香港11|⬇️6.0MB/s|Youtube
-      - 🇭🇰香港18|⬇️5.8MB/s|0%|Netflix|Disney
-      - 🇦🇪阿拉伯酋长国1|⬇️1.3MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他15-CN|⬇️10.5MB/s|32%
-      - 🇺🇸美国28|⬇️14.5MB/s|54%|Openai
-      - 🇩🇪德国2|⬇️1.6MB/s|51%|Openai
-      - 🇭🇰香港6|⬇️4.9MB/s|0%|Disney|Youtube
-      - 🇺🇸美国72|⬇️10.9MB/s|Openai
-      - 🇺🇸美国74|⬇️10.8MB/s|32%|Openai
-      - 🇹🇼台湾9|⬇️5.7MB/s|19%|Youtube|Openai
-      - 🇭🇰香港16|⬇️4.0MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇹🇼台湾6|⬇️4.9MB/s|19%|Youtube|Openai
-      - 🇬🇧英国3|⬇️6.7MB/s|50%|Disney|Openai
-      - 🌀其他25-SE|⬇️8.4MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇨🇦加拿大8|⬇️2.5MB/s|68%|Youtube|Openai
-      - 🌀其他10-AT|⬇️2.7MB/s|51%|Openai
-      - 🇬🇧英国7|⬇️13.1MB/s|50%|Disney|Openai
-      - 🇺🇸美国52|⬇️1.3MB/s|54%|Openai
-      - 🇺🇸美国5|⬇️2.8MB/s|0%|Netflix|Openai
-      - 🌀其他14-MD|⬇️5.2MB/s|51%|Openai
-      - 🌀其他33-RO|⬇️1.6MB/s|51%|Youtube|Openai
-      - 🇭🇰香港4|⬇️2.5MB/s|0%|Netflix|Disney
-      - 🇬🇧英国2|⬇️8.7MB/s|50%|Disney|Openai
-      - 🇬🇧英国5|⬇️2.2MB/s|50%|Disney|Openai
-      - 🌀其他12-ES|⬇️4.9MB/s|32%|Openai
-      - 🇨🇭瑞士2|⬇️7.3MB/s|28%|Netflix|Disney|Openai
-      - 🇺🇸美国45|⬇️3.6MB/s|51%|Openai
-      - 🇺🇸美国77|⬇️8.0MB/s|33%|Openai
-      - 🌀其他4-MY|⬇️1.6MB/s|0%|Youtube|Openai
-      - 🇸🇬新加坡17|⬇️1.4MB/s|43%|Youtube|Openai
-      - 🇺🇸美国81|⬇️6.1MB/s|33%|Openai
-      - 🇺🇸美国39|⬇️1.6MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡1|⬇️1.7MB/s|43%|Youtube|Openai
-      - 🇺🇸美国76|⬇️9.0MB/s|50%|Openai
-      - 🇺🇸美国6|⬇️8.0MB/s|0%|Netflix|Disney
-      - 🇩🇪德国9|⬇️8.0MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰5|⬇️1.2MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本4|⬇️1.1MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国43|⬇️4.8MB/s|67%|Openai
-      - 🇭🇰香港17|⬇️2.3MB/s|Netflix|Disney|Openai
-      - 🇺🇸美国2|⬇️5.4MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西4|⬇️16.6MB/s|0%|Netflix|Disney|Openai
-      - 🇨🇦加拿大5|⬇️4.4MB/s|68%|Youtube|Openai
-      - 🇩🇪德国14|⬇️2.1MB/s|52%|Netflix|Disney|Openai
-      - 🇰🇷韩国2|⬇️3.7MB/s|65%|Netflix|Disney
-      - 🇯🇵日本15|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国35|⬇️3.2MB/s|65%|Netflix|Disney|Openai
-      - 🇺🇸美国23|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国18|⬇️5.0MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港5|⬇️12.9MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西1|⬇️1.1MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国64|⬇️3.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国79|⬇️22.2MB/s|39%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚4|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本10|⬇️1.6MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国61|⬇️2.0MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰4|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他22-TH|⬇️4.3MB/s|0%|Netflix|Youtube|Openai
-      - 🇯🇵日本11|⬇️2.7MB/s|0%|Netflix|Openai
-      - 🇺🇸美国55|⬇️1.0MB/s|67%|Openai
-      - 🇫🇮芬兰9|⬇️1.2MB/s|0%|Netflix|Openai
-      - 🇧🇷巴西2|⬇️6.3MB/s|65%|Youtube|Openai
-      - 🇩🇪德国13|⬇️7.7MB/s|26%|Youtube
-      - 🇯🇵日本13|⬇️5.5MB/s|39%|Disney|Youtube|Openai
-      - 🇬🇧英国6|⬇️2.2MB/s|49%|Netflix|Disney|Openai
+      - 【看视频】台湾1-无限流量
+      - 【看视频】台湾5-无限流量
+      - 【看视频】台湾6-无限流量
+      - 🇭🇰中继香港011【请勿用来看视频】
+      - 🇭🇰中继香港021【请勿用来看视频】
+      - 🇭🇰IEPL香港033【请勿用来看视频】
+      - 🇭🇰中继香港041【请勿用来看视频】
+      - 🇭🇰中继香港051【请勿用来看视频】
+      - 🇭🇰中继香港061【请勿用来看视频】
+      - 🇭🇰IEPL香港073【请勿用来看视频】
+      - 🇭🇰中继香港081【请勿用来看视频】
+      - 🇭🇰中继香港091【请勿用来看视频】
+      - 🇭🇰中继香港101【请勿用来看视频】
+      - 🇭🇰中继香港111【请勿用来看视频】
+      - 🇭🇰中继香港121【请勿用来看视频】
+      - 🇭🇰中继香港131【请勿用来看视频】
+      - 🇭🇰中继香港141【请勿用来看视频】
+      - 🇭🇰中继香港151【请勿用来看视频】
+      - 🇯🇵IEPL日本013【请勿用来看视频】
+      - 🇯🇵中继日本021【请勿用来看视频】
+      - 🇯🇵中继日本031【请勿用来看视频】
+      - 🇯🇵中继日本041【请勿用来看视频】
+      - 🇯🇵中继日本051【请勿用来看视频】
+      - 🇯🇵中继日本061【请勿用来看视频】
+      - 🇯🇵中继日本071【请勿用来看视频】
+      - 🇯🇵IEPL日本083【请勿用来看视频】
+      - 🇸🇬IEPL｜新加坡013【请勿用来看视频】
+      - 🇸🇬中继｜新加坡021【请勿用来看视频】
+      - 🇸🇬中继｜新加坡031【请勿用来看视频】
+      - 🇸🇬中继｜新加坡041【请勿用来看视频】
+      - 🇸🇬中继｜新加坡051【请勿用来看视频】
+      - 🇸🇬中继｜新加坡061【请勿用来看视频】
+      - 🇸🇬IEPL｜新加坡073【请勿用来看视频】
+      - 🇸🇬中继｜新加坡081【请勿用来看视频】
+      - 🇸🇬中继｜新加坡091【请勿用来看视频】
+      - 🇸🇬中继｜新加坡101【请勿用来看视频】
+      - 🇺🇸IEPL美国013【请勿用来看视频】
+      - 🇺🇸IEPL美国023【请勿用来看视频】
+      - 🇺🇸中继美国031【请勿用来看视频】
+      - 🇺🇸中继美国041【请勿用来看视频】
+      - 🇺🇸中继美国051【请勿用来看视频】
+      - 🇺🇸中继美国061【请勿用来看视频】
+      - 🇹🇼IEPL台湾013【请勿用来看视频】
+      - 🇹🇼中继台湾021【请勿用来看视频】
+      - 🇹🇼中继台湾031【请勿用来看视频】
+      - 🇻🇳中继越南｜原生1【请勿用来看视频】
+      - 🇲🇾马来西亚【请勿用来看视频】
+      - 🇵🇭菲律宾【请勿用来看视频】
+      - 🇦🇷阿根廷【请勿用来看视频】
+      - 🇰🇭柬埔寨【请勿用来看视频】
+      - 🇷🇺俄罗斯【请勿用来看视频】
+      - 🇰🇷韩国1【请勿用来看视频】
+      - 🇰🇷韩国2【请勿用来看视频】
+      - 🇩🇪德国【请勿用来看视频】
+      - 🇨🇦加拿大【请勿用来看视频】
+      - 🇹🇷土耳其【请勿用来看视频】
+      - 🇮🇳印度【请勿用来看视频】
+      - 🇮🇪爱尔兰【请勿用来看视频】
+      - 🇬🇧英国【请勿用来看视频】
+      - 【看视频】-gouyunHK1T流量
+      - 🇭🇰香港-01【通用】
+      - 🇸🇬新加坡【通用】
+      - 🇯🇵日本【【通用】
+      - 🇮🇩英国【通用】
+      - 🇰🇷韩国【通用】
+      - 🇲🇾马来西亚【通用】
+      - 🇮🇳印度【通用】
+      - 🇻🇳越南【通用】
+      - 🇺🇸美国【通用】
+      - 🇫🇷法国【通用】
+      - 🇨🇦加拿大【通用】
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -1533,216 +598,77 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 🇩🇪德国7|⬇️6.5MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡15|⬇️3.3MB/s|Netflix|Youtube|Openai
-      - 🇦🇺澳大利亚1|⬇️12.5MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇧🇷巴西2|⬇️22.6MB/s|0%|Netflix|Disney
-      - 🇺🇸美国60|⬇️16.9MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇯🇵日本19|⬇️10.0MB/s|0%|Netflix|Disney
-      - 🇦🇺澳大利亚3|⬇️18.3MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰1|⬇️7.6MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国9|⬇️5.4MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰9|⬇️1.7MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国36|⬇️1.2MB/s|33%|Netflix|Openai
-      - 🇩🇪德国5|⬇️12.3MB/s|52%|Netflix|Disney|Youtube|Openai
-      - 🇺🇸美国57|⬇️17.3MB/s|29%|Netflix|Openai
-      - 🇬🇧英国2|⬇️2.5MB/s|49%|Netflix|Disney|Openai
-      - 🇯🇵日本20|⬇️11.4MB/s|70%|Netflix|Youtube|Openai
-      - 🇹🇼台湾8|⬇️30.8MB/s|19%|Netflix|Disney|Youtube|Openai
-      - 🇯🇵日本14|⬇️20.5MB/s|28%|Netflix|Openai
-      - 🇺🇸美国15|⬇️9.8MB/s|32%|Netflix|Openai
-      - 🇯🇵日本16|⬇️3.4MB/s|0%|Netflix|Disney|Openai
-      - 🇹🇼台湾2|⬇️22.6MB/s|19%|Netflix|Youtube|Openai
-      - 🇯🇵日本24|⬇️21.7MB/s|12%|Netflix|Openai
-      - 🇯🇵日本23|⬇️24.9MB/s|12%|Netflix|Youtube|Openai
-      - 🇭🇰香港11|⬇️1.5MB/s|Netflix
-      - 🇫🇷法国10|⬇️11.8MB/s|0%|Netflix|Openai
-      - 🇯🇵日本21|⬇️20.2MB/s|55%|Netflix|Disney|Openai
-      - 🇹🇼台湾3|⬇️8.5MB/s|19%|Netflix|Youtube|Openai
-      - 🇦🇺澳大利亚5|⬇️2.5MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国40|⬇️8.6MB/s|33%|Netflix|Openai
-      - 🇩🇪德国4|⬇️6.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国67|⬇️8.3MB/s|51%|Netflix|Openai
-      - 🇺🇸美国28|⬇️13.1MB/s|37%|Netflix|Openai
-      - 🇫🇮芬兰8|⬇️10.8MB/s|0%|Netflix|Disney|Openai
-      - 🇨🇦加拿大4|⬇️11.0MB/s|Netflix|Youtube|Openai
-      - 🇺🇸美国2|⬇️2.4MB/s|50%|Netflix|Openai
-      - 🇺🇸美国8|⬇️7.8MB/s|32%|Netflix|Youtube|Openai
-      - 🇯🇵日本8|⬇️10.7MB/s|55%|Netflix|Disney|Openai
-      - 🌀其他21-PH|⬇️9.6MB/s|10%|Netflix|Youtube|Openai
-      - 🇨🇭瑞士1|⬇️8.7MB/s|0%|Netflix|Youtube|Openai
-      - 🇺🇸美国14|⬇️10.5MB/s|0%|Netflix|Openai
-      - 🇫🇷法国7|⬇️12.3MB/s|51%|Youtube|Openai
-      - 🇺🇸美国25|⬇️14.1MB/s|51%|Netflix|Youtube|Openai
-      - 🇭🇰香港17|⬇️15.2MB/s|0%|Netflix|Disney|Youtube
-      - 🇺🇸美国6|⬇️1.7MB/s|33%|Netflix|Openai
-      - 🇯🇵日本26|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他14-SA|⬇️9.8MB/s|0%|Netflix|Youtube|Openai
-      - 🇨🇭瑞士2|⬇️7.1MB/s|28%|Netflix|Disney|Youtube|Openai
-      - 🇰🇷韩国2|⬇️1.8MB/s|65%|Netflix|Disney|Openai
-      - 🇫🇷法国12|⬇️11.8MB/s|47%|Netflix|Openai
-      - 🇷🇺俄罗斯4|⬇️7.4MB/s|50%
-      - 🇸🇬新加坡2|⬇️23.4MB/s|43%|Youtube|Openai
-      - 🇫🇷法国5|⬇️15.4MB/s|47%|Netflix|Youtube|Openai
-      - 🇯🇵日本11|⬇️15.7MB/s|70%|Netflix|Openai
-      - 🇬🇧英国6|⬇️2.9MB/s|49%|Netflix|Disney|Openai
-      - 🇺🇦乌克兰1|⬇️7.1MB/s|51%|Netflix|Openai
-      - 🇸🇬新加坡11|⬇️20.5MB/s|28%|Netflix|Openai
-      - 🇺🇸美国68|⬇️27.2MB/s|0%|Netflix|Disney
-      - 🌀其他13-IL|⬇️2.0MB/s|0%|Youtube|Openai
-      - 🇺🇸美国3|⬇️24.7MB/s|39%|Netflix|Disney|Openai
-      - 🌀其他24-AM|⬇️11.6MB/s|42%|Openai
-      - 🇦🇪阿拉伯酋长国1|⬇️3.9MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港4|⬇️19.3MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚6|⬇️15.1MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国14|⬇️3.4MB/s|52%|Netflix|Disney|Openai
-      - 🌀其他18-AR|⬇️4.0MB/s|0%|Youtube|Openai
-      - 🇺🇸美国64|⬇️15.5MB/s|39%|Netflix|Disney|Openai
-      - 🇺🇸美国69|⬇️7.6MB/s|32%|Netflix|Openai
-      - 🇺🇸美国39|⬇️1.1MB/s|28%|Netflix|Disney|Openai
-      - 🇺🇸美国22|⬇️2.4MB/s|65%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚10|⬇️2.0MB/s|0%|Netflix|Openai
-      - 🇯🇵日本25|⬇️21.1MB/s|0%|Netflix|Disney|Openai
-      - 🇵🇱波兰1|⬇️7.9MB/s|32%|Openai
-      - 🌀其他6-IL|⬇️1.9MB/s|0%|Youtube|Openai
-      - 🇯🇵日本13|⬇️14.8MB/s|0%|Netflix|Disney
-      - 🇺🇸美国26|⬇️1.0MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本1|⬇️2.2MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国19|⬇️2.8MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本27|⬇️1.7MB/s|0%|Netflix|Disney
-      - 🇰🇷韩国7|⬇️2.1MB/s|65%|Netflix|Disney|Openai
-      - 🌀其他1-SE|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国13|⬇️29.3MB/s|0%|Netflix|Disney|Openai
-      - 🇬🇧英国9|⬇️19.7MB/s|49%|Netflix|Disney|Openai
-      - 🇯🇵日本3|⬇️23.6MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国3|⬇️24.7MB/s|52%|Netflix|Disney|Openai
-      - 🇺🇸美国58|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国59|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国1|⬇️1.9MB/s|26%|Openai
-      - 🇺🇸美国34|⬇️14.5MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国16|⬇️15.1MB/s|0%|Netflix|Disney|Openai
-      - 🇹🇼台湾6|⬇️5.1MB/s|19%|Netflix|Youtube|Openai
-      - 🇰🇷韩国6|⬇️1.3MB/s|65%|Netflix|Disney|Openai
-      - 🌀其他9-TR|⬇️9.5MB/s|41%|Youtube|Openai
-      - 🇺🇸美国30|⬇️2.3MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他7-SE|⬇️30.5MB/s|0%|Netflix|Disney|Openai
-      - 🇬🇧英国8|⬇️2.0MB/s|37%|Openai
-      - 🇭🇰香港3|⬇️1.2MB/s|50%|Netflix|Youtube
-      - 🌀其他17-IL|⬇️5.7MB/s|41%|Youtube|Openai
-      - 🇺🇸美国43|⬇️7.8MB/s|32%|Netflix|Openai
-      - 🇺🇸美国55|⬇️1.1MB/s|0%|Disney|Openai
-      - 🇺🇸美国27|⬇️19.1MB/s|65%|Netflix|Disney|Openai
-      - 🇭🇰香港9|⬇️29.9MB/s|0%|Netflix|Disney
-      - 🇺🇸美国50|⬇️11.5MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本2|⬇️6.2MB/s|Netflix|Disney|Openai
-      - 🇬🇧英国7|⬇️1.6MB/s|49%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚9|⬇️5.9MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国9|⬇️26.7MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西1|⬇️2.8MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚7|⬇️29.0MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇪阿拉伯酋长国2|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他22-KZ|⬇️2.6MB/s|51%|Openai
-      - 🇬🇧英国3|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港12|⬇️7.1MB/s|0%|Netflix|Disney
-      - 🌀其他20-IL|⬇️2.5MB/s|0%|Youtube|Openai
-      - 🇹🇼台湾4|⬇️2.1MB/s|0%|Netflix|Youtube|Openai
-      - 🇺🇸美国48|⬇️4.5MB/s|65%|Netflix|Disney|Openai
-      - 🇹🇼台湾1|⬇️2.1MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇭🇰香港8|⬇️2.4MB/s|50%|Netflix|Disney
-      - 🇺🇸美国12|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚4|⬇️30.1MB/s|0%|Netflix|Disney
-      - 🇺🇸美国56|⬇️5.4MB/s|0%|Netflix|Openai
-      - 🇺🇸美国27|⬇️2.7MB/s|39%|Netflix|Disney|Openai
-      - 🇦🇪阿拉伯酋长国2|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡11|⬇️1.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡12|⬇️3.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡16|⬇️4.9MB/s|Youtube|Openai
-      - 🇸🇬新加坡3|⬇️4.9MB/s|Youtube|Openai
-      - 🌀其他5-SE|⬇️1.7MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他26-SE|⬇️3.7MB/s|0%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚5|⬇️1.1MB/s|0%|Netflix|Openai
-      - 🇯🇵日本9|⬇️16.3MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇺🇸美国44|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西3|⬇️4.7MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国32|⬇️16.0MB/s|28%|Netflix|Disney|Openai
-      - 🇩🇪德国7|⬇️3.7MB/s|52%|Netflix|Disney|Openai
-      - 🇭🇰香港1|⬇️31.2MB/s|0%|Youtube
-      - 🇺🇸美国9|⬇️2.3MB/s|0%|Netflix|Disney|Openai
-      - 🇩🇪德国6|⬇️2.4MB/s|0%|Disney|Openai
-      - 🇭🇰香港12|⬇️2.7MB/s|0%|Netflix|Disney|Youtube
-      - 🇸🇬新加坡2|⬇️1.2MB/s|Youtube|Openai
-      - 🇯🇵日本1|⬇️9.8MB/s|70%|Youtube|Openai
-      - 🇭🇰香港2|⬇️13.3MB/s|0%|Youtube|Openai
-      - 🇯🇵日本12|⬇️4.0MB/s|12%|Openai
-      - 🌀其他20-CN|⬇️14.2MB/s|32%
-      - 🇭🇰香港8|⬇️8.2MB/s|0%|Netflix|Disney|Youtube
-      - 🇭🇰香港9|⬇️12.3MB/s|0%|Netflix|Disney|Youtube
-      - 🇯🇵日本7|⬇️6.2MB/s|20%|Youtube|Openai
-      - 🇭🇰香港11|⬇️6.0MB/s|Youtube
-      - 🇭🇰香港18|⬇️5.8MB/s|0%|Netflix|Disney
-      - 🇦🇪阿拉伯酋长国1|⬇️1.3MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他15-CN|⬇️10.5MB/s|32%
-      - 🇺🇸美国28|⬇️14.5MB/s|54%|Openai
-      - 🇩🇪德国2|⬇️1.6MB/s|51%|Openai
-      - 🇭🇰香港6|⬇️4.9MB/s|0%|Disney|Youtube
-      - 🇺🇸美国72|⬇️10.9MB/s|Openai
-      - 🇺🇸美国74|⬇️10.8MB/s|32%|Openai
-      - 🇹🇼台湾9|⬇️5.7MB/s|19%|Youtube|Openai
-      - 🇭🇰香港16|⬇️4.0MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇹🇼台湾6|⬇️4.9MB/s|19%|Youtube|Openai
-      - 🇬🇧英国3|⬇️6.7MB/s|50%|Disney|Openai
-      - 🌀其他25-SE|⬇️8.4MB/s|0%|Netflix|Disney|Youtube|Openai
-      - 🇨🇦加拿大8|⬇️2.5MB/s|68%|Youtube|Openai
-      - 🌀其他10-AT|⬇️2.7MB/s|51%|Openai
-      - 🇬🇧英国7|⬇️13.1MB/s|50%|Disney|Openai
-      - 🇺🇸美国52|⬇️1.3MB/s|54%|Openai
-      - 🇺🇸美国5|⬇️2.8MB/s|0%|Netflix|Openai
-      - 🌀其他14-MD|⬇️5.2MB/s|51%|Openai
-      - 🌀其他33-RO|⬇️1.6MB/s|51%|Youtube|Openai
-      - 🇭🇰香港4|⬇️2.5MB/s|0%|Netflix|Disney
-      - 🇬🇧英国2|⬇️8.7MB/s|50%|Disney|Openai
-      - 🇬🇧英国5|⬇️2.2MB/s|50%|Disney|Openai
-      - 🌀其他12-ES|⬇️4.9MB/s|32%|Openai
-      - 🇨🇭瑞士2|⬇️7.3MB/s|28%|Netflix|Disney|Openai
-      - 🇺🇸美国45|⬇️3.6MB/s|51%|Openai
-      - 🇺🇸美国77|⬇️8.0MB/s|33%|Openai
-      - 🌀其他4-MY|⬇️1.6MB/s|0%|Youtube|Openai
-      - 🇸🇬新加坡17|⬇️1.4MB/s|43%|Youtube|Openai
-      - 🇺🇸美国81|⬇️6.1MB/s|33%|Openai
-      - 🇺🇸美国39|⬇️1.6MB/s|0%|Netflix|Disney|Openai
-      - 🇸🇬新加坡1|⬇️1.7MB/s|43%|Youtube|Openai
-      - 🇺🇸美国76|⬇️9.0MB/s|50%|Openai
-      - 🇺🇸美国6|⬇️8.0MB/s|0%|Netflix|Disney
-      - 🇩🇪德国9|⬇️8.0MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰5|⬇️1.2MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本4|⬇️1.1MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国43|⬇️4.8MB/s|67%|Openai
-      - 🇭🇰香港17|⬇️2.3MB/s|Netflix|Disney|Openai
-      - 🇺🇸美国2|⬇️5.4MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西4|⬇️16.6MB/s|0%|Netflix|Disney|Openai
-      - 🇨🇦加拿大5|⬇️4.4MB/s|68%|Youtube|Openai
-      - 🇩🇪德国14|⬇️2.1MB/s|52%|Netflix|Disney|Openai
-      - 🇰🇷韩国2|⬇️3.7MB/s|65%|Netflix|Disney
-      - 🇯🇵日本15|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国35|⬇️3.2MB/s|65%|Netflix|Disney|Openai
-      - 🇺🇸美国23|⬇️1.8MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国18|⬇️5.0MB/s|0%|Netflix|Disney|Openai
-      - 🇭🇰香港5|⬇️12.9MB/s|0%|Netflix|Disney|Openai
-      - 🇧🇷巴西1|⬇️1.1MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国64|⬇️3.4MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国79|⬇️22.2MB/s|39%|Netflix|Disney|Openai
-      - 🇦🇺澳大利亚4|⬇️1.9MB/s|0%|Netflix|Disney|Openai
-      - 🇯🇵日本10|⬇️1.6MB/s|0%|Netflix|Disney|Openai
-      - 🇺🇸美国61|⬇️2.0MB/s|0%|Netflix|Disney|Openai
-      - 🇫🇮芬兰4|⬇️1.4MB/s|0%|Netflix|Disney|Openai
-      - 🌀其他22-TH|⬇️4.3MB/s|0%|Netflix|Youtube|Openai
-      - 🇯🇵日本11|⬇️2.7MB/s|0%|Netflix|Openai
-      - 🇺🇸美国55|⬇️1.0MB/s|67%|Openai
-      - 🇫🇮芬兰9|⬇️1.2MB/s|0%|Netflix|Openai
-      - 🇧🇷巴西2|⬇️6.3MB/s|65%|Youtube|Openai
-      - 🇩🇪德国13|⬇️7.7MB/s|26%|Youtube
-      - 🇯🇵日本13|⬇️5.5MB/s|39%|Disney|Youtube|Openai
-      - 🇬🇧英国6|⬇️2.2MB/s|49%|Netflix|Disney|Openai
+      - 【看视频】台湾1-无限流量
+      - 【看视频】台湾5-无限流量
+      - 【看视频】台湾6-无限流量
+      - 🇭🇰中继香港011【请勿用来看视频】
+      - 🇭🇰中继香港021【请勿用来看视频】
+      - 🇭🇰IEPL香港033【请勿用来看视频】
+      - 🇭🇰中继香港041【请勿用来看视频】
+      - 🇭🇰中继香港051【请勿用来看视频】
+      - 🇭🇰中继香港061【请勿用来看视频】
+      - 🇭🇰IEPL香港073【请勿用来看视频】
+      - 🇭🇰中继香港081【请勿用来看视频】
+      - 🇭🇰中继香港091【请勿用来看视频】
+      - 🇭🇰中继香港101【请勿用来看视频】
+      - 🇭🇰中继香港111【请勿用来看视频】
+      - 🇭🇰中继香港121【请勿用来看视频】
+      - 🇭🇰中继香港131【请勿用来看视频】
+      - 🇭🇰中继香港141【请勿用来看视频】
+      - 🇭🇰中继香港151【请勿用来看视频】
+      - 🇯🇵IEPL日本013【请勿用来看视频】
+      - 🇯🇵中继日本021【请勿用来看视频】
+      - 🇯🇵中继日本031【请勿用来看视频】
+      - 🇯🇵中继日本041【请勿用来看视频】
+      - 🇯🇵中继日本051【请勿用来看视频】
+      - 🇯🇵中继日本061【请勿用来看视频】
+      - 🇯🇵中继日本071【请勿用来看视频】
+      - 🇯🇵IEPL日本083【请勿用来看视频】
+      - 🇸🇬IEPL｜新加坡013【请勿用来看视频】
+      - 🇸🇬中继｜新加坡021【请勿用来看视频】
+      - 🇸🇬中继｜新加坡031【请勿用来看视频】
+      - 🇸🇬中继｜新加坡041【请勿用来看视频】
+      - 🇸🇬中继｜新加坡051【请勿用来看视频】
+      - 🇸🇬中继｜新加坡061【请勿用来看视频】
+      - 🇸🇬IEPL｜新加坡073【请勿用来看视频】
+      - 🇸🇬中继｜新加坡081【请勿用来看视频】
+      - 🇸🇬中继｜新加坡091【请勿用来看视频】
+      - 🇸🇬中继｜新加坡101【请勿用来看视频】
+      - 🇺🇸IEPL美国013【请勿用来看视频】
+      - 🇺🇸IEPL美国023【请勿用来看视频】
+      - 🇺🇸中继美国031【请勿用来看视频】
+      - 🇺🇸中继美国041【请勿用来看视频】
+      - 🇺🇸中继美国051【请勿用来看视频】
+      - 🇺🇸中继美国061【请勿用来看视频】
+      - 🇹🇼IEPL台湾013【请勿用来看视频】
+      - 🇹🇼中继台湾021【请勿用来看视频】
+      - 🇹🇼中继台湾031【请勿用来看视频】
+      - 🇻🇳中继越南｜原生1【请勿用来看视频】
+      - 🇲🇾马来西亚【请勿用来看视频】
+      - 🇵🇭菲律宾【请勿用来看视频】
+      - 🇦🇷阿根廷【请勿用来看视频】
+      - 🇰🇭柬埔寨【请勿用来看视频】
+      - 🇷🇺俄罗斯【请勿用来看视频】
+      - 🇰🇷韩国1【请勿用来看视频】
+      - 🇰🇷韩国2【请勿用来看视频】
+      - 🇩🇪德国【请勿用来看视频】
+      - 🇨🇦加拿大【请勿用来看视频】
+      - 🇹🇷土耳其【请勿用来看视频】
+      - 🇮🇳印度【请勿用来看视频】
+      - 🇮🇪爱尔兰【请勿用来看视频】
+      - 🇬🇧英国【请勿用来看视频】
+      - 【看视频】-gouyunHK1T流量
+      - 🇭🇰香港-01【通用】
+      - 🇸🇬新加坡【通用】
+      - 🇯🇵日本【【通用】
+      - 🇮🇩英国【通用】
+      - 🇰🇷韩国【通用】
+      - 🇲🇾马来西亚【通用】
+      - 🇮🇳印度【通用】
+      - 🇻🇳越南【通用】
+      - 🇺🇸美国【通用】
+      - 🇫🇷法国【通用】
+      - 🇨🇦加拿大【通用】
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
   - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
