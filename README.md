@@ -1,19 +1,18 @@
 mixed-port: 7890
 allow-lan: true
-bind-address: '*'
-mode: rule
+mode: Rule
 log-level: info
-external-controller: '127.0.0.1:9090'
+external-controller: 0.0.0.0:9090
 dns:
-    enable: true
-    ipv6: false
-    default-nameserver: [223.5.5.5, 119.29.29.29]
-    enhanced-mode: fake-ip
-    fake-ip-range: 198.18.0.1/16
-    use-hosts: true
-    nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
-    fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://8.8.4.4:853']
-    fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
+  enabled: true
+  nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+  fallback:
+    - 8.8.8.8
+    - 8.8.4.4
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
 proxies:
   - {"type":"ss","name":"🇭🇰【看视频】香港-04","server":"120.232.16.51","port":50203,"cipher":null}
   - {"type":"ss","name":"🇭🇰【看视频】香港-02","server":"120.232.91.69","port":50201,"cipher":null}
