@@ -1,50 +1,19 @@
 mixed-port: 7890
-allow-lan: false
+allow-lan: true
+bind-address: '*'
 mode: rule
-ipv6: false
 log-level: info
-external-controller: 0.0.0.0:9090
+external-controller: '127.0.0.1:9090'
 dns:
-  enable: true
-  listen: 0.0.0.0:53
-  ipv6: true
-  default-nameserver:
-    - 223.5.5.5
-    - 114.114.114.114
-  nameserver:
-    - 223.5.5.5
-    - 114.114.114.114
-    - 119.29.29.29
-    - 180.76.76.76
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  fake-ip-filter:
-    - "*.lan"
-    - "*.localdomain"
-    - "*.example"
-    - "*.invalid"
-    - "*.localhost"
-    - "*.test"
-    - "*.local"
-    - "*.home.arpa"
-    - router.asus.com
-    - localhost.sec.qq.com
-    - localhost.ptlogin2.qq.com
-    - +.msftconnecttest.com
-tun:
-  enable: true
-  stack: system
-  auto-route: true
-  auto-detect-interface: true
-  dns-hijack:
-    - 114.114.114.114
-    - 180.76.76.76
-    - 119.29.29.29
-    - 223.5.5.5
-    - 8.8.8.8
-    - 8.8.4.4
-    - 1.1.1.1
-    - 1.0.0.1
+    enable: true
+    ipv6: false
+    default-nameserver: [223.5.5.5, 119.29.29.29]
+    enhanced-mode: fake-ip
+    fake-ip-range: 198.18.0.1/16
+    use-hosts: true
+    nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
+    fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://8.8.4.4:853']
+    fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
 proxies:
   - {"type":"ss","name":"🇭🇰【看视频】香港-04","server":"120.232.16.51","port":50203,"cipher":null}
   - {"type":"ss","name":"🇭🇰【看视频】香港-02","server":"120.232.91.69","port":50201,"cipher":null}
@@ -159,119 +128,6 @@ proxies:
   - {"type":"ss","name":"🇫🇷法国1【勿看视频】","server":"120.232.91.69","port":50242,"cipher":null}
   - {"type":"ss","name":"🇦🇪迪拜1【勿看视频】","server":"120.232.16.51","port":53902,"cipher":null}
   - {"type":"ss","name":"🇹🇭泰国1【勿看视频】","server":"120.232.16.51","port":53899,"cipher":null}
-  - {"type":"ss","name":"🇭🇰【看视频】香港-04-clone","server":"120.232.16.51","port":50203,"cipher":null}
-  - {"type":"ss","name":"🇭🇰【看视频】香港-02-clone","server":"120.232.91.69","port":50201,"cipher":null}
-  - {"type":"ss","name":"🇯🇵【看视频】日本-01-clone","server":"120.232.217.27","port":50210,"cipher":null}
-  - {"type":"ss","name":"🇺🇸【看视频】美国-05-clone","server":"120.232.91.69","port":50232,"cipher":null}
-  - {"type":"ss","name":"🇭🇰【看视频】香港-16-clone","server":"120.232.16.51","port":50255,"cipher":null}
-  - {"type":"ss","name":"🇭🇰【看视频】香港-10-clone","server":"120.232.91.69","port":50209,"cipher":null}
-  - {"type":"ss","name":"🇭🇰【看视频】香港-08-clone","server":"120.232.16.51","port":50207,"cipher":null}
-  - {"type":"ss","name":"🇸🇬【看视频】新加坡-09-clone","server":"120.232.91.69","port":50226,"cipher":null}
-  - {"type":"ss","name":"🇸🇬【看视频】新加坡-03-clone","server":"120.232.16.51","port":50220,"cipher":null}
-  - {"type":"ss","name":"🇭🇰【看视频】香港-05-clone","server":"120.232.91.69","port":50204,"cipher":null}
-  - {"type":"ss","name":"🇭🇰【看视频】香港-15-clone","server":"120.232.16.51","port":50254,"cipher":null}
-  - {"type":"ss","name":"🇭🇰【看视频】香港-01-clone","server":"120.232.91.69","port":50200,"cipher":null}
-  - {"type":"ss","name":"🇸🇬【看视频】新加坡-02-clone","server":"120.232.16.51","port":50219,"cipher":null}
-  - {"type":"ss","name":"🇸🇬【看视频】新加坡-07-clone","server":"120.232.16.51","port":50224,"cipher":null}
-  - {"type":"ss","name":"🇺🇸【看视频】美国-04-clone","server":"120.232.16.51","port":50231,"cipher":null}
-  - {"type":"ss","name":"🇸🇬【看视频】新加坡-05-clone","server":"120.232.16.51","port":50222,"cipher":null}
-  - {"type":"ss","name":"🇭🇰【看视频】香港-06-clone","server":"120.232.16.51","port":50205,"cipher":null}
-  - {"type":"ss","name":"🇮🇳【看视频】印度-clone","server":"120.232.91.69","port":50237,"cipher":null}
-  - {"type":"ss","name":"🇭🇰【看视频】香港-13-clone","server":"120.232.91.69","port":50252,"cipher":null}
-  - {"type":"ss","name":"🇸🇬【看视频】新加坡-06-clone","server":"120.232.91.69","port":50223,"cipher":null}
-  - {"type":"ss","name":"🇯🇵【看视频】日本-06-clone","server":"120.232.16.51","port":50215,"cipher":null}
-  - {"type":"ss","name":"🇹🇼【看视频】台湾1-clone","server":"120.232.217.27","port":50234,"cipher":null}
-  - {"type":"ss","name":"🇯🇵【看视频】日本-04-clone","server":"120.232.16.51","port":50213,"cipher":null}
-  - {"type":"ss","name":"🇸🇬【看视频】新加坡-10-clone","server":"120.232.16.51","port":50227,"cipher":null}
-  - {"type":"ss","name":"🇯🇵【看视频】日本-05-clone","server":"120.232.91.69","port":50214,"cipher":null}
-  - {"type":"ss","name":"🇯🇵【看视频】日本-07-clone","server":"120.232.16.51","port":50216,"cipher":null}
-  - {"type":"ss","name":"🇸🇬【看视频】新加坡-08-clone","server":"120.232.91.69","port":50225,"cipher":null}
-  - {"type":"ss","name":"🇹🇼【看视频】台湾2-clone_1","server":"120.232.16.51","port":50235,"cipher":null}
-  - {"type":"ss","name":"🇭🇰【看视频】香港-14-clone","server":"120.232.91.69","port":50253,"cipher":null}
-  - {"type":"ss","name":"🇭🇰【看视频】香港-11-clone","server":"120.232.91.69","port":58456,"cipher":null}
-  - {"type":"ss","name":"🇯🇵【看视频】日本-08-clone","server":"120.232.91.69","port":50217,"cipher":null}
-  - {"type":"ss","name":"🇯🇵【看视频】日本-03-clone","server":"120.232.16.51","port":50212,"cipher":null}
-  - {"type":"ss","name":"🇭🇰【看视频】香港-07-clone","server":"120.232.91.69","port":50206,"cipher":null}
-  - {"type":"ss","name":"🇸🇬【看视频】新加坡-01-clone","server":"120.232.217.27","port":50218,"cipher":null}
-  - {"type":"ss","name":"🇯🇵【看视频】日本-02-clone","server":"120.232.16.51","port":50211,"cipher":null}
-  - {"type":"ss","name":"🇨🇦【看视频】加拿大-clone","server":"120.232.91.69","port":50236,"cipher":null}
-  - {"type":"ss","name":"🇻🇳【看视频】越南-clone","server":"120.232.16.51","port":50233,"cipher":null}
-  - {"type":"ss","name":"🇭🇰【看视频】香港-09-clone","server":"120.232.91.69","port":50208,"cipher":null}
-  - {"type":"ss","name":"🇮🇩【看视频】英国-clone","server":"120.232.16.51","port":50238,"cipher":null}
-  - {"type":"ss","name":"🇸🇬【看视频】新加坡-04-clone","server":"120.232.16.51","port":50221,"cipher":null}
-  - {"type":"ss","name":"🇲🇾【看视频】马来西亚-clone","server":"120.232.91.69","port":53898,"cipher":null}
-  - {"type":"vmess","name":"🇺🇸【看视频】美国24-clone","ws-opts":{"path":"/oooo","headers":{"host":"v8.heduian.link"}},"server":"v8.heduian.link","port":"30808","uuid":"cbb3f877-d1fb-344c-87a9-d153bffd5484","alterId":"2","cipher":"auto","network":"ws"}
-  - {"type":"trojan","name":"🇯🇵【看视频】日本2-clone","server":"sla.cn.964e995b760.gogodns.xin","port":22269,"password":"e7cdfda4-dbd1-4a46-8858-5b7c89e72a3c","udp":true,"skip-cert-verify":true,"sni":"q08m.vgraxiw73s.hasyaf.cn","network":"tcp"}
-  - {"type":"trojan","name":"🇯🇵【看视频】日本4-clone","server":"aafrtpfxr.jpl01i9zjfegelp.5xfsur8v62.gosdk.xyz","port":27001,"password":"3ba8cc9b-f30c-426b-84a8-878f02ae895d","udp":true,"skip-cert-verify":true,"sni":"q08m.vgraxiw73s.hasyaf.cn","network":"tcp"}
-  - {"type":"vless","name":"🇹🇼【看视频】台湾2-clone_2","server":"gysz0000.dynu.net","port":15823,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.yahoo.com","tls":false,"udp":true}
-  - {"type":"vmess","name":"🇭🇰【看视频】香港20-clone","server":"183.236.51.38","port":"32919","uuid":"418048af-a293-4b99-9b0c-98ca3580dd24","alterId":"64","cipher":"auto","network":"tcp"}
-  - {"type":"vmess","name":"🇳🇱【看视频】荷兰4-clone","server":"0:0:0:0:0:ffff:9df5:4c61","port":"2095","uuid":"6ba15edd-efc5-426b-baf7-70b9c6607e26","alterId":"0","cipher":"auto","network":"tcp"}
-  - {"type":"ss","name":"🇭🇰【看视频】香港4-clone","server":"xm.miloli.cc","port":39226,"cipher":null}
-  - {"type":"vless","name":"🇸🇬【看视频】新加坡1-clone","server":"185.146.173.16","port":2052,"uuid":"4088e698-69fd-4d15-98bc-f1fe4c071642","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"digitalscientificresearchgroup.ir","ws-opts":{"path":"/tm-@azarbayjab1/?ed=2560","headers":{"host":"digitalscientificresearchgroup.ir"}}}
-  - {"type":"vless","name":"🇬🇧【看视频】英国1-clone","server":"beiyong.dynuddns.net","port":65053,"uuid":"459b4a80-bd61-4ecd-a26b-e9c1809d9e45","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"www.amazon.com","tls":false,"udp":true}
-  - {"type":"vless","name":"【看视频】-gouyunHK1T流量-clone","server":"206.237.7.142","port":443,"uuid":"fc8f2b62-6e38-4943-b4c3-24997ff3f6ba","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"itunes.apple.com","tls":false,"udp":true}
-  - {"type":"vless","name":"【看视频】台湾5-无限流量-clone","server":"www.visa.com.br","port":2087,"uuid":"e94b7e06-1934-4f0e-89ad-1f516e532590","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"a.bumilu.zone.id","ws-opts":{"path":"/?ed=2560","headers":{"host":"a.bumilu.zone.id"}}}
-  - {"type":"vless","name":"【看视频】台湾6-无限流量-clone","server":"www.visasoutheasteurope.com","port":2096,"uuid":"e94b7e06-1934-4f0e-89ad-1f516e532590","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"a.bumilu.zone.id","ws-opts":{"path":"/?ed=2560","headers":{"host":"a.bumilu.zone.id"}}}
-  - {"type":"vless","name":"【看视频】台湾1-无限流量-clone","server":"usa.visa.com","port":443,"uuid":"e94b7e06-1934-4f0e-89ad-1f516e532590","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"a.bumilu.zone.id","ws-opts":{"path":"/?ed=2560","headers":{"host":"a.bumilu.zone.id"}}}
-  - {"type":"ss","name":"🇭🇰中继香港011【勿看视频】-clone","server":"120.232.91.69","port":50200,"cipher":null}
-  - {"type":"ss","name":"🇭🇰中继香港021【勿看视频】-clone","server":"120.232.16.51","port":50201,"cipher":null}
-  - {"type":"ss","name":"🇭🇰IEPL香港033【勿看视频】-clone","server":"120.232.217.27","port":50202,"cipher":null}
-  - {"type":"ss","name":"🇭🇰中继香港041【勿看视频】-clone","server":"120.232.16.51","port":50203,"cipher":null}
-  - {"type":"ss","name":"🇭🇰中继香港051【勿看视频】-clone","server":"120.232.91.69","port":50204,"cipher":null}
-  - {"type":"ss","name":"🇭🇰中继香港061【勿看视频】-clone","server":"120.232.16.51","port":50205,"cipher":null}
-  - {"type":"ss","name":"🇭🇰中继香港071【勿看视频】-clone","server":"120.232.16.51","port":50206,"cipher":null}
-  - {"type":"ss","name":"🇭🇰中继香港081【勿看视频】-clone","server":"120.232.16.51","port":50207,"cipher":null}
-  - {"type":"ss","name":"🇭🇰中继香港091【勿看视频】-clone","server":"120.232.16.51","port":50208,"cipher":null}
-  - {"type":"ss","name":"🇭🇰中继香港101【勿看视频】-clone","server":"120.232.91.69","port":50209,"cipher":null}
-  - {"type":"ss","name":"🇭🇰中继香港111【勿看视频】-clone","server":"120.232.91.69","port":58456,"cipher":null}
-  - {"type":"ss","name":"🇭🇰中继香港121【勿看视频】-clone","server":"120.232.91.69","port":50252,"cipher":null}
-  - {"type":"ss","name":"🇭🇰中继香港131【勿看视频】-clone","server":"120.232.91.69","port":50253,"cipher":null}
-  - {"type":"ss","name":"🇭🇰中继香港141【勿看视频】-clone","server":"120.232.16.51","port":50254,"cipher":null}
-  - {"type":"ss","name":"🇭🇰中继香港151【勿看视频】-clone","server":"120.232.16.51","port":50255,"cipher":null}
-  - {"type":"ss","name":"🇯🇵IEPL日本013【勿看视频】-clone","server":"120.232.217.27","port":50210,"cipher":null}
-  - {"type":"ss","name":"🇯🇵中继日本021【勿看视频】-clone","server":"120.232.16.51","port":50211,"cipher":null}
-  - {"type":"ss","name":"🇯🇵中继日本031【勿看视频】-clone","server":"120.232.16.51","port":50212,"cipher":null}
-  - {"type":"ss","name":"🇯🇵中继日本041【勿看视频】-clone","server":"120.232.91.69","port":50213,"cipher":null}
-  - {"type":"ss","name":"🇯🇵中继日本051【勿看视频】-clone","server":"120.232.16.51","port":50214,"cipher":null}
-  - {"type":"ss","name":"🇯🇵中继日本061【勿看视频】-clone","server":"120.232.16.51","port":50215,"cipher":null}
-  - {"type":"ss","name":"🇯🇵中继日本071【勿看视频】-clone","server":"120.232.16.51","port":50216,"cipher":null}
-  - {"type":"ss","name":"🇯🇵中继日本081【勿看视频】-clone","server":"120.232.16.51","port":50217,"cipher":null}
-  - {"type":"ss","name":"🇸🇬IEPL｜新加坡013【勿看视频】-clone","server":"120.232.217.27","port":50218,"cipher":null}
-  - {"type":"ss","name":"🇸🇬中继｜新加坡021【勿看视频】-clone","server":"120.232.91.69","port":50219,"cipher":null}
-  - {"type":"ss","name":"🇸🇬中继｜新加坡031【勿看视频】-clone","server":"120.232.91.69","port":50220,"cipher":null}
-  - {"type":"ss","name":"🇸🇬中继｜新加坡041【勿看视频】-clone","server":"120.232.91.69","port":50221,"cipher":null}
-  - {"type":"ss","name":"🇸🇬中继｜新加坡051【勿看视频】-clone","server":"120.232.91.69","port":50222,"cipher":null}
-  - {"type":"ss","name":"🇸🇬中继｜新加坡061【勿看视频】-clone","server":"120.232.91.69","port":50223,"cipher":null}
-  - {"type":"ss","name":"🇸🇬中继｜新加坡071【勿看视频】-clone","server":"120.232.16.51","port":50224,"cipher":null}
-  - {"type":"ss","name":"🇸🇬中继｜新加坡081【勿看视频】-clone","server":"120.232.16.51","port":50225,"cipher":null}
-  - {"type":"ss","name":"🇸🇬中继｜新加坡091【勿看视频】-clone","server":"120.232.91.69","port":50226,"cipher":null}
-  - {"type":"ss","name":"🇸🇬中继｜新加坡101【勿看视频】-clone","server":"120.232.16.51","port":50227,"cipher":null}
-  - {"type":"ss","name":"🇺🇸IEPL美国013【勿看视频】-clone","server":"120.232.217.27","port":50229,"cipher":null}
-  - {"type":"ss","name":"🇺🇸中继美国021【勿看视频】-clone","server":"120.232.91.69","port":50231,"cipher":null}
-  - {"type":"ss","name":"🇺🇸中继美国031【勿看视频】-clone","server":"120.232.16.51","port":50232,"cipher":null}
-  - {"type":"ss","name":"🇺🇸中继美国041【勿看视频】-clone","server":"120.232.16.51","port":50666,"cipher":null}
-  - {"type":"ss","name":"🇺🇸中继美国051【勿看视频】-clone","server":"120.232.16.51","port":50669,"cipher":null}
-  - {"type":"ss","name":"🇺🇸中继美国061【勿看视频】-clone","server":"120.232.16.51","port":50670,"cipher":null}
-  - {"type":"ss","name":"🇹🇼IEPL台湾013【勿看视频】-clone","server":"120.232.217.27","port":50234,"cipher":null}
-  - {"type":"ss","name":"🇹🇼中继台湾021【勿看视频】-clone","server":"120.232.91.69","port":50235,"cipher":null}
-  - {"type":"ss","name":"🇹🇼中继台湾031【勿看视频】-clone","server":"120.232.16.51","port":50757,"cipher":null}
-  - {"type":"ss","name":"🇻🇳中继越南｜原生1【勿看视频】-clone","server":"120.232.91.69","port":50233,"cipher":null}
-  - {"type":"ss","name":"🇲🇾马来西亚1【勿看视频】-clone","server":"120.232.91.69","port":53898,"cipher":null}
-  - {"type":"ss","name":"🇵🇭菲律宾1【勿看视频】-clone","server":"120.232.16.51","port":50731,"cipher":null}
-  - {"type":"ss","name":"🇦🇷阿根廷1【勿看视频】-clone","server":"120.232.91.69","port":50732,"cipher":null}
-  - {"type":"ss","name":"🇰🇭柬埔寨1【勿看视频】-clone","server":"120.232.91.69","port":50733,"cipher":null}
-  - {"type":"ss","name":"🇷🇺俄罗斯1【勿看视频】-clone","server":"120.232.16.51","port":50734,"cipher":null}
-  - {"type":"ss","name":"🇰🇷韩国1【勿看视频】-clone","server":"120.232.91.69","port":50246,"cipher":null}
-  - {"type":"ss","name":"🇩🇪德国1【勿看视频】-clone","server":"120.232.91.69","port":53900,"cipher":null}
-  - {"type":"ss","name":"🇨🇦加拿大1【勿看视频】-clone","server":"120.232.16.51","port":50236,"cipher":null}
-  - {"type":"ss","name":"🇮🇩印度尼西亚1【勿看视频】-clone","server":"120.232.91.69","port":50238,"cipher":null}
-  - {"type":"ss","name":"🇹🇷土耳其1【勿看视频】-clone","server":"120.232.16.51","port":53901,"cipher":null}
-  - {"type":"ss","name":"🇮🇳印度1【勿看视频】-clone","server":"120.232.91.69","port":50237,"cipher":null}
-  - {"type":"ss","name":"🇮🇪爱尔兰1【勿看视频】-clone","server":"120.232.16.51","port":50667,"cipher":null}
-  - {"type":"ss","name":"🇬🇧英国1【勿看视频】-clone","server":"120.232.16.51","port":53904,"cipher":null}
-  - {"type":"ss","name":"🇫🇷法国1【勿看视频】-clone","server":"120.232.91.69","port":50242,"cipher":null}
-  - {"type":"ss","name":"🇦🇪迪拜1【勿看视频】-clone","server":"120.232.16.51","port":53902,"cipher":null}
-  - {"type":"ss","name":"🇹🇭泰国1【勿看视频】-clone","server":"120.232.16.51","port":53899,"cipher":null}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -391,119 +247,6 @@ proxy-groups:
       - 🇫🇷法国1【勿看视频】
       - 🇦🇪迪拜1【勿看视频】
       - 🇹🇭泰国1【勿看视频】
-      - 🇭🇰【看视频】香港-04-clone
-      - 🇭🇰【看视频】香港-02-clone
-      - 🇯🇵【看视频】日本-01-clone
-      - 🇺🇸【看视频】美国-05-clone
-      - 🇭🇰【看视频】香港-16-clone
-      - 🇭🇰【看视频】香港-10-clone
-      - 🇭🇰【看视频】香港-08-clone
-      - 🇸🇬【看视频】新加坡-09-clone
-      - 🇸🇬【看视频】新加坡-03-clone
-      - 🇭🇰【看视频】香港-05-clone
-      - 🇭🇰【看视频】香港-15-clone
-      - 🇭🇰【看视频】香港-01-clone
-      - 🇸🇬【看视频】新加坡-02-clone
-      - 🇸🇬【看视频】新加坡-07-clone
-      - 🇺🇸【看视频】美国-04-clone
-      - 🇸🇬【看视频】新加坡-05-clone
-      - 🇭🇰【看视频】香港-06-clone
-      - 🇮🇳【看视频】印度-clone
-      - 🇭🇰【看视频】香港-13-clone
-      - 🇸🇬【看视频】新加坡-06-clone
-      - 🇯🇵【看视频】日本-06-clone
-      - 🇹🇼【看视频】台湾1-clone
-      - 🇯🇵【看视频】日本-04-clone
-      - 🇸🇬【看视频】新加坡-10-clone
-      - 🇯🇵【看视频】日本-05-clone
-      - 🇯🇵【看视频】日本-07-clone
-      - 🇸🇬【看视频】新加坡-08-clone
-      - 🇹🇼【看视频】台湾2-clone_1
-      - 🇭🇰【看视频】香港-14-clone
-      - 🇭🇰【看视频】香港-11-clone
-      - 🇯🇵【看视频】日本-08-clone
-      - 🇯🇵【看视频】日本-03-clone
-      - 🇭🇰【看视频】香港-07-clone
-      - 🇸🇬【看视频】新加坡-01-clone
-      - 🇯🇵【看视频】日本-02-clone
-      - 🇨🇦【看视频】加拿大-clone
-      - 🇻🇳【看视频】越南-clone
-      - 🇭🇰【看视频】香港-09-clone
-      - 🇮🇩【看视频】英国-clone
-      - 🇸🇬【看视频】新加坡-04-clone
-      - 🇲🇾【看视频】马来西亚-clone
-      - 🇺🇸【看视频】美国24-clone
-      - 🇯🇵【看视频】日本2-clone
-      - 🇯🇵【看视频】日本4-clone
-      - 🇹🇼【看视频】台湾2-clone_2
-      - 🇭🇰【看视频】香港20-clone
-      - 🇳🇱【看视频】荷兰4-clone
-      - 🇭🇰【看视频】香港4-clone
-      - 🇸🇬【看视频】新加坡1-clone
-      - 🇬🇧【看视频】英国1-clone
-      - 【看视频】-gouyunHK1T流量-clone
-      - 【看视频】台湾5-无限流量-clone
-      - 【看视频】台湾6-无限流量-clone
-      - 【看视频】台湾1-无限流量-clone
-      - 🇭🇰中继香港011【勿看视频】-clone
-      - 🇭🇰中继香港021【勿看视频】-clone
-      - 🇭🇰IEPL香港033【勿看视频】-clone
-      - 🇭🇰中继香港041【勿看视频】-clone
-      - 🇭🇰中继香港051【勿看视频】-clone
-      - 🇭🇰中继香港061【勿看视频】-clone
-      - 🇭🇰中继香港071【勿看视频】-clone
-      - 🇭🇰中继香港081【勿看视频】-clone
-      - 🇭🇰中继香港091【勿看视频】-clone
-      - 🇭🇰中继香港101【勿看视频】-clone
-      - 🇭🇰中继香港111【勿看视频】-clone
-      - 🇭🇰中继香港121【勿看视频】-clone
-      - 🇭🇰中继香港131【勿看视频】-clone
-      - 🇭🇰中继香港141【勿看视频】-clone
-      - 🇭🇰中继香港151【勿看视频】-clone
-      - 🇯🇵IEPL日本013【勿看视频】-clone
-      - 🇯🇵中继日本021【勿看视频】-clone
-      - 🇯🇵中继日本031【勿看视频】-clone
-      - 🇯🇵中继日本041【勿看视频】-clone
-      - 🇯🇵中继日本051【勿看视频】-clone
-      - 🇯🇵中继日本061【勿看视频】-clone
-      - 🇯🇵中继日本071【勿看视频】-clone
-      - 🇯🇵中继日本081【勿看视频】-clone
-      - 🇸🇬IEPL｜新加坡013【勿看视频】-clone
-      - 🇸🇬中继｜新加坡021【勿看视频】-clone
-      - 🇸🇬中继｜新加坡031【勿看视频】-clone
-      - 🇸🇬中继｜新加坡041【勿看视频】-clone
-      - 🇸🇬中继｜新加坡051【勿看视频】-clone
-      - 🇸🇬中继｜新加坡061【勿看视频】-clone
-      - 🇸🇬中继｜新加坡071【勿看视频】-clone
-      - 🇸🇬中继｜新加坡081【勿看视频】-clone
-      - 🇸🇬中继｜新加坡091【勿看视频】-clone
-      - 🇸🇬中继｜新加坡101【勿看视频】-clone
-      - 🇺🇸IEPL美国013【勿看视频】-clone
-      - 🇺🇸中继美国021【勿看视频】-clone
-      - 🇺🇸中继美国031【勿看视频】-clone
-      - 🇺🇸中继美国041【勿看视频】-clone
-      - 🇺🇸中继美国051【勿看视频】-clone
-      - 🇺🇸中继美国061【勿看视频】-clone
-      - 🇹🇼IEPL台湾013【勿看视频】-clone
-      - 🇹🇼中继台湾021【勿看视频】-clone
-      - 🇹🇼中继台湾031【勿看视频】-clone
-      - 🇻🇳中继越南｜原生1【勿看视频】-clone
-      - 🇲🇾马来西亚1【勿看视频】-clone
-      - 🇵🇭菲律宾1【勿看视频】-clone
-      - 🇦🇷阿根廷1【勿看视频】-clone
-      - 🇰🇭柬埔寨1【勿看视频】-clone
-      - 🇷🇺俄罗斯1【勿看视频】-clone
-      - 🇰🇷韩国1【勿看视频】-clone
-      - 🇩🇪德国1【勿看视频】-clone
-      - 🇨🇦加拿大1【勿看视频】-clone
-      - 🇮🇩印度尼西亚1【勿看视频】-clone
-      - 🇹🇷土耳其1【勿看视频】-clone
-      - 🇮🇳印度1【勿看视频】-clone
-      - 🇮🇪爱尔兰1【勿看视频】-clone
-      - 🇬🇧英国1【勿看视频】-clone
-      - 🇫🇷法国1【勿看视频】-clone
-      - 🇦🇪迪拜1【勿看视频】-clone
-      - 🇹🇭泰国1【勿看视频】-clone
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -623,119 +366,6 @@ proxy-groups:
       - 🇫🇷法国1【勿看视频】
       - 🇦🇪迪拜1【勿看视频】
       - 🇹🇭泰国1【勿看视频】
-      - 🇭🇰【看视频】香港-04-clone
-      - 🇭🇰【看视频】香港-02-clone
-      - 🇯🇵【看视频】日本-01-clone
-      - 🇺🇸【看视频】美国-05-clone
-      - 🇭🇰【看视频】香港-16-clone
-      - 🇭🇰【看视频】香港-10-clone
-      - 🇭🇰【看视频】香港-08-clone
-      - 🇸🇬【看视频】新加坡-09-clone
-      - 🇸🇬【看视频】新加坡-03-clone
-      - 🇭🇰【看视频】香港-05-clone
-      - 🇭🇰【看视频】香港-15-clone
-      - 🇭🇰【看视频】香港-01-clone
-      - 🇸🇬【看视频】新加坡-02-clone
-      - 🇸🇬【看视频】新加坡-07-clone
-      - 🇺🇸【看视频】美国-04-clone
-      - 🇸🇬【看视频】新加坡-05-clone
-      - 🇭🇰【看视频】香港-06-clone
-      - 🇮🇳【看视频】印度-clone
-      - 🇭🇰【看视频】香港-13-clone
-      - 🇸🇬【看视频】新加坡-06-clone
-      - 🇯🇵【看视频】日本-06-clone
-      - 🇹🇼【看视频】台湾1-clone
-      - 🇯🇵【看视频】日本-04-clone
-      - 🇸🇬【看视频】新加坡-10-clone
-      - 🇯🇵【看视频】日本-05-clone
-      - 🇯🇵【看视频】日本-07-clone
-      - 🇸🇬【看视频】新加坡-08-clone
-      - 🇹🇼【看视频】台湾2-clone_1
-      - 🇭🇰【看视频】香港-14-clone
-      - 🇭🇰【看视频】香港-11-clone
-      - 🇯🇵【看视频】日本-08-clone
-      - 🇯🇵【看视频】日本-03-clone
-      - 🇭🇰【看视频】香港-07-clone
-      - 🇸🇬【看视频】新加坡-01-clone
-      - 🇯🇵【看视频】日本-02-clone
-      - 🇨🇦【看视频】加拿大-clone
-      - 🇻🇳【看视频】越南-clone
-      - 🇭🇰【看视频】香港-09-clone
-      - 🇮🇩【看视频】英国-clone
-      - 🇸🇬【看视频】新加坡-04-clone
-      - 🇲🇾【看视频】马来西亚-clone
-      - 🇺🇸【看视频】美国24-clone
-      - 🇯🇵【看视频】日本2-clone
-      - 🇯🇵【看视频】日本4-clone
-      - 🇹🇼【看视频】台湾2-clone_2
-      - 🇭🇰【看视频】香港20-clone
-      - 🇳🇱【看视频】荷兰4-clone
-      - 🇭🇰【看视频】香港4-clone
-      - 🇸🇬【看视频】新加坡1-clone
-      - 🇬🇧【看视频】英国1-clone
-      - 【看视频】-gouyunHK1T流量-clone
-      - 【看视频】台湾5-无限流量-clone
-      - 【看视频】台湾6-无限流量-clone
-      - 【看视频】台湾1-无限流量-clone
-      - 🇭🇰中继香港011【勿看视频】-clone
-      - 🇭🇰中继香港021【勿看视频】-clone
-      - 🇭🇰IEPL香港033【勿看视频】-clone
-      - 🇭🇰中继香港041【勿看视频】-clone
-      - 🇭🇰中继香港051【勿看视频】-clone
-      - 🇭🇰中继香港061【勿看视频】-clone
-      - 🇭🇰中继香港071【勿看视频】-clone
-      - 🇭🇰中继香港081【勿看视频】-clone
-      - 🇭🇰中继香港091【勿看视频】-clone
-      - 🇭🇰中继香港101【勿看视频】-clone
-      - 🇭🇰中继香港111【勿看视频】-clone
-      - 🇭🇰中继香港121【勿看视频】-clone
-      - 🇭🇰中继香港131【勿看视频】-clone
-      - 🇭🇰中继香港141【勿看视频】-clone
-      - 🇭🇰中继香港151【勿看视频】-clone
-      - 🇯🇵IEPL日本013【勿看视频】-clone
-      - 🇯🇵中继日本021【勿看视频】-clone
-      - 🇯🇵中继日本031【勿看视频】-clone
-      - 🇯🇵中继日本041【勿看视频】-clone
-      - 🇯🇵中继日本051【勿看视频】-clone
-      - 🇯🇵中继日本061【勿看视频】-clone
-      - 🇯🇵中继日本071【勿看视频】-clone
-      - 🇯🇵中继日本081【勿看视频】-clone
-      - 🇸🇬IEPL｜新加坡013【勿看视频】-clone
-      - 🇸🇬中继｜新加坡021【勿看视频】-clone
-      - 🇸🇬中继｜新加坡031【勿看视频】-clone
-      - 🇸🇬中继｜新加坡041【勿看视频】-clone
-      - 🇸🇬中继｜新加坡051【勿看视频】-clone
-      - 🇸🇬中继｜新加坡061【勿看视频】-clone
-      - 🇸🇬中继｜新加坡071【勿看视频】-clone
-      - 🇸🇬中继｜新加坡081【勿看视频】-clone
-      - 🇸🇬中继｜新加坡091【勿看视频】-clone
-      - 🇸🇬中继｜新加坡101【勿看视频】-clone
-      - 🇺🇸IEPL美国013【勿看视频】-clone
-      - 🇺🇸中继美国021【勿看视频】-clone
-      - 🇺🇸中继美国031【勿看视频】-clone
-      - 🇺🇸中继美国041【勿看视频】-clone
-      - 🇺🇸中继美国051【勿看视频】-clone
-      - 🇺🇸中继美国061【勿看视频】-clone
-      - 🇹🇼IEPL台湾013【勿看视频】-clone
-      - 🇹🇼中继台湾021【勿看视频】-clone
-      - 🇹🇼中继台湾031【勿看视频】-clone
-      - 🇻🇳中继越南｜原生1【勿看视频】-clone
-      - 🇲🇾马来西亚1【勿看视频】-clone
-      - 🇵🇭菲律宾1【勿看视频】-clone
-      - 🇦🇷阿根廷1【勿看视频】-clone
-      - 🇰🇭柬埔寨1【勿看视频】-clone
-      - 🇷🇺俄罗斯1【勿看视频】-clone
-      - 🇰🇷韩国1【勿看视频】-clone
-      - 🇩🇪德国1【勿看视频】-clone
-      - 🇨🇦加拿大1【勿看视频】-clone
-      - 🇮🇩印度尼西亚1【勿看视频】-clone
-      - 🇹🇷土耳其1【勿看视频】-clone
-      - 🇮🇳印度1【勿看视频】-clone
-      - 🇮🇪爱尔兰1【勿看视频】-clone
-      - 🇬🇧英国1【勿看视频】-clone
-      - 🇫🇷法国1【勿看视频】-clone
-      - 🇦🇪迪拜1【勿看视频】-clone
-      - 🇹🇭泰国1【勿看视频】-clone
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -855,119 +485,6 @@ proxy-groups:
       - 🇫🇷法国1【勿看视频】
       - 🇦🇪迪拜1【勿看视频】
       - 🇹🇭泰国1【勿看视频】
-      - 🇭🇰【看视频】香港-04-clone
-      - 🇭🇰【看视频】香港-02-clone
-      - 🇯🇵【看视频】日本-01-clone
-      - 🇺🇸【看视频】美国-05-clone
-      - 🇭🇰【看视频】香港-16-clone
-      - 🇭🇰【看视频】香港-10-clone
-      - 🇭🇰【看视频】香港-08-clone
-      - 🇸🇬【看视频】新加坡-09-clone
-      - 🇸🇬【看视频】新加坡-03-clone
-      - 🇭🇰【看视频】香港-05-clone
-      - 🇭🇰【看视频】香港-15-clone
-      - 🇭🇰【看视频】香港-01-clone
-      - 🇸🇬【看视频】新加坡-02-clone
-      - 🇸🇬【看视频】新加坡-07-clone
-      - 🇺🇸【看视频】美国-04-clone
-      - 🇸🇬【看视频】新加坡-05-clone
-      - 🇭🇰【看视频】香港-06-clone
-      - 🇮🇳【看视频】印度-clone
-      - 🇭🇰【看视频】香港-13-clone
-      - 🇸🇬【看视频】新加坡-06-clone
-      - 🇯🇵【看视频】日本-06-clone
-      - 🇹🇼【看视频】台湾1-clone
-      - 🇯🇵【看视频】日本-04-clone
-      - 🇸🇬【看视频】新加坡-10-clone
-      - 🇯🇵【看视频】日本-05-clone
-      - 🇯🇵【看视频】日本-07-clone
-      - 🇸🇬【看视频】新加坡-08-clone
-      - 🇹🇼【看视频】台湾2-clone_1
-      - 🇭🇰【看视频】香港-14-clone
-      - 🇭🇰【看视频】香港-11-clone
-      - 🇯🇵【看视频】日本-08-clone
-      - 🇯🇵【看视频】日本-03-clone
-      - 🇭🇰【看视频】香港-07-clone
-      - 🇸🇬【看视频】新加坡-01-clone
-      - 🇯🇵【看视频】日本-02-clone
-      - 🇨🇦【看视频】加拿大-clone
-      - 🇻🇳【看视频】越南-clone
-      - 🇭🇰【看视频】香港-09-clone
-      - 🇮🇩【看视频】英国-clone
-      - 🇸🇬【看视频】新加坡-04-clone
-      - 🇲🇾【看视频】马来西亚-clone
-      - 🇺🇸【看视频】美国24-clone
-      - 🇯🇵【看视频】日本2-clone
-      - 🇯🇵【看视频】日本4-clone
-      - 🇹🇼【看视频】台湾2-clone_2
-      - 🇭🇰【看视频】香港20-clone
-      - 🇳🇱【看视频】荷兰4-clone
-      - 🇭🇰【看视频】香港4-clone
-      - 🇸🇬【看视频】新加坡1-clone
-      - 🇬🇧【看视频】英国1-clone
-      - 【看视频】-gouyunHK1T流量-clone
-      - 【看视频】台湾5-无限流量-clone
-      - 【看视频】台湾6-无限流量-clone
-      - 【看视频】台湾1-无限流量-clone
-      - 🇭🇰中继香港011【勿看视频】-clone
-      - 🇭🇰中继香港021【勿看视频】-clone
-      - 🇭🇰IEPL香港033【勿看视频】-clone
-      - 🇭🇰中继香港041【勿看视频】-clone
-      - 🇭🇰中继香港051【勿看视频】-clone
-      - 🇭🇰中继香港061【勿看视频】-clone
-      - 🇭🇰中继香港071【勿看视频】-clone
-      - 🇭🇰中继香港081【勿看视频】-clone
-      - 🇭🇰中继香港091【勿看视频】-clone
-      - 🇭🇰中继香港101【勿看视频】-clone
-      - 🇭🇰中继香港111【勿看视频】-clone
-      - 🇭🇰中继香港121【勿看视频】-clone
-      - 🇭🇰中继香港131【勿看视频】-clone
-      - 🇭🇰中继香港141【勿看视频】-clone
-      - 🇭🇰中继香港151【勿看视频】-clone
-      - 🇯🇵IEPL日本013【勿看视频】-clone
-      - 🇯🇵中继日本021【勿看视频】-clone
-      - 🇯🇵中继日本031【勿看视频】-clone
-      - 🇯🇵中继日本041【勿看视频】-clone
-      - 🇯🇵中继日本051【勿看视频】-clone
-      - 🇯🇵中继日本061【勿看视频】-clone
-      - 🇯🇵中继日本071【勿看视频】-clone
-      - 🇯🇵中继日本081【勿看视频】-clone
-      - 🇸🇬IEPL｜新加坡013【勿看视频】-clone
-      - 🇸🇬中继｜新加坡021【勿看视频】-clone
-      - 🇸🇬中继｜新加坡031【勿看视频】-clone
-      - 🇸🇬中继｜新加坡041【勿看视频】-clone
-      - 🇸🇬中继｜新加坡051【勿看视频】-clone
-      - 🇸🇬中继｜新加坡061【勿看视频】-clone
-      - 🇸🇬中继｜新加坡071【勿看视频】-clone
-      - 🇸🇬中继｜新加坡081【勿看视频】-clone
-      - 🇸🇬中继｜新加坡091【勿看视频】-clone
-      - 🇸🇬中继｜新加坡101【勿看视频】-clone
-      - 🇺🇸IEPL美国013【勿看视频】-clone
-      - 🇺🇸中继美国021【勿看视频】-clone
-      - 🇺🇸中继美国031【勿看视频】-clone
-      - 🇺🇸中继美国041【勿看视频】-clone
-      - 🇺🇸中继美国051【勿看视频】-clone
-      - 🇺🇸中继美国061【勿看视频】-clone
-      - 🇹🇼IEPL台湾013【勿看视频】-clone
-      - 🇹🇼中继台湾021【勿看视频】-clone
-      - 🇹🇼中继台湾031【勿看视频】-clone
-      - 🇻🇳中继越南｜原生1【勿看视频】-clone
-      - 🇲🇾马来西亚1【勿看视频】-clone
-      - 🇵🇭菲律宾1【勿看视频】-clone
-      - 🇦🇷阿根廷1【勿看视频】-clone
-      - 🇰🇭柬埔寨1【勿看视频】-clone
-      - 🇷🇺俄罗斯1【勿看视频】-clone
-      - 🇰🇷韩国1【勿看视频】-clone
-      - 🇩🇪德国1【勿看视频】-clone
-      - 🇨🇦加拿大1【勿看视频】-clone
-      - 🇮🇩印度尼西亚1【勿看视频】-clone
-      - 🇹🇷土耳其1【勿看视频】-clone
-      - 🇮🇳印度1【勿看视频】-clone
-      - 🇮🇪爱尔兰1【勿看视频】-clone
-      - 🇬🇧英国1【勿看视频】-clone
-      - 🇫🇷法国1【勿看视频】-clone
-      - 🇦🇪迪拜1【勿看视频】-clone
-      - 🇹🇭泰国1【勿看视频】-clone
   - name: 📲 电报信息
     type: select
     proxies:
@@ -1086,119 +603,6 @@ proxy-groups:
       - 🇫🇷法国1【勿看视频】
       - 🇦🇪迪拜1【勿看视频】
       - 🇹🇭泰国1【勿看视频】
-      - 🇭🇰【看视频】香港-04-clone
-      - 🇭🇰【看视频】香港-02-clone
-      - 🇯🇵【看视频】日本-01-clone
-      - 🇺🇸【看视频】美国-05-clone
-      - 🇭🇰【看视频】香港-16-clone
-      - 🇭🇰【看视频】香港-10-clone
-      - 🇭🇰【看视频】香港-08-clone
-      - 🇸🇬【看视频】新加坡-09-clone
-      - 🇸🇬【看视频】新加坡-03-clone
-      - 🇭🇰【看视频】香港-05-clone
-      - 🇭🇰【看视频】香港-15-clone
-      - 🇭🇰【看视频】香港-01-clone
-      - 🇸🇬【看视频】新加坡-02-clone
-      - 🇸🇬【看视频】新加坡-07-clone
-      - 🇺🇸【看视频】美国-04-clone
-      - 🇸🇬【看视频】新加坡-05-clone
-      - 🇭🇰【看视频】香港-06-clone
-      - 🇮🇳【看视频】印度-clone
-      - 🇭🇰【看视频】香港-13-clone
-      - 🇸🇬【看视频】新加坡-06-clone
-      - 🇯🇵【看视频】日本-06-clone
-      - 🇹🇼【看视频】台湾1-clone
-      - 🇯🇵【看视频】日本-04-clone
-      - 🇸🇬【看视频】新加坡-10-clone
-      - 🇯🇵【看视频】日本-05-clone
-      - 🇯🇵【看视频】日本-07-clone
-      - 🇸🇬【看视频】新加坡-08-clone
-      - 🇹🇼【看视频】台湾2-clone_1
-      - 🇭🇰【看视频】香港-14-clone
-      - 🇭🇰【看视频】香港-11-clone
-      - 🇯🇵【看视频】日本-08-clone
-      - 🇯🇵【看视频】日本-03-clone
-      - 🇭🇰【看视频】香港-07-clone
-      - 🇸🇬【看视频】新加坡-01-clone
-      - 🇯🇵【看视频】日本-02-clone
-      - 🇨🇦【看视频】加拿大-clone
-      - 🇻🇳【看视频】越南-clone
-      - 🇭🇰【看视频】香港-09-clone
-      - 🇮🇩【看视频】英国-clone
-      - 🇸🇬【看视频】新加坡-04-clone
-      - 🇲🇾【看视频】马来西亚-clone
-      - 🇺🇸【看视频】美国24-clone
-      - 🇯🇵【看视频】日本2-clone
-      - 🇯🇵【看视频】日本4-clone
-      - 🇹🇼【看视频】台湾2-clone_2
-      - 🇭🇰【看视频】香港20-clone
-      - 🇳🇱【看视频】荷兰4-clone
-      - 🇭🇰【看视频】香港4-clone
-      - 🇸🇬【看视频】新加坡1-clone
-      - 🇬🇧【看视频】英国1-clone
-      - 【看视频】-gouyunHK1T流量-clone
-      - 【看视频】台湾5-无限流量-clone
-      - 【看视频】台湾6-无限流量-clone
-      - 【看视频】台湾1-无限流量-clone
-      - 🇭🇰中继香港011【勿看视频】-clone
-      - 🇭🇰中继香港021【勿看视频】-clone
-      - 🇭🇰IEPL香港033【勿看视频】-clone
-      - 🇭🇰中继香港041【勿看视频】-clone
-      - 🇭🇰中继香港051【勿看视频】-clone
-      - 🇭🇰中继香港061【勿看视频】-clone
-      - 🇭🇰中继香港071【勿看视频】-clone
-      - 🇭🇰中继香港081【勿看视频】-clone
-      - 🇭🇰中继香港091【勿看视频】-clone
-      - 🇭🇰中继香港101【勿看视频】-clone
-      - 🇭🇰中继香港111【勿看视频】-clone
-      - 🇭🇰中继香港121【勿看视频】-clone
-      - 🇭🇰中继香港131【勿看视频】-clone
-      - 🇭🇰中继香港141【勿看视频】-clone
-      - 🇭🇰中继香港151【勿看视频】-clone
-      - 🇯🇵IEPL日本013【勿看视频】-clone
-      - 🇯🇵中继日本021【勿看视频】-clone
-      - 🇯🇵中继日本031【勿看视频】-clone
-      - 🇯🇵中继日本041【勿看视频】-clone
-      - 🇯🇵中继日本051【勿看视频】-clone
-      - 🇯🇵中继日本061【勿看视频】-clone
-      - 🇯🇵中继日本071【勿看视频】-clone
-      - 🇯🇵中继日本081【勿看视频】-clone
-      - 🇸🇬IEPL｜新加坡013【勿看视频】-clone
-      - 🇸🇬中继｜新加坡021【勿看视频】-clone
-      - 🇸🇬中继｜新加坡031【勿看视频】-clone
-      - 🇸🇬中继｜新加坡041【勿看视频】-clone
-      - 🇸🇬中继｜新加坡051【勿看视频】-clone
-      - 🇸🇬中继｜新加坡061【勿看视频】-clone
-      - 🇸🇬中继｜新加坡071【勿看视频】-clone
-      - 🇸🇬中继｜新加坡081【勿看视频】-clone
-      - 🇸🇬中继｜新加坡091【勿看视频】-clone
-      - 🇸🇬中继｜新加坡101【勿看视频】-clone
-      - 🇺🇸IEPL美国013【勿看视频】-clone
-      - 🇺🇸中继美国021【勿看视频】-clone
-      - 🇺🇸中继美国031【勿看视频】-clone
-      - 🇺🇸中继美国041【勿看视频】-clone
-      - 🇺🇸中继美国051【勿看视频】-clone
-      - 🇺🇸中继美国061【勿看视频】-clone
-      - 🇹🇼IEPL台湾013【勿看视频】-clone
-      - 🇹🇼中继台湾021【勿看视频】-clone
-      - 🇹🇼中继台湾031【勿看视频】-clone
-      - 🇻🇳中继越南｜原生1【勿看视频】-clone
-      - 🇲🇾马来西亚1【勿看视频】-clone
-      - 🇵🇭菲律宾1【勿看视频】-clone
-      - 🇦🇷阿根廷1【勿看视频】-clone
-      - 🇰🇭柬埔寨1【勿看视频】-clone
-      - 🇷🇺俄罗斯1【勿看视频】-clone
-      - 🇰🇷韩国1【勿看视频】-clone
-      - 🇩🇪德国1【勿看视频】-clone
-      - 🇨🇦加拿大1【勿看视频】-clone
-      - 🇮🇩印度尼西亚1【勿看视频】-clone
-      - 🇹🇷土耳其1【勿看视频】-clone
-      - 🇮🇳印度1【勿看视频】-clone
-      - 🇮🇪爱尔兰1【勿看视频】-clone
-      - 🇬🇧英国1【勿看视频】-clone
-      - 🇫🇷法国1【勿看视频】-clone
-      - 🇦🇪迪拜1【勿看视频】-clone
-      - 🇹🇭泰国1【勿看视频】-clone
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
@@ -1317,119 +721,6 @@ proxy-groups:
       - 🇫🇷法国1【勿看视频】
       - 🇦🇪迪拜1【勿看视频】
       - 🇹🇭泰国1【勿看视频】
-      - 🇭🇰【看视频】香港-04-clone
-      - 🇭🇰【看视频】香港-02-clone
-      - 🇯🇵【看视频】日本-01-clone
-      - 🇺🇸【看视频】美国-05-clone
-      - 🇭🇰【看视频】香港-16-clone
-      - 🇭🇰【看视频】香港-10-clone
-      - 🇭🇰【看视频】香港-08-clone
-      - 🇸🇬【看视频】新加坡-09-clone
-      - 🇸🇬【看视频】新加坡-03-clone
-      - 🇭🇰【看视频】香港-05-clone
-      - 🇭🇰【看视频】香港-15-clone
-      - 🇭🇰【看视频】香港-01-clone
-      - 🇸🇬【看视频】新加坡-02-clone
-      - 🇸🇬【看视频】新加坡-07-clone
-      - 🇺🇸【看视频】美国-04-clone
-      - 🇸🇬【看视频】新加坡-05-clone
-      - 🇭🇰【看视频】香港-06-clone
-      - 🇮🇳【看视频】印度-clone
-      - 🇭🇰【看视频】香港-13-clone
-      - 🇸🇬【看视频】新加坡-06-clone
-      - 🇯🇵【看视频】日本-06-clone
-      - 🇹🇼【看视频】台湾1-clone
-      - 🇯🇵【看视频】日本-04-clone
-      - 🇸🇬【看视频】新加坡-10-clone
-      - 🇯🇵【看视频】日本-05-clone
-      - 🇯🇵【看视频】日本-07-clone
-      - 🇸🇬【看视频】新加坡-08-clone
-      - 🇹🇼【看视频】台湾2-clone_1
-      - 🇭🇰【看视频】香港-14-clone
-      - 🇭🇰【看视频】香港-11-clone
-      - 🇯🇵【看视频】日本-08-clone
-      - 🇯🇵【看视频】日本-03-clone
-      - 🇭🇰【看视频】香港-07-clone
-      - 🇸🇬【看视频】新加坡-01-clone
-      - 🇯🇵【看视频】日本-02-clone
-      - 🇨🇦【看视频】加拿大-clone
-      - 🇻🇳【看视频】越南-clone
-      - 🇭🇰【看视频】香港-09-clone
-      - 🇮🇩【看视频】英国-clone
-      - 🇸🇬【看视频】新加坡-04-clone
-      - 🇲🇾【看视频】马来西亚-clone
-      - 🇺🇸【看视频】美国24-clone
-      - 🇯🇵【看视频】日本2-clone
-      - 🇯🇵【看视频】日本4-clone
-      - 🇹🇼【看视频】台湾2-clone_2
-      - 🇭🇰【看视频】香港20-clone
-      - 🇳🇱【看视频】荷兰4-clone
-      - 🇭🇰【看视频】香港4-clone
-      - 🇸🇬【看视频】新加坡1-clone
-      - 🇬🇧【看视频】英国1-clone
-      - 【看视频】-gouyunHK1T流量-clone
-      - 【看视频】台湾5-无限流量-clone
-      - 【看视频】台湾6-无限流量-clone
-      - 【看视频】台湾1-无限流量-clone
-      - 🇭🇰中继香港011【勿看视频】-clone
-      - 🇭🇰中继香港021【勿看视频】-clone
-      - 🇭🇰IEPL香港033【勿看视频】-clone
-      - 🇭🇰中继香港041【勿看视频】-clone
-      - 🇭🇰中继香港051【勿看视频】-clone
-      - 🇭🇰中继香港061【勿看视频】-clone
-      - 🇭🇰中继香港071【勿看视频】-clone
-      - 🇭🇰中继香港081【勿看视频】-clone
-      - 🇭🇰中继香港091【勿看视频】-clone
-      - 🇭🇰中继香港101【勿看视频】-clone
-      - 🇭🇰中继香港111【勿看视频】-clone
-      - 🇭🇰中继香港121【勿看视频】-clone
-      - 🇭🇰中继香港131【勿看视频】-clone
-      - 🇭🇰中继香港141【勿看视频】-clone
-      - 🇭🇰中继香港151【勿看视频】-clone
-      - 🇯🇵IEPL日本013【勿看视频】-clone
-      - 🇯🇵中继日本021【勿看视频】-clone
-      - 🇯🇵中继日本031【勿看视频】-clone
-      - 🇯🇵中继日本041【勿看视频】-clone
-      - 🇯🇵中继日本051【勿看视频】-clone
-      - 🇯🇵中继日本061【勿看视频】-clone
-      - 🇯🇵中继日本071【勿看视频】-clone
-      - 🇯🇵中继日本081【勿看视频】-clone
-      - 🇸🇬IEPL｜新加坡013【勿看视频】-clone
-      - 🇸🇬中继｜新加坡021【勿看视频】-clone
-      - 🇸🇬中继｜新加坡031【勿看视频】-clone
-      - 🇸🇬中继｜新加坡041【勿看视频】-clone
-      - 🇸🇬中继｜新加坡051【勿看视频】-clone
-      - 🇸🇬中继｜新加坡061【勿看视频】-clone
-      - 🇸🇬中继｜新加坡071【勿看视频】-clone
-      - 🇸🇬中继｜新加坡081【勿看视频】-clone
-      - 🇸🇬中继｜新加坡091【勿看视频】-clone
-      - 🇸🇬中继｜新加坡101【勿看视频】-clone
-      - 🇺🇸IEPL美国013【勿看视频】-clone
-      - 🇺🇸中继美国021【勿看视频】-clone
-      - 🇺🇸中继美国031【勿看视频】-clone
-      - 🇺🇸中继美国041【勿看视频】-clone
-      - 🇺🇸中继美国051【勿看视频】-clone
-      - 🇺🇸中继美国061【勿看视频】-clone
-      - 🇹🇼IEPL台湾013【勿看视频】-clone
-      - 🇹🇼中继台湾021【勿看视频】-clone
-      - 🇹🇼中继台湾031【勿看视频】-clone
-      - 🇻🇳中继越南｜原生1【勿看视频】-clone
-      - 🇲🇾马来西亚1【勿看视频】-clone
-      - 🇵🇭菲律宾1【勿看视频】-clone
-      - 🇦🇷阿根廷1【勿看视频】-clone
-      - 🇰🇭柬埔寨1【勿看视频】-clone
-      - 🇷🇺俄罗斯1【勿看视频】-clone
-      - 🇰🇷韩国1【勿看视频】-clone
-      - 🇩🇪德国1【勿看视频】-clone
-      - 🇨🇦加拿大1【勿看视频】-clone
-      - 🇮🇩印度尼西亚1【勿看视频】-clone
-      - 🇹🇷土耳其1【勿看视频】-clone
-      - 🇮🇳印度1【勿看视频】-clone
-      - 🇮🇪爱尔兰1【勿看视频】-clone
-      - 🇬🇧英国1【勿看视频】-clone
-      - 🇫🇷法国1【勿看视频】-clone
-      - 🇦🇪迪拜1【勿看视频】-clone
-      - 🇹🇭泰国1【勿看视频】-clone
   - name: 🍎 苹果服务
     type: select
     proxies:
@@ -1548,119 +839,6 @@ proxy-groups:
       - 🇫🇷法国1【勿看视频】
       - 🇦🇪迪拜1【勿看视频】
       - 🇹🇭泰国1【勿看视频】
-      - 🇭🇰【看视频】香港-04-clone
-      - 🇭🇰【看视频】香港-02-clone
-      - 🇯🇵【看视频】日本-01-clone
-      - 🇺🇸【看视频】美国-05-clone
-      - 🇭🇰【看视频】香港-16-clone
-      - 🇭🇰【看视频】香港-10-clone
-      - 🇭🇰【看视频】香港-08-clone
-      - 🇸🇬【看视频】新加坡-09-clone
-      - 🇸🇬【看视频】新加坡-03-clone
-      - 🇭🇰【看视频】香港-05-clone
-      - 🇭🇰【看视频】香港-15-clone
-      - 🇭🇰【看视频】香港-01-clone
-      - 🇸🇬【看视频】新加坡-02-clone
-      - 🇸🇬【看视频】新加坡-07-clone
-      - 🇺🇸【看视频】美国-04-clone
-      - 🇸🇬【看视频】新加坡-05-clone
-      - 🇭🇰【看视频】香港-06-clone
-      - 🇮🇳【看视频】印度-clone
-      - 🇭🇰【看视频】香港-13-clone
-      - 🇸🇬【看视频】新加坡-06-clone
-      - 🇯🇵【看视频】日本-06-clone
-      - 🇹🇼【看视频】台湾1-clone
-      - 🇯🇵【看视频】日本-04-clone
-      - 🇸🇬【看视频】新加坡-10-clone
-      - 🇯🇵【看视频】日本-05-clone
-      - 🇯🇵【看视频】日本-07-clone
-      - 🇸🇬【看视频】新加坡-08-clone
-      - 🇹🇼【看视频】台湾2-clone_1
-      - 🇭🇰【看视频】香港-14-clone
-      - 🇭🇰【看视频】香港-11-clone
-      - 🇯🇵【看视频】日本-08-clone
-      - 🇯🇵【看视频】日本-03-clone
-      - 🇭🇰【看视频】香港-07-clone
-      - 🇸🇬【看视频】新加坡-01-clone
-      - 🇯🇵【看视频】日本-02-clone
-      - 🇨🇦【看视频】加拿大-clone
-      - 🇻🇳【看视频】越南-clone
-      - 🇭🇰【看视频】香港-09-clone
-      - 🇮🇩【看视频】英国-clone
-      - 🇸🇬【看视频】新加坡-04-clone
-      - 🇲🇾【看视频】马来西亚-clone
-      - 🇺🇸【看视频】美国24-clone
-      - 🇯🇵【看视频】日本2-clone
-      - 🇯🇵【看视频】日本4-clone
-      - 🇹🇼【看视频】台湾2-clone_2
-      - 🇭🇰【看视频】香港20-clone
-      - 🇳🇱【看视频】荷兰4-clone
-      - 🇭🇰【看视频】香港4-clone
-      - 🇸🇬【看视频】新加坡1-clone
-      - 🇬🇧【看视频】英国1-clone
-      - 【看视频】-gouyunHK1T流量-clone
-      - 【看视频】台湾5-无限流量-clone
-      - 【看视频】台湾6-无限流量-clone
-      - 【看视频】台湾1-无限流量-clone
-      - 🇭🇰中继香港011【勿看视频】-clone
-      - 🇭🇰中继香港021【勿看视频】-clone
-      - 🇭🇰IEPL香港033【勿看视频】-clone
-      - 🇭🇰中继香港041【勿看视频】-clone
-      - 🇭🇰中继香港051【勿看视频】-clone
-      - 🇭🇰中继香港061【勿看视频】-clone
-      - 🇭🇰中继香港071【勿看视频】-clone
-      - 🇭🇰中继香港081【勿看视频】-clone
-      - 🇭🇰中继香港091【勿看视频】-clone
-      - 🇭🇰中继香港101【勿看视频】-clone
-      - 🇭🇰中继香港111【勿看视频】-clone
-      - 🇭🇰中继香港121【勿看视频】-clone
-      - 🇭🇰中继香港131【勿看视频】-clone
-      - 🇭🇰中继香港141【勿看视频】-clone
-      - 🇭🇰中继香港151【勿看视频】-clone
-      - 🇯🇵IEPL日本013【勿看视频】-clone
-      - 🇯🇵中继日本021【勿看视频】-clone
-      - 🇯🇵中继日本031【勿看视频】-clone
-      - 🇯🇵中继日本041【勿看视频】-clone
-      - 🇯🇵中继日本051【勿看视频】-clone
-      - 🇯🇵中继日本061【勿看视频】-clone
-      - 🇯🇵中继日本071【勿看视频】-clone
-      - 🇯🇵中继日本081【勿看视频】-clone
-      - 🇸🇬IEPL｜新加坡013【勿看视频】-clone
-      - 🇸🇬中继｜新加坡021【勿看视频】-clone
-      - 🇸🇬中继｜新加坡031【勿看视频】-clone
-      - 🇸🇬中继｜新加坡041【勿看视频】-clone
-      - 🇸🇬中继｜新加坡051【勿看视频】-clone
-      - 🇸🇬中继｜新加坡061【勿看视频】-clone
-      - 🇸🇬中继｜新加坡071【勿看视频】-clone
-      - 🇸🇬中继｜新加坡081【勿看视频】-clone
-      - 🇸🇬中继｜新加坡091【勿看视频】-clone
-      - 🇸🇬中继｜新加坡101【勿看视频】-clone
-      - 🇺🇸IEPL美国013【勿看视频】-clone
-      - 🇺🇸中继美国021【勿看视频】-clone
-      - 🇺🇸中继美国031【勿看视频】-clone
-      - 🇺🇸中继美国041【勿看视频】-clone
-      - 🇺🇸中继美国051【勿看视频】-clone
-      - 🇺🇸中继美国061【勿看视频】-clone
-      - 🇹🇼IEPL台湾013【勿看视频】-clone
-      - 🇹🇼中继台湾021【勿看视频】-clone
-      - 🇹🇼中继台湾031【勿看视频】-clone
-      - 🇻🇳中继越南｜原生1【勿看视频】-clone
-      - 🇲🇾马来西亚1【勿看视频】-clone
-      - 🇵🇭菲律宾1【勿看视频】-clone
-      - 🇦🇷阿根廷1【勿看视频】-clone
-      - 🇰🇭柬埔寨1【勿看视频】-clone
-      - 🇷🇺俄罗斯1【勿看视频】-clone
-      - 🇰🇷韩国1【勿看视频】-clone
-      - 🇩🇪德国1【勿看视频】-clone
-      - 🇨🇦加拿大1【勿看视频】-clone
-      - 🇮🇩印度尼西亚1【勿看视频】-clone
-      - 🇹🇷土耳其1【勿看视频】-clone
-      - 🇮🇳印度1【勿看视频】-clone
-      - 🇮🇪爱尔兰1【勿看视频】-clone
-      - 🇬🇧英国1【勿看视频】-clone
-      - 🇫🇷法国1【勿看视频】-clone
-      - 🇦🇪迪拜1【勿看视频】-clone
-      - 🇹🇭泰国1【勿看视频】-clone
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -1796,136 +974,29 @@ proxy-groups:
       - 🇫🇷法国1【勿看视频】
       - 🇦🇪迪拜1【勿看视频】
       - 🇹🇭泰国1【勿看视频】
-      - 🇭🇰【看视频】香港-04-clone
-      - 🇭🇰【看视频】香港-02-clone
-      - 🇯🇵【看视频】日本-01-clone
-      - 🇺🇸【看视频】美国-05-clone
-      - 🇭🇰【看视频】香港-16-clone
-      - 🇭🇰【看视频】香港-10-clone
-      - 🇭🇰【看视频】香港-08-clone
-      - 🇸🇬【看视频】新加坡-09-clone
-      - 🇸🇬【看视频】新加坡-03-clone
-      - 🇭🇰【看视频】香港-05-clone
-      - 🇭🇰【看视频】香港-15-clone
-      - 🇭🇰【看视频】香港-01-clone
-      - 🇸🇬【看视频】新加坡-02-clone
-      - 🇸🇬【看视频】新加坡-07-clone
-      - 🇺🇸【看视频】美国-04-clone
-      - 🇸🇬【看视频】新加坡-05-clone
-      - 🇭🇰【看视频】香港-06-clone
-      - 🇮🇳【看视频】印度-clone
-      - 🇭🇰【看视频】香港-13-clone
-      - 🇸🇬【看视频】新加坡-06-clone
-      - 🇯🇵【看视频】日本-06-clone
-      - 🇹🇼【看视频】台湾1-clone
-      - 🇯🇵【看视频】日本-04-clone
-      - 🇸🇬【看视频】新加坡-10-clone
-      - 🇯🇵【看视频】日本-05-clone
-      - 🇯🇵【看视频】日本-07-clone
-      - 🇸🇬【看视频】新加坡-08-clone
-      - 🇹🇼【看视频】台湾2-clone_1
-      - 🇭🇰【看视频】香港-14-clone
-      - 🇭🇰【看视频】香港-11-clone
-      - 🇯🇵【看视频】日本-08-clone
-      - 🇯🇵【看视频】日本-03-clone
-      - 🇭🇰【看视频】香港-07-clone
-      - 🇸🇬【看视频】新加坡-01-clone
-      - 🇯🇵【看视频】日本-02-clone
-      - 🇨🇦【看视频】加拿大-clone
-      - 🇻🇳【看视频】越南-clone
-      - 🇭🇰【看视频】香港-09-clone
-      - 🇮🇩【看视频】英国-clone
-      - 🇸🇬【看视频】新加坡-04-clone
-      - 🇲🇾【看视频】马来西亚-clone
-      - 🇺🇸【看视频】美国24-clone
-      - 🇯🇵【看视频】日本2-clone
-      - 🇯🇵【看视频】日本4-clone
-      - 🇹🇼【看视频】台湾2-clone_2
-      - 🇭🇰【看视频】香港20-clone
-      - 🇳🇱【看视频】荷兰4-clone
-      - 🇭🇰【看视频】香港4-clone
-      - 🇸🇬【看视频】新加坡1-clone
-      - 🇬🇧【看视频】英国1-clone
-      - 【看视频】-gouyunHK1T流量-clone
-      - 【看视频】台湾5-无限流量-clone
-      - 【看视频】台湾6-无限流量-clone
-      - 【看视频】台湾1-无限流量-clone
-      - 🇭🇰中继香港011【勿看视频】-clone
-      - 🇭🇰中继香港021【勿看视频】-clone
-      - 🇭🇰IEPL香港033【勿看视频】-clone
-      - 🇭🇰中继香港041【勿看视频】-clone
-      - 🇭🇰中继香港051【勿看视频】-clone
-      - 🇭🇰中继香港061【勿看视频】-clone
-      - 🇭🇰中继香港071【勿看视频】-clone
-      - 🇭🇰中继香港081【勿看视频】-clone
-      - 🇭🇰中继香港091【勿看视频】-clone
-      - 🇭🇰中继香港101【勿看视频】-clone
-      - 🇭🇰中继香港111【勿看视频】-clone
-      - 🇭🇰中继香港121【勿看视频】-clone
-      - 🇭🇰中继香港131【勿看视频】-clone
-      - 🇭🇰中继香港141【勿看视频】-clone
-      - 🇭🇰中继香港151【勿看视频】-clone
-      - 🇯🇵IEPL日本013【勿看视频】-clone
-      - 🇯🇵中继日本021【勿看视频】-clone
-      - 🇯🇵中继日本031【勿看视频】-clone
-      - 🇯🇵中继日本041【勿看视频】-clone
-      - 🇯🇵中继日本051【勿看视频】-clone
-      - 🇯🇵中继日本061【勿看视频】-clone
-      - 🇯🇵中继日本071【勿看视频】-clone
-      - 🇯🇵中继日本081【勿看视频】-clone
-      - 🇸🇬IEPL｜新加坡013【勿看视频】-clone
-      - 🇸🇬中继｜新加坡021【勿看视频】-clone
-      - 🇸🇬中继｜新加坡031【勿看视频】-clone
-      - 🇸🇬中继｜新加坡041【勿看视频】-clone
-      - 🇸🇬中继｜新加坡051【勿看视频】-clone
-      - 🇸🇬中继｜新加坡061【勿看视频】-clone
-      - 🇸🇬中继｜新加坡071【勿看视频】-clone
-      - 🇸🇬中继｜新加坡081【勿看视频】-clone
-      - 🇸🇬中继｜新加坡091【勿看视频】-clone
-      - 🇸🇬中继｜新加坡101【勿看视频】-clone
-      - 🇺🇸IEPL美国013【勿看视频】-clone
-      - 🇺🇸中继美国021【勿看视频】-clone
-      - 🇺🇸中继美国031【勿看视频】-clone
-      - 🇺🇸中继美国041【勿看视频】-clone
-      - 🇺🇸中继美国051【勿看视频】-clone
-      - 🇺🇸中继美国061【勿看视频】-clone
-      - 🇹🇼IEPL台湾013【勿看视频】-clone
-      - 🇹🇼中继台湾021【勿看视频】-clone
-      - 🇹🇼中继台湾031【勿看视频】-clone
-      - 🇻🇳中继越南｜原生1【勿看视频】-clone
-      - 🇲🇾马来西亚1【勿看视频】-clone
-      - 🇵🇭菲律宾1【勿看视频】-clone
-      - 🇦🇷阿根廷1【勿看视频】-clone
-      - 🇰🇭柬埔寨1【勿看视频】-clone
-      - 🇷🇺俄罗斯1【勿看视频】-clone
-      - 🇰🇷韩国1【勿看视频】-clone
-      - 🇩🇪德国1【勿看视频】-clone
-      - 🇨🇦加拿大1【勿看视频】-clone
-      - 🇮🇩印度尼西亚1【勿看视频】-clone
-      - 🇹🇷土耳其1【勿看视频】-clone
-      - 🇮🇳印度1【勿看视频】-clone
-      - 🇮🇪爱尔兰1【勿看视频】-clone
-      - 🇬🇧英国1【勿看视频】-clone
-      - 🇫🇷法国1【勿看视频】-clone
-      - 🇦🇪迪拜1【勿看视频】-clone
-      - 🇹🇭泰国1【勿看视频】-clone
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
   - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
   - DOMAIN-SUFFIX,ip6-loopback,🎯 全球直连
+  - DOMAIN-SUFFIX,lan,🎯 全球直连
   - DOMAIN-SUFFIX,local,🎯 全球直连
   - DOMAIN-SUFFIX,localhost,🎯 全球直连
+  - IP-CIDR,0.0.0.0/8,🎯 全球直连,no-resolve
   - IP-CIDR,10.0.0.0/8,🎯 全球直连,no-resolve
   - IP-CIDR,100.64.0.0/10,🎯 全球直连,no-resolve
   - IP-CIDR,127.0.0.0/8,🎯 全球直连,no-resolve
   - IP-CIDR,172.16.0.0/12,🎯 全球直连,no-resolve
   - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
   - IP-CIDR,198.18.0.0/16,🎯 全球直连,no-resolve
+  - IP-CIDR,224.0.0.0/4,🎯 全球直连,no-resolve
   - IP-CIDR6,::1/128,🎯 全球直连,no-resolve
   - IP-CIDR6,fc00::/7,🎯 全球直连,no-resolve
   - IP-CIDR6,fe80::/10,🎯 全球直连,no-resolve
   - IP-CIDR6,fd00::/8,🎯 全球直连,no-resolve
+  - DOMAIN,instant.arubanetworks.com,🎯 全球直连
+  - DOMAIN,setmeup.arubanetworks.com,🎯 全球直连
   - DOMAIN,router.asus.com,🎯 全球直连
+  - DOMAIN,www.asusrouter.com,🎯 全球直连
   - DOMAIN-SUFFIX,hiwifi.com,🎯 全球直连
   - DOMAIN-SUFFIX,leike.cc,🎯 全球直连
   - DOMAIN-SUFFIX,miwifi.com,🎯 全球直连
@@ -1933,20 +1004,21 @@ rules:
   - DOMAIN-SUFFIX,p.to,🎯 全球直连
   - DOMAIN-SUFFIX,peiluyou.com,🎯 全球直连
   - DOMAIN-SUFFIX,phicomm.me,🎯 全球直连
+  - DOMAIN-SUFFIX,router.ctc,🎯 全球直连
   - DOMAIN-SUFFIX,routerlogin.com,🎯 全球直连
   - DOMAIN-SUFFIX,tendawifi.com,🎯 全球直连
   - DOMAIN-SUFFIX,zte.home,🎯 全球直连
+  - DOMAIN-SUFFIX,tplogin.cn,🎯 全球直连
+  - DOMAIN-SUFFIX,wifi.cmcc,🎯 全球直连
   - DOMAIN-KEYWORD,admarvel,🛑 全球拦截
   - DOMAIN-KEYWORD,admaster,🛑 全球拦截
   - DOMAIN-KEYWORD,adsage,🛑 全球拦截
   - DOMAIN-KEYWORD,adsensor,🛑 全球拦截
-  - DOMAIN-KEYWORD,adservice,🛑 全球拦截
   - DOMAIN-KEYWORD,adsmogo,🛑 全球拦截
   - DOMAIN-KEYWORD,adsrvmedia,🛑 全球拦截
   - DOMAIN-KEYWORD,adsserving,🛑 全球拦截
   - DOMAIN-KEYWORD,adsystem,🛑 全球拦截
   - DOMAIN-KEYWORD,adwords,🛑 全球拦截
-  - DOMAIN-KEYWORD,analysis,🛑 全球拦截
   - DOMAIN-KEYWORD,applovin,🛑 全球拦截
   - DOMAIN-KEYWORD,appsflyer,🛑 全球拦截
   - DOMAIN-KEYWORD,domob,🛑 全球拦截
@@ -1960,28 +1032,8 @@ rules:
   - DOMAIN-KEYWORD,pingfore,🛑 全球拦截
   - DOMAIN-KEYWORD,socdm,🛑 全球拦截
   - DOMAIN-KEYWORD,supersonicads,🛑 全球拦截
-  - DOMAIN-KEYWORD,usage,🛑 全球拦截
   - DOMAIN-KEYWORD,wlmonitor,🛑 全球拦截
   - DOMAIN-KEYWORD,zjtoolbar,🛑 全球拦截
-  - DOMAIN-SUFFIX,admob.com,🛑 全球拦截
-  - DOMAIN-SUFFIX,ads.gmodules.com,🛑 全球拦截
-  - DOMAIN-SUFFIX,ads.google.com,🛑 全球拦截
-  - DOMAIN-SUFFIX,adservice.google.com,🛑 全球拦截
-  - DOMAIN-SUFFIX,afd.l.google.com,🛑 全球拦截
-  - DOMAIN-SUFFIX,badad.googleplex.com,🛑 全球拦截
-  - DOMAIN-SUFFIX,csi.gstatic.com,🛑 全球拦截
-  - DOMAIN-SUFFIX,doubleclick.com,🛑 全球拦截
-  - DOMAIN-SUFFIX,doubleclick.net,🛑 全球拦截
-  - DOMAIN-SUFFIX,google-analytics.com,🛑 全球拦截
-  - DOMAIN-SUFFIX,googleadservices.com,🛑 全球拦截
-  - DOMAIN-SUFFIX,googleadsserving.cn,🛑 全球拦截
-  - DOMAIN-SUFFIX,googlecommerce.com,🛑 全球拦截
-  - DOMAIN-SUFFIX,googlesyndication.com,🛑 全球拦截
-  - DOMAIN-SUFFIX,mobileads.google.com,🛑 全球拦截
-  - DOMAIN-SUFFIX,pagead-tpc.l.google.com,🛑 全球拦截
-  - DOMAIN-SUFFIX,pagead.google.com,🛑 全球拦截
-  - DOMAIN-SUFFIX,pagead.l.google.com,🛑 全球拦截
-  - DOMAIN-SUFFIX,service.urchin.com,🛑 全球拦截
   - DOMAIN-SUFFIX,09mk.cn,🛑 全球拦截
   - DOMAIN-SUFFIX,100peng.com,🛑 全球拦截
   - DOMAIN-SUFFIX,114la.com,🛑 全球拦截
@@ -2141,7 +1193,6 @@ rules:
   - DOMAIN-SUFFIX,edigitalsurvey.com,🛑 全球拦截
   - DOMAIN-SUFFIX,eduancm.com,🛑 全球拦截
   - DOMAIN-SUFFIX,emarbox.com,🛑 全球拦截
-  - DOMAIN-SUFFIX,epsilon.com,🛑 全球拦截
   - DOMAIN-SUFFIX,exosrv.com,🛑 全球拦截
   - DOMAIN-SUFFIX,fancyapi.com,🛑 全球拦截
   - DOMAIN-SUFFIX,feitian001.com,🛑 全球拦截
@@ -2217,7 +1268,6 @@ rules:
   - DOMAIN-SUFFIX,mediaplex.com,🛑 全球拦截
   - DOMAIN-SUFFIX,mediav.com,🛑 全球拦截
   - DOMAIN-SUFFIX,megajoy.com,🛑 全球拦截
-  - DOMAIN-SUFFIX,meiqia.com,🛑 全球拦截
   - DOMAIN-SUFFIX,mgogo.com,🛑 全球拦截
   - DOMAIN-SUFFIX,miaozhen.com,🛑 全球拦截
   - DOMAIN-SUFFIX,microad-cn.com,🛑 全球拦截
@@ -2232,7 +1282,7 @@ rules:
   - DOMAIN-SUFFIX,mobclix.com,🛑 全球拦截
   - DOMAIN-SUFFIX,mobgi.com,🛑 全球拦截
   - DOMAIN-SUFFIX,mobisage.cn,🛑 全球拦截
-  - DOMAIN-SUFFIX,mobvista.com,🛑 全球拦截
+  - DOMAIN-SUFFIX,moogos.com,🛑 全球拦截
   - DOMAIN-SUFFIX,mopub.com,🛑 全球拦截
   - DOMAIN-SUFFIX,moquanad.com,🛑 全球拦截
   - DOMAIN-SUFFIX,mpush.cn,🛑 全球拦截
@@ -2241,7 +1291,6 @@ rules:
   - DOMAIN-SUFFIX,mzy2014.com,🛑 全球拦截
   - DOMAIN-SUFFIX,networkbench.com,🛑 全球拦截
   - DOMAIN-SUFFIX,ninebox.cn,🛑 全球拦截
-  - DOMAIN-SUFFIX,ntalker.com,🛑 全球拦截
   - DOMAIN-SUFFIX,nylalobghyhirgh.com,🛑 全球拦截
   - DOMAIN-SUFFIX,o2omobi.com,🛑 全球拦截
   - DOMAIN-SUFFIX,oadz.com,🛑 全球拦截
@@ -2276,7 +1325,6 @@ rules:
   - DOMAIN-SUFFIX,rtbasia.com,🛑 全球拦截
   - DOMAIN-SUFFIX,sanya1.com,🛑 全球拦截
   - DOMAIN-SUFFIX,scupio.com,🛑 全球拦截
-  - DOMAIN-SUFFIX,serving-sys.com,🛑 全球拦截
   - DOMAIN-SUFFIX,shuiguo.com,🛑 全球拦截
   - DOMAIN-SUFFIX,shuzilm.cn,🛑 全球拦截
   - DOMAIN-SUFFIX,similarweb.com,🛑 全球拦截
@@ -2327,6 +1375,7 @@ rules:
   - DOMAIN-SUFFIX,uuzu.com,🛑 全球拦截
   - DOMAIN-SUFFIX,uyunad.com,🛑 全球拦截
   - DOMAIN-SUFFIX,vamaker.com,🛑 全球拦截
+  - DOMAIN-SUFFIX,vlion.cn,🛑 全球拦截
   - DOMAIN-SUFFIX,voiceads.cn,🛑 全球拦截
   - DOMAIN-SUFFIX,voiceads.com,🛑 全球拦截
   - DOMAIN-SUFFIX,vpon.com,🛑 全球拦截
@@ -2343,6 +1392,7 @@ rules:
   - DOMAIN-SUFFIX,wqmobile.com,🛑 全球拦截
   - DOMAIN-SUFFIX,wrating.com,🛑 全球拦截
   - DOMAIN-SUFFIX,wumii.cn,🛑 全球拦截
+  - DOMAIN-SUFFIX,wwads.cn,🛑 全球拦截
   - DOMAIN-SUFFIX,xcy8.com,🛑 全球拦截
   - DOMAIN-SUFFIX,xdrig.com,🛑 全球拦截
   - DOMAIN-SUFFIX,xiaozhen.com,🛑 全球拦截
@@ -2428,7 +1478,6 @@ rules:
   - DOMAIN-SUFFIX,criteo.com,🛑 全球拦截
   - DOMAIN-SUFFIX,criteo.net,🛑 全球拦截
   - DOMAIN-SUFFIX,csbew.com,🛑 全球拦截
-  - DOMAIN-SUFFIX,demdex.net,🛑 全球拦截
   - DOMAIN-SUFFIX,directrev.com,🛑 全球拦截
   - DOMAIN-SUFFIX,dumedia.ru,🛑 全球拦截
   - DOMAIN-SUFFIX,effectivemeasure.com,🛑 全球拦截
@@ -2659,12 +1708,10 @@ rules:
   - DOMAIN-SUFFIX,activate-sea.adobe.com,🍃 应用净化
   - DOMAIN-SUFFIX,activate-sjc0.adobe.com,🍃 应用净化
   - DOMAIN-SUFFIX,activate.adobe.com,🍃 应用净化
-  - DOMAIN-SUFFIX,activate.wip3.adobe.com,🍃 应用净化
   - DOMAIN-SUFFIX,adobe-dns-2.adobe.com,🍃 应用净化
   - DOMAIN-SUFFIX,adobe-dns-3.adobe.com,🍃 应用净化
   - DOMAIN-SUFFIX,adobe-dns.adobe.com,🍃 应用净化
   - DOMAIN-SUFFIX,ereg.adobe.com,🍃 应用净化
-  - DOMAIN-SUFFIX,ereg.wip3.adobe.com,🍃 应用净化
   - DOMAIN-SUFFIX,geo2.adobe.com,🍃 应用净化
   - DOMAIN-SUFFIX,hl2rcv.adobe.com,🍃 应用净化
   - DOMAIN-SUFFIX,hlrcv.stage.adobe.com,🍃 应用净化
@@ -2716,10 +1763,8 @@ rules:
   - DOMAIN-SUFFIX,baidu9635.com,🍃 应用净化
   - DOMAIN-SUFFIX,baidustatic.com,🍃 应用净化
   - DOMAIN-SUFFIX,baidutv.baidu.com,🍃 应用净化
-  - DOMAIN-SUFFIX,baikebcs.bdimg.com,🍃 应用净化
   - DOMAIN-SUFFIX,banlv.baidu.com,🍃 应用净化
   - DOMAIN-SUFFIX,bar.baidu.com,🍃 应用净化
-  - DOMAIN-SUFFIX,bdimg.share.baidu.com,🍃 应用净化
   - DOMAIN-SUFFIX,bdplus.baidu.com,🍃 应用净化
   - DOMAIN-SUFFIX,btlaunch.baidu.com,🍃 应用净化
   - DOMAIN-SUFFIX,c.baidu.cn,🍃 应用净化
@@ -2737,7 +1782,6 @@ rules:
   - DOMAIN-SUFFIX,click.hm.baidu.com,🍃 应用净化
   - DOMAIN-SUFFIX,click.qianqian.com,🍃 应用净化
   - DOMAIN-SUFFIX,cm.baidu.com,🍃 应用净化
-  - DOMAIN-SUFFIX,cm.pos.baidu.com,🍃 应用净化
   - DOMAIN-SUFFIX,cpro.baidu.cn,🍃 应用净化
   - DOMAIN-SUFFIX,cpro.baidu.com,🍃 应用净化
   - DOMAIN-SUFFIX,cpro.baidustatic.com,🍃 应用净化
@@ -2840,13 +1884,10 @@ rules:
   - DOMAIN-SUFFIX,rp.baidu.com,🍃 应用净化
   - DOMAIN-SUFFIX,rplog.baidu.com,🍃 应用净化
   - DOMAIN-SUFFIX,s.baidu.com,🍃 应用净化
-  - DOMAIN-SUFFIX,s.cpro.baidu.com,🍃 应用净化
-  - DOMAIN-SUFFIX,sa.tuisong.baidu.com,🍃 应用净化
   - DOMAIN-SUFFIX,sclick.baidu.com,🍃 应用净化
   - DOMAIN-SUFFIX,sestat.baidu.com,🍃 应用净化
   - DOMAIN-SUFFIX,shadu.baidu.com,🍃 应用净化
   - DOMAIN-SUFFIX,share.baidu.com,🍃 应用净化
-  - DOMAIN-SUFFIX,snippet.pos.baidu.com,🍃 应用净化
   - DOMAIN-SUFFIX,sobar.baidu.com,🍃 应用净化
   - DOMAIN-SUFFIX,sobartop.baidu.com,🍃 应用净化
   - DOMAIN-SUFFIX,spcode.baidu.cn,🍃 应用净化
@@ -2863,7 +1904,6 @@ rules:
   - DOMAIN-SUFFIX,tuijian.baidu.com,🍃 应用净化
   - DOMAIN-SUFFIX,tuisong.baidu.cn,🍃 应用净化
   - DOMAIN-SUFFIX,tuisong.baidu.com,🍃 应用净化
-  - DOMAIN-SUFFIX,uat1.bfsspadserver.8le8le.com,🍃 应用净化
   - DOMAIN-SUFFIX,ubmcmm.baidustatic.com,🍃 应用净化
   - DOMAIN-SUFFIX,ucstat.baidu.cn,🍃 应用净化
   - DOMAIN-SUFFIX,ucstat.baidu.com,🍃 应用净化
@@ -2888,7 +1928,6 @@ rules:
   - DOMAIN-SUFFIX,wisepush.video.baidu.com,🍃 应用净化
   - DOMAIN-SUFFIX,wm.baidu.cn,🍃 应用净化
   - DOMAIN-SUFFIX,wm.baidu.com,🍃 应用净化
-  - DOMAIN-SUFFIX,wn.pos.baidu.com,🍃 应用净化
   - DOMAIN-SUFFIX,znsv.baidu.cn,🍃 应用净化
   - DOMAIN-SUFFIX,znsv.baidu.com,🍃 应用净化
   - DOMAIN-SUFFIX,zz.bdstatic.com,🍃 应用净化
@@ -2939,7 +1978,11 @@ rules:
   - DOMAIN-SUFFIX,ic.snssdk.com,🍃 应用净化
   - DOMAIN-SUFFIX,log.snssdk.com,🍃 应用净化
   - DOMAIN-SUFFIX,nativeapp.toutiao.com,🍃 应用净化
+  - DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,🍃 应用净化
+  - DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,🍃 应用净化
+  - DOMAIN-SUFFIX,pangolin.snssdk.com,🍃 应用净化
   - DOMAIN-SUFFIX,partner.toutiao.com,🍃 应用净化
+  - DOMAIN-SUFFIX,pglstatp-toutiao.com,🍃 应用净化
   - DOMAIN-SUFFIX,sm.toutiao.com,🍃 应用净化
   - DOMAIN-SUFFIX,a.dangdang.com,🍃 应用净化
   - DOMAIN-SUFFIX,click.dangdang.com,🍃 应用净化
@@ -3069,7 +2112,6 @@ rules:
   - DOMAIN-SUFFIX,jellyfish.pandora.xiaomi.com,🍃 应用净化
   - DOMAIN-SUFFIX,migc.g.mi.com,🍃 应用净化
   - DOMAIN-SUFFIX,migcreport.g.mi.com,🍃 应用净化
-  - DOMAIN-SUFFIX,mis.g.mi.com,🍃 应用净化
   - DOMAIN-SUFFIX,notice.game.xiaomi.com,🍃 应用净化
   - DOMAIN-SUFFIX,ppurifier.game.xiaomi.com,🍃 应用净化
   - DOMAIN-SUFFIX,r.browser.miui.com,🍃 应用净化
@@ -3078,7 +2120,6 @@ rules:
   - DOMAIN-SUFFIX,stat.pandora.xiaomi.com,🍃 应用净化
   - DOMAIN-SUFFIX,union.mi.com,🍃 应用净化
   - DOMAIN-SUFFIX,wtradv.market.xiaomi.com,🍃 应用净化
-  - DOMAIN-SUFFIX,xmpush.xiaomi.com,🍃 应用净化
   - DOMAIN-SUFFIX,ad.api.moji.com,🍃 应用净化
   - DOMAIN-SUFFIX,app.moji001.com,🍃 应用净化
   - DOMAIN-SUFFIX,cdn.moji002.com,🍃 应用净化
@@ -3273,8 +2314,6 @@ rules:
   - DOMAIN-SUFFIX,ws.progrss.yahoo.com,🍃 应用净化
   - DOMAIN-SUFFIX,yads.yahoo.co.jp,🍃 应用净化
   - DOMAIN-SUFFIX,ybp.yahoo.com,🍃 应用净化
-  - DOMAIN-SUFFIX,sugar.zhihu.com,🍃 应用净化
-  - DOMAIN-SUFFIX,zhihu-web-analytics.zhihu.com,🍃 应用净化
   - DOMAIN-SUFFIX,shrek.6.cn,🍃 应用净化
   - DOMAIN-SUFFIX,simba.6.cn,🍃 应用净化
   - DOMAIN-SUFFIX,union.6.cn,🍃 应用净化
@@ -3462,7 +2501,6 @@ rules:
   - DOMAIN-SUFFIX,couchcoaster.jp,🍃 应用净化
   - DOMAIN-SUFFIX,delivery.dmkt-sp.jp,🍃 应用净化
   - DOMAIN-SUFFIX,ehg-youtube.hitbox.com,🍃 应用净化
-  - DOMAIN-SUFFIX,m-78.jp,🍃 应用净化
   - DOMAIN-SUFFIX,nichibenren.or.jp,🍃 应用净化
   - DOMAIN-SUFFIX,nicorette.co.kr,🍃 应用净化
   - DOMAIN-SUFFIX,ssl-youtube.2cnt.net,🍃 应用净化
@@ -3473,8 +2511,6 @@ rules:
   - DOMAIN-SUFFIX,ads.wasu.tv,🍃 应用净化
   - DOMAIN-SUFFIX,afp.wasu.tv,🍃 应用净化
   - DOMAIN-SUFFIX,c.algovid.com,🍃 应用净化
-  - DOMAIN-SUFFIX,cc.xtgreat.com,🍃 应用净化
-  - DOMAIN-SUFFIX,d.dsp.imageter.com,🍃 应用净化
   - DOMAIN-SUFFIX,gg.jtertp.com,🍃 应用净化
   - DOMAIN-SUFFIX,gridsum-vd.cntv.cn,🍃 应用净化
   - DOMAIN-SUFFIX,kwflvcdn.000dn.com,🍃 应用净化
@@ -3597,33 +2633,40 @@ rules:
   - DOMAIN-SUFFIX,alt7-mtalk.google.com,🎯 全球直连
   - DOMAIN-SUFFIX,alt8-mtalk.google.com,🎯 全球直连
   - DOMAIN-SUFFIX,app-measurement.com,🎯 全球直连
-  - DOMAIN-SUFFIX,c.android.clients.google.com,🎯 全球直连
   - DOMAIN-SUFFIX,cache.pack.google.com,🎯 全球直连
   - DOMAIN-SUFFIX,clickserve.dartsearch.net,🎯 全球直连
-  - DOMAIN-SUFFIX,clientservices.googleapis.com,🎯 全球直连
   - DOMAIN-SUFFIX,crl.pki.goog,🎯 全球直连
   - DOMAIN-SUFFIX,dl.google.com,🎯 全球直连
   - DOMAIN-SUFFIX,dl.l.google.com,🎯 全球直连
-  - DOMAIN-SUFFIX,fonts.googleapis.com,🎯 全球直连
-  - DOMAIN-SUFFIX,fonts.gstatic.com,🎯 全球直连
   - DOMAIN-SUFFIX,googletagmanager.com,🎯 全球直连
   - DOMAIN-SUFFIX,googletagservices.com,🎯 全球直连
   - DOMAIN-SUFFIX,gtm.oasisfeng.com,🎯 全球直连
-  - DOMAIN-SUFFIX,imasdk.googleapis.com,🎯 全球直连
   - DOMAIN-SUFFIX,mtalk.google.com,🎯 全球直连
   - DOMAIN-SUFFIX,ocsp.pki.goog,🎯 全球直连
   - DOMAIN-SUFFIX,recaptcha.net,🎯 全球直连
   - DOMAIN-SUFFIX,safebrowsing-cache.google.com,🎯 全球直连
-  - DOMAIN-SUFFIX,safebrowsing.googleapis.com,🎯 全球直连
   - DOMAIN-SUFFIX,settings.crashlytics.com,🎯 全球直连
   - DOMAIN-SUFFIX,ssl-google-analytics.l.google.com,🎯 全球直连
-  - DOMAIN-SUFFIX,ssl.gstatic.com,🎯 全球直连
   - DOMAIN-SUFFIX,toolbarqueries.google.com,🎯 全球直连
   - DOMAIN-SUFFIX,tools.google.com,🎯 全球直连
   - DOMAIN-SUFFIX,tools.l.google.com,🎯 全球直连
-  - DOMAIN-SUFFIX,update.googleapis.com,🎯 全球直连
   - DOMAIN-SUFFIX,www-googletagmanager.l.google.com,🎯 全球直连
-  - DOMAIN-SUFFIX,www.gstatic.com,🎯 全球直连
+  - DOMAIN,csgo.wmsj.cn,🎯 全球直连
+  - DOMAIN,dl.steam.clngaa.com,🎯 全球直连
+  - DOMAIN,dl.steam.ksyna.com,🎯 全球直连
+  - DOMAIN,dota2.wmsj.cn,🎯 全球直连
+  - DOMAIN,st.dl.bscstorage.net,🎯 全球直连
+  - DOMAIN,st.dl.eccdnx.com,🎯 全球直连
+  - DOMAIN,st.dl.pinyuncloud.com,🎯 全球直连
+  - DOMAIN,steampipe.steamcontent.tnkjmec.com,🎯 全球直连
+  - DOMAIN,steampowered.com.8686c.com,🎯 全球直连
+  - DOMAIN,steamstatic.com.8686c.com,🎯 全球直连
+  - DOMAIN,wmsjsteam.com,🎯 全球直连
+  - DOMAIN,xz.pphimalayanrt.com,🎯 全球直连
+  - DOMAIN-SUFFIX,cm.steampowered.com,🎯 全球直连
+  - DOMAIN-SUFFIX,steamchina.com,🎯 全球直连
+  - DOMAIN-SUFFIX,steamcontent.com,🎯 全球直连
+  - DOMAIN-SUFFIX,steamusercontent.com,🎯 全球直连
   - DOMAIN-KEYWORD,1drv,Ⓜ️ 微软服务
   - DOMAIN-KEYWORD,microsoft,Ⓜ️ 微软服务
   - DOMAIN-SUFFIX,aadrm.com,Ⓜ️ 微软服务
@@ -3636,8 +2679,11 @@ rules:
   - DOMAIN-SUFFIX,azure.com,Ⓜ️ 微软服务
   - DOMAIN-SUFFIX,azure.net,Ⓜ️ 微软服务
   - DOMAIN-SUFFIX,azureedge.net,Ⓜ️ 微软服务
+  - DOMAIN-SUFFIX,azureiotcentral.com,Ⓜ️ 微软服务
   - DOMAIN-SUFFIX,azurerms.com,Ⓜ️ 微软服务
   - DOMAIN-SUFFIX,bing.com,Ⓜ️ 微软服务
+  - DOMAIN-SUFFIX,bing.net,Ⓜ️ 微软服务
+  - DOMAIN-SUFFIX,bingapis.com,Ⓜ️ 微软服务
   - DOMAIN-SUFFIX,cloudapp.net,Ⓜ️ 微软服务
   - DOMAIN-SUFFIX,cloudappsecurity.com,Ⓜ️ 微软服务
   - DOMAIN-SUFFIX,edgesuite.net,Ⓜ️ 微软服务
@@ -3704,6 +2750,8 @@ rules:
   - DOMAIN-SUFFIX,aaplimg.com,🍎 苹果服务
   - DOMAIN-SUFFIX,akadns.net,🍎 苹果服务
   - DOMAIN-SUFFIX,apple-cloudkit.com,🍎 苹果服务
+  - DOMAIN-SUFFIX,apple-dns.net,🍎 苹果服务
+  - DOMAIN-SUFFIX,apple-mapkit.com,🍎 苹果服务
   - DOMAIN-SUFFIX,apple.co,🍎 苹果服务
   - DOMAIN-SUFFIX,apple.com,🍎 苹果服务
   - DOMAIN-SUFFIX,apple.com.cn,🍎 苹果服务
@@ -3729,6 +2777,45 @@ rules:
   - IP-CIDR,205.180.175.0/24,🍎 苹果服务,no-resolve
   - DOMAIN-SUFFIX,edgedatg.com,🌍 国外媒体
   - DOMAIN-SUFFIX,go.com,🌍 国外媒体
+  - DOMAIN-KEYWORD,anthropic,🌍 国外媒体
+  - DOMAIN-KEYWORD,claude,🌍 国外媒体
+  - DOMAIN-KEYWORD,openai,🌍 国外媒体
+  - DOMAIN,ai.google.dev,🌍 国外媒体
+  - DOMAIN,api.githubcopilot.com,🌍 国外媒体
+  - DOMAIN,api.groq.com,🌍 国外媒体
+  - DOMAIN,api.together.xyz,🌍 国外媒体
+  - DOMAIN,bard.google.com,🌍 国外媒体
+  - DOMAIN,console.groq.com,🌍 国外媒体
+  - DOMAIN,copilot-proxy.githubusercontent.com,🌍 国外媒体
+  - DOMAIN,gemini.google.com,🌍 国外媒体
+  - DOMAIN,generativelanguage.googleapis.com,🌍 国外媒体
+  - DOMAIN,sydney.bing.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,ai.azure.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,anthropic.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,auth0.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,bard.google.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,chatgpt.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,claude.ai,🌍 国外媒体
+  - DOMAIN-SUFFIX,client-api.arkoselabs.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,copilot.cloud.microsoft,🌍 国外媒体
+  - DOMAIN-SUFFIX,copilot.microsoft.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,events.statsigapi.net,🌍 国外媒体
+  - DOMAIN-SUFFIX,featuregates.org,🌍 国外媒体
+  - DOMAIN-SUFFIX,gemini.google.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,grazie.ai,🌍 国外媒体
+  - DOMAIN-SUFFIX,grazie.aws.intellij.net,🌍 国外媒体
+  - DOMAIN-SUFFIX,identrust.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,intercom.io,🌍 国外媒体
+  - DOMAIN-SUFFIX,intercomcdn.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,makersuite.google.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,meta.ai,🌍 国外媒体
+  - DOMAIN-SUFFIX,mistral.ai,🌍 国外媒体
+  - DOMAIN-SUFFIX,oaistatic.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,oaiusercontent.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,openai.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,🌍 国外媒体
+  - DOMAIN-SUFFIX,perplexity.ai,🌍 国外媒体
+  - DOMAIN-SUFFIX,sora.com,🌍 国外媒体
   - DOMAIN-KEYWORD,abematv.akamaized.net,🌍 国外媒体
   - DOMAIN-SUFFIX,abema.io,🌍 国外媒体
   - DOMAIN-SUFFIX,abema.tv,🌍 国外媒体
@@ -3736,15 +2823,28 @@ rules:
   - DOMAIN-SUFFIX,hayabusa.io,🌍 国外媒体
   - DOMAIN-SUFFIX,c4assets.com,🌍 国外媒体
   - DOMAIN-SUFFIX,channel4.com,🌍 国外媒体
-  - DOMAIN, atv-ps.amazon.com,🌍 国外媒体
-  - DOMAIN, fls-na.amazon.com,🌍 国外媒体
-  - DOMAIN-SUFFIX, media-amazon.com,🌍 国外媒体
+  - DOMAIN-KEYWORD,avoddashs,🌍 国外媒体
+  - DOMAIN,atv-ps.amazon.com,🌍 国外媒体
+  - DOMAIN,avodmp4s3ww-a.akamaihd.net,🌍 国外媒体
+  - DOMAIN,d1v5ir2lpwr8os.cloudfront.net,🌍 国外媒体
+  - DOMAIN,d1xfray82862hr.cloudfront.net,🌍 国外媒体
+  - DOMAIN,d22qjgkvxw22r6.cloudfront.net,🌍 国外媒体
+  - DOMAIN,d25xi40x97liuc.cloudfront.net,🌍 国外媒体
+  - DOMAIN,d27xxe7juh1us6.cloudfront.net,🌍 国外媒体
+  - DOMAIN,d3196yreox78o9.cloudfront.net,🌍 国外媒体
+  - DOMAIN,dmqdd6hw24ucf.cloudfront.net,🌍 国外媒体
+  - DOMAIN,ktpx.amazon.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,aboutamazon.com,🌍 国外媒体
   - DOMAIN-SUFFIX,aiv-cdn.net,🌍 国外媒体
-  - DOMAIN-SUFFIX,amazonaws.co.uk,🌍 国外媒体
-  - DOMAIN-SUFFIX,amazonaws.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,aiv-delivery.net,🌍 国外媒体
+  - DOMAIN-SUFFIX,amazon.jobs,🌍 国外媒体
+  - DOMAIN-SUFFIX,amazontools.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,amazontours.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,amazonuniversity.jobs,🌍 国外媒体
   - DOMAIN-SUFFIX,amazonvideo.com,🌍 国外媒体
-  - DOMAIN-SUFFIX,llnwd.net,🌍 国外媒体
-  - DOMAIN-SUFFIX,primevideo.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,media-amazon.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,pv-cdn.net,🌍 国外媒体
+  - DOMAIN-SUFFIX,seattlespheres.com,🌍 国外媒体
   - DOMAIN,gspe1-ssl.ls.apple.com,🌍 国外媒体
   - DOMAIN,np-edge.itunes.apple.com,🌍 国外媒体
   - DOMAIN,play-edge.itunes.apple.com,🌍 国外媒体
@@ -3763,51 +2863,27 @@ rules:
   - DOMAIN-SUFFIX,bbci.co,🌍 国外媒体
   - DOMAIN-SUFFIX,bbci.co.uk,🌍 国外媒体
   - DOMAIN-SUFFIX,bidi.net.uk,🌍 国外媒体
+  - DOMAIN,bahamut.akamaized.net,🌍 国外媒体
   - DOMAIN,gamer-cds.cdn.hinet.net,🌍 国外媒体
   - DOMAIN,gamer2-cds.cdn.hinet.net,🌍 国外媒体
   - DOMAIN-SUFFIX,bahamut.com.tw,🌍 国外媒体
   - DOMAIN-SUFFIX,gamer.com.tw,🌍 国外媒体
-  - DOMAIN-SUFFIX,hinet.net,🌍 国外媒体
-  - DOMAIN-KEYWORD,livedazn,🌍 国外媒体
-  - DOMAIN-KEYWORD,vod2dazn,🌍 国外媒体
   - DOMAIN-KEYWORD,voddazn,🌍 国外媒体
   - DOMAIN,d151l6v8er5bdm.cloudfront.net,🌍 国外媒体
-  - DOMAIN,edge.api.brightcove.com,🌍 国外媒体
-  - DOMAIN,players.brightcove.net,🌍 国外媒体
-  - DOMAIN-SUFFIX,amplify.outbrain.com,🌍 国外媒体
-  - DOMAIN-SUFFIX,bluekai.com,🌍 国外媒体
-  - DOMAIN-SUFFIX,control.kochava.com,🌍 国外媒体
-  - DOMAIN-SUFFIX,cws.conviva.com,🌍 国外媒体
   - DOMAIN-SUFFIX,d151l6v8er5bdm.cloudfront.net,🌍 国外媒体
   - DOMAIN-SUFFIX,d1sgwhnao7452x.cloudfront.net,🌍 国外媒体
   - DOMAIN-SUFFIX,dazn-api.com,🌍 国外媒体
   - DOMAIN-SUFFIX,dazn.com,🌍 国外媒体
   - DOMAIN-SUFFIX,dazndn.com,🌍 国外媒体
-  - DOMAIN-SUFFIX,dc1-voddash-perform.secure.footprint.net,🌍 国外媒体
-  - DOMAIN-SUFFIX,dc1live21715dazn.akamaized.net,🌍 国外媒体
-  - DOMAIN-SUFFIX,dc2-live2dash-perform.secure.footprint.net,🌍 国外媒体
-  - DOMAIN-SUFFIX,dc2-live2hls-perform.secure.footprint.net,🌍 国外媒体
-  - DOMAIN-SUFFIX,dc2-vodhls-perform.secure.footprint.net,🌍 国外媒体
-  - DOMAIN-SUFFIX,dca-livedash-perform.secure.footprint.net,🌍 国外媒体
-  - DOMAIN-SUFFIX,dca-voddash-perform.secure.footprint.net,🌍 国外媒体
-  - DOMAIN-SUFFIX,dca-vodhls-perform.secure.footprint.net,🌍 国外媒体
-  - DOMAIN-SUFFIX,dcb-livedash-perform.secure.footprint.net,🌍 国外媒体
-  - DOMAIN-SUFFIX,dcb-voddash-perform.secure.footprint.net,🌍 国外媒体
   - DOMAIN-SUFFIX,dcblivedazn.akamaized.net,🌍 国外媒体
   - DOMAIN-SUFFIX,indazn.com,🌍 国外媒体
   - DOMAIN-SUFFIX,indaznlab.com,🌍 国外媒体
-  - DOMAIN-SUFFIX,intercom.io,🌍 国外媒体
-  - DOMAIN-SUFFIX,perfops.doracdn.com,🌍 国外媒体
-  - DOMAIN-SUFFIX,s.llnwi.net,🌍 国外媒体
-  - DOMAIN-SUFFIX,s.yimg.jp,🌍 国外媒体
-  - DOMAIN-SUFFIX,secure.footprint.net,🌍 国外媒体
   - DOMAIN-SUFFIX,sentry.io,🌍 国外媒体
-  - DOMAIN-SUFFIX,urbanairship.com,🌍 国外媒体
-  - DOMAIN-SUFFIX,vjs.zencdn.net,🌍 国外媒体
-  - DOMAIN-SUFFIX,widevine.entitlement.us.theplatform.com,🌍 国外媒体
-  - DOMAIN-SUFFIX,yahoo.co.jp,🌍 国外媒体
   - DOMAIN-SUFFIX,deezer.com,🌍 国外媒体
   - DOMAIN-SUFFIX,dzcdn.net,🌍 国外媒体
+  - DOMAIN-SUFFIX,disco-api.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,discovery.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,uplynk.com,🌍 国外媒体
   - DOMAIN,cdn.registerdisney.go.com,🌍 国外媒体
   - DOMAIN-SUFFIX,adobedtm.com,🌍 国外媒体
   - DOMAIN-SUFFIX,bam.nr-data.net,🌍 国外媒体
@@ -3836,25 +2912,12 @@ rules:
   - DOMAIN-SUFFIX,fox.com,🌍 国外媒体
   - DOMAIN-SUFFIX,foxdcg.com,🌍 国外媒体
   - DOMAIN-SUFFIX,uplynk.com,🌍 国外媒体
-  - DOMAIN,44wilhpljf.execute-api.ap-southeast-1.amazonaws.com,🌍 国外媒体
-  - DOMAIN,bcbolthboa-a.akamaihd.net,🌍 国外媒体
-  - DOMAIN,cf-images.ap-southeast-1.prod.boltdns.net,🌍 国外媒体
-  - DOMAIN,dai3fd1oh325y.cloudfront.net,🌍 国外媒体
-  - DOMAIN,hboasia1-i.akamaihd.net,🌍 国外媒体
-  - DOMAIN,hboasia2-i.akamaihd.net,🌍 国外媒体
-  - DOMAIN,hboasia3-i.akamaihd.net,🌍 国外媒体
-  - DOMAIN,hboasia4-i.akamaihd.net,🌍 国外媒体
-  - DOMAIN,hboasia5-i.akamaihd.net,🌍 国外媒体
-  - DOMAIN,players.brightcove.net,🌍 国外媒体
-  - DOMAIN,s3-ap-southeast-1.amazonaws.com,🌍 国外媒体
   - DOMAIN-SUFFIX,hbo.com,🌍 国外媒体
   - DOMAIN-SUFFIX,hbogo.com,🌍 国外媒体
-  - DOMAIN-SUFFIX,hbogoasia.com,🌍 国外媒体
-  - DOMAIN-SUFFIX,hbogoasia.hk,🌍 国外媒体
   - DOMAIN-SUFFIX,hbomax.com,🌍 国外媒体
   - DOMAIN-SUFFIX,hbomaxcdn.com,🌍 国外媒体
   - DOMAIN-SUFFIX,hbonow.com,🌍 国外媒体
-  - DOMAIN-KEYWORD,.hbogoasia.,🌍 国外媒体
+  - DOMAIN-KEYWORD,hbogoasia,🌍 国外媒体
   - DOMAIN,44wilhpljf.execute-api.ap-southeast-1.amazonaws.com,🌍 国外媒体
   - DOMAIN,bcbolthboa-a.akamaihd.net,🌍 国外媒体
   - DOMAIN,cf-images.ap-southeast-1.prod.boltdns.net,🌍 国外媒体
@@ -3870,6 +2933,7 @@ rules:
   - DOMAIN,hbounify-prod.evergent.com,🌍 国外媒体
   - DOMAIN,players.brightcove.net,🌍 国外媒体
   - DOMAIN,s3-ap-southeast-1.amazonaws.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,hboasia.com,🌍 国外媒体
   - DOMAIN-SUFFIX,hbogoasia.com,🌍 国外媒体
   - DOMAIN-SUFFIX,hbogoasia.hk,🌍 国外媒体
   - DOMAIN-SUFFIX,5itv.tv,🌍 国外媒体
@@ -3890,6 +2954,7 @@ rules:
   - DOMAIN,itvpnpmobile-a.akamaihd.net,🌍 国外媒体
   - DOMAIN-SUFFIX,itv.com,🌍 国外媒体
   - DOMAIN-SUFFIX,itvstatic.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,iwara.tv,🌍 国外媒体
   - DOMAIN-KEYWORD,jooxweb-api,🌍 国外媒体
   - DOMAIN-SUFFIX,joox.com,🌍 国外媒体
   - DOMAIN-KEYWORD,japonx,🌍 国外媒体
@@ -3906,6 +2971,7 @@ rules:
   - DOMAIN-SUFFIX,kkbox.com,🌍 国外媒体
   - DOMAIN-SUFFIX,kkbox.com.tw,🌍 国外媒体
   - DOMAIN,kktv-theater.kk.stream,🌍 国外媒体
+  - DOMAIN,theater-kktv.cdn.hinet.net,🌍 国外媒体
   - DOMAIN-SUFFIX,kktv.com.tw,🌍 国外媒体
   - DOMAIN-SUFFIX,kktv.me,🌍 国外媒体
   - DOMAIN,litvfreemobile-hichannel.cdn.hinet.net,🌍 国外媒体
@@ -3917,12 +2983,15 @@ rules:
   - DOMAIN,d349g9zuie06uo.cloudfront.net,🌍 国外媒体
   - DOMAIN-SUFFIX,channel5.com,🌍 国外媒体
   - DOMAIN-SUFFIX,my5.tv,🌍 国外媒体
+  - DOMAIN-KEYWORD,nowtv100,🌍 国外媒体
+  - DOMAIN-KEYWORD,rthklive,🌍 国外媒体
   - DOMAIN,mytvsuperlimited.hb.omtrdc.net,🌍 国外媒体
   - DOMAIN,mytvsuperlimited.sc.omtrdc.net,🌍 国外媒体
   - DOMAIN-SUFFIX,mytvsuper.com,🌍 国外媒体
   - DOMAIN-SUFFIX,tvb.com,🌍 国外媒体
+  - DOMAIN-KEYWORD,apiproxy-device-prod-nlb-,🌍 国外媒体
   - DOMAIN-KEYWORD,dualstack.apiproxy-,🌍 国外媒体
-  - DOMAIN-KEYWORD,dualstack.ichnaea-web-,🌍 国外媒体
+  - DOMAIN-KEYWORD,netflixdnstest,🌍 国外媒体
   - DOMAIN,netflix.com.edgesuite.net,🌍 国外媒体
   - DOMAIN-SUFFIX,fast.com,🌍 国外媒体
   - DOMAIN-SUFFIX,netflix.com,🌍 国外媒体
@@ -3944,12 +3013,9 @@ rules:
   - DOMAIN-SUFFIX,nflxvideo.net,🌍 国外媒体
   - IP-CIDR,8.41.4.0/24,🌍 国外媒体,no-resolve
   - IP-CIDR,23.246.0.0/18,🌍 国外媒体,no-resolve
-  - IP-CIDR,34.210.42.111/32,🌍 国外媒体,no-resolve
   - IP-CIDR,37.77.184.0/21,🌍 国外媒体,no-resolve
   - IP-CIDR,38.72.126.0/24,🌍 国外媒体,no-resolve
   - IP-CIDR,45.57.0.0/17,🌍 国外媒体,no-resolve
-  - IP-CIDR,52.89.124.203/32,🌍 国外媒体,no-resolve
-  - IP-CIDR,54.148.37.5/32,🌍 国外媒体,no-resolve
   - IP-CIDR,64.120.128.0/17,🌍 国外媒体,no-resolve
   - IP-CIDR,66.197.128.0/17,🌍 国外媒体,no-resolve
   - IP-CIDR,69.53.224.0/19,🌍 国外媒体,no-resolve
@@ -3960,11 +3026,48 @@ rules:
   - IP-CIDR,192.173.64.0/18,🌍 国外媒体,no-resolve
   - IP-CIDR,198.38.96.0/19,🌍 国外媒体,no-resolve
   - IP-CIDR,198.45.48.0/20,🌍 国外媒体,no-resolve
+  - IP-CIDR,203.75.84.0/24,🌍 国外媒体,no-resolve
   - IP-CIDR,207.45.72.0/22,🌍 国外媒体,no-resolve
   - IP-CIDR,208.75.76.0/22,🌍 国外媒体,no-resolve
   - DOMAIN-SUFFIX,dmc.nico,🌍 国外媒体
   - DOMAIN-SUFFIX,nicovideo.jp,🌍 国外媒体
   - DOMAIN-SUFFIX,nimg.jp,🌍 国外媒体
+  - DOMAIN-KEYWORD,nivod,🌍 国外媒体
+  - DOMAIN-SUFFIX,biggggg.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,mudvod.tv,🌍 国外媒体
+  - DOMAIN-SUFFIX,nbys.tv,🌍 国外媒体
+  - DOMAIN-SUFFIX,nbys1.tv,🌍 国外媒体
+  - DOMAIN-SUFFIX,nbyy.tv,🌍 国外媒体
+  - DOMAIN-SUFFIX,newpppp.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,nivod.tv,🌍 国外媒体
+  - DOMAIN-SUFFIX,nivodi.tv,🌍 国外媒体
+  - DOMAIN-SUFFIX,nivodz.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,vod360.net,🌍 国外媒体
+  - DOMAIN-KEYWORD,olevod,🌍 国外媒体
+  - DOMAIN-SUFFIX,haiwaikan.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,iole.tv,🌍 国外媒体
+  - DOMAIN-SUFFIX,olehd.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,olelive.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,olevod.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,olevod.io,🌍 国外媒体
+  - DOMAIN-SUFFIX,olevod.tv,🌍 国外媒体
+  - DOMAIN-SUFFIX,olevodtv.com,🌍 国外媒体
+  - DOMAIN-KEYWORD,openai,🌍 国外媒体
+  - DOMAIN-SUFFIX,auth0.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,challenges.cloudflare.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,chatgpt.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,client-api.arkoselabs.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,events.statsigapi.net,🌍 国外媒体
+  - DOMAIN-SUFFIX,featuregates.org,🌍 国外媒体
+  - DOMAIN-SUFFIX,identrust.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,intercom.io,🌍 国外媒体
+  - DOMAIN-SUFFIX,intercomcdn.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,oaistatic.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,oaiusercontent.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,openai.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,🌍 国外媒体
+  - DOMAIN-SUFFIX,sentry.io,🌍 国外媒体
+  - DOMAIN-SUFFIX,stripe.com,🌍 国外媒体
   - DOMAIN-SUFFIX,pbs.org,🌍 国外媒体
   - DOMAIN-SUFFIX,pandora.com,🌍 国外媒体
   - DOMAIN-SUFFIX,phncdn.com,🌍 国外媒体
@@ -3975,7 +3078,7 @@ rules:
   - DOMAIN-SUFFIX,p-cdn.us,🌍 国外媒体
   - DOMAIN-SUFFIX,sndcdn.com,🌍 国外媒体
   - DOMAIN-SUFFIX,soundcloud.com,🌍 国外媒体
-  - DOMAIN-KEYWORD,-spotify-com,🌍 国外媒体
+  - DOMAIN-KEYWORD,-spotify-,🌍 国外媒体
   - DOMAIN-KEYWORD,spotify.com,🌍 国外媒体
   - DOMAIN-SUFFIX,pscdn.co,🌍 国外媒体
   - DOMAIN-SUFFIX,scdn.co,🌍 国外媒体
@@ -3988,7 +3091,7 @@ rules:
   - DOMAIN-SUFFIX,tidalhifi.com,🌍 国外媒体
   - DOMAIN,hamifans.emome.net,🌍 国外媒体
   - DOMAIN-SUFFIX,skyking.com.tw,🌍 国外媒体
-  - DOMAIN-KEYWORD,-tiktokcdn-com,🌍 国外媒体
+  - DOMAIN-KEYWORD,tiktokcdn,🌍 国外媒体
   - DOMAIN-SUFFIX,byteoversea.com,🌍 国外媒体
   - DOMAIN-SUFFIX,ibytedtos.com,🌍 国外媒体
   - DOMAIN-SUFFIX,ipstatp.com,🌍 国外媒体
@@ -3999,22 +3102,24 @@ rules:
   - DOMAIN-SUFFIX,tiktokcdn.com,🌍 国外媒体
   - DOMAIN-SUFFIX,tiktokv.com,🌍 国外媒体
   - DOMAIN-KEYWORD,ttvnw,🌍 国外媒体
+  - DOMAIN-SUFFIX,ext-twitch.tv,🌍 国外媒体
   - DOMAIN-SUFFIX,jtvnw.net,🌍 国外媒体
   - DOMAIN-SUFFIX,ttvnw.net,🌍 国外媒体
+  - DOMAIN-SUFFIX,twitch-ext.rootonline.de,🌍 国外媒体
   - DOMAIN-SUFFIX,twitch.tv,🌍 国外媒体
   - DOMAIN-SUFFIX,twitchcdn.net,🌍 国外媒体
+  - PROCESS-NAME,com.viu.pad,🌍 国外媒体
+  - PROCESS-NAME,com.viu.phone,🌍 国外媒体
+  - PROCESS-NAME,com.vuclip.viu,🌍 国外媒体
   - DOMAIN,api.viu.now.com,🌍 国外媒体
   - DOMAIN,d1k2us671qcoau.cloudfront.net,🌍 国外媒体
   - DOMAIN,d2anahhhmp1ffz.cloudfront.net,🌍 国外媒体
   - DOMAIN,dfp6rglgjqszk.cloudfront.net,🌍 国外媒体
-  - DOMAIN-SUFFIX,bootstrapcdn.com,🌍 国外媒体
-  - DOMAIN-SUFFIX,cloudfront.net,🌍 国外媒体
   - DOMAIN-SUFFIX,cognito-identity.us-east-1.amazonaws.com,🌍 国外媒体
-  - DOMAIN-SUFFIX,firebaseio.com,🌍 国外媒体
-  - DOMAIN-SUFFIX,jwpcdn.com,🌍 国外媒体
-  - DOMAIN-SUFFIX,jwplayer.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,d1k2us671qcoau.cloudfront.net,🌍 国外媒体
+  - DOMAIN-SUFFIX,d2anahhhmp1ffz.cloudfront.net,🌍 国外媒体
+  - DOMAIN-SUFFIX,dfp6rglgjqszk.cloudfront.net,🌍 国外媒体
   - DOMAIN-SUFFIX,mobileanalytics.us-east-1.amazonaws.com,🌍 国外媒体
-  - DOMAIN-SUFFIX,nowe.com,🌍 国外媒体
   - DOMAIN-SUFFIX,viu.com,🌍 国外媒体
   - DOMAIN-SUFFIX,viu.now.com,🌍 国外媒体
   - DOMAIN-SUFFIX,viu.tv,🌍 国外媒体
@@ -4023,9 +3128,16 @@ rules:
   - DOMAIN,yt3.ggpht.com,🌍 国外媒体
   - DOMAIN-SUFFIX,googlevideo.com,🌍 国外媒体
   - DOMAIN-SUFFIX,gvt2.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,withyoutube.com,🌍 国外媒体
   - DOMAIN-SUFFIX,youtu.be,🌍 国外媒体
+  - DOMAIN-SUFFIX,youtube-nocookie.com,🌍 国外媒体
   - DOMAIN-SUFFIX,youtube.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,youtubeeducation.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,youtubegaming.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,youtubekids.com,🌍 国外媒体
+  - DOMAIN-SUFFIX,yt.be,🌍 国外媒体
   - DOMAIN-SUFFIX,ytimg.com,🌍 国外媒体
+  - DOMAIN,music.youtube.com,🌍 国外媒体
   - DOMAIN-SUFFIX,t.me,📲 电报信息
   - DOMAIN-SUFFIX,tdesktop.com,📲 电报信息
   - DOMAIN-SUFFIX,telegra.ph,📲 电报信息
@@ -4033,18 +3145,20 @@ rules:
   - DOMAIN-SUFFIX,telegram.org,📲 电报信息
   - DOMAIN-SUFFIX,telesco.pe,📲 电报信息
   - IP-CIDR,91.108.0.0/16,📲 电报信息,no-resolve
+  - IP-CIDR,95.161.64.0/20,📲 电报信息,no-resolve
   - IP-CIDR,109.239.140.0/24,📲 电报信息,no-resolve
   - IP-CIDR,149.154.160.0/20,📲 电报信息,no-resolve
   - IP-CIDR6,2001:67c:4e8::/48,📲 电报信息,no-resolve
   - IP-CIDR6,2001:b28:f23d::/48,📲 电报信息,no-resolve
   - IP-CIDR6,2001:b28:f23f::/48,📲 电报信息,no-resolve
-  - DOMAIN-SUFFIX,1password.com,🚀 节点选择
   - DOMAIN-SUFFIX,v2rayse.com,🚀 节点选择
   - DOMAIN-SUFFIX,vpnse.org,🚀 节点选择
+  - DOMAIN-SUFFIX,cff.pw,🚀 节点选择
+  - DOMAIN-SUFFIX,cfmem.com,🚀 节点选择
+  - DOMAIN-SUFFIX,1password.com,🚀 节点选择
   - DOMAIN-SUFFIX,adguard.org,🚀 节点选择
   - DOMAIN-SUFFIX,bit.no.com,🚀 节点选择
   - DOMAIN-SUFFIX,btlibrary.me,🚀 节点选择
-  - DOMAIN-SUFFIX,cccat.io,🚀 节点选择
   - DOMAIN-SUFFIX,cloudcone.com,🚀 节点选择
   - DOMAIN-SUFFIX,dubox.com,🚀 节点选择
   - DOMAIN-SUFFIX,gameloft.com,🚀 节点选择
@@ -4052,6 +3166,7 @@ rules:
   - DOMAIN-SUFFIX,hoyolab.com,🚀 节点选择
   - DOMAIN-SUFFIX,inoreader.com,🚀 节点选择
   - DOMAIN-SUFFIX,ip138.com,🚀 节点选择
+  - DOMAIN-SUFFIX,linkedin.com,🚀 节点选择
   - DOMAIN-SUFFIX,myteamspeak.com,🚀 节点选择
   - DOMAIN-SUFFIX,notion.so,🚀 节点选择
   - DOMAIN-SUFFIX,ping.pe,🚀 节点选择
@@ -4060,8 +3175,7 @@ rules:
   - DOMAIN-SUFFIX,tumbex.com,🚀 节点选择
   - DOMAIN-SUFFIX,twdvd.com,🚀 节点选择
   - DOMAIN-SUFFIX,unsplash.com,🚀 节点选择
-  - DOMAIN-SUFFIX,xn--i2ru8q2qg.com,🚀 节点选择
-  - DOMAIN-SUFFIX,yunpanjingling.com,🚀 节点选择
+  - DOMAIN-SUFFIX,buzzsprout.com,🚀 节点选择
   - DOMAIN-SUFFIX,eu,🚀 节点选择
   - DOMAIN-SUFFIX,hk,🚀 节点选择
   - DOMAIN-SUFFIX,jp,🚀 节点选择
@@ -4069,7 +3183,6 @@ rules:
   - DOMAIN-SUFFIX,sg,🚀 节点选择
   - DOMAIN-SUFFIX,tw,🚀 节点选择
   - DOMAIN-SUFFIX,uk,🚀 节点选择
-  - DOMAIN-SUFFIX,us,🚀 节点选择
   - DOMAIN-KEYWORD,1e100,🚀 节点选择
   - DOMAIN-KEYWORD,abema,🚀 节点选择
   - DOMAIN-KEYWORD,appledaily,🚀 节点选择
@@ -4123,7 +3236,6 @@ rules:
   - DOMAIN-SUFFIX,cloudfront.net,🚀 节点选择
   - DOMAIN-SUFFIX,comodoca.com,🚀 节点选择
   - DOMAIN-SUFFIX,daum.net,🚀 节点选择
-  - DOMAIN-SUFFIX,demdex.net,🚀 节点选择
   - DOMAIN-SUFFIX,deskconnect.com,🚀 节点选择
   - DOMAIN-SUFFIX,disqus.com,🚀 节点选择
   - DOMAIN-SUFFIX,disquscdn.com,🚀 节点选择
@@ -4221,8 +3333,11 @@ rules:
   - DOMAIN-KEYWORD,uk-live,🚀 节点选择
   - DOMAIN-SUFFIX,bbc.co,🚀 节点选择
   - DOMAIN-SUFFIX,bbc.com,🚀 节点选择
+  - DOMAIN-SUFFIX,claude.ai,🚀 节点选择
+  - DOMAIN-SUFFIX,anthropic.com,🚀 节点选择
   - DOMAIN-SUFFIX,apache.org,🚀 节点选择
   - DOMAIN-SUFFIX,docker.com,🚀 节点选择
+  - DOMAIN-SUFFIX,docker.io,🚀 节点选择
   - DOMAIN-SUFFIX,elastic.co,🚀 节点选择
   - DOMAIN-SUFFIX,elastic.com,🚀 节点选择
   - DOMAIN-SUFFIX,gcr.io,🚀 节点选择
@@ -4240,6 +3355,13 @@ rules:
   - DOMAIN-SUFFIX,spring.io,🚀 节点选择
   - DOMAIN-SUFFIX,spring.net,🚀 节点选择
   - DOMAIN-SUFFIX,stackoverflow.com,🚀 节点选择
+  - DOMAIN,d1q6f0aelx0por.cloudfront.net,🚀 节点选择
+  - DOMAIN,d2wy8f7a9ursnm.cloudfront.net,🚀 节点选择
+  - DOMAIN,d36jcksde1wxzq.cloudfront.net,🚀 节点选择
+  - DOMAIN-SUFFIX,compose-spec.io,🚀 节点选择
+  - DOMAIN-SUFFIX,docker.com,🚀 节点选择
+  - DOMAIN-SUFFIX,docker.io,🚀 节点选择
+  - DOMAIN-SUFFIX,dockerhub.com,🚀 节点选择
   - DOMAIN-SUFFIX,discord.co,🚀 节点选择
   - DOMAIN-SUFFIX,discord.com,🚀 节点选择
   - DOMAIN-SUFFIX,discord.gg,🚀 节点选择
@@ -4313,6 +3435,7 @@ rules:
   - DOMAIN-SUFFIX,cdninstagram.com,🚀 节点选择
   - DOMAIN-SUFFIX,instagram.com,🚀 节点选择
   - DOMAIN-SUFFIX,instagr.am,🚀 节点选择
+  - DOMAIN-SUFFIX,iwara.tv,🚀 节点选择
   - DOMAIN-SUFFIX,kakao.com,🚀 节点选择
   - DOMAIN-SUFFIX,kakao.co.kr,🚀 节点选择
   - DOMAIN-SUFFIX,kakaocdn.net,🚀 节点选择
@@ -4337,6 +3460,8 @@ rules:
   - IP-CIDR,119.235.236.0/23,🚀 节点选择,no-resolve
   - IP-CIDR,147.92.128.0/17,🚀 节点选择,no-resolve
   - IP-CIDR,203.104.128.0/19,🚀 节点选择,no-resolve
+  - DOMAIN-SUFFIX,openai.com,🚀 节点选择
+  - DOMAIN-SUFFIX,challenges.cloudflare.com,🚀 节点选择
   - DOMAIN-KEYWORD,1drv,🚀 节点选择
   - DOMAIN-KEYWORD,onedrive,🚀 节点选择
   - DOMAIN-KEYWORD,skydrive,🚀 节点选择
@@ -4374,6 +3499,7 @@ rules:
   - DOMAIN-SUFFIX,ypncdn.com,🚀 节点选择
   - DOMAIN-SUFFIX,pixiv.net,🚀 节点选择
   - DOMAIN-SUFFIX,pximg.net,🚀 节点选择
+  - DOMAIN-SUFFIX,fanbox.cc,🚀 节点选择
   - DOMAIN-SUFFIX,amplitude.com,🚀 节点选择
   - DOMAIN-SUFFIX,firebaseio.com,🚀 节点选择
   - DOMAIN-SUFFIX,hockeyapp.net,🚀 节点选择
@@ -4381,7 +3507,22 @@ rules:
   - DOMAIN-SUFFIX,smartmailcloud.com,🚀 节点选择
   - DOMAIN-SUFFIX,fanatical.com,🚀 节点选择
   - DOMAIN-SUFFIX,humblebundle.com,🚀 节点选择
+  - DOMAIN-SUFFIX,underlords.com,🚀 节点选择
+  - DOMAIN-SUFFIX,valvesoftware.com,🚀 节点选择
+  - DOMAIN-SUFFIX,playartifact.com,🚀 节点选择
+  - DOMAIN-SUFFIX,steam-chat.com,🚀 节点选择
   - DOMAIN-SUFFIX,steamcommunity.com,🚀 节点选择
+  - DOMAIN-SUFFIX,steamgames.com,🚀 节点选择
+  - DOMAIN-SUFFIX,steampowered.com,🚀 节点选择
+  - DOMAIN-SUFFIX,steamserver.net,🚀 节点选择
+  - DOMAIN-SUFFIX,steamstatic.com,🚀 节点选择
+  - DOMAIN-SUFFIX,steamstat.us,🚀 节点选择
+  - DOMAIN,steambroadcast.akamaized.net,🚀 节点选择
+  - DOMAIN,steamcommunity-a.akamaihd.net,🚀 节点选择
+  - DOMAIN,steamstore-a.akamaihd.net,🚀 节点选择
+  - DOMAIN,steamusercontent-a.akamaihd.net,🚀 节点选择
+  - DOMAIN,steamuserimages-a.akamaihd.net,🚀 节点选择
+  - DOMAIN,steampipe.akamaized.net,🚀 节点选择
   - DOMAIN-SUFFIX,tap.io,🚀 节点选择
   - DOMAIN-SUFFIX,taptap.tw,🚀 节点选择
   - DOMAIN-SUFFIX,twitch.tv,🚀 节点选择
@@ -4392,6 +3533,7 @@ rules:
   - DOMAIN-SUFFIX,twimg.co,🚀 节点选择
   - DOMAIN-SUFFIX,twimg.com,🚀 节点选择
   - DOMAIN-SUFFIX,twimg.org,🚀 节点选择
+  - DOMAIN-SUFFIX,x.com,🚀 节点选择
   - DOMAIN-SUFFIX,t.me,🚀 节点选择
   - DOMAIN-SUFFIX,tdesktop.com,🚀 节点选择
   - DOMAIN-SUFFIX,telegra.ph,🚀 节点选择
@@ -4433,10 +3575,14 @@ rules:
   - DOMAIN-SUFFIX,wikiversity.org,🚀 节点选择
   - DOMAIN-SUFFIX,wikivoyage.org,🚀 节点选择
   - DOMAIN-SUFFIX,wiktionary.org,🚀 节点选择
+  - DOMAIN-SUFFIX,zoom.us,🚀 节点选择
+  - DOMAIN-SUFFIX,zoomgov.com,🚀 节点选择
   - DOMAIN-SUFFIX,neulion.com,🚀 节点选择
   - DOMAIN-SUFFIX,icntv.xyz,🚀 节点选择
   - DOMAIN-SUFFIX,flzbcdn.xyz,🚀 节点选择
   - DOMAIN-SUFFIX,ocnttv.com,🚀 节点选择
+  - DOMAIN-SUFFIX,vikacg.com,🚀 节点选择
+  - DOMAIN-SUFFIX,picjs.xyz,🚀 节点选择
   - DOMAIN-SUFFIX,13th.tech,🎯 全球直连
   - DOMAIN-SUFFIX,423down.com,🎯 全球直连
   - DOMAIN-SUFFIX,bokecc.com,🎯 全球直连
@@ -4449,11 +3595,15 @@ rules:
   - DOMAIN-SUFFIX,msftconnecttest.com,🎯 全球直连
   - DOMAIN-SUFFIX,msftncsi.com,🎯 全球直连
   - DOMAIN-SUFFIX,qupu123.com,🎯 全球直连
+  - DOMAIN-SUFFIX,pdfwifi.com,🎯 全球直连
+  - DOMAIN-SUFFIX,zhenguanyu.biz,🎯 全球直连
+  - DOMAIN-SUFFIX,zhenguanyu.com,🎯 全球直连
+  - DOMAIN-SUFFIX,snapdrop.net,🎯 全球直连
+  - DOMAIN-SUFFIX,tebex.io,🎯 全球直连
   - DOMAIN-SUFFIX,cn,🎯 全球直连
-  - DOMAIN-SUFFIX,中国,🎯 全球直连
-  - DOMAIN-SUFFIX,公司,🎯 全球直连
-  - DOMAIN-SUFFIX,网络,🎯 全球直连
-  - DOMAIN-KEYWORD,-cn,🎯 全球直连
+  - DOMAIN-SUFFIX,xn--fiqs8s,🎯 全球直连
+  - DOMAIN-SUFFIX,xn--55qx5d,🎯 全球直连
+  - DOMAIN-SUFFIX,xn--io0a7i,🎯 全球直连
   - DOMAIN-KEYWORD,360buy,🎯 全球直连
   - DOMAIN-KEYWORD,alicdn,🎯 全球直连
   - DOMAIN-KEYWORD,alimama,🎯 全球直连
@@ -4464,7 +3614,6 @@ rules:
   - DOMAIN-KEYWORD,ccgslb,🎯 全球直连
   - DOMAIN-KEYWORD,chinacache,🎯 全球直连
   - DOMAIN-KEYWORD,duobao,🎯 全球直连
-  - DOMAIN-KEYWORD,duolingo,🎯 全球直连
   - DOMAIN-KEYWORD,jdpay,🎯 全球直连
   - DOMAIN-KEYWORD,moke,🎯 全球直连
   - DOMAIN-KEYWORD,qhimg,🎯 全球直连
@@ -4501,6 +3650,7 @@ rules:
   - DOMAIN-SUFFIX,aliyuncdn.com,🎯 全球直连
   - DOMAIN-SUFFIX,aliyuncs.com,🎯 全球直连
   - DOMAIN-SUFFIX,aliyundrive.com,🎯 全球直连
+  - DOMAIN-SUFFIX,aliyundrive.net,🎯 全球直连
   - DOMAIN-SUFFIX,amap.com,🎯 全球直连
   - DOMAIN-SUFFIX,autonavi.com,🎯 全球直连
   - DOMAIN-SUFFIX,dingtalk.com,🎯 全球直连
@@ -4540,7 +3690,8 @@ rules:
   - DOMAIN-SUFFIX,biliapi.com,🎯 全球直连
   - DOMAIN-SUFFIX,biliapi.net,🎯 全球直连
   - DOMAIN-SUFFIX,bilibili.com,🎯 全球直连
-  - DOMAIN-SUFFIX,bilibili.tv,🎯 全球直连
+  - DOMAIN-SUFFIX,bilibili.co,🎯 全球直连
+  - DOMAIN-SUFFIX,biliintl.co,🎯 全球直连
   - DOMAIN-SUFFIX,biligame.com,🎯 全球直连
   - DOMAIN-SUFFIX,biligame.net,🎯 全球直连
   - DOMAIN-SUFFIX,bilivideo.com,🎯 全球直连
@@ -4548,16 +3699,30 @@ rules:
   - DOMAIN-SUFFIX,hdslb.com,🎯 全球直连
   - DOMAIN-SUFFIX,im9.com,🎯 全球直连
   - DOMAIN-SUFFIX,smtcdns.net,🎯 全球直连
-  - DOMAIN-SUFFIX,battle.net,🎯 全球直连
-  - DOMAIN-SUFFIX,battlenet.com,🎯 全球直连
-  - DOMAIN-SUFFIX,blizzard.com,🎯 全球直连
+  - DOMAIN-SUFFIX,amemv.com,🎯 全球直连
+  - DOMAIN-SUFFIX,bdxiguaimg.com,🎯 全球直连
+  - DOMAIN-SUFFIX,bdxiguastatic.com,🎯 全球直连
+  - DOMAIN-SUFFIX,byted-static.com,🎯 全球直连
   - DOMAIN-SUFFIX,bytedance.com,🎯 全球直连
   - DOMAIN-SUFFIX,bytedance.net,🎯 全球直连
   - DOMAIN-SUFFIX,bytedns.net,🎯 全球直连
+  - DOMAIN-SUFFIX,bytednsdoc.com,🎯 全球直连
+  - DOMAIN-SUFFIX,bytegoofy.com,🎯 全球直连
   - DOMAIN-SUFFIX,byteimg.com,🎯 全球直连
+  - DOMAIN-SUFFIX,bytescm.com,🎯 全球直连
+  - DOMAIN-SUFFIX,bytetos.com,🎯 全球直连
+  - DOMAIN-SUFFIX,bytexservice.com,🎯 全球直连
+  - DOMAIN-SUFFIX,douyin.com,🎯 全球直连
+  - DOMAIN-SUFFIX,douyincdn.com,🎯 全球直连
+  - DOMAIN-SUFFIX,douyinpic.com,🎯 全球直连
+  - DOMAIN-SUFFIX,douyinstatic.com,🎯 全球直连
+  - DOMAIN-SUFFIX,douyinvod.com,🎯 全球直连
+  - DOMAIN-SUFFIX,feelgood.cn,🎯 全球直连
   - DOMAIN-SUFFIX,feiliao.com,🎯 全球直连
   - DOMAIN-SUFFIX,gifshow.com,🎯 全球直连
   - DOMAIN-SUFFIX,huoshan.com,🎯 全球直连
+  - DOMAIN-SUFFIX,huoshanzhibo.com,🎯 全球直连
+  - DOMAIN-SUFFIX,ibytedapm.com,🎯 全球直连
   - DOMAIN-SUFFIX,iesdouyin.com,🎯 全球直连
   - DOMAIN-SUFFIX,ixigua.com,🎯 全球直连
   - DOMAIN-SUFFIX,kspkg.com,🎯 全球直连
@@ -4565,6 +3730,7 @@ rules:
   - DOMAIN-SUFFIX,snssdk.com,🎯 全球直连
   - DOMAIN-SUFFIX,toutiao.com,🎯 全球直连
   - DOMAIN-SUFFIX,toutiao13.com,🎯 全球直连
+  - DOMAIN-SUFFIX,toutiaoapi.com,🎯 全球直连
   - DOMAIN-SUFFIX,toutiaocdn.com,🎯 全球直连
   - DOMAIN-SUFFIX,toutiaocdn.net,🎯 全球直连
   - DOMAIN-SUFFIX,toutiaocloud.com,🎯 全球直连
@@ -4573,33 +3739,67 @@ rules:
   - DOMAIN-SUFFIX,toutiaoimg.com,🎯 全球直连
   - DOMAIN-SUFFIX,toutiaopage.com,🎯 全球直连
   - DOMAIN-SUFFIX,wukong.com,🎯 全球直连
+  - DOMAIN-SUFFIX,zijieapi.com,🎯 全球直连
   - DOMAIN-SUFFIX,zijieimg.com,🎯 全球直连
   - DOMAIN-SUFFIX,zjbyte.com,🎯 全球直连
   - DOMAIN-SUFFIX,zjcdn.com,🎯 全球直连
   - DOMAIN-SUFFIX,cctv.com,🎯 全球直连
   - DOMAIN-SUFFIX,cctvpic.com,🎯 全球直连
   - DOMAIN-SUFFIX,livechina.com,🎯 全球直连
+  - DOMAIN,auth.wosms.cn,🎯 全球直连
+  - DOMAIN,config.cmpassport.com,🎯 全球直连
+  - DOMAIN,enrichgw.10010.com,🎯 全球直连
+  - DOMAIN,hmrz.wo.cn,🎯 全球直连
+  - DOMAIN,id.mail.wo.cn,🎯 全球直连
+  - DOMAIN,log.cmpassport.com,🎯 全球直连
+  - DOMAIN,log1.cmpassport.com,🎯 全球直连
+  - DOMAIN,mdn.open.wo.cn,🎯 全球直连
+  - DOMAIN,nishub1.10010.com,🎯 全球直连
+  - DOMAIN,opencloud.wostore.cn,🎯 全球直连
+  - DOMAIN,ye.dun.163yun.com,🎯 全球直连
+  - DOMAIN-SUFFIX,auth.wo.cn,🎯 全球直连
+  - DOMAIN-SUFFIX,cmpassport.com,🎯 全球直连
+  - DOMAIN-SUFFIX,id6.me,🎯 全球直连
+  - DOMAIN-SUFFIX,mob.com,🎯 全球直连
+  - DOMAIN-SUFFIX,open.e.189.cn,🎯 全球直连
   - DOMAIN-SUFFIX,21cn.com,🎯 全球直连
   - DOMAIN-SUFFIX,didialift.com,🎯 全球直连
   - DOMAIN-SUFFIX,didiglobal.com,🎯 全球直连
   - DOMAIN-SUFFIX,udache.com,🎯 全球直连
+  - DOMAIN-SUFFIX,bytefcdnrd.com,🎯 全球直连
+  - DOMAIN-SUFFIX,edgesrv.com,🎯 全球直连
   - DOMAIN-SUFFIX,douyu.com,🎯 全球直连
   - DOMAIN-SUFFIX,douyu.tv,🎯 全球直连
+  - DOMAIN-SUFFIX,douyucdn.cn,🎯 全球直连
   - DOMAIN-SUFFIX,douyuscdn.com,🎯 全球直连
   - DOMAIN-SUFFIX,douyutv.com,🎯 全球直连
   - DOMAIN-SUFFIX,epicgames.com,🎯 全球直连
+  - DOMAIN-SUFFIX,epicgames.dev,🎯 全球直连
   - DOMAIN-SUFFIX,helpshift.com,🎯 全球直连
   - DOMAIN-SUFFIX,paragon.com,🎯 全球直连
   - DOMAIN-SUFFIX,unrealengine.com,🎯 全球直连
   - DOMAIN-SUFFIX,dbankcdn.com,🎯 全球直连
   - DOMAIN-SUFFIX,hc-cdn.com,🎯 全球直连
   - DOMAIN-SUFFIX,hicloud.com,🎯 全球直连
+  - DOMAIN-SUFFIX,hihonor.com,🎯 全球直连
   - DOMAIN-SUFFIX,huawei.com,🎯 全球直连
   - DOMAIN-SUFFIX,huaweicloud.com,🎯 全球直连
   - DOMAIN-SUFFIX,huaweishop.net,🎯 全球直连
   - DOMAIN-SUFFIX,hwccpc.com,🎯 全球直连
   - DOMAIN-SUFFIX,vmall.com,🎯 全球直连
   - DOMAIN-SUFFIX,vmallres.com,🎯 全球直连
+  - DOMAIN-SUFFIX,allawnfs.com,🎯 全球直连
+  - DOMAIN-SUFFIX,allawno.com,🎯 全球直连
+  - DOMAIN-SUFFIX,allawntech.com,🎯 全球直连
+  - DOMAIN-SUFFIX,coloros.com,🎯 全球直连
+  - DOMAIN-SUFFIX,heytap.com,🎯 全球直连
+  - DOMAIN-SUFFIX,heytapcs.com,🎯 全球直连
+  - DOMAIN-SUFFIX,heytapdownload.com,🎯 全球直连
+  - DOMAIN-SUFFIX,heytapimage.com,🎯 全球直连
+  - DOMAIN-SUFFIX,heytapmobi.com,🎯 全球直连
+  - DOMAIN-SUFFIX,oppo.com,🎯 全球直连
+  - DOMAIN-SUFFIX,oppoer.me,🎯 全球直连
+  - DOMAIN-SUFFIX,oppomobile.com,🎯 全球直连
   - DOMAIN-SUFFIX,iflyink.com,🎯 全球直连
   - DOMAIN-SUFFIX,iflyrec.com,🎯 全球直连
   - DOMAIN-SUFFIX,iflytek.com,🎯 全球直连
@@ -4661,10 +3861,16 @@ rules:
   - DOMAIN-SUFFIX,leju.com,🎯 全球直连
   - DOMAIN-SUFFIX,miaopai.com,🎯 全球直连
   - DOMAIN-SUFFIX,sina.com,🎯 全球直连
+  - DOMAIN-SUFFIX,sina.com.cn,🎯 全球直连
+  - DOMAIN-SUFFIX,sina.cn,🎯 全球直连
   - DOMAIN-SUFFIX,sinaapp.com,🎯 全球直连
+  - DOMAIN-SUFFIX,sinaapp.cn,🎯 全球直连
   - DOMAIN-SUFFIX,sinaimg.com,🎯 全球直连
+  - DOMAIN-SUFFIX,sinaimg.cn,🎯 全球直连
   - DOMAIN-SUFFIX,weibo.com,🎯 全球直连
+  - DOMAIN-SUFFIX,weibo.cn,🎯 全球直连
   - DOMAIN-SUFFIX,weibocdn.com,🎯 全球直连
+  - DOMAIN-SUFFIX,weibocdn.cn,🎯 全球直连
   - DOMAIN-SUFFIX,xiaoka.tv,🎯 全球直连
   - DOMAIN-SUFFIX,go2map.com,🎯 全球直连
   - DOMAIN-SUFFIX,sogo.com,🎯 全球直连
@@ -4681,20 +3887,22 @@ rules:
   - DOMAIN-SUFFIX,playstationnetwork.com,🎯 全球直连
   - DOMAIN-SUFFIX,sony.com,🎯 全球直连
   - DOMAIN-SUFFIX,sonyentertainmentnetwork.com,🎯 全球直连
-  - DOMAIN-SUFFIX,csgo.wmsj.cn,🎯 全球直连
-  - DOMAIN-SUFFIX,dl.steam.ksyna.com,🎯 全球直连
-  - DOMAIN-SUFFIX,dota2.wmsj.cn,🎯 全球直连
-  - DOMAIN-SUFFIX,st.dl.bscstorage.net,🎯 全球直连
-  - DOMAIN-SUFFIX,st.dl.eccdnx.com,🎯 全球直连
-  - DOMAIN-SUFFIX,st.dl.pinyuncloud.com,🎯 全球直连
-  - DOMAIN-SUFFIX,steamcommunity-a.akamaihd.net,🎯 全球直连
+  - DOMAIN-SUFFIX,cm.steampowered.com,🎯 全球直连
   - DOMAIN-SUFFIX,steamcontent.com,🎯 全球直连
-  - DOMAIN-SUFFIX,steamgames.com,🎯 全球直连
-  - DOMAIN-SUFFIX,steampowered.com.8686c.com,🎯 全球直连
-  - DOMAIN-SUFFIX,steamstat.us,🎯 全球直连
-  - DOMAIN-SUFFIX,steamstatic.com,🎯 全球直连
   - DOMAIN-SUFFIX,steamusercontent.com,🎯 全球直连
-  - DOMAIN-SUFFIX,steamuserimages-a.akamaihd.net,🎯 全球直连
+  - DOMAIN-SUFFIX,steamchina.com,🎯 全球直连
+  - DOMAIN,csgo.wmsj.cn,🎯 全球直连
+  - DOMAIN,dota2.wmsj.cn,🎯 全球直连
+  - DOMAIN,wmsjsteam.com,🎯 全球直连
+  - DOMAIN,dl.steam.clngaa.com,🎯 全球直连
+  - DOMAIN,dl.steam.ksyna.com,🎯 全球直连
+  - DOMAIN,st.dl.bscstorage.net,🎯 全球直连
+  - DOMAIN,st.dl.eccdnx.com,🎯 全球直连
+  - DOMAIN,st.dl.pinyuncloud.com,🎯 全球直连
+  - DOMAIN,xz.pphimalayanrt.com,🎯 全球直连
+  - DOMAIN,steampipe.steamcontent.tnkjmec.com,🎯 全球直连
+  - DOMAIN,steampowered.com.8686c.com,🎯 全球直连
+  - DOMAIN,steamstatic.com.8686c.com,🎯 全球直连
   - DOMAIN-SUFFIX,foxmail.com,🎯 全球直连
   - DOMAIN-SUFFIX,gtimg.com,🎯 全球直连
   - DOMAIN-SUFFIX,idqqimg.com,🎯 全球直连
@@ -4743,46 +3951,7 @@ rules:
   - DOMAIN-SUFFIX,zmzapi.com,🎯 全球直连
   - DOMAIN-SUFFIX,zmzapi.net,🎯 全球直连
   - DOMAIN-SUFFIX,zmzfile.com,🎯 全球直连
-  - DOMAIN-KEYWORD,announce,🎯 全球直连
-  - DOMAIN-KEYWORD,torrent,🎯 全球直连
-  - DOMAIN-KEYWORD,tracker,🎯 全球直连
-  - DOMAIN-SUFFIX,animebytes.tv,🎯 全球直连
-  - DOMAIN-SUFFIX,animetorrents.me,🎯 全球直连
-  - DOMAIN-SUFFIX,awesome-hd.me,🎯 全球直连
-  - DOMAIN-SUFFIX,beitai.pt,🎯 全球直连
-  - DOMAIN-SUFFIX,bittorrent.com,🎯 全球直连
-  - DOMAIN-SUFFIX,broadcasthe.net,🎯 全球直连
-  - DOMAIN-SUFFIX,chdbits.co,🎯 全球直连
-  - DOMAIN-SUFFIX,classix-unlimited.co.uk,🎯 全球直连
-  - DOMAIN-SUFFIX,empornium.me,🎯 全球直连
-  - DOMAIN-SUFFIX,gazellegames.net,🎯 全球直连
-  - DOMAIN-SUFFIX,hd4fans.org,🎯 全球直连
-  - DOMAIN-SUFFIX,hdchina.org,🎯 全球直连
-  - DOMAIN-SUFFIX,hdhome.org,🎯 全球直连
-  - DOMAIN-SUFFIX,hdsky.me,🎯 全球直连
-  - DOMAIN-SUFFIX,hdtime.org,🎯 全球直连
-  - DOMAIN-SUFFIX,hdzone.me,🎯 全球直连
-  - DOMAIN-SUFFIX,icetorrent.org,🎯 全球直连
-  - DOMAIN-SUFFIX,jpopsuki.eu,🎯 全球直连
-  - DOMAIN-SUFFIX,keepfrds.com,🎯 全球直连
-  - DOMAIN-SUFFIX,leaguehd.com,🎯 全球直连
-  - DOMAIN-SUFFIX,m-team.cc,🎯 全球直连
-  - DOMAIN-SUFFIX,madsrevolution.net,🎯 全球直连
-  - DOMAIN-SUFFIX,msg.vg,🎯 全球直连
-  - DOMAIN-SUFFIX,nanyangpt.com,🎯 全球直连
-  - DOMAIN-SUFFIX,ncore.cc,🎯 全球直连
-  - DOMAIN-SUFFIX,open.cd,🎯 全球直连
-  - DOMAIN-SUFFIX,ourbits.club,🎯 全球直连
-  - DOMAIN-SUFFIX,passthepopcorn.me,🎯 全球直连
-  - DOMAIN-SUFFIX,privatehd.to,🎯 全球直连
-  - DOMAIN-SUFFIX,pthome.net,🎯 全球直连
-  - DOMAIN-SUFFIX,redacted.ch,🎯 全球直连
-  - DOMAIN-SUFFIX,springsunday.net,🎯 全球直连
-  - DOMAIN-SUFFIX,tjupt.org,🎯 全球直连
-  - DOMAIN-SUFFIX,totheglory.im,🎯 全球直连
-  - DOMAIN-SUFFIX,trontv.com,🎯 全球直连
   - DOMAIN-SUFFIX,teamviewer.com,🎯 全球直连
-  - IP-CIDR,109.239.140.0/24,🎯 全球直连,no-resolve
   - IP-CIDR,139.220.243.27/32,🎯 全球直连,no-resolve
   - IP-CIDR,172.16.102.56/32,🎯 全球直连,no-resolve
   - IP-CIDR,185.188.32.1/28,🎯 全球直连,no-resolve
@@ -4794,9 +3963,12 @@ rules:
   - DOMAIN-SUFFIX,baomitu.com,🎯 全球直连
   - DOMAIN-SUFFIX,bootcss.com,🎯 全球直连
   - DOMAIN-SUFFIX,jiasule.com,🎯 全球直连
-  - DOMAIN-SUFFIX,jsdelivr.net,🎯 全球直连
   - DOMAIN-SUFFIX,staticfile.org,🎯 全球直连
   - DOMAIN-SUFFIX,upaiyun.com,🎯 全球直连
+  - DOMAIN-SUFFIX,doh.pub,🎯 全球直连
+  - DOMAIN-SUFFIX,dns.alidns.com,🎯 全球直连
+  - DOMAIN-SUFFIX,doh.360.cn,🎯 全球直连
+  - IP-CIDR,1.12.12.12/32,🎯 全球直连,no-resolve
   - DOMAIN-SUFFIX,10010.com,🎯 全球直连
   - DOMAIN-SUFFIX,115.com,🎯 全球直连
   - DOMAIN-SUFFIX,12306.com,🎯 全球直连
@@ -4826,6 +3998,7 @@ rules:
   - DOMAIN-SUFFIX,biqudu.com,🎯 全球直连
   - DOMAIN-SUFFIX,biquge.com,🎯 全球直连
   - DOMAIN-SUFFIX,bitauto.com,🎯 全球直连
+  - DOMAIN-SUFFIX,bosszhipin.com,🎯 全球直连
   - DOMAIN-SUFFIX,c-ctrip.com,🎯 全球直连
   - DOMAIN-SUFFIX,camera360.com,🎯 全球直连
   - DOMAIN-SUFFIX,cdnmama.com,🎯 全球直连
@@ -4840,8 +4013,6 @@ rules:
   - DOMAIN-SUFFIX,clouddn.com,🎯 全球直连
   - DOMAIN-SUFFIX,cloudxns.net,🎯 全球直连
   - DOMAIN-SUFFIX,cn163.net,🎯 全球直连
-  - DOMAIN-SUFFIX,cnbeta.com,🎯 全球直连
-  - DOMAIN-SUFFIX,cnbetacdn.com,🎯 全球直连
   - DOMAIN-SUFFIX,cnblogs.com,🎯 全球直连
   - DOMAIN-SUFFIX,cnki.net,🎯 全球直连
   - DOMAIN-SUFFIX,cnmstl.net,🎯 全球直连
@@ -4863,6 +4034,7 @@ rules:
   - DOMAIN-SUFFIX,eastday.com,🎯 全球直连
   - DOMAIN-SUFFIX,eastmoney.com,🎯 全球直连
   - DOMAIN-SUFFIX,ecitic.com,🎯 全球直连
+  - DOMAIN-SUFFIX,element-plus.org,🎯 全球直连
   - DOMAIN-SUFFIX,ewqcxz.com,🎯 全球直连
   - DOMAIN-SUFFIX,fang.com,🎯 全球直连
   - DOMAIN-SUFFIX,fantasy.tv,🎯 全球直连
@@ -4906,6 +4078,7 @@ rules:
   - DOMAIN-SUFFIX,kaola.com,🎯 全球直连
   - DOMAIN-SUFFIX,knewone.com,🎯 全球直连
   - DOMAIN-SUFFIX,koowo.com,🎯 全球直连
+  - DOMAIN-SUFFIX,koyso.com,🎯 全球直连
   - DOMAIN-SUFFIX,ksyungslb.com,🎯 全球直连
   - DOMAIN-SUFFIX,kuaidi100.com,🎯 全球直连
   - DOMAIN-SUFFIX,kugou.com,🎯 全球直连
@@ -4916,11 +4089,9 @@ rules:
   - DOMAIN-SUFFIX,lanzoux.com,🎯 全球直连
   - DOMAIN-SUFFIX,lemicp.com,🎯 全球直连
   - DOMAIN-SUFFIX,letitfly.me,🎯 全球直连
-  - DOMAIN-SUFFIX,linkedin.com,🎯 全球直连
   - DOMAIN-SUFFIX,lizhi.fm,🎯 全球直连
   - DOMAIN-SUFFIX,lizhi.io,🎯 全球直连
   - DOMAIN-SUFFIX,lizhifm.com,🎯 全球直连
-  - DOMAIN-SUFFIX,loli.net,🎯 全球直连
   - DOMAIN-SUFFIX,luoo.net,🎯 全球直连
   - DOMAIN-SUFFIX,lvmama.com,🎯 全球直连
   - DOMAIN-SUFFIX,lxdns.com,🎯 全球直连
@@ -4943,11 +4114,11 @@ rules:
   - DOMAIN-SUFFIX,nruan.com,🎯 全球直连
   - DOMAIN-SUFFIX,nuomi.com,🎯 全球直连
   - DOMAIN-SUFFIX,onedns.net,🎯 全球直连
+  - DOMAIN-SUFFIX,oneplus.com,🎯 全球直连
   - DOMAIN-SUFFIX,onlinedown.net,🎯 全球直连
   - DOMAIN-SUFFIX,oracle.com,🎯 全球直连
   - DOMAIN-SUFFIX,oschina.net,🎯 全球直连
   - DOMAIN-SUFFIX,ourdvs.com,🎯 全球直连
-  - DOMAIN-SUFFIX,paypal.com,🎯 全球直连
   - DOMAIN-SUFFIX,polyv.net,🎯 全球直连
   - DOMAIN-SUFFIX,qbox.me,🎯 全球直连
   - DOMAIN-SUFFIX,qcloud.com,🎯 全球直连
@@ -4966,9 +4137,8 @@ rules:
   - DOMAIN-SUFFIX,quanmin.tv,🎯 全球直连
   - DOMAIN-SUFFIX,qunar.com,🎯 全球直连
   - DOMAIN-SUFFIX,qunarzz.com,🎯 全球直连
-  - DOMAIN-SUFFIX,rarbg.to,🎯 全球直连
+  - DOMAIN-SUFFIX,realme.com,🎯 全球直连
   - DOMAIN-SUFFIX,repaik.com,🎯 全球直连
-  - DOMAIN-SUFFIX,rrmj.tv,🎯 全球直连
   - DOMAIN-SUFFIX,ruguoapp.com,🎯 全球直连
   - DOMAIN-SUFFIX,runoob.com,🎯 全球直连
   - DOMAIN-SUFFIX,sankuai.com,🎯 全球直连
@@ -4976,7 +4146,6 @@ rules:
   - DOMAIN-SUFFIX,sf-express.com,🎯 全球直连
   - DOMAIN-SUFFIX,shumilou.net,🎯 全球直连
   - DOMAIN-SUFFIX,simplecd.me,🎯 全球直连
-  - DOMAIN-SUFFIX,sm.ms,🎯 全球直连
   - DOMAIN-SUFFIX,smzdm.com,🎯 全球直连
   - DOMAIN-SUFFIX,snwx.com,🎯 全球直连
   - DOMAIN-SUFFIX,soufunimg.com,🎯 全球直连
@@ -5002,6 +4171,7 @@ rules:
   - DOMAIN-SUFFIX,upyun.com,🎯 全球直连
   - DOMAIN-SUFFIX,uxengine.net,🎯 全球直连
   - DOMAIN-SUFFIX,videocc.net,🎯 全球直连
+  - DOMAIN-SUFFIX,vivo.com,🎯 全球直连
   - DOMAIN-SUFFIX,wandoujia.com,🎯 全球直连
   - DOMAIN-SUFFIX,weather.com,🎯 全球直连
   - DOMAIN-SUFFIX,weico.cc,🎯 全球直连
@@ -5038,69 +4208,101 @@ rules:
   - DOMAIN-SUFFIX,zhaopin.com,🎯 全球直连
   - DOMAIN-SUFFIX,zhihu.com,🎯 全球直连
   - DOMAIN-SUFFIX,zhimg.com,🎯 全球直连
+  - DOMAIN-SUFFIX,zhipin.com,🎯 全球直连
   - DOMAIN-SUFFIX,zhongsou.com,🎯 全球直连
   - DOMAIN-SUFFIX,zhuihd.com,🎯 全球直连
+  - DOMAIN-SUFFIX,cmbchina.com,🎯 全球直连
+  - DOMAIN-SUFFIX,95516.com,🎯 全球直连
   - IP-CIDR,8.128.0.0/10,🎯 全球直连,no-resolve
-  - IP-CIDR,8.208.0.0/12,🎯 全球直连,no-resolve
+  - IP-CIDR,8.209.32.0/22,🎯 全球直连,no-resolve
+  - IP-CIDR,8.209.40.0/21,🎯 全球直连,no-resolve
+  - IP-CIDR,8.209.48.0/20,🎯 全球直连,no-resolve
+  - IP-CIDR,8.210.0.0/16,🎯 全球直连,no-resolve
+  - IP-CIDR,8.211.64.0/18,🎯 全球直连,no-resolve
+  - IP-CIDR,8.211.128.0/20,🎯 全球直连,no-resolve
+  - IP-CIDR,8.211.144.0/21,🎯 全球直连,no-resolve
+  - IP-CIDR,8.211.152.0/22,🎯 全球直连,no-resolve
+  - IP-CIDR,8.211.208.0/20,🎯 全球直连,no-resolve
+  - IP-CIDR,8.211.224.0/19,🎯 全球直连,no-resolve
+  - IP-CIDR,8.212.0.0/14,🎯 全球直连,no-resolve
+  - IP-CIDR,8.216.0.0/13,🎯 全球直连,no-resolve
   - IP-CIDR,14.1.112.0/22,🎯 全球直连,no-resolve
-  - IP-CIDR,41.222.240.0/22,🎯 全球直连,no-resolve
-  - IP-CIDR,41.223.119.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,43.242.168.0/22,🎯 全球直连,no-resolve
   - IP-CIDR,45.112.212.0/22,🎯 全球直连,no-resolve
   - IP-CIDR,47.52.0.0/16,🎯 全球直连,no-resolve
   - IP-CIDR,47.56.0.0/15,🎯 全球直连,no-resolve
-  - IP-CIDR,47.74.0.0/15,🎯 全球直连,no-resolve
-  - IP-CIDR,47.76.0.0/14,🎯 全球直连,no-resolve
-  - IP-CIDR,47.80.0.0/12,🎯 全球直连,no-resolve
-  - IP-CIDR,47.235.0.0/16,🎯 全球直连,no-resolve
-  - IP-CIDR,47.236.0.0/14,🎯 全球直连,no-resolve
-  - IP-CIDR,47.240.0.0/14,🎯 全球直连,no-resolve
-  - IP-CIDR,47.244.0.0/15,🎯 全球直连,no-resolve
-  - IP-CIDR,47.246.0.0/16,🎯 全球直连,no-resolve
-  - IP-CIDR,47.250.0.0/15,🎯 全球直连,no-resolve
-  - IP-CIDR,47.252.0.0/15,🎯 全球直连,no-resolve
-  - IP-CIDR,47.254.0.0/16,🎯 全球直连,no-resolve
+  - IP-CIDR,47.75.0.0/16,🎯 全球直连,no-resolve
+  - IP-CIDR,47.89.0.0/18,🎯 全球直连,no-resolve
+  - IP-CIDR,47.89.64.0/24,🎯 全球直连,no-resolve
+  - IP-CIDR,47.89.82.0/23,🎯 全球直连,no-resolve
+  - IP-CIDR,47.89.91.0/24,🎯 全球直连,no-resolve
+  - IP-CIDR,47.89.100.0/23,🎯 全球直连,no-resolve
+  - IP-CIDR,47.90.0.0/17,🎯 全球直连,no-resolve
+  - IP-CIDR,47.91.128.0/17,🎯 全球直连,no-resolve
+  - IP-CIDR,47.92.0.0/14,🎯 全球直连,no-resolve
+  - IP-CIDR,47.240.0.0/16,🎯 全球直连,no-resolve
+  - IP-CIDR,47.242.0.0/15,🎯 全球直连,no-resolve
+  - IP-CIDR,47.244.0.0/16,🎯 全球直连,no-resolve
+  - IP-CIDR,47.246.5.0/24,🎯 全球直连,no-resolve
+  - IP-CIDR,47.246.16.0/24,🎯 全球直连,no-resolve
+  - IP-CIDR,47.246.60.0/23,🎯 全球直连,no-resolve
+  - IP-CIDR,47.246.65.0/24,🎯 全球直连,no-resolve
   - IP-CIDR,59.82.0.0/20,🎯 全球直连,no-resolve
   - IP-CIDR,59.82.240.0/21,🎯 全球直连,no-resolve
   - IP-CIDR,59.82.248.0/22,🎯 全球直连,no-resolve
-  - IP-CIDR,72.254.0.0/16,🎯 全球直连,no-resolve
-  - IP-CIDR,103.38.56.0/22,🎯 全球直连,no-resolve
   - IP-CIDR,103.52.76.0/22,🎯 全球直连,no-resolve
   - IP-CIDR,103.206.40.0/22,🎯 全球直连,no-resolve
   - IP-CIDR,110.76.21.0/24,🎯 全球直连,no-resolve
   - IP-CIDR,110.76.23.0/24,🎯 全球直连,no-resolve
   - IP-CIDR,112.125.0.0/17,🎯 全球直连,no-resolve
-  - IP-CIDR,116.251.64.0/18,🎯 全球直连,no-resolve
+  - IP-CIDR,116.251.79.0/24,🎯 全球直连,no-resolve
+  - IP-CIDR,116.251.80.0/22,🎯 全球直连,no-resolve
+  - IP-CIDR,116.251.84.0/24,🎯 全球直连,no-resolve
+  - IP-CIDR,116.251.88.0/22,🎯 全球直连,no-resolve
+  - IP-CIDR,116.251.93.0/24,🎯 全球直连,no-resolve
+  - IP-CIDR,116.251.94.0/23,🎯 全球直连,no-resolve
+  - IP-CIDR,116.251.102.0/23,🎯 全球直连,no-resolve
+  - IP-CIDR,116.251.104.0/21,🎯 全球直连,no-resolve
+  - IP-CIDR,116.251.112.0/21,🎯 全球直连,no-resolve
+  - IP-CIDR,116.251.124.0/22,🎯 全球直连,no-resolve
   - IP-CIDR,119.38.208.0/20,🎯 全球直连,no-resolve
   - IP-CIDR,119.38.224.0/20,🎯 全球直连,no-resolve
   - IP-CIDR,119.42.224.0/20,🎯 全球直连,no-resolve
-  - IP-CIDR,139.95.0.0/16,🎯 全球直连,no-resolve
   - IP-CIDR,140.205.1.0/24,🎯 全球直连,no-resolve
   - IP-CIDR,140.205.122.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,147.139.0.0/16,🎯 全球直连,no-resolve
-  - IP-CIDR,149.129.0.0/16,🎯 全球直连,no-resolve
-  - IP-CIDR,155.102.0.0/16,🎯 全球直连,no-resolve
-  - IP-CIDR,161.117.0.0/16,🎯 全球直连,no-resolve
-  - IP-CIDR,163.181.0.0/16,🎯 全球直连,no-resolve
-  - IP-CIDR,170.33.0.0/16,🎯 全球直连,no-resolve
-  - IP-CIDR,198.11.128.0/18,🎯 全球直连,no-resolve
-  - IP-CIDR,205.204.96.0/19,🎯 全球直连,no-resolve
-  - IP-CIDR,19.28.0.0/23,🎯 全球直连,no-resolve
+  - IP-CIDR,149.129.64.0/18,🎯 全球直连,no-resolve
+  - IP-CIDR,163.181.32.0/22,🎯 全球直连,no-resolve
+  - IP-CIDR,163.181.40.0/24,🎯 全球直连,no-resolve
+  - IP-CIDR,170.33.0.0/22,🎯 全球直连,no-resolve
+  - IP-CIDR,198.11.141.0/24,🎯 全球直连,no-resolve
+  - IP-CIDR,198.11.184.0/21,🎯 全球直连,no-resolve
+  - IP-CIDR,205.204.104.0/23,🎯 全球直连,no-resolve
+  - IP-CIDR,205.204.117.0/24,🎯 全球直连,no-resolve
+  - IP-CIDR,205.204.122.0/23,🎯 全球直连,no-resolve
+  - IP-CIDR,205.204.124.0/22,🎯 全球直连,no-resolve
   - IP-CIDR,45.40.192.0/19,🎯 全球直连,no-resolve
-  - IP-CIDR,49.51.0.0/16,🎯 全球直连,no-resolve
+  - IP-CIDR,49.51.56.0/22,🎯 全球直连,no-resolve
+  - IP-CIDR,49.51.60.0/23,🎯 全球直连,no-resolve
+  - IP-CIDR,49.51.110.0/23,🎯 全球直连,no-resolve
+  - IP-CIDR,49.51.112.0/20,🎯 全球直连,no-resolve
   - IP-CIDR,62.234.0.0/16,🎯 全球直连,no-resolve
   - IP-CIDR,94.191.0.0/17,🎯 全球直连,no-resolve
   - IP-CIDR,103.7.28.0/22,🎯 全球直连,no-resolve
-  - IP-CIDR,103.116.50.0/23,🎯 全球直连,no-resolve
-  - IP-CIDR,103.231.60.0/24,🎯 全球直连,no-resolve
   - IP-CIDR,109.244.0.0/16,🎯 全球直连,no-resolve
   - IP-CIDR,111.30.128.0/21,🎯 全球直连,no-resolve
   - IP-CIDR,111.30.136.0/24,🎯 全球直连,no-resolve
   - IP-CIDR,111.30.139.0/24,🎯 全球直连,no-resolve
   - IP-CIDR,111.30.140.0/23,🎯 全球直连,no-resolve
   - IP-CIDR,115.159.0.0/16,🎯 全球直连,no-resolve
-  - IP-CIDR,119.28.0.0/15,🎯 全球直连,no-resolve
-  - IP-CIDR,120.88.56.0/23,🎯 全球直连,no-resolve
+  - IP-CIDR,119.28.0.0/18,🎯 全球直连,no-resolve
+  - IP-CIDR,119.28.64.0/19,🎯 全球直连,no-resolve
+  - IP-CIDR,119.28.124.0/23,🎯 全球直连,no-resolve
+  - IP-CIDR,119.28.128.0/20,🎯 全球直连,no-resolve
+  - IP-CIDR,119.28.164.0/22,🎯 全球直连,no-resolve
+  - IP-CIDR,119.28.168.0/21,🎯 全球直连,no-resolve
+  - IP-CIDR,119.28.176.0/20,🎯 全球直连,no-resolve
+  - IP-CIDR,119.28.192.0/19,🎯 全球直连,no-resolve
+  - IP-CIDR,119.28.224.0/21,🎯 全球直连,no-resolve
+  - IP-CIDR,119.29.0.0/16,🎯 全球直连,no-resolve
   - IP-CIDR,121.51.0.0/16,🎯 全球直连,no-resolve
   - IP-CIDR,129.28.0.0/16,🎯 全球直连,no-resolve
   - IP-CIDR,129.204.0.0/16,🎯 全球直连,no-resolve
@@ -5108,61 +4310,46 @@ rules:
   - IP-CIDR,132.232.0.0/16,🎯 全球直连,no-resolve
   - IP-CIDR,134.175.0.0/16,🎯 全球直连,no-resolve
   - IP-CIDR,146.56.192.0/18,🎯 全球直连,no-resolve
-  - IP-CIDR,148.70.0.0/16,🎯 全球直连,no-resolve
-  - IP-CIDR,150.109.0.0/16,🎯 全球直连,no-resolve
+  - IP-CIDR,150.109.32.0/19,🎯 全球直连,no-resolve
+  - IP-CIDR,150.109.64.0/20,🎯 全球直连,no-resolve
+  - IP-CIDR,150.109.96.0/19,🎯 全球直连,no-resolve
   - IP-CIDR,152.136.0.0/16,🎯 全球直连,no-resolve
   - IP-CIDR,162.14.0.0/16,🎯 全球直连,no-resolve
-  - IP-CIDR,162.62.0.0/16,🎯 全球直连,no-resolve
-  - IP-CIDR,170.106.130.0/24,🎯 全球直连,no-resolve
   - IP-CIDR,182.254.0.0/16,🎯 全球直连,no-resolve
   - IP-CIDR,188.131.128.0/17,🎯 全球直连,no-resolve
   - IP-CIDR,203.195.128.0/17,🎯 全球直连,no-resolve
-  - IP-CIDR,203.205.128.0/17,🎯 全球直连,no-resolve
-  - IP-CIDR,210.4.138.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,211.152.128.0/23,🎯 全球直连,no-resolve
-  - IP-CIDR,211.152.132.0/23,🎯 全球直连,no-resolve
-  - IP-CIDR,211.152.148.0/23,🎯 全球直连,no-resolve
+  - IP-CIDR,203.205.128.0/20,🎯 全球直连,no-resolve
+  - IP-CIDR,203.205.144.0/21,🎯 全球直连,no-resolve
+  - IP-CIDR,203.205.158.0/24,🎯 全球直连,no-resolve
+  - IP-CIDR,203.205.180.0/22,🎯 全球直连,no-resolve
+  - IP-CIDR,203.205.208.0/22,🎯 全球直连,no-resolve
+  - IP-CIDR,203.205.212.0/23,🎯 全球直连,no-resolve
+  - IP-CIDR,203.205.218.0/23,🎯 全球直连,no-resolve
+  - IP-CIDR,203.205.220.0/22,🎯 全球直连,no-resolve
+  - IP-CIDR,203.205.248.0/21,🎯 全球直连,no-resolve
   - IP-CIDR,212.64.0.0/17,🎯 全球直连,no-resolve
   - IP-CIDR,212.129.128.0/17,🎯 全球直连,no-resolve
-  - IP-CIDR,45.113.192.0/22,🎯 全球直连,no-resolve
-  - IP-CIDR,63.217.23.0/24,🎯 全球直连,no-resolve
+  - IP-CIDR,45.113.194.0/23,🎯 全球直连,no-resolve
   - IP-CIDR,63.243.252.0/24,🎯 全球直连,no-resolve
   - IP-CIDR,103.235.44.0/22,🎯 全球直连,no-resolve
-  - IP-CIDR,104.193.88.0/22,🎯 全球直连,no-resolve
   - IP-CIDR,106.12.0.0/15,🎯 全球直连,no-resolve
   - IP-CIDR,114.28.224.0/20,🎯 全球直连,no-resolve
-  - IP-CIDR,119.63.192.0/21,🎯 全球直连,no-resolve
-  - IP-CIDR,180.76.0.0/24,🎯 全球直连,no-resolve
   - IP-CIDR,180.76.0.0/16,🎯 全球直连,no-resolve
   - IP-CIDR,182.61.0.0/16,🎯 全球直连,no-resolve
-  - IP-CIDR,185.10.104.0/22,🎯 全球直连,no-resolve
+  - IP-CIDR,185.10.105.0/24,🎯 全球直连,no-resolve
   - IP-CIDR,202.46.48.0/20,🎯 全球直连,no-resolve
   - IP-CIDR,203.90.238.0/24,🎯 全球直连,no-resolve
   - IP-CIDR,43.254.0.0/22,🎯 全球直连,no-resolve
   - IP-CIDR,45.249.212.0/22,🎯 全球直连,no-resolve
   - IP-CIDR,49.4.0.0/17,🎯 全球直连,no-resolve
-  - IP-CIDR,78.101.192.0/19,🎯 全球直连,no-resolve
-  - IP-CIDR,78.101.224.0/20,🎯 全球直连,no-resolve
-  - IP-CIDR,81.52.161.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,85.97.220.0/22,🎯 全球直连,no-resolve
   - IP-CIDR,103.31.200.0/22,🎯 全球直连,no-resolve
-  - IP-CIDR,103.69.140.0/23,🎯 全球直连,no-resolve
   - IP-CIDR,103.218.216.0/22,🎯 全球直连,no-resolve
   - IP-CIDR,114.115.128.0/17,🎯 全球直连,no-resolve
   - IP-CIDR,114.116.0.0/16,🎯 全球直连,no-resolve
   - IP-CIDR,116.63.128.0/18,🎯 全球直连,no-resolve
   - IP-CIDR,116.66.184.0/22,🎯 全球直连,no-resolve
-  - IP-CIDR,116.71.96.0/20,🎯 全球直连,no-resolve
-  - IP-CIDR,116.71.128.0/21,🎯 全球直连,no-resolve
-  - IP-CIDR,116.71.136.0/22,🎯 全球直连,no-resolve
-  - IP-CIDR,116.71.141.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,116.71.142.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,116.71.243.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,116.71.244.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,116.71.251.0/24,🎯 全球直连,no-resolve
   - IP-CIDR,117.78.0.0/18,🎯 全球直连,no-resolve
   - IP-CIDR,119.3.0.0/16,🎯 全球直连,no-resolve
-  - IP-CIDR,119.8.0.0/21,🎯 全球直连,no-resolve
   - IP-CIDR,119.8.32.0/19,🎯 全球直连,no-resolve
   - IP-CIDR,121.36.0.0/17,🎯 全球直连,no-resolve
   - IP-CIDR,121.36.128.0/18,🎯 全球直连,no-resolve
@@ -5191,37 +4378,7 @@ rules:
   - IP-CIDR,159.138.96.0/20,🎯 全球直连,no-resolve
   - IP-CIDR,159.138.112.0/21,🎯 全球直连,no-resolve
   - IP-CIDR,159.138.125.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,159.138.128.0/18,🎯 全球直连,no-resolve
-  - IP-CIDR,159.138.192.0/20,🎯 全球直连,no-resolve
-  - IP-CIDR,159.138.223.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,159.138.224.0/19,🎯 全球直连,no-resolve
-  - IP-CIDR,168.195.92.0/22,🎯 全球直连,no-resolve
-  - IP-CIDR,185.176.76.0/22,🎯 全球直连,no-resolve
-  - IP-CIDR,197.199.0.0/18,🎯 全球直连,no-resolve
-  - IP-CIDR,197.210.163.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,197.252.1.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,197.252.2.0/23,🎯 全球直连,no-resolve
-  - IP-CIDR,197.252.4.0/22,🎯 全球直连,no-resolve
-  - IP-CIDR,197.252.8.0/21,🎯 全球直连,no-resolve
-  - IP-CIDR,200.32.52.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,200.32.54.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,200.32.57.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,203.135.0.0/22,🎯 全球直连,no-resolve
-  - IP-CIDR,203.135.4.0/23,🎯 全球直连,no-resolve
-  - IP-CIDR,203.135.8.0/23,🎯 全球直连,no-resolve
-  - IP-CIDR,203.135.11.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,203.135.13.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,203.135.20.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,203.135.22.0/23,🎯 全球直连,no-resolve
-  - IP-CIDR,203.135.24.0/23,🎯 全球直连,no-resolve
-  - IP-CIDR,203.135.26.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,203.135.29.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,203.135.33.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,203.135.38.0/23,🎯 全球直连,no-resolve
-  - IP-CIDR,203.135.40.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,203.135.43.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,203.135.48.0/24,🎯 全球直连,no-resolve
-  - IP-CIDR,203.135.50.0/24,🎯 全球直连,no-resolve
+  - IP-CIDR,159.138.128.0/19,🎯 全球直连,no-resolve
   - IP-CIDR,42.186.0.0/16,🎯 全球直连,no-resolve
   - IP-CIDR,45.127.128.0/22,🎯 全球直连,no-resolve
   - IP-CIDR,45.195.24.0/24,🎯 全球直连,no-resolve
@@ -5245,7 +4402,6 @@ rules:
   - IP-CIDR,103.72.128.0/21,🎯 全球直连,no-resolve
   - IP-CIDR,103.74.24.0/21,🎯 全球直连,no-resolve
   - IP-CIDR,103.74.48.0/22,🎯 全球直连,no-resolve
-  - IP-CIDR,103.126.92.0/22,🎯 全球直连,no-resolve
   - IP-CIDR,103.129.252.0/22,🎯 全球直连,no-resolve
   - IP-CIDR,103.131.252.0/22,🎯 全球直连,no-resolve
   - IP-CIDR,103.135.240.0/22,🎯 全球直连,no-resolve
@@ -5259,7 +4415,11 @@ rules:
   - IP-CIDR,123.58.160.0/19,🎯 全球直连,no-resolve
   - IP-CIDR,223.252.192.0/19,🎯 全球直连,no-resolve
   - IP-CIDR,101.198.128.0/18,🎯 全球直连,no-resolve
-  - IP-CIDR,101.198.192.0/19,🎯 全球直连,no-resolve
+  - IP-CIDR,101.198.192.0/24,🎯 全球直连,no-resolve
+  - IP-CIDR,101.198.194.0/23,🎯 全球直连,no-resolve
+  - IP-CIDR,101.198.196.0/22,🎯 全球直连,no-resolve
+  - IP-CIDR,101.198.200.0/21,🎯 全球直连,no-resolve
+  - IP-CIDR,101.198.208.0/20,🎯 全球直连,no-resolve
   - IP-CIDR,101.199.196.0/22,🎯 全球直连,no-resolve
   - GEOIP,CN,🎯 全球直连
   - MATCH,🐟 漏网之鱼
