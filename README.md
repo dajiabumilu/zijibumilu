@@ -6,7 +6,7 @@ log-level: info
 external-controller: '127.0.0.1:9090'
 dns:
     enable: true
-    ipv6: false
+    ipv6: true
     default-nameserver: [223.5.5.5, 119.29.29.29]
     enhanced-mode: fake-ip
     fake-ip-range: 198.18.0.1/16
@@ -15,186 +15,886 @@ dns:
     fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://8.8.4.4:853']
     fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
 proxies:
-  - {"type":"vless","name":"【看视频】美国01","server":"icook.tw","port":443,"uuid":"866853eb-5293-4f09-bf00-e13eb237c655","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"worker.amcloud.filegear-sg.me","ws-opts":{"path":"/","headers":{"host":"worker.amcloud.filegear-sg.me"}}}
-  - {"type":"vless","name":"【看视频】美国02","server":"visa.com","port":443,"uuid":"866853eb-5293-4f09-bf00-e13eb237c655","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"worker.amcloud.filegear-sg.me","ws-opts":{"path":"/","headers":{"host":"worker.amcloud.filegear-sg.me"}}}
   - {"type":"trojan","name":"🇯🇵【看视频】日本4","server":"aafrtpfxr.jpl01i9zjfegelp.5xfsur8v62.gosdk.xyz","port":27001,"password":"3ba8cc9b-f30c-426b-84a8-878f02ae895d","udp":true,"skip-cert-verify":true,"sni":"q08m.vgraxiw73s.hasyaf.cn","network":"tcp"}
   - {"type":"vless","name":"【看视频】台湾1-无限流量","server":"usa.visa.com","port":443,"uuid":"e94b7e06-1934-4f0e-89ad-1f516e532590","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"a.bumilu.zone.id","ws-opts":{"path":"/?ed=2560","headers":{"host":"a.bumilu.zone.id"}}}
   - {"type":"vless","name":"【看视频】台湾5-无限流量","server":"www.visa.com.br","port":2087,"uuid":"e94b7e06-1934-4f0e-89ad-1f516e532590","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"a.bumilu.zone.id","ws-opts":{"path":"/?ed=2560","headers":{"host":"a.bumilu.zone.id"}}}
   - {"type":"vless","name":"【看视频】台湾6-无限流量","server":"www.visasoutheasteurope.com","port":2096,"uuid":"e94b7e06-1934-4f0e-89ad-1f516e532590","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"a.bumilu.zone.id","ws-opts":{"path":"/?ed=2560","headers":{"host":"a.bumilu.zone.id"}}}
-  - {"type":"vmess","name":"🇭🇰【看视频】香港20","server":"183.236.51.38","port":"32919","uuid":"418048af-a293-4b99-9b0c-98ca3580dd24","alterId":"64","cipher":"auto","network":"tcp"}
   - {"type":"vless","name":"【看视频】-gouyunHK1T流量","server":"206.237.7.142","port":443,"uuid":"fc8f2b62-6e38-4943-b4c3-24997ff3f6ba","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"itunes.apple.com","tls":false,"udp":true}
-  - {"type":"vless","name":"【看视频】美国03","server":"website.acveo.ir","port":8080,"uuid":"70558b53-e4fd-43d4-98b2-b7cf84de8276","skip-cert-verify":true}
-  - {"type":"vless","name":"【看视频】美国04","server":"www.speedtest.net","port":443,"uuid":"9b224b07-98c9-4f4c-8360-301ada31dea4","skip-cert-verify":true}
-  - {"type":"vless","name":"【看视频】德国01","server":"104.24.196.20","port":2086,"uuid":"640cfa2f-b5ae-4815-82b9-7594d2515f83","skip-cert-verify":true}
-  - {"type":"trojan","name":"【看视频】德国02","server":"18.193.90.151","port":22222,"password":"telegram-id-vlessconfig","udp":true,"skip-cert-verify":true,"sni":"trojan.burgerip.co.uk","network":"tcp"}
-  - {"type":"vless","name":"【看视频】德国03","server":"website.acveo.ir","port":8080,"uuid":"70558b53-e4fd-43d4-98b2-b7cf84de8276","skip-cert-verify":true}
-  - {"type":"vmess","name":"🇭🇰中继香港021【勿看视频】","ws-opts":{"path":"/"},"server":"hk02.ssyhi.xyz","port":"50201","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
-  - {"type":"vmess","name":"🇭🇰中继香港041【勿看视频】","ws-opts":{"path":"/"},"server":"hk04.ssyhi.xyz","port":"50203","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
-  - {"type":"vmess","name":"🇭🇰中继香港051【勿看视频】","ws-opts":{"path":"/"},"server":"hk05.ssyhi.xyz","port":"50204","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
-  - {"type":"vmess","name":"🇭🇰中继香港121【勿看视频】","ws-opts":{"path":"/"},"server":"hk12.ssyhi.xyz","port":"50252","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
-  - {"type":"vmess","name":"🇭🇰中继香港131【勿看视频】","ws-opts":{"path":"/"},"server":"hk13.ssyhi.xyz","port":"50253","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
-  - {"type":"vmess","name":"🇭🇰中继香港141【勿看视频】","ws-opts":{"path":"/"},"server":"hk14.ssyhi.xyz","port":"50254","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
-  - {"type":"vmess","name":"🇭🇰中继香港151【勿看视频】","ws-opts":{"path":"/"},"server":"hk16.ssyhi.xyz","port":"50255","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
-  - {"type":"vmess","name":"🇺🇸中继美国061【勿看视频】","ws-opts":{"path":"/"},"server":"us08.ssyhi.xyz","port":"50670","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"🇭🇰【看视频】香港20","server":"183.236.51.38","port":"32919","uuid":"418048af-a293-4b99-9b0c-98ca3580dd24","alterId":"64","cipher":"auto","network":"tcp"}
+  - {"type":"vless","name":"【看视频】🇺🇸美国1","server":"160.79.104.113","port":443,"uuid":"794f9f41-92c9-4a78-8ffc-1f82cb48a4e2","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"0229.patterdeng.pp.ua","ws-opts":{"path":"/security=tls","headers":{"host":"0229.patterdeng.pp.ua"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国2","server":"www.speedtest.net","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"redfree8mahsang6.redfree8.ir","ws-opts":{"path":"/vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl?ed=2560","headers":{"host":"redfree8mahsang6.redfree8.ir"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国3","server":"104.17.147.22","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"redfree8mahsang6.redfree8.ir","ws-opts":{"path":"/jokerrvpntelegram----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn?ed=2560","headers":{"host":"redfree8mahsang6.redfree8.ir"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国4","server":"162.159.152.81","port":8443,"uuid":"de537efd-4d7c-4f3c-aea5-19d3f36c7b1b","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"txmt.conetcdata.dpdns.org","ws-opts":{"path":"/?ed=2560security=tls","headers":{"host":"txmt.conetcdata.dpdns.org"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国5","server":"www.speedtest.net","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"redfree8mahsang6.redfree8.ir","ws-opts":{"path":"/","headers":{"host":"redfree8mahsang6.redfree8.ir"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国6","server":"www.speedtest.net","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"redfree8mahsang6.redfree8.ir","ws-opts":{"path":"/?ed=2560@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn","headers":{"host":"redfree8mahsang6.redfree8.ir"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国7","server":"160.79.104.113","port":443,"uuid":"794f9f41-92c9-4a78-8ffc-1f82cb48a4e2","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"0229.patterdeng.pp.ua","ws-opts":{"path":"/","headers":{"host":"0229.patterdeng.pp.ua"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国8","server":"103.21.244.17","port":443,"uuid":"f055d270-0e76-4a41-a53f-871bbb51b003","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"what.zhonghuoxing.top","ws-opts":{"path":"/?ed=2560security=tls","headers":{"host":"what.zhonghuoxing.top"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国9","server":"www.speedtest.net","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"redfree8mahsang6.redfree8.ir","ws-opts":{"path":"?ed=","headers":{"host":"redfree8mahsang6.redfree8.ir"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国10","server":"www.speedtest.net","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"redfree8mahsang6.redfree8.ir","ws-opts":{"path":"/","headers":{"host":"redfree8mahsang6.redfree8.ir"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国11","server":"172.67.204.120","port":443,"uuid":"ae8ee2e7-4e62-44ea-8cc3-c584515bacb1","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"mas3d1.890614.xyz","ws-opts":{"path":"/","headers":{"host":"mas3d1.890614.xyz"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国12","server":"104.21.69.44","port":443,"uuid":"f12977e6-d296-4d94-9aaf-d31770b70f84","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"cr77.hedieh.dpdns.org","ws-opts":{"path":"/","headers":{"host":"cr77.hedieh.dpdns.org"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国13","server":"www.speedtest.net","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"redfree8mahsang6.redfree8.ir","ws-opts":{"path":"/jokerrvpntelegram----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn?ed=2560","headers":{"host":"redfree8mahsang6.redfree8.ir"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国14","server":"www.speedtest.net","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"redfree8mahsang6.redfree8.ir","ws-opts":{"path":"/telegram-marambashi_marambashi?ed=512","headers":{"host":"redfree8mahsang6.redfree8.ir"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国15","server":"104.16.95.143","port":443,"uuid":"b5441b0d-2147-4898-8a6a-9b2c87f58382","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"bitget1.asdasd.click","ws-opts":{"path":"/?ed=2560security=tls","headers":{"host":"bitget1.asdasd.click"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国16","server":"www.speedtest.net","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"redfree8mahsang6.redfree8.ir","ws-opts":{"path":"/telegram-marambashi_marambashi?ed=512","headers":{"host":"redfree8mahsang6.redfree8.ir"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国17","server":"www.speedtest.net","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"redfree8mahsang6.redfree8.ir","ws-opts":{"path":"/vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl?ed=2560","headers":{"host":"redfree8mahsang6.redfree8.ir"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国18","server":"170.114.46.190","port":443,"uuid":"401374e6-df77-41fb-f638-dad8184f175b","skip-cert-verify":true,"udp":true,"network":"grpc","tls":true}
+  - {"type":"vless","name":"【看视频】🇺🇸美国19","server":"103.21.244.17","port":443,"uuid":"f055d270-0e76-4a41-a53f-871bbb51b003","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"what.zhonghuoxing.top","ws-opts":{"path":"/?ed","headers":{"host":"what.zhonghuoxing.top"}}}
+  - {"type":"vless","name":"【看视频】🇳🇱荷兰20","server":"185.133.35.115","port":443,"uuid":"794f9f41-92c9-4a78-8ffc-1f82cb48a4e2","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"0229.patterdeng.pp.ua","ws-opts":{"path":"/proxyip=185.133.35.115:443security=tls","headers":{"host":"0229.patterdeng.pp.ua"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国21","server":"104.17.147.22","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"redfree8mahsang6.redfree8.ir","ws-opts":{"path":"/telegram-marambashi_marambashi?ed=512","headers":{"host":"redfree8mahsang6.redfree8.ir"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国22","server":"160.79.104.113","port":443,"uuid":"794f9f41-92c9-4a78-8ffc-1f82cb48a4e2","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"0229.patterdeng.pp.ua","ws-opts":{"path":"/","headers":{"host":"0229.patterdeng.pp.ua"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国23","server":"104.26.3.186","port":443,"uuid":"401374e6-df77-41fb-f638-dad8184f175b","skip-cert-verify":true,"udp":true,"network":"grpc","tls":true}
+  - {"type":"vless","name":"【看视频】🇺🇸美国24","server":"104.16.12.247","port":2053,"uuid":"de537efd-4d7c-4f3c-aea5-19d3f36c7b1b","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"txmt.conetcdata.dpdns.org","ws-opts":{"path":"/?ed=2560security=tls","headers":{"host":"txmt.conetcdata.dpdns.org"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国25","server":"tgju.org","port":8080,"uuid":"56652249-2e67-4429-b86c-3df8b838ad85","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"4j.QBAo1g5z6k.ZulaIR.org.","ws-opts":{"path":"/?ed","headers":{"host":"4j.QBAo1g5z6k.ZulaIR.org."}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国26","server":"www.speedtest.net","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"redfree8mahsang6.redfree8.ir","ws-opts":{"path":"/jokerrvpnjoin_bade_channel@jokerrvpn?ed=2560","headers":{"host":"redfree8mahsang6.redfree8.ir"}}}
+  - {"type":"vless","name":"【看视频】🇳🇱荷兰27","server":"185.133.35.115","port":443,"uuid":"794f9f41-92c9-4a78-8ffc-1f82cb48a4e2","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"0229.patterdeng.pp.ua","ws-opts":{"path":"/proxyip=185.133.35.115:443security=tls","headers":{"host":"0229.patterdeng.pp.ua"}}}
+  - {"type":"vless","name":"【看视频】🇬🇧英国28","server":"45.85.118.141","port":443,"uuid":"401374e6-df77-41fb-f638-dad8184f175b","skip-cert-verify":true,"udp":true,"network":"grpc","tls":true}
+  - {"type":"vless","name":"【看视频】🇺🇸美国29","server":"www.speedtest.net","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"redfree8mahsang6.redfree8.ir","ws-opts":{"path":"/telegram@v2ray_alpha/?ed=2560","headers":{"host":"redfree8mahsang6.redfree8.ir"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国30","server":"104.26.2.186","port":443,"uuid":"401374e6-df77-41fb-f638-dad8184f175b","skip-cert-verify":true,"udp":true,"network":"grpc","tls":true}
+  - {"type":"vless","name":"【看视频】🇺🇸美国31","server":"104.16.95.143","port":443,"uuid":"b5441b0d-2147-4898-8a6a-9b2c87f58382","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"bitget1.asdasd.click","ws-opts":{"path":"/?ed=2560security=tls","headers":{"host":"bitget1.asdasd.click"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国32","server":"141.101.122.211","port":2052,"uuid":"8247c690-5157-58f2-a7a2-21a78377bd98","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"sPeedtest2.sbs.us.vless.sitespeedtest.net","ws-opts":{"path":"/vless","headers":{"host":"sPeedtest2.sbs.us.vless.sitespeedtest.net"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国33","server":"172.67.204.84","port":443,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"ipsychO.SUEx12.Ir","ws-opts":{"path":"/re5izbz9izzmddtw?ed=2560flow=-udp443flow=-udp443","headers":{"host":"ipsychO.SUEx12.Ir"}}}
+  - {"type":"trojan","name":"【看视频】🇨🇳中国34","server":"27.50.48.126","port":2083,"password":"Aimer","udp":true,"skip-cert-verify":true,"sni":"tyep.esslh.filegear-sg.me","network":"tcp"}
+  - {"type":"vless","name":"【看视频】🇺🇸美国35","server":"www.speedtest.net","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"redfree8mahsang6.redfree8.ir","ws-opts":{"path":"/?ed=2560@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn----@evay_vpn","headers":{"host":"redfree8mahsang6.redfree8.ir"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国36","server":"104.17.148.22","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"redfree8mahsang6.redfree8.ir","ws-opts":{"path":"?ed=2560","headers":{"host":"redfree8mahsang6.redfree8.ir"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国37","server":"104.17.148.22","port":443,"uuid":"c2226caf-0134-49d4-aa8c-0069e98b5882","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"72790032528889957475364702518915.v2line.online","ws-opts":{"path":"/netherlands/amsterdam/vl/ws/tls","headers":{"host":"72790032528889957475364702518915.v2line.online"}}}
+  - {"type":"vless","name":"【看视频】🇬🇧英国38","server":"45.85.118.141","port":443,"uuid":"401374e6-df77-41fb-f638-dad8184f175b","skip-cert-verify":true,"udp":true,"network":"grpc","tls":true}
+  - {"type":"vless","name":"【看视频】🇺🇸美国39","server":"172.66.47.63","port":80,"uuid":"10d9df89-9a20-4110-9711-bca119490ee9","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"masaleini.mahsaamini.dpdns.org","ws-opts":{"path":"/","headers":{"host":"masaleini.mahsaamini.dpdns.org"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国40","server":"104.24.40.146","port":8443,"uuid":"b5441b0d-2147-4898-8a6a-9b2c87f58382","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"bitget1.asdasd.click","ws-opts":{"path":"/?ed=2560security=tls","headers":{"host":"bitget1.asdasd.click"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国41","server":"104.17.148.22","port":2096,"uuid":"96a1b724-68d2-4f4d-ab25-38ecd83577bc","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"RwQfYqAh14.tRaViQo.oRg","ws-opts":{"path":"/","headers":{"host":"RwQfYqAh14.tRaViQo.oRg"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国42","server":"tgju.org","port":8080,"uuid":"56652249-2e67-4429-b86c-3df8b838ad85","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"4j.QBAo1g5z6k.ZulaIR.org.","ws-opts":{"path":"/?ed=2048","headers":{"host":"4j.QBAo1g5z6k.ZulaIR.org."}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国43","server":"www.speedtest.net","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"redfree8mahsang6.redfree8.ir","ws-opts":{"path":"/jokerrvpntelegram----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn?ed=2560","headers":{"host":"redfree8mahsang6.redfree8.ir"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国44","server":"160.79.104.113","port":443,"uuid":"794f9f41-92c9-4a78-8ffc-1f82cb48a4e2","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"0229.patterdeng.pp.ua","ws-opts":{"path":"/security=tls","headers":{"host":"0229.patterdeng.pp.ua"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国45","server":"104.17.148.22","port":8443,"uuid":"96a1b724-68d2-4f4d-ab25-38ecd83577bc","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"GxVpOnLl13.pRiMeXaD.OrG","ws-opts":{"path":"/","headers":{"host":"GxVpOnLl13.pRiMeXaD.OrG"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国46","server":"www.speedtest.net","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"redfree8mahsang6.redfree8.ir","ws-opts":{"path":"/jokerrvpntelegram----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn----@jokerrvpn?ed=2560","headers":{"host":"redfree8mahsang6.redfree8.ir"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国47","server":"104.21.56.44","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"REEdfREe8MahSaNg2.rEDOrG.IR","ws-opts":{"path":"/vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl?ed=2560","headers":{"host":"REEdfREe8MahSaNg2.rEDOrG.IR"}}}
+  - {"type":"vless","name":"【看视频】🇺🇸美国48","server":"104.24.240.115","port":2053,"uuid":"39a2588a-2980-4ae6-a32e-63fb3456daef","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"xpvip168.eu.org","ws-opts":{"path":"/?ed=2560security=tls","headers":{"host":"xpvip168.eu.org"}}}
+  - {"type":"vless","name":"【看视频】🇳🇱荷兰49","server":"45.159.217.161","port":443,"uuid":"401374e6-df77-41fb-f638-dad8184f175b","skip-cert-verify":true,"udp":true,"network":"grpc","tls":true}
+  - {"type":"vless","name":"【看视频】🇺🇸美国50","server":"172.67.68.36","port":443,"uuid":"401374e6-df77-41fb-f638-dad8184f175b","skip-cert-verify":true,"udp":true,"network":"grpc","tls":true}
+  - {"type":"vless","name":"【看视频】🇺🇸美国51","server":"www.speedtest.net","port":443,"uuid":"838f5273-5d2d-4630-a0f5-9cc8e4aef4d6","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"ZjJuNdIy.rIpLeToOrY.InFo","ws-opts":{"path":"/","headers":{"host":"ZjJuNdIy.rIpLeToOrY.InFo"}}}
+  - {"type":"vless","name":"【看视频】🇺🇦乌克兰52","server":"95.164.47.60","port":443,"uuid":"588f094b-431b-422c-b80b-007945037072","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"de02.abvpn.ru","ws-opts":{"path":"/websocket","headers":{"host":"de02.abvpn.ru"}}}
+  - {"type":"vmess","name":"【看视频】🇨🇳中国53","server":"120.198.44.126","port":"47883","uuid":"418048af-a293-4b99-9b0c-98ca3580dd24","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vless","name":"【看视频】🇺🇸美国54","server":"135.148.142.30","port":443,"uuid":"c4fa89d4-fcb9-48ba-adbc-665181cc817f","skip-cert-verify":true,"network":"tcp","servername":"147135010072.sec21org.com","tls":true,"udp":true}
+  - {"type":"vless","name":"【看视频】🇨🇿捷克55","server":"194.182.79.252","port":10785,"uuid":"0b872dc1-d11c-4a33-8c30-370cb42faafa","skip-cert-verify":true,"udp":true,"network":"grpc","tls":true}
+  - {"type":"ss","name":"🇭🇰中继香港011【勿看视频】","server":"120.232.91.135","port":50200,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"vmess","name":"🇭🇰中继香港021【勿看视频】","ws-opts":{"path":"/","headers":{"host":"hk02.ssyhi.xyz"}},"server":"120.233.176.133","port":"50201","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"ss","name":"🇭🇰IEPL香港033【勿看视频】","server":"120.233.176.133","port":50202,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"vmess","name":"🇭🇰中继香港041【勿看视频】","ws-opts":{"path":"/","headers":{"host":"hk04.ssyhi.xyz"}},"server":"183.240.228.190","port":"50203","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"🇭🇰中继香港051【勿看视频】","ws-opts":{"path":"/","headers":{"host":"hk05.ssyhi.xyz"}},"server":"183.240.228.190","port":"50204","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"ss","name":"🇭🇰中继香港061【勿看视频】","server":"120.232.91.135","port":50205,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇭🇰中继香港071【勿看视频】","server":"120.233.176.133","port":50206,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇭🇰中继香港081【勿看视频】","server":"120.233.176.133","port":50207,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇭🇰中继香港091【勿看视频】","server":"120.233.176.133","port":50208,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇭🇰中继香港101【勿看视频】","server":"120.233.176.133","port":50209,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇭🇰中继香港111【勿看视频】","server":"183.240.228.190","port":58456,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"vmess","name":"🇭🇰中继香港121【勿看视频】","ws-opts":{"path":"/","headers":{"host":"hk12.ssyhi.xyz"}},"server":"120.233.176.133","port":"50252","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"🇭🇰中继香港131【勿看视频】","ws-opts":{"path":"/","headers":{"host":"hk13.ssyhi.xyz"}},"server":"120.233.176.133","port":"50253","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"🇭🇰中继香港141【勿看视频】","ws-opts":{"path":"/","headers":{"host":"hk14.ssyhi.xyz"}},"server":"120.232.91.135","port":"50254","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"🇭🇰中继香港151【勿看视频】","ws-opts":{"path":"/","headers":{"host":"hk16.ssyhi.xyz"}},"server":"183.240.228.190","port":"50255","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"ss","name":"🇯🇵IEPL日本013【勿看视频】","server":"183.240.228.190","port":50210,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇯🇵中继日本021【勿看视频】","server":"120.232.91.135","port":50211,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇯🇵中继日本031【勿看视频】","server":"120.233.176.133","port":50212,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇯🇵中继日本041【勿看视频】","server":"120.233.176.133","port":50213,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇯🇵中继日本051【勿看视频】","server":"183.240.228.190","port":50214,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇯🇵中继日本061【勿看视频】","server":"120.232.91.135","port":50215,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇯🇵中继日本071【勿看视频】","server":"120.232.91.135","port":50216,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇯🇵中继日本081【勿看视频】","server":"120.232.91.135","port":50217,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇸🇬IEPL｜新加坡013【勿看视频】","server":"183.240.228.190","port":50218,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡021【勿看视频】","server":"120.232.91.135","port":50219,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡031【勿看视频】","server":"120.233.176.133","port":50220,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡041【勿看视频】","server":"120.232.91.135","port":50221,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡051【勿看视频】","server":"183.240.228.190","port":50222,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡061【勿看视频】","server":"120.232.91.135","port":50223,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡071【勿看视频】","server":"120.232.91.135","port":50224,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡081【勿看视频】","server":"120.232.91.135","port":50225,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡091【勿看视频】","server":"183.240.228.190","port":50226,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡101【勿看视频】","server":"183.240.228.190","port":50227,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇺🇸IEPL美国013【勿看视频】","server":"120.233.176.133","port":50229,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇺🇸中继美国021【勿看视频】","server":"120.233.176.133","port":50231,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇺🇸中继美国031【勿看视频】","server":"120.232.91.135","port":50232,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇺🇸中继美国041【勿看视频】","server":"183.240.228.190","port":50666,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇺🇸中继美国051【勿看视频】","server":"120.232.91.135","port":50669,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"vmess","name":"🇺🇸中继美国061【勿看视频】","ws-opts":{"path":"/","headers":{"host":"us08.ssyhi.xyz"}},"server":"120.232.91.135","port":"50670","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"ss","name":"🇹🇼IEPL台湾013【勿看视频】","server":"120.233.176.133","port":53234,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇹🇼中继台湾021【勿看视频】","server":"120.232.91.135","port":50235,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇹🇼中继台湾031【勿看视频】","server":"120.232.91.135","port":50757,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇻🇳中继越南｜原生1【勿看视频】","server":"183.240.228.190","port":50233,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇲🇾马来西亚1【勿看视频】","server":"183.240.228.190","port":53898,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇵🇭菲律宾1【勿看视频】","server":"120.233.176.133","port":50731,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇦🇷阿根廷1【勿看视频】","server":"120.233.176.133","port":50732,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇰🇭柬埔寨1【勿看视频】","server":"183.240.228.190","port":50733,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇷🇺俄罗斯1【勿看视频】","server":"120.232.91.135","port":50734,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇰🇷韩国1【勿看视频】","server":"183.240.228.190","port":50246,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇩🇪德国1【勿看视频】","server":"183.240.228.190","port":53900,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇨🇦加拿大1【勿看视频】","server":"120.233.176.133","port":50236,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇮🇩印度尼西亚1【勿看视频】","server":"120.233.176.133","port":50238,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇹🇷土耳其1【勿看视频】","server":"120.232.91.135","port":53901,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇮🇳印度1【勿看视频】","server":"120.233.176.133","port":50237,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇮🇪爱尔兰1【勿看视频】","server":"120.232.91.135","port":50667,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇬🇧英国1【勿看视频】","server":"120.233.176.133","port":53904,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇫🇷法国1【勿看视频】","server":"183.240.228.190","port":50242,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇦🇪迪拜1【勿看视频】","server":"183.240.228.190","port":53902,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇹🇭泰国1【勿看视频】","server":"183.240.228.190","port":53899,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇦🇺澳大利亚1【勿看视频】","server":"120.232.91.135","port":53903,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - 【看视频】美国01
-      - 【看视频】美国02
       - 🇯🇵【看视频】日本4
       - 【看视频】台湾1-无限流量
       - 【看视频】台湾5-无限流量
       - 【看视频】台湾6-无限流量
-      - 🇭🇰【看视频】香港20
       - 【看视频】-gouyunHK1T流量
-      - 【看视频】美国03
-      - 【看视频】美国04
-      - 【看视频】德国01
-      - 【看视频】德国02
-      - 【看视频】德国03
+      - 🇭🇰【看视频】香港20
+      - 【看视频】🇺🇸美国1
+      - 【看视频】🇺🇸美国2
+      - 【看视频】🇺🇸美国3
+      - 【看视频】🇺🇸美国4
+      - 【看视频】🇺🇸美国5
+      - 【看视频】🇺🇸美国6
+      - 【看视频】🇺🇸美国7
+      - 【看视频】🇺🇸美国8
+      - 【看视频】🇺🇸美国9
+      - 【看视频】🇺🇸美国10
+      - 【看视频】🇺🇸美国11
+      - 【看视频】🇺🇸美国12
+      - 【看视频】🇺🇸美国13
+      - 【看视频】🇺🇸美国14
+      - 【看视频】🇺🇸美国15
+      - 【看视频】🇺🇸美国16
+      - 【看视频】🇺🇸美国17
+      - 【看视频】🇺🇸美国18
+      - 【看视频】🇺🇸美国19
+      - 【看视频】🇳🇱荷兰20
+      - 【看视频】🇺🇸美国21
+      - 【看视频】🇺🇸美国22
+      - 【看视频】🇺🇸美国23
+      - 【看视频】🇺🇸美国24
+      - 【看视频】🇺🇸美国25
+      - 【看视频】🇺🇸美国26
+      - 【看视频】🇳🇱荷兰27
+      - 【看视频】🇬🇧英国28
+      - 【看视频】🇺🇸美国29
+      - 【看视频】🇺🇸美国30
+      - 【看视频】🇺🇸美国31
+      - 【看视频】🇺🇸美国32
+      - 【看视频】🇺🇸美国33
+      - 【看视频】🇨🇳中国34
+      - 【看视频】🇺🇸美国35
+      - 【看视频】🇺🇸美国36
+      - 【看视频】🇺🇸美国37
+      - 【看视频】🇬🇧英国38
+      - 【看视频】🇺🇸美国39
+      - 【看视频】🇺🇸美国40
+      - 【看视频】🇺🇸美国41
+      - 【看视频】🇺🇸美国42
+      - 【看视频】🇺🇸美国43
+      - 【看视频】🇺🇸美国44
+      - 【看视频】🇺🇸美国45
+      - 【看视频】🇺🇸美国46
+      - 【看视频】🇺🇸美国47
+      - 【看视频】🇺🇸美国48
+      - 【看视频】🇳🇱荷兰49
+      - 【看视频】🇺🇸美国50
+      - 【看视频】🇺🇸美国51
+      - 【看视频】🇺🇦乌克兰52
+      - 【看视频】🇨🇳中国53
+      - 【看视频】🇺🇸美国54
+      - 【看视频】🇨🇿捷克55
+      - 🇭🇰中继香港011【勿看视频】
       - 🇭🇰中继香港021【勿看视频】
+      - 🇭🇰IEPL香港033【勿看视频】
       - 🇭🇰中继香港041【勿看视频】
       - 🇭🇰中继香港051【勿看视频】
+      - 🇭🇰中继香港061【勿看视频】
+      - 🇭🇰中继香港071【勿看视频】
+      - 🇭🇰中继香港081【勿看视频】
+      - 🇭🇰中继香港091【勿看视频】
+      - 🇭🇰中继香港101【勿看视频】
+      - 🇭🇰中继香港111【勿看视频】
       - 🇭🇰中继香港121【勿看视频】
       - 🇭🇰中继香港131【勿看视频】
       - 🇭🇰中继香港141【勿看视频】
       - 🇭🇰中继香港151【勿看视频】
+      - 🇯🇵IEPL日本013【勿看视频】
+      - 🇯🇵中继日本021【勿看视频】
+      - 🇯🇵中继日本031【勿看视频】
+      - 🇯🇵中继日本041【勿看视频】
+      - 🇯🇵中继日本051【勿看视频】
+      - 🇯🇵中继日本061【勿看视频】
+      - 🇯🇵中继日本071【勿看视频】
+      - 🇯🇵中继日本081【勿看视频】
+      - 🇸🇬IEPL｜新加坡013【勿看视频】
+      - 🇸🇬中继｜新加坡021【勿看视频】
+      - 🇸🇬中继｜新加坡031【勿看视频】
+      - 🇸🇬中继｜新加坡041【勿看视频】
+      - 🇸🇬中继｜新加坡051【勿看视频】
+      - 🇸🇬中继｜新加坡061【勿看视频】
+      - 🇸🇬中继｜新加坡071【勿看视频】
+      - 🇸🇬中继｜新加坡081【勿看视频】
+      - 🇸🇬中继｜新加坡091【勿看视频】
+      - 🇸🇬中继｜新加坡101【勿看视频】
+      - 🇺🇸IEPL美国013【勿看视频】
+      - 🇺🇸中继美国021【勿看视频】
+      - 🇺🇸中继美国031【勿看视频】
+      - 🇺🇸中继美国041【勿看视频】
+      - 🇺🇸中继美国051【勿看视频】
       - 🇺🇸中继美国061【勿看视频】
+      - 🇹🇼IEPL台湾013【勿看视频】
+      - 🇹🇼中继台湾021【勿看视频】
+      - 🇹🇼中继台湾031【勿看视频】
+      - 🇻🇳中继越南｜原生1【勿看视频】
+      - 🇲🇾马来西亚1【勿看视频】
+      - 🇵🇭菲律宾1【勿看视频】
+      - 🇦🇷阿根廷1【勿看视频】
+      - 🇰🇭柬埔寨1【勿看视频】
+      - 🇷🇺俄罗斯1【勿看视频】
+      - 🇰🇷韩国1【勿看视频】
+      - 🇩🇪德国1【勿看视频】
+      - 🇨🇦加拿大1【勿看视频】
+      - 🇮🇩印度尼西亚1【勿看视频】
+      - 🇹🇷土耳其1【勿看视频】
+      - 🇮🇳印度1【勿看视频】
+      - 🇮🇪爱尔兰1【勿看视频】
+      - 🇬🇧英国1【勿看视频】
+      - 🇫🇷法国1【勿看视频】
+      - 🇦🇪迪拜1【勿看视频】
+      - 🇹🇭泰国1【勿看视频】
+      - 🇦🇺澳大利亚1【勿看视频】
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - 【看视频】美国01
-      - 【看视频】美国02
       - 🇯🇵【看视频】日本4
       - 【看视频】台湾1-无限流量
       - 【看视频】台湾5-无限流量
       - 【看视频】台湾6-无限流量
-      - 🇭🇰【看视频】香港20
       - 【看视频】-gouyunHK1T流量
-      - 【看视频】美国03
-      - 【看视频】美国04
-      - 【看视频】德国01
-      - 【看视频】德国02
-      - 【看视频】德国03
+      - 🇭🇰【看视频】香港20
+      - 【看视频】🇺🇸美国1
+      - 【看视频】🇺🇸美国2
+      - 【看视频】🇺🇸美国3
+      - 【看视频】🇺🇸美国4
+      - 【看视频】🇺🇸美国5
+      - 【看视频】🇺🇸美国6
+      - 【看视频】🇺🇸美国7
+      - 【看视频】🇺🇸美国8
+      - 【看视频】🇺🇸美国9
+      - 【看视频】🇺🇸美国10
+      - 【看视频】🇺🇸美国11
+      - 【看视频】🇺🇸美国12
+      - 【看视频】🇺🇸美国13
+      - 【看视频】🇺🇸美国14
+      - 【看视频】🇺🇸美国15
+      - 【看视频】🇺🇸美国16
+      - 【看视频】🇺🇸美国17
+      - 【看视频】🇺🇸美国18
+      - 【看视频】🇺🇸美国19
+      - 【看视频】🇳🇱荷兰20
+      - 【看视频】🇺🇸美国21
+      - 【看视频】🇺🇸美国22
+      - 【看视频】🇺🇸美国23
+      - 【看视频】🇺🇸美国24
+      - 【看视频】🇺🇸美国25
+      - 【看视频】🇺🇸美国26
+      - 【看视频】🇳🇱荷兰27
+      - 【看视频】🇬🇧英国28
+      - 【看视频】🇺🇸美国29
+      - 【看视频】🇺🇸美国30
+      - 【看视频】🇺🇸美国31
+      - 【看视频】🇺🇸美国32
+      - 【看视频】🇺🇸美国33
+      - 【看视频】🇨🇳中国34
+      - 【看视频】🇺🇸美国35
+      - 【看视频】🇺🇸美国36
+      - 【看视频】🇺🇸美国37
+      - 【看视频】🇬🇧英国38
+      - 【看视频】🇺🇸美国39
+      - 【看视频】🇺🇸美国40
+      - 【看视频】🇺🇸美国41
+      - 【看视频】🇺🇸美国42
+      - 【看视频】🇺🇸美国43
+      - 【看视频】🇺🇸美国44
+      - 【看视频】🇺🇸美国45
+      - 【看视频】🇺🇸美国46
+      - 【看视频】🇺🇸美国47
+      - 【看视频】🇺🇸美国48
+      - 【看视频】🇳🇱荷兰49
+      - 【看视频】🇺🇸美国50
+      - 【看视频】🇺🇸美国51
+      - 【看视频】🇺🇦乌克兰52
+      - 【看视频】🇨🇳中国53
+      - 【看视频】🇺🇸美国54
+      - 【看视频】🇨🇿捷克55
+      - 🇭🇰中继香港011【勿看视频】
       - 🇭🇰中继香港021【勿看视频】
+      - 🇭🇰IEPL香港033【勿看视频】
       - 🇭🇰中继香港041【勿看视频】
       - 🇭🇰中继香港051【勿看视频】
+      - 🇭🇰中继香港061【勿看视频】
+      - 🇭🇰中继香港071【勿看视频】
+      - 🇭🇰中继香港081【勿看视频】
+      - 🇭🇰中继香港091【勿看视频】
+      - 🇭🇰中继香港101【勿看视频】
+      - 🇭🇰中继香港111【勿看视频】
       - 🇭🇰中继香港121【勿看视频】
       - 🇭🇰中继香港131【勿看视频】
       - 🇭🇰中继香港141【勿看视频】
       - 🇭🇰中继香港151【勿看视频】
+      - 🇯🇵IEPL日本013【勿看视频】
+      - 🇯🇵中继日本021【勿看视频】
+      - 🇯🇵中继日本031【勿看视频】
+      - 🇯🇵中继日本041【勿看视频】
+      - 🇯🇵中继日本051【勿看视频】
+      - 🇯🇵中继日本061【勿看视频】
+      - 🇯🇵中继日本071【勿看视频】
+      - 🇯🇵中继日本081【勿看视频】
+      - 🇸🇬IEPL｜新加坡013【勿看视频】
+      - 🇸🇬中继｜新加坡021【勿看视频】
+      - 🇸🇬中继｜新加坡031【勿看视频】
+      - 🇸🇬中继｜新加坡041【勿看视频】
+      - 🇸🇬中继｜新加坡051【勿看视频】
+      - 🇸🇬中继｜新加坡061【勿看视频】
+      - 🇸🇬中继｜新加坡071【勿看视频】
+      - 🇸🇬中继｜新加坡081【勿看视频】
+      - 🇸🇬中继｜新加坡091【勿看视频】
+      - 🇸🇬中继｜新加坡101【勿看视频】
+      - 🇺🇸IEPL美国013【勿看视频】
+      - 🇺🇸中继美国021【勿看视频】
+      - 🇺🇸中继美国031【勿看视频】
+      - 🇺🇸中继美国041【勿看视频】
+      - 🇺🇸中继美国051【勿看视频】
       - 🇺🇸中继美国061【勿看视频】
+      - 🇹🇼IEPL台湾013【勿看视频】
+      - 🇹🇼中继台湾021【勿看视频】
+      - 🇹🇼中继台湾031【勿看视频】
+      - 🇻🇳中继越南｜原生1【勿看视频】
+      - 🇲🇾马来西亚1【勿看视频】
+      - 🇵🇭菲律宾1【勿看视频】
+      - 🇦🇷阿根廷1【勿看视频】
+      - 🇰🇭柬埔寨1【勿看视频】
+      - 🇷🇺俄罗斯1【勿看视频】
+      - 🇰🇷韩国1【勿看视频】
+      - 🇩🇪德国1【勿看视频】
+      - 🇨🇦加拿大1【勿看视频】
+      - 🇮🇩印度尼西亚1【勿看视频】
+      - 🇹🇷土耳其1【勿看视频】
+      - 🇮🇳印度1【勿看视频】
+      - 🇮🇪爱尔兰1【勿看视频】
+      - 🇬🇧英国1【勿看视频】
+      - 🇫🇷法国1【勿看视频】
+      - 🇦🇪迪拜1【勿看视频】
+      - 🇹🇭泰国1【勿看视频】
+      - 🇦🇺澳大利亚1【勿看视频】
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - 【看视频】美国01
-      - 【看视频】美国02
       - 🇯🇵【看视频】日本4
       - 【看视频】台湾1-无限流量
       - 【看视频】台湾5-无限流量
       - 【看视频】台湾6-无限流量
-      - 🇭🇰【看视频】香港20
       - 【看视频】-gouyunHK1T流量
-      - 【看视频】美国03
-      - 【看视频】美国04
-      - 【看视频】德国01
-      - 【看视频】德国02
-      - 【看视频】德国03
+      - 🇭🇰【看视频】香港20
+      - 【看视频】🇺🇸美国1
+      - 【看视频】🇺🇸美国2
+      - 【看视频】🇺🇸美国3
+      - 【看视频】🇺🇸美国4
+      - 【看视频】🇺🇸美国5
+      - 【看视频】🇺🇸美国6
+      - 【看视频】🇺🇸美国7
+      - 【看视频】🇺🇸美国8
+      - 【看视频】🇺🇸美国9
+      - 【看视频】🇺🇸美国10
+      - 【看视频】🇺🇸美国11
+      - 【看视频】🇺🇸美国12
+      - 【看视频】🇺🇸美国13
+      - 【看视频】🇺🇸美国14
+      - 【看视频】🇺🇸美国15
+      - 【看视频】🇺🇸美国16
+      - 【看视频】🇺🇸美国17
+      - 【看视频】🇺🇸美国18
+      - 【看视频】🇺🇸美国19
+      - 【看视频】🇳🇱荷兰20
+      - 【看视频】🇺🇸美国21
+      - 【看视频】🇺🇸美国22
+      - 【看视频】🇺🇸美国23
+      - 【看视频】🇺🇸美国24
+      - 【看视频】🇺🇸美国25
+      - 【看视频】🇺🇸美国26
+      - 【看视频】🇳🇱荷兰27
+      - 【看视频】🇬🇧英国28
+      - 【看视频】🇺🇸美国29
+      - 【看视频】🇺🇸美国30
+      - 【看视频】🇺🇸美国31
+      - 【看视频】🇺🇸美国32
+      - 【看视频】🇺🇸美国33
+      - 【看视频】🇨🇳中国34
+      - 【看视频】🇺🇸美国35
+      - 【看视频】🇺🇸美国36
+      - 【看视频】🇺🇸美国37
+      - 【看视频】🇬🇧英国38
+      - 【看视频】🇺🇸美国39
+      - 【看视频】🇺🇸美国40
+      - 【看视频】🇺🇸美国41
+      - 【看视频】🇺🇸美国42
+      - 【看视频】🇺🇸美国43
+      - 【看视频】🇺🇸美国44
+      - 【看视频】🇺🇸美国45
+      - 【看视频】🇺🇸美国46
+      - 【看视频】🇺🇸美国47
+      - 【看视频】🇺🇸美国48
+      - 【看视频】🇳🇱荷兰49
+      - 【看视频】🇺🇸美国50
+      - 【看视频】🇺🇸美国51
+      - 【看视频】🇺🇦乌克兰52
+      - 【看视频】🇨🇳中国53
+      - 【看视频】🇺🇸美国54
+      - 【看视频】🇨🇿捷克55
+      - 🇭🇰中继香港011【勿看视频】
       - 🇭🇰中继香港021【勿看视频】
+      - 🇭🇰IEPL香港033【勿看视频】
       - 🇭🇰中继香港041【勿看视频】
       - 🇭🇰中继香港051【勿看视频】
+      - 🇭🇰中继香港061【勿看视频】
+      - 🇭🇰中继香港071【勿看视频】
+      - 🇭🇰中继香港081【勿看视频】
+      - 🇭🇰中继香港091【勿看视频】
+      - 🇭🇰中继香港101【勿看视频】
+      - 🇭🇰中继香港111【勿看视频】
       - 🇭🇰中继香港121【勿看视频】
       - 🇭🇰中继香港131【勿看视频】
       - 🇭🇰中继香港141【勿看视频】
       - 🇭🇰中继香港151【勿看视频】
+      - 🇯🇵IEPL日本013【勿看视频】
+      - 🇯🇵中继日本021【勿看视频】
+      - 🇯🇵中继日本031【勿看视频】
+      - 🇯🇵中继日本041【勿看视频】
+      - 🇯🇵中继日本051【勿看视频】
+      - 🇯🇵中继日本061【勿看视频】
+      - 🇯🇵中继日本071【勿看视频】
+      - 🇯🇵中继日本081【勿看视频】
+      - 🇸🇬IEPL｜新加坡013【勿看视频】
+      - 🇸🇬中继｜新加坡021【勿看视频】
+      - 🇸🇬中继｜新加坡031【勿看视频】
+      - 🇸🇬中继｜新加坡041【勿看视频】
+      - 🇸🇬中继｜新加坡051【勿看视频】
+      - 🇸🇬中继｜新加坡061【勿看视频】
+      - 🇸🇬中继｜新加坡071【勿看视频】
+      - 🇸🇬中继｜新加坡081【勿看视频】
+      - 🇸🇬中继｜新加坡091【勿看视频】
+      - 🇸🇬中继｜新加坡101【勿看视频】
+      - 🇺🇸IEPL美国013【勿看视频】
+      - 🇺🇸中继美国021【勿看视频】
+      - 🇺🇸中继美国031【勿看视频】
+      - 🇺🇸中继美国041【勿看视频】
+      - 🇺🇸中继美国051【勿看视频】
       - 🇺🇸中继美国061【勿看视频】
+      - 🇹🇼IEPL台湾013【勿看视频】
+      - 🇹🇼中继台湾021【勿看视频】
+      - 🇹🇼中继台湾031【勿看视频】
+      - 🇻🇳中继越南｜原生1【勿看视频】
+      - 🇲🇾马来西亚1【勿看视频】
+      - 🇵🇭菲律宾1【勿看视频】
+      - 🇦🇷阿根廷1【勿看视频】
+      - 🇰🇭柬埔寨1【勿看视频】
+      - 🇷🇺俄罗斯1【勿看视频】
+      - 🇰🇷韩国1【勿看视频】
+      - 🇩🇪德国1【勿看视频】
+      - 🇨🇦加拿大1【勿看视频】
+      - 🇮🇩印度尼西亚1【勿看视频】
+      - 🇹🇷土耳其1【勿看视频】
+      - 🇮🇳印度1【勿看视频】
+      - 🇮🇪爱尔兰1【勿看视频】
+      - 🇬🇧英国1【勿看视频】
+      - 🇫🇷法国1【勿看视频】
+      - 🇦🇪迪拜1【勿看视频】
+      - 🇹🇭泰国1【勿看视频】
+      - 🇦🇺澳大利亚1【勿看视频】
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 【看视频】美国01
-      - 【看视频】美国02
       - 🇯🇵【看视频】日本4
       - 【看视频】台湾1-无限流量
       - 【看视频】台湾5-无限流量
       - 【看视频】台湾6-无限流量
-      - 🇭🇰【看视频】香港20
       - 【看视频】-gouyunHK1T流量
-      - 【看视频】美国03
-      - 【看视频】美国04
-      - 【看视频】德国01
-      - 【看视频】德国02
-      - 【看视频】德国03
+      - 🇭🇰【看视频】香港20
+      - 【看视频】🇺🇸美国1
+      - 【看视频】🇺🇸美国2
+      - 【看视频】🇺🇸美国3
+      - 【看视频】🇺🇸美国4
+      - 【看视频】🇺🇸美国5
+      - 【看视频】🇺🇸美国6
+      - 【看视频】🇺🇸美国7
+      - 【看视频】🇺🇸美国8
+      - 【看视频】🇺🇸美国9
+      - 【看视频】🇺🇸美国10
+      - 【看视频】🇺🇸美国11
+      - 【看视频】🇺🇸美国12
+      - 【看视频】🇺🇸美国13
+      - 【看视频】🇺🇸美国14
+      - 【看视频】🇺🇸美国15
+      - 【看视频】🇺🇸美国16
+      - 【看视频】🇺🇸美国17
+      - 【看视频】🇺🇸美国18
+      - 【看视频】🇺🇸美国19
+      - 【看视频】🇳🇱荷兰20
+      - 【看视频】🇺🇸美国21
+      - 【看视频】🇺🇸美国22
+      - 【看视频】🇺🇸美国23
+      - 【看视频】🇺🇸美国24
+      - 【看视频】🇺🇸美国25
+      - 【看视频】🇺🇸美国26
+      - 【看视频】🇳🇱荷兰27
+      - 【看视频】🇬🇧英国28
+      - 【看视频】🇺🇸美国29
+      - 【看视频】🇺🇸美国30
+      - 【看视频】🇺🇸美国31
+      - 【看视频】🇺🇸美国32
+      - 【看视频】🇺🇸美国33
+      - 【看视频】🇨🇳中国34
+      - 【看视频】🇺🇸美国35
+      - 【看视频】🇺🇸美国36
+      - 【看视频】🇺🇸美国37
+      - 【看视频】🇬🇧英国38
+      - 【看视频】🇺🇸美国39
+      - 【看视频】🇺🇸美国40
+      - 【看视频】🇺🇸美国41
+      - 【看视频】🇺🇸美国42
+      - 【看视频】🇺🇸美国43
+      - 【看视频】🇺🇸美国44
+      - 【看视频】🇺🇸美国45
+      - 【看视频】🇺🇸美国46
+      - 【看视频】🇺🇸美国47
+      - 【看视频】🇺🇸美国48
+      - 【看视频】🇳🇱荷兰49
+      - 【看视频】🇺🇸美国50
+      - 【看视频】🇺🇸美国51
+      - 【看视频】🇺🇦乌克兰52
+      - 【看视频】🇨🇳中国53
+      - 【看视频】🇺🇸美国54
+      - 【看视频】🇨🇿捷克55
+      - 🇭🇰中继香港011【勿看视频】
       - 🇭🇰中继香港021【勿看视频】
+      - 🇭🇰IEPL香港033【勿看视频】
       - 🇭🇰中继香港041【勿看视频】
       - 🇭🇰中继香港051【勿看视频】
+      - 🇭🇰中继香港061【勿看视频】
+      - 🇭🇰中继香港071【勿看视频】
+      - 🇭🇰中继香港081【勿看视频】
+      - 🇭🇰中继香港091【勿看视频】
+      - 🇭🇰中继香港101【勿看视频】
+      - 🇭🇰中继香港111【勿看视频】
       - 🇭🇰中继香港121【勿看视频】
       - 🇭🇰中继香港131【勿看视频】
       - 🇭🇰中继香港141【勿看视频】
       - 🇭🇰中继香港151【勿看视频】
+      - 🇯🇵IEPL日本013【勿看视频】
+      - 🇯🇵中继日本021【勿看视频】
+      - 🇯🇵中继日本031【勿看视频】
+      - 🇯🇵中继日本041【勿看视频】
+      - 🇯🇵中继日本051【勿看视频】
+      - 🇯🇵中继日本061【勿看视频】
+      - 🇯🇵中继日本071【勿看视频】
+      - 🇯🇵中继日本081【勿看视频】
+      - 🇸🇬IEPL｜新加坡013【勿看视频】
+      - 🇸🇬中继｜新加坡021【勿看视频】
+      - 🇸🇬中继｜新加坡031【勿看视频】
+      - 🇸🇬中继｜新加坡041【勿看视频】
+      - 🇸🇬中继｜新加坡051【勿看视频】
+      - 🇸🇬中继｜新加坡061【勿看视频】
+      - 🇸🇬中继｜新加坡071【勿看视频】
+      - 🇸🇬中继｜新加坡081【勿看视频】
+      - 🇸🇬中继｜新加坡091【勿看视频】
+      - 🇸🇬中继｜新加坡101【勿看视频】
+      - 🇺🇸IEPL美国013【勿看视频】
+      - 🇺🇸中继美国021【勿看视频】
+      - 🇺🇸中继美国031【勿看视频】
+      - 🇺🇸中继美国041【勿看视频】
+      - 🇺🇸中继美国051【勿看视频】
       - 🇺🇸中继美国061【勿看视频】
+      - 🇹🇼IEPL台湾013【勿看视频】
+      - 🇹🇼中继台湾021【勿看视频】
+      - 🇹🇼中继台湾031【勿看视频】
+      - 🇻🇳中继越南｜原生1【勿看视频】
+      - 🇲🇾马来西亚1【勿看视频】
+      - 🇵🇭菲律宾1【勿看视频】
+      - 🇦🇷阿根廷1【勿看视频】
+      - 🇰🇭柬埔寨1【勿看视频】
+      - 🇷🇺俄罗斯1【勿看视频】
+      - 🇰🇷韩国1【勿看视频】
+      - 🇩🇪德国1【勿看视频】
+      - 🇨🇦加拿大1【勿看视频】
+      - 🇮🇩印度尼西亚1【勿看视频】
+      - 🇹🇷土耳其1【勿看视频】
+      - 🇮🇳印度1【勿看视频】
+      - 🇮🇪爱尔兰1【勿看视频】
+      - 🇬🇧英国1【勿看视频】
+      - 🇫🇷法国1【勿看视频】
+      - 🇦🇪迪拜1【勿看视频】
+      - 🇹🇭泰国1【勿看视频】
+      - 🇦🇺澳大利亚1【勿看视频】
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - 【看视频】美国01
-      - 【看视频】美国02
       - 🇯🇵【看视频】日本4
       - 【看视频】台湾1-无限流量
       - 【看视频】台湾5-无限流量
       - 【看视频】台湾6-无限流量
-      - 🇭🇰【看视频】香港20
       - 【看视频】-gouyunHK1T流量
-      - 【看视频】美国03
-      - 【看视频】美国04
-      - 【看视频】德国01
-      - 【看视频】德国02
-      - 【看视频】德国03
+      - 🇭🇰【看视频】香港20
+      - 【看视频】🇺🇸美国1
+      - 【看视频】🇺🇸美国2
+      - 【看视频】🇺🇸美国3
+      - 【看视频】🇺🇸美国4
+      - 【看视频】🇺🇸美国5
+      - 【看视频】🇺🇸美国6
+      - 【看视频】🇺🇸美国7
+      - 【看视频】🇺🇸美国8
+      - 【看视频】🇺🇸美国9
+      - 【看视频】🇺🇸美国10
+      - 【看视频】🇺🇸美国11
+      - 【看视频】🇺🇸美国12
+      - 【看视频】🇺🇸美国13
+      - 【看视频】🇺🇸美国14
+      - 【看视频】🇺🇸美国15
+      - 【看视频】🇺🇸美国16
+      - 【看视频】🇺🇸美国17
+      - 【看视频】🇺🇸美国18
+      - 【看视频】🇺🇸美国19
+      - 【看视频】🇳🇱荷兰20
+      - 【看视频】🇺🇸美国21
+      - 【看视频】🇺🇸美国22
+      - 【看视频】🇺🇸美国23
+      - 【看视频】🇺🇸美国24
+      - 【看视频】🇺🇸美国25
+      - 【看视频】🇺🇸美国26
+      - 【看视频】🇳🇱荷兰27
+      - 【看视频】🇬🇧英国28
+      - 【看视频】🇺🇸美国29
+      - 【看视频】🇺🇸美国30
+      - 【看视频】🇺🇸美国31
+      - 【看视频】🇺🇸美国32
+      - 【看视频】🇺🇸美国33
+      - 【看视频】🇨🇳中国34
+      - 【看视频】🇺🇸美国35
+      - 【看视频】🇺🇸美国36
+      - 【看视频】🇺🇸美国37
+      - 【看视频】🇬🇧英国38
+      - 【看视频】🇺🇸美国39
+      - 【看视频】🇺🇸美国40
+      - 【看视频】🇺🇸美国41
+      - 【看视频】🇺🇸美国42
+      - 【看视频】🇺🇸美国43
+      - 【看视频】🇺🇸美国44
+      - 【看视频】🇺🇸美国45
+      - 【看视频】🇺🇸美国46
+      - 【看视频】🇺🇸美国47
+      - 【看视频】🇺🇸美国48
+      - 【看视频】🇳🇱荷兰49
+      - 【看视频】🇺🇸美国50
+      - 【看视频】🇺🇸美国51
+      - 【看视频】🇺🇦乌克兰52
+      - 【看视频】🇨🇳中国53
+      - 【看视频】🇺🇸美国54
+      - 【看视频】🇨🇿捷克55
+      - 🇭🇰中继香港011【勿看视频】
       - 🇭🇰中继香港021【勿看视频】
+      - 🇭🇰IEPL香港033【勿看视频】
       - 🇭🇰中继香港041【勿看视频】
       - 🇭🇰中继香港051【勿看视频】
+      - 🇭🇰中继香港061【勿看视频】
+      - 🇭🇰中继香港071【勿看视频】
+      - 🇭🇰中继香港081【勿看视频】
+      - 🇭🇰中继香港091【勿看视频】
+      - 🇭🇰中继香港101【勿看视频】
+      - 🇭🇰中继香港111【勿看视频】
       - 🇭🇰中继香港121【勿看视频】
       - 🇭🇰中继香港131【勿看视频】
       - 🇭🇰中继香港141【勿看视频】
       - 🇭🇰中继香港151【勿看视频】
+      - 🇯🇵IEPL日本013【勿看视频】
+      - 🇯🇵中继日本021【勿看视频】
+      - 🇯🇵中继日本031【勿看视频】
+      - 🇯🇵中继日本041【勿看视频】
+      - 🇯🇵中继日本051【勿看视频】
+      - 🇯🇵中继日本061【勿看视频】
+      - 🇯🇵中继日本071【勿看视频】
+      - 🇯🇵中继日本081【勿看视频】
+      - 🇸🇬IEPL｜新加坡013【勿看视频】
+      - 🇸🇬中继｜新加坡021【勿看视频】
+      - 🇸🇬中继｜新加坡031【勿看视频】
+      - 🇸🇬中继｜新加坡041【勿看视频】
+      - 🇸🇬中继｜新加坡051【勿看视频】
+      - 🇸🇬中继｜新加坡061【勿看视频】
+      - 🇸🇬中继｜新加坡071【勿看视频】
+      - 🇸🇬中继｜新加坡081【勿看视频】
+      - 🇸🇬中继｜新加坡091【勿看视频】
+      - 🇸🇬中继｜新加坡101【勿看视频】
+      - 🇺🇸IEPL美国013【勿看视频】
+      - 🇺🇸中继美国021【勿看视频】
+      - 🇺🇸中继美国031【勿看视频】
+      - 🇺🇸中继美国041【勿看视频】
+      - 🇺🇸中继美国051【勿看视频】
       - 🇺🇸中继美国061【勿看视频】
+      - 🇹🇼IEPL台湾013【勿看视频】
+      - 🇹🇼中继台湾021【勿看视频】
+      - 🇹🇼中继台湾031【勿看视频】
+      - 🇻🇳中继越南｜原生1【勿看视频】
+      - 🇲🇾马来西亚1【勿看视频】
+      - 🇵🇭菲律宾1【勿看视频】
+      - 🇦🇷阿根廷1【勿看视频】
+      - 🇰🇭柬埔寨1【勿看视频】
+      - 🇷🇺俄罗斯1【勿看视频】
+      - 🇰🇷韩国1【勿看视频】
+      - 🇩🇪德国1【勿看视频】
+      - 🇨🇦加拿大1【勿看视频】
+      - 🇮🇩印度尼西亚1【勿看视频】
+      - 🇹🇷土耳其1【勿看视频】
+      - 🇮🇳印度1【勿看视频】
+      - 🇮🇪爱尔兰1【勿看视频】
+      - 🇬🇧英国1【勿看视频】
+      - 🇫🇷法国1【勿看视频】
+      - 🇦🇪迪拜1【勿看视频】
+      - 🇹🇭泰国1【勿看视频】
+      - 🇦🇺澳大利亚1【勿看视频】
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 【看视频】美国01
-      - 【看视频】美国02
       - 🇯🇵【看视频】日本4
       - 【看视频】台湾1-无限流量
       - 【看视频】台湾5-无限流量
       - 【看视频】台湾6-无限流量
-      - 🇭🇰【看视频】香港20
       - 【看视频】-gouyunHK1T流量
-      - 【看视频】美国03
-      - 【看视频】美国04
-      - 【看视频】德国01
-      - 【看视频】德国02
-      - 【看视频】德国03
+      - 🇭🇰【看视频】香港20
+      - 【看视频】🇺🇸美国1
+      - 【看视频】🇺🇸美国2
+      - 【看视频】🇺🇸美国3
+      - 【看视频】🇺🇸美国4
+      - 【看视频】🇺🇸美国5
+      - 【看视频】🇺🇸美国6
+      - 【看视频】🇺🇸美国7
+      - 【看视频】🇺🇸美国8
+      - 【看视频】🇺🇸美国9
+      - 【看视频】🇺🇸美国10
+      - 【看视频】🇺🇸美国11
+      - 【看视频】🇺🇸美国12
+      - 【看视频】🇺🇸美国13
+      - 【看视频】🇺🇸美国14
+      - 【看视频】🇺🇸美国15
+      - 【看视频】🇺🇸美国16
+      - 【看视频】🇺🇸美国17
+      - 【看视频】🇺🇸美国18
+      - 【看视频】🇺🇸美国19
+      - 【看视频】🇳🇱荷兰20
+      - 【看视频】🇺🇸美国21
+      - 【看视频】🇺🇸美国22
+      - 【看视频】🇺🇸美国23
+      - 【看视频】🇺🇸美国24
+      - 【看视频】🇺🇸美国25
+      - 【看视频】🇺🇸美国26
+      - 【看视频】🇳🇱荷兰27
+      - 【看视频】🇬🇧英国28
+      - 【看视频】🇺🇸美国29
+      - 【看视频】🇺🇸美国30
+      - 【看视频】🇺🇸美国31
+      - 【看视频】🇺🇸美国32
+      - 【看视频】🇺🇸美国33
+      - 【看视频】🇨🇳中国34
+      - 【看视频】🇺🇸美国35
+      - 【看视频】🇺🇸美国36
+      - 【看视频】🇺🇸美国37
+      - 【看视频】🇬🇧英国38
+      - 【看视频】🇺🇸美国39
+      - 【看视频】🇺🇸美国40
+      - 【看视频】🇺🇸美国41
+      - 【看视频】🇺🇸美国42
+      - 【看视频】🇺🇸美国43
+      - 【看视频】🇺🇸美国44
+      - 【看视频】🇺🇸美国45
+      - 【看视频】🇺🇸美国46
+      - 【看视频】🇺🇸美国47
+      - 【看视频】🇺🇸美国48
+      - 【看视频】🇳🇱荷兰49
+      - 【看视频】🇺🇸美国50
+      - 【看视频】🇺🇸美国51
+      - 【看视频】🇺🇦乌克兰52
+      - 【看视频】🇨🇳中国53
+      - 【看视频】🇺🇸美国54
+      - 【看视频】🇨🇿捷克55
+      - 🇭🇰中继香港011【勿看视频】
       - 🇭🇰中继香港021【勿看视频】
+      - 🇭🇰IEPL香港033【勿看视频】
       - 🇭🇰中继香港041【勿看视频】
       - 🇭🇰中继香港051【勿看视频】
+      - 🇭🇰中继香港061【勿看视频】
+      - 🇭🇰中继香港071【勿看视频】
+      - 🇭🇰中继香港081【勿看视频】
+      - 🇭🇰中继香港091【勿看视频】
+      - 🇭🇰中继香港101【勿看视频】
+      - 🇭🇰中继香港111【勿看视频】
       - 🇭🇰中继香港121【勿看视频】
       - 🇭🇰中继香港131【勿看视频】
       - 🇭🇰中继香港141【勿看视频】
       - 🇭🇰中继香港151【勿看视频】
+      - 🇯🇵IEPL日本013【勿看视频】
+      - 🇯🇵中继日本021【勿看视频】
+      - 🇯🇵中继日本031【勿看视频】
+      - 🇯🇵中继日本041【勿看视频】
+      - 🇯🇵中继日本051【勿看视频】
+      - 🇯🇵中继日本061【勿看视频】
+      - 🇯🇵中继日本071【勿看视频】
+      - 🇯🇵中继日本081【勿看视频】
+      - 🇸🇬IEPL｜新加坡013【勿看视频】
+      - 🇸🇬中继｜新加坡021【勿看视频】
+      - 🇸🇬中继｜新加坡031【勿看视频】
+      - 🇸🇬中继｜新加坡041【勿看视频】
+      - 🇸🇬中继｜新加坡051【勿看视频】
+      - 🇸🇬中继｜新加坡061【勿看视频】
+      - 🇸🇬中继｜新加坡071【勿看视频】
+      - 🇸🇬中继｜新加坡081【勿看视频】
+      - 🇸🇬中继｜新加坡091【勿看视频】
+      - 🇸🇬中继｜新加坡101【勿看视频】
+      - 🇺🇸IEPL美国013【勿看视频】
+      - 🇺🇸中继美国021【勿看视频】
+      - 🇺🇸中继美国031【勿看视频】
+      - 🇺🇸中继美国041【勿看视频】
+      - 🇺🇸中继美国051【勿看视频】
       - 🇺🇸中继美国061【勿看视频】
+      - 🇹🇼IEPL台湾013【勿看视频】
+      - 🇹🇼中继台湾021【勿看视频】
+      - 🇹🇼中继台湾031【勿看视频】
+      - 🇻🇳中继越南｜原生1【勿看视频】
+      - 🇲🇾马来西亚1【勿看视频】
+      - 🇵🇭菲律宾1【勿看视频】
+      - 🇦🇷阿根廷1【勿看视频】
+      - 🇰🇭柬埔寨1【勿看视频】
+      - 🇷🇺俄罗斯1【勿看视频】
+      - 🇰🇷韩国1【勿看视频】
+      - 🇩🇪德国1【勿看视频】
+      - 🇨🇦加拿大1【勿看视频】
+      - 🇮🇩印度尼西亚1【勿看视频】
+      - 🇹🇷土耳其1【勿看视频】
+      - 🇮🇳印度1【勿看视频】
+      - 🇮🇪爱尔兰1【勿看视频】
+      - 🇬🇧英国1【勿看视频】
+      - 🇫🇷法国1【勿看视频】
+      - 🇦🇪迪拜1【勿看视频】
+      - 🇹🇭泰国1【勿看视频】
+      - 🇦🇺澳大利亚1【勿看视频】
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -217,27 +917,127 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 【看视频】美国01
-      - 【看视频】美国02
       - 🇯🇵【看视频】日本4
       - 【看视频】台湾1-无限流量
       - 【看视频】台湾5-无限流量
       - 【看视频】台湾6-无限流量
-      - 🇭🇰【看视频】香港20
       - 【看视频】-gouyunHK1T流量
-      - 【看视频】美国03
-      - 【看视频】美国04
-      - 【看视频】德国01
-      - 【看视频】德国02
-      - 【看视频】德国03
+      - 🇭🇰【看视频】香港20
+      - 【看视频】🇺🇸美国1
+      - 【看视频】🇺🇸美国2
+      - 【看视频】🇺🇸美国3
+      - 【看视频】🇺🇸美国4
+      - 【看视频】🇺🇸美国5
+      - 【看视频】🇺🇸美国6
+      - 【看视频】🇺🇸美国7
+      - 【看视频】🇺🇸美国8
+      - 【看视频】🇺🇸美国9
+      - 【看视频】🇺🇸美国10
+      - 【看视频】🇺🇸美国11
+      - 【看视频】🇺🇸美国12
+      - 【看视频】🇺🇸美国13
+      - 【看视频】🇺🇸美国14
+      - 【看视频】🇺🇸美国15
+      - 【看视频】🇺🇸美国16
+      - 【看视频】🇺🇸美国17
+      - 【看视频】🇺🇸美国18
+      - 【看视频】🇺🇸美国19
+      - 【看视频】🇳🇱荷兰20
+      - 【看视频】🇺🇸美国21
+      - 【看视频】🇺🇸美国22
+      - 【看视频】🇺🇸美国23
+      - 【看视频】🇺🇸美国24
+      - 【看视频】🇺🇸美国25
+      - 【看视频】🇺🇸美国26
+      - 【看视频】🇳🇱荷兰27
+      - 【看视频】🇬🇧英国28
+      - 【看视频】🇺🇸美国29
+      - 【看视频】🇺🇸美国30
+      - 【看视频】🇺🇸美国31
+      - 【看视频】🇺🇸美国32
+      - 【看视频】🇺🇸美国33
+      - 【看视频】🇨🇳中国34
+      - 【看视频】🇺🇸美国35
+      - 【看视频】🇺🇸美国36
+      - 【看视频】🇺🇸美国37
+      - 【看视频】🇬🇧英国38
+      - 【看视频】🇺🇸美国39
+      - 【看视频】🇺🇸美国40
+      - 【看视频】🇺🇸美国41
+      - 【看视频】🇺🇸美国42
+      - 【看视频】🇺🇸美国43
+      - 【看视频】🇺🇸美国44
+      - 【看视频】🇺🇸美国45
+      - 【看视频】🇺🇸美国46
+      - 【看视频】🇺🇸美国47
+      - 【看视频】🇺🇸美国48
+      - 【看视频】🇳🇱荷兰49
+      - 【看视频】🇺🇸美国50
+      - 【看视频】🇺🇸美国51
+      - 【看视频】🇺🇦乌克兰52
+      - 【看视频】🇨🇳中国53
+      - 【看视频】🇺🇸美国54
+      - 【看视频】🇨🇿捷克55
+      - 🇭🇰中继香港011【勿看视频】
       - 🇭🇰中继香港021【勿看视频】
+      - 🇭🇰IEPL香港033【勿看视频】
       - 🇭🇰中继香港041【勿看视频】
       - 🇭🇰中继香港051【勿看视频】
+      - 🇭🇰中继香港061【勿看视频】
+      - 🇭🇰中继香港071【勿看视频】
+      - 🇭🇰中继香港081【勿看视频】
+      - 🇭🇰中继香港091【勿看视频】
+      - 🇭🇰中继香港101【勿看视频】
+      - 🇭🇰中继香港111【勿看视频】
       - 🇭🇰中继香港121【勿看视频】
       - 🇭🇰中继香港131【勿看视频】
       - 🇭🇰中继香港141【勿看视频】
       - 🇭🇰中继香港151【勿看视频】
+      - 🇯🇵IEPL日本013【勿看视频】
+      - 🇯🇵中继日本021【勿看视频】
+      - 🇯🇵中继日本031【勿看视频】
+      - 🇯🇵中继日本041【勿看视频】
+      - 🇯🇵中继日本051【勿看视频】
+      - 🇯🇵中继日本061【勿看视频】
+      - 🇯🇵中继日本071【勿看视频】
+      - 🇯🇵中继日本081【勿看视频】
+      - 🇸🇬IEPL｜新加坡013【勿看视频】
+      - 🇸🇬中继｜新加坡021【勿看视频】
+      - 🇸🇬中继｜新加坡031【勿看视频】
+      - 🇸🇬中继｜新加坡041【勿看视频】
+      - 🇸🇬中继｜新加坡051【勿看视频】
+      - 🇸🇬中继｜新加坡061【勿看视频】
+      - 🇸🇬中继｜新加坡071【勿看视频】
+      - 🇸🇬中继｜新加坡081【勿看视频】
+      - 🇸🇬中继｜新加坡091【勿看视频】
+      - 🇸🇬中继｜新加坡101【勿看视频】
+      - 🇺🇸IEPL美国013【勿看视频】
+      - 🇺🇸中继美国021【勿看视频】
+      - 🇺🇸中继美国031【勿看视频】
+      - 🇺🇸中继美国041【勿看视频】
+      - 🇺🇸中继美国051【勿看视频】
       - 🇺🇸中继美国061【勿看视频】
+      - 🇹🇼IEPL台湾013【勿看视频】
+      - 🇹🇼中继台湾021【勿看视频】
+      - 🇹🇼中继台湾031【勿看视频】
+      - 🇻🇳中继越南｜原生1【勿看视频】
+      - 🇲🇾马来西亚1【勿看视频】
+      - 🇵🇭菲律宾1【勿看视频】
+      - 🇦🇷阿根廷1【勿看视频】
+      - 🇰🇭柬埔寨1【勿看视频】
+      - 🇷🇺俄罗斯1【勿看视频】
+      - 🇰🇷韩国1【勿看视频】
+      - 🇩🇪德国1【勿看视频】
+      - 🇨🇦加拿大1【勿看视频】
+      - 🇮🇩印度尼西亚1【勿看视频】
+      - 🇹🇷土耳其1【勿看视频】
+      - 🇮🇳印度1【勿看视频】
+      - 🇮🇪爱尔兰1【勿看视频】
+      - 🇬🇧英国1【勿看视频】
+      - 🇫🇷法国1【勿看视频】
+      - 🇦🇪迪拜1【勿看视频】
+      - 🇹🇭泰国1【勿看视频】
+      - 🇦🇺澳大利亚1【勿看视频】
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
   - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
