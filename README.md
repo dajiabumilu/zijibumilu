@@ -6,7 +6,7 @@ log-level: info
 external-controller: '127.0.0.1:9090'
 dns:
     enable: true
-    ipv6: false
+    ipv6: true
     default-nameserver: [223.5.5.5, 119.29.29.29]
     enhanced-mode: fake-ip
     fake-ip-range: 198.18.0.1/16
@@ -16,73 +16,73 @@ dns:
     fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
 proxies:
   - {"type":"vmess","name":"🇭🇰中继香港021【勿看视频】","ws-opts":{"path":"/","headers":{"host":"hk02.ssyhi.xyz"}},"server":"120.233.176.133","port":"50201","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
-  - {"type":"ss","name":"🇭🇰IEPL香港033【勿看视频】","server":"120.233.176.133","port":50202,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇭🇰IEPL香港033【勿看视频】","server":"120.233.176.133","port":50202,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
   - {"type":"vmess","name":"🇭🇰中继香港051【勿看视频】","ws-opts":{"path":"/","headers":{"host":"hk05.ssyhi.xyz"}},"server":"183.240.228.190","port":"50204","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
   - {"type":"vmess","name":"🇭🇰中继香港041【勿看视频】","ws-opts":{"path":"/","headers":{"host":"hk04.ssyhi.xyz"}},"server":"183.240.228.190","port":"50203","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
   - {"type":"vmess","name":"🇭🇰中继香港121【勿看视频】","ws-opts":{"path":"/","headers":{"host":"hk12.ssyhi.xyz"}},"server":"120.233.176.133","port":"50252","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
-  - {"type":"ss","name":"🇭🇰中继香港011【勿看视频】","server":"120.232.91.135","port":50200,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇭🇰中继香港111【勿看视频】","server":"183.240.228.190","port":58456,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇭🇰中继香港011【勿看视频】","server":"120.232.91.135","port":50200,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇭🇰中继香港111【勿看视频】","server":"183.240.228.190","port":58456,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
   - {"type":"vmess","name":"🇭🇰中继香港151【勿看视频】","ws-opts":{"path":"/","headers":{"host":"hk16.ssyhi.xyz"}},"server":"183.240.228.190","port":"50255","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
-  - {"type":"ss","name":"🇭🇰中继香港091【勿看视频】","server":"120.233.176.133","port":50208,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇭🇰中继香港061【勿看视频】","server":"120.232.91.135","port":50205,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇭🇰中继香港091【勿看视频】","server":"120.233.176.133","port":50208,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇭🇰中继香港061【勿看视频】","server":"120.232.91.135","port":50205,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
   - {"type":"vmess","name":"🇭🇰中继香港131【勿看视频】","ws-opts":{"path":"/","headers":{"host":"hk13.ssyhi.xyz"}},"server":"120.233.176.133","port":"50253","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
   - {"type":"vmess","name":"🇭🇰中继香港141【勿看视频】","ws-opts":{"path":"/","headers":{"host":"hk14.ssyhi.xyz"}},"server":"120.232.91.135","port":"50254","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
-  - {"type":"ss","name":"🇹🇼中继台湾031【勿看视频】","server":"120.232.91.135","port":50757,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇹🇼中继台湾021【勿看视频】","server":"120.232.91.135","port":50235,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇻🇳中继越南｜原生1【勿看视频】","server":"183.240.228.190","port":50233,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇲🇾马来西亚1【勿看视频】","server":"183.240.228.190","port":53898,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇸🇬中继｜新加坡071【勿看视频】","server":"120.232.91.135","port":50224,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇯🇵中继日本061【勿看视频】","server":"120.232.91.135","port":50215,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇯🇵IEPL日本013【勿看视频】","server":"183.240.228.190","port":50210,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇯🇵中继日本081【勿看视频】","server":"120.232.91.135","port":50217,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇸🇬中继｜新加坡081【勿看视频】","server":"120.232.91.135","port":50225,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇸🇬中继｜新加坡091【勿看视频】","server":"183.240.228.190","port":50226,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇯🇵中继日本051【勿看视频】","server":"183.240.228.190","port":50214,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇸🇬中继｜新加坡021【勿看视频】","server":"120.232.91.135","port":50219,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇹🇼中继台湾031【勿看视频】","server":"120.232.91.135","port":50757,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇹🇼中继台湾021【勿看视频】","server":"120.232.91.135","port":50235,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇻🇳中继越南｜原生1【勿看视频】","server":"183.240.228.190","port":50233,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇲🇾马来西亚1【勿看视频】","server":"183.240.228.190","port":53898,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡071【勿看视频】","server":"120.232.91.135","port":50224,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇯🇵中继日本061【勿看视频】","server":"120.232.91.135","port":50215,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇯🇵IEPL日本013【勿看视频】","server":"183.240.228.190","port":50210,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇯🇵中继日本081【勿看视频】","server":"120.232.91.135","port":50217,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡081【勿看视频】","server":"120.232.91.135","port":50225,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡091【勿看视频】","server":"183.240.228.190","port":50226,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇯🇵中继日本051【勿看视频】","server":"183.240.228.190","port":50214,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡021【勿看视频】","server":"120.232.91.135","port":50219,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
   - {"type":"vmess","name":"🇭🇰【看视频】香港20","server":"183.236.51.38","port":"32919","uuid":"418048af-a293-4b99-9b0c-98ca3580dd24","alterId":"64","cipher":"auto","network":"tcp"}
-  - {"type":"ss","name":"🇸🇬中继｜新加坡041【勿看视频】","server":"120.232.91.135","port":50221,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇸🇬IEPL｜新加坡013【勿看视频】","server":"183.240.228.190","port":50218,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇯🇵中继日本071【勿看视频】","server":"120.232.91.135","port":50216,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇸🇬中继｜新加坡051【勿看视频】","server":"183.240.228.190","port":50222,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇸🇬中继｜新加坡101【勿看视频】","server":"183.240.228.190","port":50227,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇯🇵中继日本021【勿看视频】","server":"120.232.91.135","port":50211,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇰🇭柬埔寨1【勿看视频】","server":"183.240.228.190","port":50733,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇸🇬中继｜新加坡061【勿看视频】","server":"120.232.91.135","port":50223,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇰🇷韩国1【勿看视频】","server":"183.240.228.190","port":50246,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇹🇭泰国1【勿看视频】","server":"183.240.228.190","port":53899,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡041【勿看视频】","server":"120.232.91.135","port":50221,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇸🇬IEPL｜新加坡013【勿看视频】","server":"183.240.228.190","port":50218,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇯🇵中继日本071【勿看视频】","server":"120.232.91.135","port":50216,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡051【勿看视频】","server":"183.240.228.190","port":50222,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡101【勿看视频】","server":"183.240.228.190","port":50227,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇯🇵中继日本021【勿看视频】","server":"120.232.91.135","port":50211,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇰🇭柬埔寨1【勿看视频】","server":"183.240.228.190","port":50733,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇸🇬中继｜新加坡061【勿看视频】","server":"120.232.91.135","port":50223,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇰🇷韩国1【勿看视频】","server":"183.240.228.190","port":50246,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇹🇭泰国1【勿看视频】","server":"183.240.228.190","port":53899,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
   - {"type":"vless","name":"【看视频】🇺🇸美国1","server":"160.79.104.113","port":443,"uuid":"794f9f41-92c9-4a78-8ffc-1f82cb48a4e2","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"0229.patterdeng.pp.ua","ws-opts":{"path":"/security=tls","headers":{"host":"0229.patterdeng.pp.ua"}}}
-  - {"type":"ss","name":"🇺🇸中继美国041【勿看视频】","server":"183.240.228.190","port":50666,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇦🇪迪拜1【勿看视频】","server":"183.240.228.190","port":53902,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇺🇸中继美国041【勿看视频】","server":"183.240.228.190","port":50666,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇦🇪迪拜1【勿看视频】","server":"183.240.228.190","port":53902,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
   - {"type":"vmess","name":"🇺🇸中继美国061【勿看视频】","ws-opts":{"path":"/","headers":{"host":"us08.ssyhi.xyz"}},"server":"120.232.91.135","port":"50670","uuid":"75e09741-13c8-494b-901a-3701d4cfb225","alterId":"0","cipher":"auto","network":"ws"}
-  - {"type":"ss","name":"🇦🇺澳大利亚1【勿看视频】","server":"120.232.91.135","port":53903,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇺🇸中继美国021【勿看视频】","server":"120.233.176.133","port":50231,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇦🇺澳大利亚1【勿看视频】","server":"120.232.91.135","port":53903,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇺🇸中继美国021【勿看视频】","server":"120.233.176.133","port":50231,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
   - {"type":"vless","name":"【看视频】🇺🇸美国12","server":"104.21.69.44","port":443,"uuid":"f12977e6-d296-4d94-9aaf-d31770b70f84","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"cr77.hedieh.dpdns.org","ws-opts":{"path":"/","headers":{"host":"cr77.hedieh.dpdns.org"}}}
   - {"type":"vless","name":"【看视频】🇺🇸美国44","server":"160.79.104.113","port":443,"uuid":"794f9f41-92c9-4a78-8ffc-1f82cb48a4e2","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"0229.patterdeng.pp.ua","ws-opts":{"path":"/security=tls","headers":{"host":"0229.patterdeng.pp.ua"}}}
-  - {"type":"ss","name":"🇺🇸中继美国031【勿看视频】","server":"120.232.91.135","port":50232,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇺🇸中继美国051【勿看视频】","server":"120.232.91.135","port":50669,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇷🇺俄罗斯1【勿看视频】","server":"120.232.91.135","port":50734,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇫🇷法国1【勿看视频】","server":"183.240.228.190","port":50242,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇩🇪德国1【勿看视频】","server":"183.240.228.190","port":53900,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇺🇸中继美国031【勿看视频】","server":"120.232.91.135","port":50232,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇺🇸中继美国051【勿看视频】","server":"120.232.91.135","port":50669,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇷🇺俄罗斯1【勿看视频】","server":"120.232.91.135","port":50734,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇫🇷法国1【勿看视频】","server":"183.240.228.190","port":50242,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇩🇪德国1【勿看视频】","server":"183.240.228.190","port":53900,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
   - {"type":"vmess","name":"【看视频】🇨🇳中国53","server":"120.198.44.126","port":"47883","uuid":"418048af-a293-4b99-9b0c-98ca3580dd24","alterId":"0","cipher":"auto","network":"tcp"}
-  - {"type":"ss","name":"🇨🇦加拿大1【勿看视频】","server":"120.233.176.133","port":50236,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇹🇷土耳其1【勿看视频】","server":"120.232.91.135","port":53901,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇮🇪爱尔兰1【勿看视频】","server":"120.232.91.135","port":50667,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇦🇷阿根廷1【勿看视频】","server":"120.233.176.133","port":50732,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇨🇦加拿大1【勿看视频】","server":"120.233.176.133","port":50236,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇹🇷土耳其1【勿看视频】","server":"120.232.91.135","port":53901,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇮🇪爱尔兰1【勿看视频】","server":"120.232.91.135","port":50667,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇦🇷阿根廷1【勿看视频】","server":"120.233.176.133","port":50732,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
   - {"type":"vless","name":"【看视频】🇺🇸美国7","server":"160.79.104.113","port":443,"uuid":"794f9f41-92c9-4a78-8ffc-1f82cb48a4e2","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"0229.patterdeng.pp.ua","ws-opts":{"path":"/","headers":{"host":"0229.patterdeng.pp.ua"}}}
   - {"type":"vless","name":"【看视频】🇺🇸美国22","server":"160.79.104.113","port":443,"uuid":"794f9f41-92c9-4a78-8ffc-1f82cb48a4e2","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"0229.patterdeng.pp.ua","ws-opts":{"path":"/","headers":{"host":"0229.patterdeng.pp.ua"}}}
   - {"type":"vless","name":"【看视频】台湾1-无限流量","server":"usa.visa.com","port":443,"uuid":"e94b7e06-1934-4f0e-89ad-1f516e532590","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"a.bumilu.zone.id","ws-opts":{"path":"/?ed=2560","headers":{"host":"a.bumilu.zone.id"}}}
   - {"type":"vless","name":"【看视频】🇺🇸美国41","server":"104.17.148.22","port":2096,"uuid":"96a1b724-68d2-4f4d-ab25-38ecd83577bc","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"RwQfYqAh14.tRaViQo.oRg","ws-opts":{"path":"/","headers":{"host":"RwQfYqAh14.tRaViQo.oRg"}}}
   - {"type":"vless","name":"【看视频】-gouyunHK1T流量","server":"206.237.7.142","port":443,"uuid":"fc8f2b62-6e38-4943-b4c3-24997ff3f6ba","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"itunes.apple.com","tls":false,"udp":true}
-  - {"type":"ss","name":"🇰🇷韩国【看视频】","server":"kr01.ssyhi.xyz","port":50246,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇰🇷韩国【看视频】","server":"kr01.ssyhi.xyz","port":50246,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
   - {"type":"vless","name":"🇺🇸US美国【看视频】","server":"icook.tw","port":443,"uuid":"866853eb-5293-4f09-bf00-e13eb237c655","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"worker.amcloud.filegear-sg.me","ws-opts":{"path":"/","headers":{"host":"worker.amcloud.filegear-sg.me"}}}
-  - {"type":"ss","name":"🇲🇾马来西亚【看视频】","server":"my01.ssyhi.xyz","port":53898,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇯🇵日本-04【看视频】","server":"jp04.ssyhi.xyz","port":50213,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇫🇷法国【看视频】","server":"fr01.ssyhi.xyz","port":50242,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇯🇵日本-07【看视频】","server":"jp07.ssyhi.xyz","port":50216,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇭🇰香港-08【看视频】","server":"hk08.ssyhi.xyz","port":50207,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇭🇰香港-11【看视频】","server":"hk11.ssyhi.xyz","port":58456,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇭🇰香港-09【看视频】","server":"hk09.ssyhi.xyz","port":50208,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
-  - {"type":"ss","name":"🇮🇳印度【看视频】","server":"in01.ssyhi.xyz","port":50237,"cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇲🇾马来西亚【看视频】","server":"my01.ssyhi.xyz","port":53898,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇯🇵日本-04【看视频】","server":"jp04.ssyhi.xyz","port":50213,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇫🇷法国【看视频】","server":"fr01.ssyhi.xyz","port":50242,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇯🇵日本-07【看视频】","server":"jp07.ssyhi.xyz","port":50216,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇭🇰香港-08【看视频】","server":"hk08.ssyhi.xyz","port":50207,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇭🇰香港-11【看视频】","server":"hk11.ssyhi.xyz","port":58456,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇭🇰香港-09【看视频】","server":"hk09.ssyhi.xyz","port":50208,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
+  - {"type":"ss","name":"🇮🇳印度【看视频】","server":"in01.ssyhi.xyz","port":50237,cipher: chacha20-ietf-poly1305, password: 75e09741-13c8-494b-901a-3701d4cfb225, udp: true}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
